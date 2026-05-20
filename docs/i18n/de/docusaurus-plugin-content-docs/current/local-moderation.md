@@ -9,6 +9,8 @@ Bitsocial ist nicht moderationsfrei. Es handelt sich um eine Moderation ohne Sup
 
 Gemeinschaftseigentümer legen immer noch Regeln für ihre eigenen Räume fest. Apps entscheiden immer noch, was sie indizieren, bewerten oder hervorheben. Was Bitsocial nicht beinhaltet, ist eine globale Autorität, die eine Community beschlagnahmen oder eine Identität aus dem Netzwerk selbst löschen kann.
 
+Eine ausführlichere Anleitung in einfacher englischer Sprache zu Community-Eigentümern, Veröffentlichungen, Herausforderungen und Moderatorunterschriften finden Sie hier [Eine vollständige Erklärung des Bitsocial-Protokolls für Laien](./layman-protocol-explanation.md).
+
 ## So funktioniert Moderation
 
 - Ein Community-Eigentümer kann diese Community moderieren

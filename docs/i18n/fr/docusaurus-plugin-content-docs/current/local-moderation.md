@@ -9,6 +9,8 @@ Bitsocial n'est pas sans modération. Il s’agit d’une modération sans super
 
 Les propriétaires communautaires fixent toujours des règles pour leurs propres espaces. Les applications décident toujours de ce qu’elles indexent, classent ou mettent en évidence. Ce que Bitsocial n'inclut pas, c'est une autorité mondiale qui peut confisquer une communauté ou effacer une identité du réseau lui-même.
 
+Pour une présentation plus large en anglais simple de la propriété de la communauté, de la publication, des défis et des signatures des modérateurs, lisez [Une explication profane complète du protocole Bitsocial](./layman-protocol-explanation.md).
+
 ## Comment fonctionne la modération
 
 - Un propriétaire de communauté peut modérer cette communauté

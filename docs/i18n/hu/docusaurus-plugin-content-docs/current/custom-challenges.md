@@ -7,6 +7,8 @@ description: Miért teszi lehetővé a Bitsocial, hogy minden közösség meghat
 
 A Bitsocial nem feltételez egyetlen univerzális spam elleni védelmet. Minden közösség eldöntheti, hogy egy érvényes bejegyzéshez vagy válaszhoz mit igényel, és ez a kihívás lehet olyan könnyű vagy véleményes, amennyire az üzemeltető akar.
 
+Olvassa el a teljes egyszerű angol nyelvű folyamot a közösségi címektől a kihívásokkal teli bejegyzésekig [A Bitsocial protokoll teljes laikus magyarázata](./layman-protocol-explanation.md).
+
 ## Micsoda kihívás lehet
 
 - Egy captcha

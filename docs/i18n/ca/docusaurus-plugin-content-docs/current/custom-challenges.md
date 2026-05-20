@@ -7,6 +7,8 @@ description: Per què Bitsocial permet a cada comunitat definir la seva pròpia 
 
 Bitsocial no assumeix una defensa universal contra el correu brossa. Cada comunitat pot decidir què requereix una publicació o resposta vàlida, i aquest repte pot ser tan lleuger o opinió com vulgui l'operador.
 
+Per obtenir el flux complet en anglès senzill, des de les adreces de la comunitat fins a la publicació limitada per desafiaments, llegiu [Una explicació completa del protocol Bitsocial](./layman-protocol-explanation.md).
+
 ## Quin repte pot ser
 
 - Un captcha

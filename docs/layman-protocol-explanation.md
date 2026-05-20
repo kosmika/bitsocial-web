@@ -211,5 +211,5 @@ the product can feel normal while the ownership model underneath is different.
 - [Custom Anti-Spam Challenges](./custom-challenges.md) explains the challenge system.
 - [Identity and Community Ownership](./identity-and-ownership.md) explains key-controlled
   ownership.
-- [Build your own client](./build-your-own-client.md) explains how independent apps can build on
+- [Build your own client](/build-your-own-client/) explains how independent apps can build on
   the same network.

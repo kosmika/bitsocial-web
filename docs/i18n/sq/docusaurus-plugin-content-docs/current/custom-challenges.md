@@ -7,6 +7,8 @@ description: Pse Bitsocial lejon çdo komunitet të përcaktojë politikën e ti
 
 Bitsocial nuk supozon një mbrojtje universale të spamit. Secili komunitet mund të vendosë se çfarë kërkon një postim ose përgjigje e vlefshme, dhe kjo sfidë mund të jetë aq e lehtë ose me opinion sa dëshiron operatori.
 
+Për rrjedhën e plotë të thjeshtë në anglisht nga adresat e komunitetit te postimi i kufizuar nga sfidat, lexoni [Një shpjegim i plotë laik i protokollit Bitsocial](./layman-protocol-explanation.md).
+
 ## Çfarë sfide mund të jetë
 
 - Një captcha

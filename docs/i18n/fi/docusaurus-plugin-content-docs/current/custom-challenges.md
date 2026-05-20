@@ -7,6 +7,8 @@ description: Miksi Bitsocial antaa jokaisen yhteisön määritellä oman roskapo
 
 Bitsocial ei oleta yhtä yleistä roskapostisuojausta. Jokainen yhteisö voi päättää, mitä pätevä viesti tai vastaus vaatii, ja haaste voi olla niin kevyt tai mielikuvituksellinen kuin operaattori haluaa.
 
+Lue koko pelkkä englanninkielinen kulku yhteisön osoitteista haasteisiin liittyvään postaukseen [Täydellinen maallikon selitys Bitsocial-protokollasta](./layman-protocol-explanation.md).
+
 ## Mikä haaste voi olla
 
 - Captcha

@@ -7,6 +7,8 @@ description: Bagaimana Bitsocial menggunakan IPFS/libp2p, pengalamatan kunci pub
 
 Bitsocial tidak menggunakan blockchain, server federasi, atau backend terpusat. Sebaliknya, ini menggabungkan dua ide — **pengalamatan berbasis kunci publik** dan **pubsub peer-to-peer** — untuk memungkinkan siapa pun menghosting komunitas dari perangkat keras konsumen sementara pengguna membaca dan memposting tanpa akun di layanan yang dikendalikan perusahaan.
 
+Untuk panduan yang kurang teknis, baca [Penjelasan awam lengkap tentang protokol Bitsocial](./layman-protocol-explanation.md).
+
 ## Kedua masalah tersebut
 
 Jejaring sosial yang terdesentralisasi harus menjawab dua pertanyaan:

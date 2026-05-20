@@ -7,6 +7,8 @@ description: Warum Bitsocial jede Community ihre eigene Anti-Spam-Richtlinie def
 
 Bitsocial geht nicht von einer universellen Spam-Abwehr aus. Jede Community kann entscheiden, was ein gültiger Beitrag oder eine gültige Antwort erfordert, und diese Herausforderung kann so leicht oder rechthaberisch sein, wie der Betreiber es wünscht.
 
+Den vollständigen Ablauf in Klartext von Community-Adressen bis hin zu herausforderungsgesteuerten Beiträgen finden Sie hier [Eine vollständige Erklärung des Bitsocial-Protokolls für Laien](./layman-protocol-explanation.md).
+
 ## Was für eine Herausforderung kann sein
 
 - Ein Captcha

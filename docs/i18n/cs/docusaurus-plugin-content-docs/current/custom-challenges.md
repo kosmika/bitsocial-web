@@ -7,6 +7,8 @@ description: Proč Bitsocial umožňuje každé komunitě definovat vlastní pol
 
 Bitsocial nepředpokládá jednu univerzální ochranu proti spamu. Každá komunita se může rozhodnout, co platný příspěvek nebo odpověď vyžaduje, a tato výzva může být tak lehká nebo názorná, jak chce operátor.
 
+Chcete-li získat úplný tok v jednoduché angličtině od adres komunity až po odesílání příspěvků s bránou, čtěte [Kompletní laické vysvětlení protokolu Bitsocial](./layman-protocol-explanation.md).
+
 ## Jaká může být výzva
 
 - A captcha

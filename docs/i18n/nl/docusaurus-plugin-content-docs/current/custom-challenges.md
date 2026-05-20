@@ -7,6 +7,8 @@ description: Waarom Bitsocial elke community zijn eigen antispambeleid laat defi
 
 Bitsocial gaat niet uit van één universele spamverdediging. Elke community kan beslissen wat een geldig bericht of antwoord vereist, en die uitdaging kan zo licht of eigenzinnig zijn als de operator wil.
 
+Voor de volledige, duidelijke Engelse stroom van community-adressen naar uitdagingsposten, lees [Een volledige uitleg voor leken van het Bitsocial-protocol](./layman-protocol-explanation.md).
+
 ## Wat een uitdaging kan zijn
 
 - Een captcha

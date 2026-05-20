@@ -7,6 +7,8 @@ description: Si përdor Bitsocial IPFS/libp2p, adresimin me çelës publik, pubs
 
 Bitsocial nuk përdor një blockchain, një server federate ose një backend të centralizuar. Në vend të kësaj, ai kombinon dy ide - **adresimi i bazuar në çelësin publik** dhe **pubsub-peer-to-peer** - për të lejuar këdo që të presë një komunitet nga hardueri i konsumatorit ndërsa përdoruesit lexojnë dhe postojnë pa llogari në çdo shërbim të kontrolluar nga kompania.
 
+Për një zbulim më pak teknik, lexoni [Një shpjegim i plotë laik i protokollit Bitsocial](./layman-protocol-explanation.md).
+
 ## Dy problemet
 
 Një rrjet social i decentralizuar duhet t'i përgjigjet dy pyetjeve:

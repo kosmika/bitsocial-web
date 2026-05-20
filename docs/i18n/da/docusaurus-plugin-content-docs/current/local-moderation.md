@@ -9,6 +9,8 @@ Bitsocial er ikke moderationsfri. Det er moderation uden en superadmin på proto
 
 Fællesskabsejere fastsætter stadig regler for deres egne rum. Apps bestemmer stadig, hvad de indekserer, rangerer eller fremhæver. Hvad Bitsocial ikke inkluderer, er en global myndighed, der kan konfiskere et fællesskab eller slette en identitet fra selve netværket.
 
+For en bredere almindelig engelsk gennemgang af fællesskabsejerskab, udgivelse, udfordringer og moderatorsignaturer, læs [En komplet lægmandsforklaring af Bitsocial-protokollen](./layman-protocol-explanation.md).
+
 ## Hvordan moderering virker
 
 - En fællesskabsejer kan moderere dette fællesskab

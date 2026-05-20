@@ -9,6 +9,8 @@ Bitsocial nuk është pa moderim. Është moderim pa një super-administrator t�
 
 Pronarët e komunitetit ende vendosin rregulla për hapësirat e tyre. Aplikacionet ende vendosin se çfarë indeksojnë, renditin ose nënvizojnë. Ajo që Bitsocial nuk përfshin është një autoritet global që mund të konfiskojë një komunitet ose të fshijë një identitet nga vetë rrjeti.
 
+Për një përmbledhje më të gjerë në anglisht të pronësisë së komunitetit, publikimit, sfidave dhe nënshkrimeve të moderatorit, lexoni [Një shpjegim i plotë laik i protokollit Bitsocial](./layman-protocol-explanation.md).
+
 ## Si funksionon moderimi
 
 - Një pronar i komunitetit mund ta moderojë atë komunitet

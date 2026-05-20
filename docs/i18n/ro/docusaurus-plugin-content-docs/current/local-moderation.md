@@ -9,6 +9,8 @@ Bitsocial nu este fără moderare. Este moderare fără un super-administrator l
 
 Proprietarii comunităților încă stabilesc reguli pentru propriile spații. Aplicațiile încă decid ce indexează, clasifică sau evidențiază. Ceea ce Bitsocial nu include este o autoritate globală care poate confisca o comunitate sau poate șterge o identitate din rețea însăși.
 
+Pentru o prezentare mai amplă în limba engleză a proprietății comunității, publicării, provocărilor și semnăturilor moderatorilor, citiți [O explicație completă a protocolului Bitsocial](./layman-protocol-explanation.md).
+
 ## Cum funcționează moderarea
 
 - Un proprietar de comunitate poate modera acea comunitate

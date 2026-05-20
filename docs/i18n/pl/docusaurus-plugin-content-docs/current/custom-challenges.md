@@ -7,6 +7,8 @@ description: Dlaczego Bitsocial pozwala każdej społeczności zdefiniować wła
 
 Bitsocial nie zakłada jednej uniwersalnej ochrony przed spamem. Każda społeczność może zdecydować, czego wymaga ważny post lub odpowiedź, a wyzwanie to może być tak lekkie lub oparte na opiniach, jak chce operator.
 
+Aby zapoznać się z pełnym opisem przepływu informacji w prostym języku angielskim od adresów społeczności do publikacji z bramką testową, przeczytaj [Kompletne wyjaśnienie protokołu Bitsocial dla laika](./layman-protocol-explanation.md).
+
 ## Jakim wyzwaniem może być
 
 - Captcha

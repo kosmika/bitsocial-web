@@ -7,6 +7,8 @@ description: Mengapa Bitsocial membiarkan setiap komunitas menentukan kebijakan 
 
 Bitsocial tidak mengasumsikan satu pertahanan spam universal. Setiap komunitas dapat memutuskan apa yang dibutuhkan oleh postingan atau balasan yang valid, dan tantangan tersebut dapat dibuat ringan atau beropini sesuai keinginan operator.
 
+Untuk mengetahui alur bahasa Inggris lengkap mulai dari alamat komunitas hingga postingan yang menantang, bacalah [Penjelasan awam lengkap tentang protokol Bitsocial](./layman-protocol-explanation.md).
+
 ## Tantangan yang luar biasa
 
 - Sebuah captcha

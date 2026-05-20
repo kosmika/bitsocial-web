@@ -9,6 +9,8 @@ Ang bitsocial ay hindi moderation-free. Ito ay moderation na walang protocol-lev
 
 Nagtatakda pa rin ang mga may-ari ng komunidad ng mga panuntunan para sa kanilang sariling mga espasyo. Ang mga app ay nagpapasya pa rin kung ano ang kanilang ini-index, niraranggo, o na-highlight. Ang hindi kasama sa Bitsocial ay isang pandaigdigang awtoridad na maaaring kumpiskahin ang isang komunidad o magbura ng isang pagkakakilanlan mula sa mismong network.
 
+Para sa isang mas malawak na payak na Ingles na walkthrough ng pagmamay-ari ng komunidad, pag-publish, mga hamon, at mga lagda ng moderator, basahin [Isang kumpletong paliwanag ng karaniwang tao sa Bitsocial protocol](./layman-protocol-explanation.md).
+
 ## Paano gumagana ang moderation
 
 - Maaaring i-moderate ng isang may-ari ng komunidad ang komunidad na iyon
