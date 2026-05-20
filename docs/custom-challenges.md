@@ -8,6 +8,9 @@ description: Why Bitsocial lets each community define its own anti-spam policy.
 Bitsocial does not assume one universal spam defense. Each community can decide what a valid post
 or reply requires, and that challenge can be as lightweight or opinionated as the operator wants.
 
+For the full plain-English flow from community addresses to challenge-gated posting, read
+[A complete layman explanation of the Bitsocial protocol](./layman-protocol-explanation.md).
+
 ## What a challenge can be
 
 - A captcha

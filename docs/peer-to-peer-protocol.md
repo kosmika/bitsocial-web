@@ -10,6 +10,9 @@ uses the IPFS/libp2p stack to combine two ideas: **public-key-based addressing**
 **peer-to-peer pubsub**. Together they let anyone host a community from consumer hardware while
 users read and post without accounts on any company-controlled service.
 
+For a less technical walkthrough, read
+[A complete layman explanation of the Bitsocial protocol](./layman-protocol-explanation.md).
+
 ## Does Bitsocial use IPFS?
 
 Yes. Bitsocial nodes use IPFS/libp2p primitives for the peer-to-peer layer: public-key-addressed
