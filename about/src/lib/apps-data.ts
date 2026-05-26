@@ -36,7 +36,8 @@ export type AppIconKey =
   | "clipboard"
   | "flag"
   | "link-2"
-  | "share-2";
+  | "share-2"
+  | "sparkles";
 
 export type DesktopVariant =
   | "windows"
@@ -633,7 +634,7 @@ export const APPS: AppData[] = [
       "AI Moderation Challenge evaluates Bitsocial comment content against community.rules with an OpenAI-compatible model endpoint. Communities can route risky posts to review while keeping provider keys and prompts in private node settings.",
     category: "anti-spam",
     tags: ["Moderation", "Risk scores"],
-    icon: "shield",
+    icon: "sparkles",
     githubRepo: "bitsocialnet/ai-moderation-challenge",
     links: [
       {

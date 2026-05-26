@@ -9,6 +9,7 @@ import {
   Send,
   Share2,
   Shield,
+  Sparkles,
   Terminal,
   Ticket,
 } from "lucide-react";
@@ -25,6 +26,7 @@ const iconMap = {
   send: Send,
   "share-2": Share2,
   shield: Shield,
+  sparkles: Sparkles,
   terminal: Terminal,
   ticket: Ticket,
 } satisfies Record<AppIconKey, ComponentType<{ className?: string }>>;
