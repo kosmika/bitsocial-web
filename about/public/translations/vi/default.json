@@ -536,6 +536,10 @@
         "flags-challenge": {
           "tagline": "Thử thách cấp cấp cờ được xác minh cho huy hiệu quốc gia và bảng cụ thể.",
           "description": "Flags Challenge chạy trên một nút cộng đồng Bitsocial và xác minh các khẳng định cờ được ký từ một dịch vụ nhà phát hành có thể định cấu hình. Hồ sơ đầu tiên được gói hướng tới 5chan, bao gồm cờ quốc gia, memeflags /pol/ và pony flags /mlp/, trong khi giữ mẫu tương tự có thể tái sử dụng cho bất kỳ máy khách nào chạy dịch vụ nhà phát hành và không gian tên của chính nó."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Seeder công khai cho các cộng đồng Bitsocial, được đóng gói cho Docker và npm.",
+          "description": "Bitsocial Seeder ghim các trang ưu tiên cộng đồng, CID sau cập nhật và định tuyến chủ đề pubsub thông qua daemon Bitsocial. Nó tái sử dụng một daemon cục bộ đang chạy sẵn khi có thể truy cập hoặc tự động khởi động daemon bitsocial-cli được gói gọn và được cung cấp như cả hình ảnh Docker cho triển khai VPS không giám sát và gói npm cho các nhà khai thác Node-first."
         }
       }
     },

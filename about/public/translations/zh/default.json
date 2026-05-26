@@ -535,6 +535,10 @@
         },
         "flags-challenge": {
           "description": "Flags Challenge在Bitsocial社区节点上运行，并验证来自可配置发行者服务的签名标志断言。第一个捆绑的配置文件以5chan为目标，涵盖国家旗帜、/pol/ memeflags和/mlp/ pony flags，同时保持相同的模式可供运行自己的发行者服务和命名空间的任何客户端重用。"
+        },
+        "bitsocial-seeder": {
+          "tagline": "Bitsocial社区的公共播种者，为Docker和npm打包。",
+          "description": "Bitsocial Seeder 通过 Bitsocial daemon 固定社区首页、更新后的 CID 和 pubsub 主题路由。当本地 daemon 可达时，它会重用已在运行的本地 daemon，或自动启动捆绑的 bitsocial-cli daemon，并同时作为 Docker 映像用于无人值守的 VPS 部署和 npm 包用于 Node-first 运营商提供。"
         }
       }
     },

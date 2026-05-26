@@ -549,6 +549,10 @@
           "tagline": "Command-line control for nodes, communities, and automation workflows.",
           "description": "Bitsocial CLI is the official terminal interface for the protocol. Use it to manage nodes, publish content, start a WebSocket JSON-RPC server for programmatic control and code automation, automate admin flows, and work directly against Bitsocial primitives without a GUI client."
         },
+        "bitsocial-seeder": {
+          "tagline": "Public seeder for Bitsocial communities, packaged for Docker and npm.",
+          "description": "Bitsocial Seeder pins community first pages, post-update CIDs, and pubsub topic routing through a Bitsocial daemon. It reuses an already-running local daemon when one is reachable or starts the bundled bitsocial-cli daemon automatically, and ships as both a Docker image for unattended VPS deployments and an npm package for Node-first operators."
+        },
         "telegram-bots": {
           "tagline": "Feed bots that relay new Bitsocial posts into Telegram channels or groups.",
           "description": "Bitsocial Telegram Bots monitor client community lists and forward new posts into Telegram destinations with inline links back to Bitsocial clients. The active bot covers 5chan feeds today, with the repo structured to add more client-specific bots over time."

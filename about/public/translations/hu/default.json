@@ -536,6 +536,10 @@
         "flags-challenge": {
           "tagline": "Ellenőrzött zászló-kibocsátó kihívás ország- és tábla-specifikus jelvényekhez.",
           "description": "A Flags Challenge egy Bitsocial közösségi csomóponton futtatódik, és aláírt flag állításokat ellenőriz egy konfigurálható kibocsátó szolgáltatástól. Az első csomagolt profil a 5chant célozza meg, az ország zászlóit, a /pol/ memeflags-okat és a /mlp/ pony flags-okat tartalmazza, miközben megtartja ugyanazt a mintát, amely újrahasználható bármely olyan ügyfél számára, amely saját kibocsátó szolgáltatást és névteret futtat."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Nyilvános seeder a Bitsocial-közösségekhez, Docker és npm csomagolásban.",
+          "description": "A Bitsocial Seeder a közösség első oldalait, a frissítés utáni CID-eket és a pubsub témakörök irányítását egy Bitsocial daemon-on keresztül rögzíti. Újrafelhasználja egy már futó helyi daemon-t, ha elérhető, vagy automatikusan elindítja a csomagolt bitsocial-cli daemon-t, és Docker-képként sem feligyelt VPS-telepítésekhez, sem npm-csomagként Node-first operátorok számára érkezik."
         }
       }
     },

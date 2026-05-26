@@ -34,7 +34,9 @@ export type AppIconKey =
   | "blocks"
   | "terminal"
   | "clipboard"
-  | "flag";
+  | "flag"
+  | "link-2"
+  | "share-2";
 
 export type DesktopVariant =
   | "windows"
@@ -281,6 +283,10 @@ const APP_COPY_TRANSLATION_KEYS: Record<string, { tagline: string; description: 
   "bitsocial-cli": {
     tagline: "apps.catalog.items.bitsocial-cli.tagline",
     description: "apps.catalog.items.bitsocial-cli.description",
+  },
+  "bitsocial-seeder": {
+    tagline: "apps.catalog.items.bitsocial-seeder.tagline",
+    description: "apps.catalog.items.bitsocial-seeder.description",
   },
   "telegram-bots": {
     tagline: "apps.catalog.items.telegram-bots.tagline",
@@ -712,7 +718,7 @@ export const APPS: AppData[] = [
       "EVM Contract Call verifies publications by calling an EVM contract before a post is accepted. It lets communities build token gates, staking rules, or other on-chain checks into their moderation flow.",
     category: "identity",
     tags: ["On-chain", "Contracts"],
-    icon: "blocks",
+    icon: "link-2",
     githubRepo: "bitsocialnet/evm-contract-call",
     links: [
       {
@@ -761,8 +767,33 @@ export const APPS: AppData[] = [
         kind: "package",
       },
     ],
-    relatedSlugs: ["5chan-board-manager"],
+    relatedSlugs: ["bitsocial-seeder", "5chan-board-manager"],
     searchTerms: ["terminal", "command line", "automation"],
+  },
+  {
+    slug: "bitsocial-seeder",
+    name: "Bitsocial Seeder",
+    tagline: "Public seeder for Bitsocial communities, packaged for Docker and npm.",
+    description:
+      "Bitsocial Seeder pins community first pages, post-update CIDs, and pubsub topic routing through a Bitsocial daemon. It reuses an already-running local daemon when one is reachable or starts the bundled bitsocial-cli daemon automatically, and ships as both a Docker image for unattended VPS deployments and an npm package for Node-first operators.",
+    category: "tools",
+    tags: ["Automation"],
+    icon: "share-2",
+    githubRepo: "bitsocialnet/bitsocial-seeder",
+    links: [
+      {
+        label: "@bitsocial/bitsocial-seeder",
+        url: "https://www.npmjs.com/package/@bitsocial/bitsocial-seeder",
+        kind: "package",
+      },
+      {
+        label: "ghcr.io/bitsocialnet/bitsocial-seeder",
+        url: "https://github.com/bitsocialnet/bitsocial-seeder/pkgs/container/bitsocial-seeder",
+        kind: "package",
+      },
+    ],
+    relatedSlugs: ["bitsocial-cli", "5chan", "seedit", "5chan-board-manager"],
+    searchTerms: ["seeder", "docker", "ipfs", "vps", "pubsub", "daemon", "pinning"],
   },
   {
     slug: "telegram-bots",

@@ -536,6 +536,10 @@
         "flags-challenge": {
           "tagline": "Napatunayan na hamon ng flag issuer para sa bansa at board-specific na insignia.",
           "description": "Ang Flags Challenge ay tumatakbo sa isang Bitsocial community node at nag-verify ng signed flag assertions mula sa isang configurable issuer service. Ang unang bundled profile ay nakatuon sa 5chan, sumasaklaw sa country flags, /pol/ memeflags, at /mlp/ pony flags, habang pinapanatili ang parehong pattern na maaaring gamitin muli para sa anumang client na gumagamit ng sariling issuer at namespace."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Pampubliko na seeder para sa Bitsocial na mga komunidad, na inihanda para sa Docker at npm.",
+          "description": "Ang Bitsocial Seeder ay nakakapin ng komunidad na unang mga pahina, post-update CID, at pubsub topic routing sa pamamagitan ng Bitsocial daemon. Ito ay muling gumagamit ng isang nang-tumatakbo na lokal na daemon kapag ito ay maaabot o awtomatikong nagsisimula ng bundled bitsocial-cli daemon, at ipinapadala bilang Docker image para sa unattended VPS deployments at npm package para sa Node-first operators."
         }
       }
     },

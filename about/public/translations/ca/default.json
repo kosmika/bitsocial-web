@@ -536,6 +536,10 @@
         "flags-challenge": {
           "tagline": "Desafiament verificat d'emissor de senyera per a insígnies específiques de país i tauler.",
           "description": "Flags Challenge s'executa en un node comunitari de Bitsocial i verifica les afirmacions de flags signades d'un servei emissor configurable. El primer perfil agrupat es dirigeix a 5chan, cobreix banderes de país, memeflags de /pol/ i pony flags de /mlp/, mantenint el mateix patró reutilitzable per a qualsevol client que executar el seu propi servei emissor i espai de noms."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Seeder públic per a comunitats de Bitsocial, empaquetat per a Docker i npm.",
+          "description": "Bitsocial Seeder fixan les pàgines prioritàries de la comunitat, els CID post-actualització i l'encaminament de temes pubsub a través d'un daemon Bitsocial. Reutilitza un daemon local ja en execució quan és accessible o inicia automàticament el daemon bitsocial-cli inclòs, i s'ofereix tant com una imatge Docker per a desplegaments VPS desatesos com un paquet npm per a operadors node-first."
         }
       }
     },

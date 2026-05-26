@@ -536,6 +536,10 @@
         "flags-challenge": {
           "tagline": "אתגר מוכח של מנפיק דגלים לאות ייחודיות של מדינה ולוח.",
           "description": "Flags Challenge פועל על צומת קהילה של Bitsocial ומאמת תביעות דגלים חתומות משירות מנפיק הניתן להגדרה. הפרופיל המקופל הראשון מכוון ל-5chan, מכסה דגלי ארצות, memeflags של /pol/ ו-pony flags של /mlp/, תוך שמירה על אותו דפוס שניתן לשימוש חוזר לכל לקוח שמפעיל את שירות המנפיק והמרחב השמות שלו."
+        },
+        "bitsocial-seeder": {
+          "tagline": "זורע ציבורי לקהילות Bitsocial, מוכן ל-Docker ו-npm.",
+          "description": "Bitsocial Seeder מיתדות דפי קהילה ראשונים, CID לאחר עדכון וניתוב נושא pubsub דרך daemon Bitsocial. הוא משתמש שוב ב-daemon מקומי שכבר פועל כאשר הוא זמין או מפעיל באופן אוטומטי את ה-daemon bitsocial-cli המוכלל, והוא משודר גם כתמונת Docker לפריסות VPS ללא פיקוח וגם כחבילת npm לאופרטורים Node-first."
         }
       }
     },

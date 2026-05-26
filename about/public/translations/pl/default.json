@@ -536,6 +536,10 @@
         "flags-challenge": {
           "tagline": "Zweryfikowany wyzwanie wystawcy flag dla odznak specyficznych dla kraju i forum.",
           "description": "Flags Challenge działa na węźle społeczności Bitsocial i weryfikuje podpisane oświadczenia flag od konfigurowalnej usługi wydawcy. Pierwszy pakiet profil jest ukierunkowany na 5chan, obejmuje flagi krajowe, memeflags /pol/ i pony flags /mlp/, jednocześnie zachowując ten sam wzór, który można ponownie wykorzystać dla każdego klienta, który uruchamia własną usługę wydawcy i przestrzeń nazw."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Publiczny seeder dla społeczności Bitsocial, opakowany dla Docker i npm.",
+          "description": "Bitsocial Seeder przyspawaja strony o priorytecie dla społeczności, CID-y po aktualizacji i trasowanie tematu pubsub przez daemon Bitsocial. Ponownie używa już działającego lokalnego daemona, gdy jest osiągalny, lub automatycznie uruchamia zainstalowany daemon bitsocial-cli i jest dostarczany zarówno jako obraz Docker dla nienadzorowanych wdrożeń VPS, jak i pakiet npm dla operatorów Node-first."
         }
       }
     },

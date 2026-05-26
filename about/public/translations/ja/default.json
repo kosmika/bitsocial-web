@@ -536,6 +536,10 @@
         "flags-challenge": {
           "tagline": "国とボード固有のバッジ用に検証されたフラグ発行者チャレンジ。",
           "description": "Flags Challengeはビットソーシャルコミュニティノード上で実行され、設定可能な発行者サービスからの署名付きフラグアサーションを検証します。最初のバンドルプロファイルは5chanを対象とし、国旗、/pol/ミームフラグ、/mlpポニーフラグをカバーしながら、独自の発行者と名前空間を実行するすべてのクライアント向けに同じパターンを再利用可能に保ちます。"
+        },
+        "bitsocial-seeder": {
+          "tagline": "Bitsocialコミュニティ向けのパブリックシーダー、Dockerとnpmにパッケージされている。",
+          "description": "Bitsocial Seederは、Bitsocial daemonを通じて、コミュニティの最初のページ、更新後のCID、およびpubsubトピックルーティングをピン留めします。すでに実行中のローカルdaemonが到達可能な場合は再利用するか、バンドルされたbitsocial-cli daemonを自動的に開始し、無人のVPS展開用のDockerイメージとNode-firstオペレータ向けのnpmパッケージの両方として提供されます。"
         }
       }
     },

@@ -536,6 +536,10 @@
         "flags-challenge": {
           "tagline": "Provocare verificată a emitentului de steaguri pentru insigne specifice țării și forumului.",
           "description": "Flags Challenge rulează pe un nod comunitar Bitsocial și verifică afirmațiile de steag semnate de un serviciu de emitent configurabil. Primul profil agregat vizează 5chan, acoperă steaguri naționale, memeflags din /pol/ și pony flags din /mlp/, menținând același pattern reutilizabil pentru orice client care rulează propriul serviciu de emitent și spațiu de nume."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Seeder public pentru comunități Bitsocial, ambalat pentru Docker și npm.",
+          "description": "Bitsocial Seeder fixează paginile prioritare ale comunității, CID-urile după actualizare și rutarea subiectelor pubsub prin intermediul unui daemon Bitsocial. Reutilizează un daemon local deja în execuție atunci când este accesibil sau pornește automat daemonul bitsocial-cli inclus și este furnizat atât ca imagine Docker pentru implementări VPS nesupravegheat cât și ca pachet npm pentru operatori Node-first."
         }
       }
     },

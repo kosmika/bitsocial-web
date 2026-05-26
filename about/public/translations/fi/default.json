@@ -536,6 +536,10 @@
         "flags-challenge": {
           "tagline": "Vahvistettu lippujen myöntäjän haaste maa- ja lauta-spesifisille merkeille.",
           "description": "Flags Challenge toimii Bitsocial-yhteisösolmussa ja tarkistaa allekirjoitettuja lipputehtäviä määritettävästä liikkeeseenlaskijapalvelusta. Ensimmäinen niputettu profiili kohdistuu 5chaniin, kattaa maakunnarit, /pol/ memekuntalaput ja /mlp/ pony-kunnarit, säilyttäen samalla kuvion uudelleenkäytettävänä kaikille asiakkaille, jotka käyttävät omaa liikkeeseenlaskijapalveluaan ja nimitilaa."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Julkinen seeder Bitsocial-yhteisöille, pakattu Dockerille ja npmlle.",
+          "description": "Bitsocial Seeder kiinnittää yhteisön ensimmäiset sivut, päivityksen jälkeiset CID:t ja pubsub-aiheen reitityspyynnöt Bitsocial-daemonin kautta. Se käyttää uudelleen jo käynnissä olevaa paikallista daemonia, kun se on saavutettavissa, tai käynnistää pakatun bitsocial-cli-daemonin automaattisesti ja toimitetaan sekä Docker-kuvan muodossa valvomattomia VPS-käyttöönottoja varten että npm-pakettina Node-first-operaattoreille."
         }
       }
     },

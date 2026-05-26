@@ -502,6 +502,10 @@
         "flags-challenge": {
           "tagline": "Ověřená výzva vydavatele vlajky pro insígnie specifické pro zemi a desku.",
           "description": "Flags Challenge běží na uzlu komunity Bitsocial a ověřuje podepsaná tvrzení vlajek od konfigurovatelné služby vydavatele. První balíčkový profil je zaměřen na 5chan a pokrývá národní vlajky, memeflags z /pol/ a pony flags z /mlp/, přičemž zachovává stejný vzor znovu použitelný pro jakéhokoli klienta, který provozuje svou vlastní službu vydavatele a obor názvů."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Veřejný seeder pro komunity Bitsocial, zabalený pro Docker a npm.",
+          "description": "Bitsocial Seeder připevňuje stránky komunity na první místo, CID po aktualizaci a směrování tématu pubsub prostřednictvím daemona Bitsocial. Znovu používá již spuštěný místní daemon, pokud je dosažitelný, nebo automaticky spustí balený daemon bitsocial-cli a dodává se jako image Docker pro bezobslužné nasazení VPS a balíček npm pro operátory Node-first."
         }
       }
     },

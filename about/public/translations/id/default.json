@@ -536,6 +536,10 @@
         "flags-challenge": {
           "tagline": "Tantangan penerbit bendera terverifikasi untuk lencana spesifik negara dan papan.",
           "description": "Flags Challenge berjalan pada node komunitas Bitsocial dan memverifikasi pernyataan bendera yang ditandatangani dari layanan penerbit yang dapat dikonfigurasi. Profil bundel pertama menargetkan 5chan, mencakup bendera negara, memeflags /pol/, dan pony flags /mlp/, sambil menjaga pola yang sama dapat digunakan kembali untuk klien apa pun yang menjalankan penerbit dan ruang nama mereka sendiri."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Seeder publik untuk komunitas Bitsocial, dikemas untuk Docker dan npm.",
+          "description": "Bitsocial Seeder menyematkan halaman pertama komunitas, CID pasca-pembaruan, dan perutean topik pubsub melalui daemon Bitsocial. Ini menggunakan kembali daemon lokal yang sudah berjalan saat dapat dijangkau atau memulai daemon bitsocial-cli bundel secara otomatis, dan dikirim sebagai citra Docker untuk penyebaran VPS tanpa pengawasan dan paket npm untuk operator Node-first."
         }
       }
     },

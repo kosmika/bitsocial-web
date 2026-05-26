@@ -536,6 +536,10 @@
         "flags-challenge": {
           "tagline": "Ülke ve forum özel rozet için doğrulanmış bayrak veren meydan okuma.",
           "description": "Flags Challenge, bir Bitsocial toplum düğümünde çalışır ve yapılandırılabilir bir yayınlayan hizmetinden imzalı bayrak önerilişlerini doğrular. İlk paket profil, 5chan'ı hedefler, ülke bayraklarını, /pol/ memeflags ve /mlp/ pony flags kapsar ve kendi yayınlayan hizmetini ve ad alanını çalıştıran herhangi bir istemci için aynı deseni yeniden kullanılabilir olarak tutar."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Bitsocial toplulukları için genel seeder, Docker ve npm için paketlenmiş.",
+          "description": "Bitsocial Seeder, bir Bitsocial daemon aracılığıyla topluluk öncelikli sayfaları, güncelleme sonrası CID'leri ve pubsub konusu yönlendirmesini sabitleme. Erişilebilir olduğunda zaten çalışan bir yerel daemon'u yeniden kullanır veya paketlenmiş bitsocial-cli daemon'u otomatik olarak başlatır ve hem gözetimsiz VPS dağıtımları için Docker görüntüsü hem de Node-first operatörler için npm paketi olarak sunulur."
         }
       }
     },
