@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "اینٹی اسپام",
-          "description": "Bitsocial کمیونٹیز کے لیے تصدیق، فلٹرنگ، اور ماڈریشن کے ماڈیولز۔"
+          "description": "Bitsocial کمیونٹیز کے لیے فلٹرنگ اور نگرانی ماڈیولز۔"
         },
         "tools": {
           "label": "ٹولز",
           "description": "Bitsocial ایپس چلانے یا بڑھانے کے لیے CLI اور انتظامی یوٹیلیٹیز۔"
+        },
+        "identity": {
+          "description": "اعتبار اور تصدیق کے ماڈیولز جو Bitsocial برادریوں میں کون پوسٹ کر سکتے ہیں اس کو کنٹرول کرتے ہیں۔",
+          "label": "شناخت"
         }
       },
       "platforms": {
@@ -528,6 +532,10 @@
         "5chan-board-manager": {
           "tagline": "custom 5chan communities کے لیے board administration tooling۔",
           "description": "5chan Board Manager، Bitsocial CLI سے منسلک ہوتا ہے تاکہ منتظمین کسٹم imageboard boards بنانے، ترتیب دینے اور moderation کرنے میں مدد پا سکیں۔ یہ board owners کے لیے utility layer ہے جو operational control چاہتے ہیں۔"
+        },
+        "flags-challenge": {
+          "tagline": "ملک اور بورڈ کے لیے درست کیے گئے فلیگ جاری کننے والے کا چیلنج۔",
+          "description": "Flags Challenge ایک Bitsocial کمیونٹی نوڈ پر چلتا ہے اور قابل تشکیل جاری کنندہ سروس سے دستخط شدہ فلیگ دعویٰ تصدیق کرتا ہے۔ پہلی بندل شدہ پروفائل 5chan کو نشانہ بناتی ہے، ملک کی پرچمیں، /pol/ memeflags اور /mlp/ pony flags کا احاطہ کرتی ہے، جبکہ اسی طریقے کو کسی بھی کلائنٹ کے لیے دوبارہ قابل استعمال رکھتی ہے جو اپنی جاری کنندہ سروس اور نام کی جگہ چلاتا ہے۔"
         }
       }
     },

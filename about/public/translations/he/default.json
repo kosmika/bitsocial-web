@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "אנטי-ספאם",
-          "description": "מודולים לאימות, סינון וניהול עבור קהילות Bitsocial."
+          "description": "מודולי סינון והנהלת משמעת לקהילות Bitsocial."
         },
         "tools": {
           "label": "כלים",
           "description": "כלי CLI וכלי ניהול להפעלה או הרחבה של אפליקציות Bitsocial."
+        },
+        "identity": {
+          "description": "מודולי אישור והאימות השולטים במי יכול לפרסם בקהילות Bitsocial.",
+          "label": "זהות"
         }
       },
       "platforms": {
@@ -528,6 +532,10 @@
         "5chan-board-manager": {
           "tagline": "כלי ניהול boards עבור קהילות 5chan מותאמות.",
           "description": "5chan Board Manager מתחבר ל-Bitsocial CLI כדי לעזור למנהלים ליצור, להגדיר ולנהל לוחות imageboard מותאמים אישית. זו שכבת הכלים לבעלי לוחות שרוצים שליטה תפעולית."
+        },
+        "flags-challenge": {
+          "tagline": "אתגר מוכח של מנפיק דגלים לאות ייחודיות של מדינה ולוח.",
+          "description": "Flags Challenge פועל על צומת קהילה של Bitsocial ומאמת תביעות דגלים חתומות משירות מנפיק הניתן להגדרה. הפרופיל המקופל הראשון מכוון ל-5chan, מכסה דגלי ארצות, memeflags של /pol/ ו-pony flags של /mlp/, תוך שמירה על אותו דפוס שניתן לשימוש חוזר לכל לקוח שמפעיל את שירות המנפיק והמרחב השמות שלו."
         }
       }
     },

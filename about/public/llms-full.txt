@@ -3108,7 +3108,7 @@ Description: 5chan is a serverless, adminless, decentralized and open source ima
 ## Key Features
 
 ### Decentralized Board Ownership
-Unlike traditional imageboards, 5chan has no global admins or central authority. Anyone can create unlimited boards using their own [bitsocial node](https://github.com/bitsocialnet/bitsocial-cli). Each board owner runs their own P2P node that users connect to peer-to-peer, giving them complete control over their board's content, moderation, and rules.
+Unlike traditional imageboards, 5chan has no global admins or central authority. Anyone can create unlimited boards using [5chan Board Manager](https://github.com/bitsocialnet/5chan-board-manager). Each board owner runs their own P2P node that users connect to peer-to-peer, giving them complete control over their board's content, moderation, and rules.
 
 ### Competitive Directory System
 5chan maintains the familiar imageboard directory structure (Japanese Culture, Video Games, Interests, Creative, etc.), but introduces competition: **multiple boards can compete for each directory slot**. For example, there can be unlimited "Business & Finance" boards, but only the highest-voted one appears in the directory on the homepage.
@@ -3117,7 +3117,7 @@ Currently, directory assignments are temporarily handpicked by developers throug
 
 ### How It Works
 
-- **Current System**: Developers manually curate directory assignments by reviewing pull requests to the [5chan-directories.json](https://github.com/bitsocialnet/lists/blob/master/5chan-directories.json) file.
+- **Current System**: Developers manually curate directory assignments by reviewing pull requests to the [5chan directory files](https://github.com/bitsocialnet/lists/tree/master/5chan-directories).
 
 - **Future System**: Each directory will have its own voting page listing the boards competing for that slot. 5chan Pass holders are expected to participate in directory voting, while final governance mechanics are still being designed to include BSO-holder alignment instead of pass-only final control.
 
@@ -3145,10 +3145,9 @@ In the bitsocial protocol, a 5chan board is called a _community_. To deliver the
 
 To create and run a board:
 
-1. Install bitsocial-cli, available for Windows, macOS, and Linux: [latest release](https://github.com/bitsocialnet/bitsocial-cli/releases/latest);
-2. Follow the instructions in the repo's README;
-3. When running the daemon for the first time, it will output WebUI links you can use to manage your bitsocial community with a GUI.
-4. Run 5chan Board Manager against the same bitsocial node and add your community to it. The recommended setup is the Docker Compose flow in the [5chan-board-manager README](https://github.com/bitsocialnet/5chan-board-manager#standalone-bitsocial-cli-already-running) for an existing bitsocial-cli daemon.
+1. Follow the Docker Compose flow in the [5chan-board-manager README](https://github.com/bitsocialnet/5chan-board-manager#docker-compose-recommended);
+2. Create your community and add it to 5chan Board Manager using the commands shown there;
+3. Keep the manager running so it can apply 5chan board behavior such as thread archiving, bump limits, and retention cleanup.
 
 Once created, anyone can connect to your community using any bitsocial client (such as 5chan) by using the community address. The address is not stored in any central database—bitsocial is a pure peer-to-peer protocol.
 
@@ -3165,7 +3164,7 @@ To have your board appear in a directory on the 5chan homepage:
    - Relevant to the directory category
    - **99% uptime** (since a board acts like its own server—it's a P2P node)
 
-2. Open a pull request on GitHub by editing the [5chan-directories.json](https://github.com/bitsocialnet/lists/blob/master/5chan-directories.json) file
+2. Open a pull request on GitHub by editing the relevant file in the [5chan-directories folder](https://github.com/bitsocialnet/lists/tree/master/5chan-directories)
 
 3. Add your board's entry with:
    - Title: in the format `/directoryCode/ - Title`, e.g. "/biz/ - Business & Finance";
@@ -3497,7 +3496,7 @@ bitsocial challenge install @bitsocial/ai-moderation-challenge
 
 ## Configuration
 
-Install this challenge twice: one `allow` branch and one `review` branch. The `review` branch uses PKC `pendingApproval` to route rule-breaking comments to the moderator queue.
+Install this challenge twice: one `allow` branch and one `review` branch. The `review` branch uses PKC `pendingApproval` to route rule-breaking comments to the moderator queue, and returns the AI model reason in `commentUpdate.reason` when the installed PKC runtime supports pending-approval metadata.
 
 ```js
 [
@@ -3507,7 +3506,8 @@ Install this challenge twice: one `allow` branch and one `review` branch. The `r
         options: {
             apiKey: "sk-...",
             branch: "allow",
-            promptPath: "/root/bitsocial-ai-moderation-prompt.md"
+            promptUrl: "https://prompt.example.com/v1/prompts/ai-moderation.md",
+            promptBearerToken: "shared-secret-token"
         },
         exclude: [{ challenges: [2] }]
     },
@@ -3516,7 +3516,8 @@ Install this challenge twice: one `allow` branch and one `review` branch. The `r
         options: {
             apiKey: "sk-...",
             branch: "review",
-            promptPath: "/root/bitsocial-ai-moderation-prompt.md"
+            promptUrl: "https://prompt.example.com/v1/prompts/ai-moderation.md",
+            promptBearerToken: "shared-secret-token"
         },
         pendingApproval: true,
         exclude: [{ challenges: [1] }]
@@ -3524,26 +3525,30 @@ Install this challenge twice: one `allow` branch and one `review` branch. The `r
 ];
 ```
 
-Challenge options are private community-node settings in `pkc-js`, so `apiKey`, `prompt`, `promptPath`, `apiUrl`, `cachePath`, and `auditLogPath` are not copied into the public community challenge metadata. Keep local settings backups private because they can contain `apiKey`.
+Challenge options are private community-node settings in `pkc-js`, so `apiKey`, `prompt`, `promptPath`, `promptUrl`, `promptBearerToken`, `apiUrl`, `cachePath`, and `auditLogPath` are not copied into the public community challenge metadata. Keep local settings backups private because they can contain provider keys or prompt access tokens.
 
-Production operators should keep the real moderation prompt in a private node-local file referenced by `promptPath`. Do not commit production prompts to public repositories; the built-in prompt is only a public fallback and the challenge emits a warning when it is used.
+Production operators should keep the real moderation prompt in a private node-local file referenced by `promptPath`, or in a private HTTPS endpoint referenced by `promptUrl` plus `promptBearerToken`. Do not commit production prompts to public repositories; the built-in prompt is only a public fallback and the challenge emits a warning when it is used.
 
 ## Options
 
-| Option         | Default                                  | Description                                                                           |
-| -------------- | ---------------------------------------- | ------------------------------------------------------------------------------------- |
-| `apiUrl`       | `https://api.openai.com/v1/responses`    | Full OpenAI-compatible endpoint URL                                                   |
-| `apiFormat`    | `responses`                              | Request/response format: `responses` or `chat-completions`                            |
-| `apiKey`       | none                                     | Private provider API key                                                              |
-| `model`        | `gpt-5.4-nano`                           | Model name sent to the provider                                                       |
-| `branch`       | `allow`                                  | Branch mode: `allow` or `review`                                                      |
-| `prompt`       | built-in prompt                          | Private inline system prompt text                                                     |
-| `promptPath`   | none                                     | Private file path for a system prompt on the community node                           |
-| `cachePath`    | `~/.bitsocial-ai-moderation-cache.json`  | Private JSON verdict cache path; set to an empty string to disable persistent caching |
-| `auditLogPath` | `~/.bitsocial-ai-moderation-audit.jsonl` | Private JSONL verdict audit log path; set to an empty string to disable audit logging |
-| `error`        | `Rejected by Bitsocial AI moderation.`   | Error shown when content edits are rejected or moderation is unavailable for an edit  |
+| Option              | Default                                  | Description                                                                           |
+| ------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------- |
+| `apiUrl`            | `https://api.openai.com/v1/responses`    | Full OpenAI-compatible endpoint URL                                                   |
+| `apiFormat`         | `responses`                              | Request/response format: `responses` or `chat-completions`                            |
+| `apiKey`            | none                                     | Private provider API key                                                              |
+| `model`             | `gpt-5.4-nano`                           | Model name sent to the provider                                                       |
+| `branch`            | `allow`                                  | Branch mode: `allow` or `review`                                                      |
+| `prompt`            | built-in prompt                          | Private inline system prompt text                                                     |
+| `promptPath`        | none                                     | Private file path for a system prompt on the community node                           |
+| `promptUrl`         | none                                     | Private HTTPS URL for a remotely hosted system prompt                                 |
+| `promptBearerToken` | none                                     | Private bearer token sent only when fetching `promptUrl`                              |
+| `cachePath`         | `~/.bitsocial-ai-moderation-cache.json`  | Private JSON verdict cache path; set to an empty string to disable persistent caching |
+| `auditLogPath`      | `~/.bitsocial-ai-moderation-audit.jsonl` | Private JSONL verdict audit log path; set to an empty string to disable audit logging |
+| `error`             | `Rejected by Bitsocial AI moderation.`   | Error shown when content edits are rejected or moderation is unavailable for an edit  |
 
-If both `prompt` and `promptPath` are set, `prompt` takes priority and the challenge emits a warning that `promptPath` is being ignored.
+Prompt source precedence is `prompt` > `promptPath` > `promptUrl` > built-in fallback. If multiple private prompt sources are configured, the challenge uses the highest-precedence source and emits a warning about the ignored source.
+
+Remote prompts must use HTTPS. When `promptBearerToken` is set, it is sent as an `Authorization: Bearer ...` header rather than in the URL. Prefer `.md` or `text/markdown` for human-maintained prompts and `.txt` or `text/plain` for plain text prompts; the model only receives the fetched text, so the file extension itself does not change model behavior.
 
 For providers exposing the chat-completions API shape, set both `apiFormat` and `apiUrl`:
 
@@ -3565,17 +3570,18 @@ OpenAI-compatible APIs are a practical compatibility convention, not a formal op
 ## Behavior
 
 - New comments with verdict `allow` publish normally.
-- New comments with verdict `review` are sent to pending approval.
+- New comments with verdict `review` are sent to pending approval with the redacted model reason attached for the author.
 - New comments are also sent to pending approval if the model API is unavailable.
 - Content edits with verdict `review` are rejected until PKC supports pending approval for edits.
 - Content edits are rejected if the model API is unavailable.
 - Delete-only edits and non-comment publication types bypass AI moderation.
-- The challenge sends text, title, link URL/domain/path, flags, flairs, community address/title/description, and `community.rules`.
+- The challenge sends text, title, link URL/domain/path, flags, flairs, community address/title/description, `community.rules`, and a bounded activity-relative list of recent top-level posts for duplicate-thread checks when the local community database is available.
 - The model payload explicitly labels publication fields as untrusted user content, not instructions.
-- The challenge does not fetch linked media in v1.
+- The challenge does not fetch linked publication media or user-submitted URLs. `promptUrl` is an operator-configured private prompt source, not publication content.
+- Remote prompts are fetched without following redirects, with a 5 second timeout, capped at 64 KiB, cached in memory for 5 minutes, and reused from the last in-memory copy if a refresh fails. If the first remote prompt fetch fails, moderation fails closed for the allow branch.
 - Two branch invocations for the same publication reuse one in-process verdict promise.
-- Successful verdicts are cached in a private JSON file keyed by a SHA-256 hash over model/provider config, community context, target content, and the final prompt hash. The cache does not store the raw prompt or API key.
-- Verdicts are written to a private JSONL audit log with the model reason, raw publication fields, and hashes/metadata for correlation. The audit log does not store the raw prompt or API key.
+- Successful verdicts are cached in a private JSON file keyed by a SHA-256 hash over model/provider config, community context including duplicate-check context, target content, and the final prompt hash. The cache does not store the raw prompt or API key.
+- Verdicts are written to a private JSONL audit log with the model reason, raw publication fields, and hashes/metadata for correlation. The audit log does not store the raw prompt, API key, prompt URL, or prompt bearer token.
 
 ## Moderation Audit Community
 
@@ -3690,6 +3696,8 @@ Evaluate publication risk. The server tracks author history internally, so no co
 
 Requests are signed by the community signer to prevent abuse (e.g., someone unrelated to the community querying the engine to doxx users). The server validates the request signature and ensures the signer matches the community (for domain addresses, the server resolves the community via `bitsocial.getCommunity` and compares `community.signature.publicKey`). Resolved community public keys are cached in-memory for 12 hours to reduce repeated lookups. The HTTP server initializes a single shared bitsocial instance and only destroys it when the server shuts down.
 
+The public challenge package does not call this endpoint from `getChallenge()`. It returns `/api/v1/iframe/:sessionId/lazy#payload=...` instead. The signed payload is stored in the URL fragment, which is not sent on the initial iframe GET; the lazy iframe posts it to `/evaluate` only after the user opens the iframe.
+
 **Request Format:** `Content-Type: application/cbor`
 
 The request body is CBOR-encoded (not JSON). This preserves `Uint8Array` types during transmission and ensures signature verification works correctly.
@@ -3702,12 +3710,17 @@ The request body is CBOR-encoded (not JSON). This preserves `Uint8Array` types d
 // The signature is created by CBOR-encoding the signed properties, then signing with Ed25519
 {
     challengeRequest: DecryptedChallengeRequestMessageTypeWithcommunityAuthor;
+    sessionId?: string; // Optional client-generated ID for consent-gated lazy iframes
+    evaluationOptions?: {
+        autoAcceptThreshold?: number;
+        autoRejectThreshold?: number;
+    };
     timestamp: number; // Unix timestamp (seconds)
     signature: {
         signature: Uint8Array; // Ed25519 signature of CBOR-encoded signed properties
         publicKey: Uint8Array; // 32-byte Ed25519 public key
         type: "ed25519";
-        signedPropertyNames: ["challengeRequest", "timestamp"];
+        signedPropertyNames: Array<"challengeRequest" | "sessionId" | "evaluationOptions" | "timestamp">;
     }
 }
 ```
@@ -3719,14 +3732,13 @@ The request body is CBOR-encoded (not JSON). This preserves `Uint8Array` types d
   riskScore: number; // 0.0 to 1.0
   explanation?: string; // Human-readable reasoning for the score
 
-  // Pre-generated challenge URL - community can use this if it decides to challenge
   sessionId: string;
   challengeUrl: string; // Full URL: https://spamblocker.bitsocial.net/api/v1/iframe/{sessionId}
   challengeExpiresAt?: number; // Unix timestamp, 1 hour from creation
 }
 ```
 
-The response always includes a pre-generated `challengeUrl`. If the community decides to challenge based on `riskScore`, it can immediately send the URL to the user without making a second request. If the challenge is not used, the session auto-purges after 1 hour.
+The response always includes the concrete challenge session URL. For the public challenge package's lazy iframe flow, low-risk and high-risk sessions are handled inside the lazy iframe without redirecting to the full challenge UI. Medium-risk sessions redirect to `challengeUrl`.
 
 ### POST /api/v1/challenge/verify
 
@@ -3766,6 +3778,10 @@ Called by the community's challenge code to verify that the user completed the i
   ipTypeEstimation?: string;   // "residential" | "vpn" | "proxy" | "tor" | "datacenter" | "unknown"
 }
 ```
+
+### GET /api/v1/iframe/:sessionId/lazy
+
+Serves the consent-gated bootstrap iframe used by the public challenge package. This route does not create a challenge session by itself. After the iframe opens, its script reads the signed CBOR payload from the URL fragment, posts it to `/api/v1/evaluate`, then either completes/fails immediately or redirects to `/api/v1/iframe/:sessionId`.
 
 ### GET /api/v1/iframe/:sessionId
 
@@ -3842,118 +3858,53 @@ The challenge flow uses **server-side state tracking** - no tokens are passed fr
 **OAuth is the primary challenge.** The iframe shows OAuth sign-in buttons first. CAPTCHA is available as a fallback for users without social accounts. After the user completes verification, the server adjusts the risk score. If the adjusted score is below the pass threshold, the session completes. For high-risk users, additional verification (second OAuth from a different provider, or CAPTCHA) may be required.
 
 ```
-/evaluate → riskScore
-  │
-  ├─ < autoAcceptThreshold → auto_accept (pass immediately, no challenge)
-  ├─ ≥ autoRejectThreshold → auto_reject (fail immediately)
-  └─ between → create session (store riskScore), return challengeUrl
-        │
-        ▼
+getChallenge() -> lazy iframe URL (no spam blocker server request)
+  |
+  v
+User opens iframe -> lazy iframe posts signed payload to /evaluate -> riskScore
+  |
+  ├─ < autoAcceptThreshold -> auto_accept (verify succeeds immediately)
+  ├─ >= autoRejectThreshold -> auto_reject (verify fails immediately)
+  └─ between -> create session (store riskScore), return challengeUrl
+        |
+        v
   Iframe serves OAuth buttons (primary) + optional CAPTCHA fallback link
-        │
-        ├─ User signs in via OAuth → callback applies score adjustment
-        │     │
-        │     ├─ riskScore × oauthMultiplier < passThreshold?
-        │     │     YES → mark "completed" ──────────────────────────> /verify → success
-        │     │
-        │     └─    NO  → mark oauthCompleted, session stays "pending"
-        │                  Iframe shows "need more" view
-        │                  │
-        │                  ├─ User signs in with 2nd OAuth (different provider)
-        │                  │     → riskScore × oauthMult × 2ndOauthMult < threshold?
-        │                  │       YES → completed ──────────────────> /verify → success
-        │                  │
-        │                  └─ User completes CAPTCHA
-        │                        → riskScore × oauthMult × captchaMult < threshold?
-        │                          YES → completed ──────────────────> /verify → success
-        │
-        └─ User clicks "I don't have a social account" → CAPTCHA fallback
-              │
-              ├─ riskScore × captchaMultiplier < passThreshold?
-              │     YES → mark "completed" ──────────────────────────> /verify → success
-              │
-              └─    NO  → mark captchaCompleted, return { oauthRequired: true }
+        |
+        ├─ User signs in via OAuth -> callback applies score adjustment
+        |     |
+        |     ├─ riskScore x oauthMultiplier < passThreshold?
+        |     |     YES -> mark "completed" -------------------------> /verify -> success
+        |     |
+        |     └─    NO -> mark oauthCompleted, session stays "pending"
+        |                 Iframe shows "need more" view
+        |                 |
+        |                 ├─ User signs in with 2nd OAuth (different provider)
+        |                 |     -> riskScore x oauthMult x 2ndOauthMult < threshold?
+        |                 |       YES -> completed ------------------> /verify -> success
+        |                 |
+        |                 └─ User completes CAPTCHA
+        |                       -> riskScore x oauthMult x captchaMult < threshold?
+        |                         YES -> completed ------------------> /verify -> success
+        |
+        └─ User clicks "I don't have a social account" -> CAPTCHA fallback
+              |
+              ├─ riskScore x captchaMultiplier < passThreshold?
+              |     YES -> mark "completed" -------------------------> /verify -> success
+              |
+              └─    NO -> mark captchaCompleted, return { oauthRequired: true }
                            Iframe redirects back to OAuth view
 ```
 
 ```
-┌─────────────────┐       ┌──────────────────┐       ┌────────────────┐
-│   Bitsocial       │     │ Spam Blocker     │       │   OAuth /      │
-│   Client        │       │     Server       │       │   Turnstile    │
-└────────┬────────┘       └────────┬─────────┘       └───────┬────────┘
-         │                         │                          │
-         │  1. ChallengeRequest    │                          │
-         │  (to community)        │                          │
-         │─────────────────────────>                          │
-         │                         │                          │
-         │  2. community calls /evaluate │                          │
-         │                         │                          │
-         │  3. riskScore +         │                          │
-         │     sessionId +         │                          │
-         │     challengeUrl        │                          │
-         │<─────────────────────────                          │
-         │                         │                          │
-         │  4. If challenge needed,│                          │
-         │     community sends           │                          │
-         │     challengeUrl to     │                          │
-         │     client              │                          │
-         │                         │                          │
-         │  5. Client loads iframe │                          │
-         │─────────────────────────────────────────────────────>
-         │                         │                          │
-         │  6. Iframe shows OAuth  │                          │
-         │     buttons (primary)   │                          │
-         │     + CAPTCHA fallback  │                          │
-         │                         │                          │
-         │  7. User signs in via   │                          │
-         │     OAuth provider      │                          │
-         │      ───────────────────────────────────────────────>
-         │                         │                          │
-         │  8. OAuth callback      │                          │
-         │     applies score       │                          │
-         │     adjustment          │                          │
-         │                         │                          │
-         │  9a. If score passes    │                          │
-         │      → session done     │                          │
-         │  9b. If needs more      │                          │
-         │      → show 2nd OAuth   │                          │
-         │      or CAPTCHA option  │                          │
-         │      ───────────────────────────────────────────────>
-         │                         │                          │
-         │  10. (If more needed)   │                          │
-         │      User completes     │                          │
-         │      2nd OAuth or       │                          │
-         │      CAPTCHA            │                          │
-         │      → session done     │                          │
-         │                         │                          │
-         │  11. Iframe shows       │                          │
-         │     "click done"        │                          │
-         │<─────────────────────────                          │
-         │                         │                          │
-         │  12. User clicks "done" │                          │
-         │      button in client   │                          │
-         │      (outside iframe)   │                          │
-         │                         │                          │
-         │  13. Client sends       │                          │
-         │      ChallengeAnswer    │                          │
-         │      with empty string  │                          │
-         │─────────────────────────>                          │
-         │                         │                          │
-         │  14. community's verify("")   │                          │
-         │      calls /verify      │                          │
-         │      with sessionId     │                          │
-         │                         │                          │
-         │  15. success: true +    │                          │
-         │      IP intelligence    │                          │
-         │<─────────────────────────                          │
-         │                         │                          │
-         │  16. community applies        │                          │
-         │      post-challenge     │                          │
-         │      filters            │                          │
-         │                         │                          │
-         │  17. Publication        │                          │
-         │      accepted/rejected  │                          │
-         └─────────────────────────┘                          │
+1. Client sends ChallengeRequest to the community.
+2. Community challenge code returns a lazy spam blocker iframe URL with a signed payload in the URL fragment.
+3. Client asks the user before opening the iframe.
+4. After the user opens the iframe, the iframe posts the signed payload to /evaluate.
+5. /evaluate creates the session and either completes, fails, or returns the full challengeUrl.
+6. Medium-risk sessions redirect to /iframe/:sessionId for OAuth and/or CAPTCHA.
+7. When done, the iframe posts a ChallengeAnswer with an empty string.
+8. Community verify("") calls /challenge/verify with the pre-generated sessionId.
+9. The community applies post-challenge IP filters and accepts or rejects the publication.
 ```
 
 ## Risk Score
@@ -3976,10 +3927,10 @@ Indexer implementation details live with the private server codebase.
 
 **Tier Thresholds (configurable per community via challenge options):**
 
-- `riskScore < autoAcceptThreshold` → Auto-accept (no challenge)
+- `riskScore < autoAcceptThreshold` → Complete after iframe evaluation (no OAuth/CAPTCHA)
 - `autoAcceptThreshold <= riskScore < oauthSufficientThreshold` → One OAuth is sufficient (`oauth_sufficient`)
 - `oauthSufficientThreshold <= riskScore < autoRejectThreshold` → OAuth + more needed (`oauth_plus_more`)
-- `riskScore >= autoRejectThreshold` → Auto-reject
+- `riskScore >= autoRejectThreshold` → Reject after iframe evaluation
 
 **Score Adjustment (configurable on server):**
 
@@ -4165,8 +4116,8 @@ field from its internal database of author history, so new authors won't have it
 | Option                | Default                                    | Description                                                                    |
 | --------------------- | ------------------------------------------ | ------------------------------------------------------------------------------ |
 | `serverUrl`           | `https://spamblocker.bitsocial.net/api/v1` | URL of the BitsocialSpamBlocker server (must be http/https)                    |
-| `autoAcceptThreshold` | `0.2`                                      | Auto-accept publications below this risk score                                 |
-| `autoRejectThreshold` | `0.8`                                      | Auto-reject publications above this risk score                                 |
+| `autoAcceptThreshold` | `0.2`                                      | Complete verification after iframe evaluation when risk is below this score    |
+| `autoRejectThreshold` | `0.8`                                      | Reject after iframe evaluation when risk is above this score                   |
 | `countryBlacklist`    | `""`                                       | Comma-separated ISO 3166-1 alpha-2 country codes to block (e.g., `"RU,CN,KP"`) |
 | `maxIpRisk`           | `1.0`                                      | Reject if ipRisk from /verify exceeds this threshold                           |
 | `blockVpn`            | `false`                                    | Reject publications from VPN IPs (`true`/`false` only)                         |
@@ -4200,9 +4151,9 @@ These settings are configured on the HTTP server, not in the challenge package:
 
 **Challenge tier thresholds:**
 
-- `AUTO_ACCEPT_THRESHOLD`: Auto-accept below this score (default: 0.2)
+- `AUTO_ACCEPT_THRESHOLD`: Complete immediately after evaluation below this score (default: 0.2)
 - `OAUTH_SUFFICIENT_THRESHOLD`: Scores between autoAccept and this pass with one OAuth (default: 0.4)
-- `AUTO_REJECT_THRESHOLD`: Auto-reject at or above this score (default: 0.8)
+- `AUTO_REJECT_THRESHOLD`: Reject immediately after evaluation at or above this score (default: 0.8)
 
 **Score adjustment (OAuth-first model):**
 
@@ -4725,6 +4676,222 @@ npm run build
 npm test
 ```
 
+### @bitsocial/flags-challenge
+
+Repository: bitsocialnet/flags-challenge
+Source: https://github.com/bitsocialnet/flags-challenge#readme
+Description: Verified flag issuer challenge for Bitsocial communities and clients.
+
+# @bitsocial/flags-challenge
+
+Verified flag issuer challenge for Bitsocial communities and clients.
+
+This package runs on a Bitsocial community owner node as a challenge. It is not specific to 5chan: any Bitsocial client can use the same challenge pattern with its own issuer service, namespace, and flag profile. The first bundled profile is the 5chan profile, issued by `flags.5chan.app`, for country flags, `/pol/` memeflags, and `/mlp/` pony flags.
+
+The challenge writes two pieces of data when a flag is verified:
+
+- immutable comment data under a client namespace such as `comment["5chan"]`;
+- a compatibility mirror under `commentUpdate.author.community.flairs`, so clients that already render author flairs can show the same flag.
+
+The namespace is configurable. For example, a future Seedit profile could write to `comment["seedit"]` while using its own issuer and flag metadata.
+
+## Installation
+
+Run this on the Bitsocial node that owns the community:
+
+```bash
+bitsocial challenge install @bitsocial/flags-challenge
+```
+
+## Configuration
+
+Add the challenge to the community's `settings.challenges`:
+
+```js
+[{ name: "@bitsocial/flags-challenge" }];
+```
+
+Default options use the first bundled profile and target the 5chan issuer:
+
+| Option         | Default                          | Behavior                                              |
+| -------------- | -------------------------------- | ----------------------------------------------------- |
+| `serviceUrl`   | `https://flags.5chan.app/api/v1` | Flag issuer service endpoint                          |
+| `issuer`       | `flags.5chan.app`                | Expected issuer name in signed assertions             |
+| `namespace`    | `5chan`                          | Top-level comment object key for immutable data       |
+| `profile`      | `5chan`                          | Flag profile to validate; this release supports 5chan |
+| `allowedFlags` | `country,pol,pony`               | Comma-separated flag families accepted by the board   |
+| `emitFlair`    | `true`                           | Mirrors the verified flag to author community flairs  |
+| `error`        | `Flag verification failed.`      | Error prefix shown if verification fails              |
+
+Boards can restrict flag families:
+
+```js
+[
+  {
+    name: "@bitsocial/flags-challenge",
+    options: {
+      allowedFlags: "country,pol",
+    },
+  },
+];
+```
+
+For `/mlp/`, use:
+
+```js
+[
+  {
+    name: "@bitsocial/flags-challenge",
+    options: {
+      allowedFlags: "pony",
+    },
+  },
+];
+```
+
+## 5chan Flag Requests
+
+Clients request a flag by publishing a challenge-readable flag value on the comment, usually through `flair`:
+
+```js
+{
+  flair: { type: "country", code: "auto", text: "flag:country:auto" }
+}
+```
+
+Supported 5chan request strings:
+
+- `flag:country:auto`
+- `flag:pol:AC`
+- `flag:pony:AJ`
+
+Country flags use `auto` because the issuer service must derive the country from the challenge iframe request IP. The challenge does not trust a client-provided country code as proof of location.
+
+## Verified Comment Shape
+
+For a country flag, the challenge returns a result like:
+
+```js
+{
+  success: true,
+  comment: {
+    "5chan": {
+      country: "US",
+      flag: {
+        type: "country",
+        code: "US",
+        text: "flag:country:us",
+        label: "US"
+      },
+      issuer: "flags.5chan.app",
+      issuedAt: 1770000000,
+      signature: {
+        publicKey: "flag-service-public-key",
+        signature: "flag-service-signature",
+        type: "ed25519"
+      }
+    }
+  },
+  commentUpdate: {
+    author: {
+      community: {
+        flairs: [{ text: "flag:country:us", type: "country", code: "US" }]
+      }
+    }
+  }
+}
+```
+
+For `/pol/` memeflags and `/mlp/` pony flags, `comment["5chan"].flag` carries the selected flag and `comment["5chan"].memeflag` or `comment["5chan"].pony` carries the short code.
+
+## Issuer Service Contract
+
+The challenge creates a lazy iframe URL:
+
+```text
+https://flags.5chan.app/api/v1/iframe/<sessionId>/lazy#payload=<base64url-cbor>
+```
+
+The payload includes:
+
+- the original challenge request;
+- `requestedFlag`;
+- `profile`, `namespace`, and `issuer`;
+- a community-signed CBOR payload signature.
+
+When the user completes the iframe flow, the challenge calls:
+
+```text
+POST https://flags.5chan.app/api/v1/challenge/verify
+Content-Type: application/cbor
+Accept: application/json
+```
+
+The issuer should return:
+
+```js
+{
+  success: true,
+  flag: {
+    type: "country",
+    code: "US",
+    issuer: "flags.5chan.app",
+    issuedAt: 1770000000,
+    signature: {
+      publicKey: "flag-service-public-key",
+      signature: "flag-service-signature",
+      type: "ed25519"
+    }
+  }
+}
+```
+
+For country flags, the service can also return `{ success: true, country: "US", issuer, issuedAt, signature }`.
+
+Issuer service deployment is intentionally outside this package. The challenge only defines the community-node integration and the issuer API contract.
+
+## Development
+
+```bash
+corepack yarn install
+corepack yarn type-check
+corepack yarn test
+corepack yarn test:coverage
+corepack yarn build
+```
+
+## Publishing
+
+Create the GitHub release and changelog with release-it:
+
+```bash
+corepack yarn release 0.1.0
+```
+
+The command expects the current branch to have an upstream and needs a GitHub token that can create releases. It writes `CHANGELOG.md`, creates a `v0.1.0` tag, and opens the GitHub release.
+
+The first npm publish must create the package before trusted publishing can be configured:
+
+```bash
+npm publish --access public
+```
+
+After the package exists, configure npm trusted publishing:
+
+- Publisher: GitHub Actions
+- Organization: `bitsocialnet`
+- Repository: `flags-challenge`
+- Workflow filename: `publish.yml`
+- Environment: leave blank
+
+Equivalent npm CLI command:
+
+```bash
+npm trust github @bitsocial/flags-challenge --repo bitsocialnet/flags-challenge --file publish.yml
+```
+
+Future releases publish automatically when `package.json` version changes on `master`. The publish workflow skips versions that already exist on npm.
+
 ### bitsocial-cli: A Bitsocial Node with WebSocket and Command Line Interface
 
 Repository: bitsocialnet/bitsocial-cli
@@ -4814,7 +4981,7 @@ docker exec bitsocial bitsocial community list
 | Path | Description |
 |---|---|
 | `/data/bitsocial` | Bitsocial data directory |
-| `/data/bitsocial/subplebbits` | Community SQLite databases |
+| `/data/bitsocial/communities` | Community SQLite databases |
 | `/data/bitsocial/.bitsocial-cli.ipfs` | Kubo IPFS repository |
 | `/logs/bitsocial` | Log files |
 
@@ -4838,7 +5005,7 @@ docker compose logs -f
 The output will include lines like:
 
 ```
-plebbit rpc: listening on ws://localhost:9138/<auth-key> (secret auth key for remote connections)
+pkc rpc: listening on ws://localhost:9138/<auth-key> (secret auth key for remote connections)
 WebUI (seedit - Similar to old reddit UI): http://<your-ip>:9138/<auth-key>/seedit (secret auth key for remote connections)
 ```
 
@@ -4963,18 +5130,18 @@ In Bash (or powershell if you're on Windows), run `bitsocial daemon` to able to 
 $ bitsocial daemon
 IPFS API listening on: http://localhost:5001/api/v0
 IPFS Gateway listening on: http://localhost:6473
-plebbit rpc: listening on ws://localhost:9138 (local connections only)
-plebbit rpc: listening on ws://localhost:9138/MHA1tm2QWG19z0bnkRarDNWIajDobl7iN2eM2PmL (secret auth key for remote connections)
+pkc rpc: listening on ws://localhost:9138 (local connections only)
+pkc rpc: listening on ws://localhost:9138/MHA1tm2QWG19z0bnkRarDNWIajDobl7iN2eM2PmL (secret auth key for remote connections)
 Bitsocial data path: /root/.local/share/bitsocial
-Communities in data path:  [ 'pleblore.bso' ]
-WebUI (plebones - A bare bones UI client): http://localhost:9138/MHA1tm2QWG19z0bnkRarDNWIajDobl7iN2eM2PmL/plebones (local connections only)
-WebUI (plebones - A bare bones UI client): http://192.168.1.60:9138/MHA1tm2QWG19z0bnkRarDNWIajDobl7iN2eM2PmL/plebones (secret auth key for remote connections)
+Communities in data path:  [ 'anime-and-manga.bso' ]
+WebUI (5chan - Imageboard-style UI): http://localhost:9138/MHA1tm2QWG19z0bnkRarDNWIajDobl7iN2eM2PmL/5chan (local connections only)
+WebUI (5chan - Imageboard-style UI): http://192.168.1.60:9138/MHA1tm2QWG19z0bnkRarDNWIajDobl7iN2eM2PmL/5chan (secret auth key for remote connections)
 WebUI (seedit - Similar to old reddit UI): http://localhost:9138/MHA1tm2QWG19z0bnkRarDNWIajDobl7iN2eM2PmL/seedit (local connections only)
 WebUI (seedit - Similar to old reddit UI): http://192.168.1.60:9138/MHA1tm2QWG19z0bnkRarDNWIajDobl7iN2eM2PmL/seedit (secret auth key for remote connections)
 
 ```
 
-Once `bitsocial daemon` is running, you can create and manage your communities through the web interfaces, either seedit or plebones. All the interfaces are interopable. If you're a power user and prefer CLI, then you can take a look at the commands below.
+Once `bitsocial daemon` is running, you can create and manage your communities through the web interfaces, either seedit or 5chan. All the interfaces are interoperable. If you're a power user and prefer CLI, then you can take a look at the commands below.
 
 If you need to view detailed protocol or IPFS logs for debugging, you can use `bitsocial logs`. For example, `bitsocial logs --tail 50` shows the last 50 lines, or `bitsocial logs --since 1h` shows logs from the past hour.
 
@@ -4996,7 +5163,7 @@ Address                                              Started
  censorship-watch.bso                                 true
  health-nutrition-science.bso                         true
  movies-tv-anime.bso                                  true
- pleblore.bso                                         true
+ anime-and-manga.bso                                  true
  politically-incorrect.bso                            true
  reddit-screenshots.bso                               false
  videos-livestreams-podcasts.bso                      false
@@ -5075,7 +5242,7 @@ EXAMPLES
   $ bitsocial challenge install ./my-local-challenge
 ```
 
-_See code: [src/cli/commands/challenge/install.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.57/src/cli/commands/challenge/install.ts)_
+_See code: [src/cli/commands/challenge/install.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.63/src/cli/commands/challenge/install.ts)_
 
 ## `bitsocial challenge list`
 
@@ -5098,7 +5265,7 @@ EXAMPLES
   $ bitsocial challenge list -q
 ```
 
-_See code: [src/cli/commands/challenge/list.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.57/src/cli/commands/challenge/list.ts)_
+_See code: [src/cli/commands/challenge/list.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.63/src/cli/commands/challenge/list.ts)_
 
 ## `bitsocial challenge remove NAME`
 
@@ -5123,7 +5290,7 @@ EXAMPLES
   $ bitsocial challenge remove @scope/my-challenge
 ```
 
-_See code: [src/cli/commands/challenge/remove.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.57/src/cli/commands/challenge/remove.ts)_
+_See code: [src/cli/commands/challenge/remove.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.63/src/cli/commands/challenge/remove.ts)_
 
 ## `bitsocial community create`
 
@@ -5153,7 +5320,7 @@ EXAMPLES
     $ bitsocial community create --jsonFile ./create-options.json
 ```
 
-_See code: [src/cli/commands/community/create.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.57/src/cli/commands/community/create.ts)_
+_See code: [src/cli/commands/community/create.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.63/src/cli/commands/community/create.ts)_
 
 ## `bitsocial community delete ADDRESSES`
 
@@ -5178,7 +5345,7 @@ EXAMPLES
   $ bitsocial community delete 12D3KooWG3XbzoVyAE6Y9vHZKF64Yuuu4TjdgQKedk14iYmTEPWu
 ```
 
-_See code: [src/cli/commands/community/delete.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.57/src/cli/commands/community/delete.ts)_
+_See code: [src/cli/commands/community/delete.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.63/src/cli/commands/community/delete.ts)_
 
 ## `bitsocial community edit ADDRESS`
 
@@ -5248,7 +5415,7 @@ EXAMPLES
     $ bitsocial community edit bitsocial.bso --jsonFile ./edit-options.json
 ```
 
-_See code: [src/cli/commands/community/edit.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.57/src/cli/commands/community/edit.ts)_
+_See code: [src/cli/commands/community/edit.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.63/src/cli/commands/community/edit.ts)_
 
 ## `bitsocial community get [ADDRESS]`
 
@@ -5279,7 +5446,7 @@ EXAMPLES
   $ bitsocial community get --publicKey 12D3KooWG3XbzoVyAE6Y9vHZKF64Yuuu4TjdgQKedk14iYmTEPWu
 ```
 
-_See code: [src/cli/commands/community/get.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.57/src/cli/commands/community/get.ts)_
+_See code: [src/cli/commands/community/get.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.63/src/cli/commands/community/get.ts)_
 
 ## `bitsocial community list`
 
@@ -5302,7 +5469,7 @@ EXAMPLES
   $ bitsocial community list
 ```
 
-_See code: [src/cli/commands/community/list.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.57/src/cli/commands/community/list.ts)_
+_See code: [src/cli/commands/community/list.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.63/src/cli/commands/community/list.ts)_
 
 ## `bitsocial community start ADDRESSES`
 
@@ -5336,7 +5503,7 @@ EXAMPLES
     $ bitsocial community start $(bitsocial community list -q) --concurrency 1
 ```
 
-_See code: [src/cli/commands/community/start.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.57/src/cli/commands/community/start.ts)_
+_See code: [src/cli/commands/community/start.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.63/src/cli/commands/community/start.ts)_
 
 ## `bitsocial community stop ADDRESSES`
 
@@ -5361,7 +5528,7 @@ EXAMPLES
   $ bitsocial community stop Qmb99crTbSUfKXamXwZBe829Vf6w5w5TktPkb6WstC9RFW
 ```
 
-_See code: [src/cli/commands/community/stop.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.57/src/cli/commands/community/stop.ts)_
+_See code: [src/cli/commands/community/stop.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.63/src/cli/commands/community/stop.ts)_
 
 ## `bitsocial daemon`
 
@@ -5401,7 +5568,7 @@ EXAMPLES
   $ bitsocial daemon --chainProviderUrls https://mainnet.infura.io/v3/YOUR_KEY
 ```
 
-_See code: [src/cli/commands/daemon.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.57/src/cli/commands/daemon.ts)_
+_See code: [src/cli/commands/daemon.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.63/src/cli/commands/daemon.ts)_
 
 ## `bitsocial help [COMMAND]`
 
@@ -5467,7 +5634,7 @@ EXAMPLES
   $ bitsocial logs --stdout -f
 ```
 
-_See code: [src/cli/commands/logs.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.57/src/cli/commands/logs.ts)_
+_See code: [src/cli/commands/logs.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.63/src/cli/commands/logs.ts)_
 
 ## `bitsocial update check`
 
@@ -5484,7 +5651,7 @@ EXAMPLES
   $ bitsocial update check
 ```
 
-_See code: [src/cli/commands/update/check.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.57/src/cli/commands/update/check.ts)_
+_See code: [src/cli/commands/update/check.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.63/src/cli/commands/update/check.ts)_
 
 ## `bitsocial update install [VERSION]`
 
@@ -5516,7 +5683,7 @@ EXAMPLES
   $ bitsocial update install --no-restart-daemons
 ```
 
-_See code: [src/cli/commands/update/install.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.57/src/cli/commands/update/install.ts)_
+_See code: [src/cli/commands/update/install.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.63/src/cli/commands/update/install.ts)_
 
 ## `bitsocial update versions`
 
@@ -5538,7 +5705,7 @@ EXAMPLES
   $ bitsocial update versions --limit 5
 ```
 
-_See code: [src/cli/commands/update/versions.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.57/src/cli/commands/update/versions.ts)_
+_See code: [src/cli/commands/update/versions.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.63/src/cli/commands/update/versions.ts)_
 <!-- commandsstop -->
 
 ## Contribution
@@ -5957,7 +6124,7 @@ EXAMPLES
   $ 5chan board add my-board.bso --apply-defaults --defaults-preset ./my-preset.json
 ```
 
-_See code: [src/commands/board/add.ts](https://github.com/bitsocialnet/5chan-board-manager/blob/v0.2.16/src/commands/board/add.ts)_
+_See code: [src/commands/board/add.ts](https://github.com/bitsocialnet/5chan-board-manager/blob/v0.2.17/src/commands/board/add.ts)_
 
 ## `5chan board edit ADDRESS`
 
@@ -6004,7 +6171,7 @@ EXAMPLES
   $ 5chan board edit random.bso -i
 ```
 
-_See code: [src/commands/board/edit.ts](https://github.com/bitsocialnet/5chan-board-manager/blob/v0.2.16/src/commands/board/edit.ts)_
+_See code: [src/commands/board/edit.ts](https://github.com/bitsocialnet/5chan-board-manager/blob/v0.2.17/src/commands/board/edit.ts)_
 
 ## `5chan board list`
 
@@ -6021,7 +6188,7 @@ EXAMPLES
   $ 5chan board list
 ```
 
-_See code: [src/commands/board/list.ts](https://github.com/bitsocialnet/5chan-board-manager/blob/v0.2.16/src/commands/board/list.ts)_
+_See code: [src/commands/board/list.ts](https://github.com/bitsocialnet/5chan-board-manager/blob/v0.2.17/src/commands/board/list.ts)_
 
 ## `5chan board remove ADDRESS`
 
@@ -6041,7 +6208,7 @@ EXAMPLES
   $ 5chan board remove random.bso
 ```
 
-_See code: [src/commands/board/remove.ts](https://github.com/bitsocialnet/5chan-board-manager/blob/v0.2.16/src/commands/board/remove.ts)_
+_See code: [src/commands/board/remove.ts](https://github.com/bitsocialnet/5chan-board-manager/blob/v0.2.17/src/commands/board/remove.ts)_
 
 ## `5chan defaults set`
 
@@ -6081,7 +6248,7 @@ EXAMPLES
   $ 5chan defaults set -i
 ```
 
-_See code: [src/commands/defaults/set.ts](https://github.com/bitsocialnet/5chan-board-manager/blob/v0.2.16/src/commands/defaults/set.ts)_
+_See code: [src/commands/defaults/set.ts](https://github.com/bitsocialnet/5chan-board-manager/blob/v0.2.17/src/commands/defaults/set.ts)_
 
 ## `5chan help [COMMAND]`
 
@@ -6147,7 +6314,7 @@ EXAMPLES
   $ 5chan logs --stdout -f
 ```
 
-_See code: [src/commands/logs.ts](https://github.com/bitsocialnet/5chan-board-manager/blob/v0.2.16/src/commands/logs.ts)_
+_See code: [src/commands/logs.ts](https://github.com/bitsocialnet/5chan-board-manager/blob/v0.2.17/src/commands/logs.ts)_
 
 ## `5chan start`
 
@@ -6185,7 +6352,7 @@ EXAMPLES
   $ 5chan start --log-path /var/log/5chan
 ```
 
-_See code: [src/commands/start.ts](https://github.com/bitsocialnet/5chan-board-manager/blob/v0.2.16/src/commands/start.ts)_
+_See code: [src/commands/start.ts](https://github.com/bitsocialnet/5chan-board-manager/blob/v0.2.17/src/commands/start.ts)_
 <!-- commandsstop -->
 
 ## Config Hot-Reload

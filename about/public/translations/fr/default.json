@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "Anti-spam",
-          "description": "Modules d’authentification, de filtrage et de modération pour les communautés Bitsocial."
+          "description": "Modules de filtrage et de modération pour les communautés Bitsocial."
         },
         "tools": {
           "label": "Outils",
           "description": "Utilitaires CLI et d’administration pour faire tourner ou étendre les apps Bitsocial."
+        },
+        "identity": {
+          "description": "Modules de credential et de vérification qui contrôlent qui peut publier dans les communautés Bitsocial.",
+          "label": "Identité"
         }
       },
       "platforms": {
@@ -528,6 +532,10 @@
         "5chan-board-manager": {
           "tagline": "Outils d’administration de boards pour les communautés 5chan personnalisées.",
           "description": "5chan Board Manager se connecte à Bitsocial CLI pour aider les administrateurs à créer, configurer et modérer des boards d'imageboard personnalisés. C'est la couche utilitaire pour les propriétaires de boards qui veulent garder la maîtrise opérationnelle."
+        },
+        "flags-challenge": {
+          "tagline": "Défi d'émetteur de drapeau vérifié pour les insignes spécifiques au pays et au forum.",
+          "description": "Flags Challenge s'exécute sur un nœud communautaire Bitsocial et vérifie les affirmations de drapeau signées à partir d'un service d'émetteur configurable. Le premier profil fourni cible 5chan, couvrant les drapeaux nationaux, les memeflags de /pol/ et les pony flags de /mlp/, tout en conservant le même schéma réutilisable pour tout client fonctionnant avec son propre service d'émetteur et espace de noms."
         }
       }
     },

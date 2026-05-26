@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "Anti-Spam",
-          "description": "Module für Authentifizierung, Filterung und Moderation für Bitsocial-Communities."
+          "description": "Filter- und Moderationsmodule für Bitsocial-Gemeinschaften."
         },
         "tools": {
           "label": "Tools",
           "description": "CLI- und Admin-Werkzeuge zum Ausführen oder Erweitern von Bitsocial-Apps."
+        },
+        "identity": {
+          "description": "Authentifizierungs- und Verifizierungsmodule, die steuern, wer in Bitsocial-Gemeinschaften posten kann.",
+          "label": "Identität"
         }
       },
       "platforms": {
@@ -528,6 +532,10 @@
         "5chan-board-manager": {
           "tagline": "Board-Administration für eigene 5chan-Communities.",
           "description": "5chan Board Manager verbindet sich mit Bitsocial CLI, um Administratoren dabei zu helfen, benutzerdefinierte Imageboard-Boards zu erstellen, zu konfigurieren und zu moderieren. Es ist die Hilfsschicht für Board-Betreiber, die operative Kontrolle wünschen."
+        },
+        "flags-challenge": {
+          "tagline": "Verifizierte Flag-Herausgeber-Herausforderung für länder- und board-spezifische Abzeichen.",
+          "description": "Flags Challenge läuft auf einem Bitsocial-Community-Node und verifiziert signierte Flag-Behauptungen von einem konfigurierbaren Ausstellerdienst. Das erste gebündelte Profil zielt auf 5chan ab, deckt Landesflaggen, /pol/ Meme-Flaggen und /mlp/ Pony-Flaggen ab und behält gleichzeitig das gleiche Muster für jeden Client wiederverwendbar, der seinen eigenen Ausstellerdienst und Namespace betreibt."
         }
       }
     },

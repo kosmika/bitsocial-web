@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "Antispam",
-          "description": "Moduler til autentificering, filtrering og moderation til Bitsocial-fællesskaber."
+          "description": "Filtrerings- og moderationsmoduler til Bitsocial-fællesskaber."
         },
         "tools": {
           "label": "Værktøjer",
           "description": "CLI- og administrationsværktøjer til at køre eller udvide Bitsocial-apps."
+        },
+        "identity": {
+          "description": "Legitimations- og verifikationsmoduler, der kontrollerer hvem der kan poste i Bitsocial-fællesskaber.",
+          "label": "Identitet"
         }
       },
       "platforms": {
@@ -494,6 +498,10 @@
         },
         "bitsocial-cli": {
           "description": "Bitsocial CLI er protokollens officielle terminalgrænseflade. Brug det til at administrere noder, udgive indhold, starte en WebSocket JSON-RPC-server til programmatisk styring og kodeautomatisering, automatisere adminflows og arbejde direkte med Bitsocial-primitiver uden en GUI-klient."
+        },
+        "flags-challenge": {
+          "tagline": "Verificeret flag-udsteders udfordring for land- og board-specifikke insignier.",
+          "description": "Flags Challenge kører på en Bitsocial-communitynode og verificerer signerede flag-påstande fra en konfigurerbar udsteders-tjeneste. Den første pakkede profil er målrettet mod 5chan, dækker landeflags, /pol/ memeflags og /mlp/ pony flags, samtidig med at det samme mønster holdes genanvendeligt for enhver klient, der kører sin egen udsteders-tjeneste og navnrum."
         }
       }
     },

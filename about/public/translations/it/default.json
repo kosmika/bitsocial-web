@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "Anti-spam",
-          "description": "Moduli di autenticazione, filtro e moderazione per le community Bitsocial."
+          "description": "Moduli di filtro e moderazione per comunità Bitsocial."
         },
         "tools": {
           "label": "Strumenti",
           "description": "Utility CLI e di amministrazione per eseguire o estendere le app Bitsocial."
+        },
+        "identity": {
+          "description": "Moduli di credenziale e verifica che controllano chi può pubblicare nelle comunità di Bitsocial.",
+          "label": "Identità"
         }
       },
       "platforms": {
@@ -528,6 +532,10 @@
         "5chan-board-manager": {
           "tagline": "Strumenti di amministrazione board per community 5chan personalizzate.",
           "description": "5chan Board Manager si connette a Bitsocial CLI per aiutare gli amministratori a creare, configurare e moderare board imageboard personalizzate. È il livello di utilità per i proprietari di board che vogliono controllo operativo."
+        },
+        "flags-challenge": {
+          "tagline": "Sfida verificata dell'emittente di bandiere per stemmi specifici di paese e forum.",
+          "description": "Flags Challenge viene eseguito su un nodo comunità Bitsocial e verifica le asserzioni di flag firmate da un servizio emittente configurabile. Il primo profilo in bundle è destinato a 5chan, copre le bandiere nazionali, i memeflags di /pol/ e i pony flags di /mlp/, mantenendo lo stesso schema riutilizzabile per qualsiasi client che esegue il proprio servizio emittente e spazio dei nomi."
         }
       }
     },

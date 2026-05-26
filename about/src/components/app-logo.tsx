@@ -2,6 +2,7 @@ import type { ComponentType } from "react";
 import {
   Blocks,
   Clipboard,
+  Flag,
   Image as ImageIcon,
   MessageSquare,
   Send,
@@ -15,6 +16,7 @@ import type { AppIconKey } from "@/lib/apps-data";
 const iconMap = {
   blocks: Blocks,
   clipboard: Clipboard,
+  flag: Flag,
   image: ImageIcon,
   "message-square": MessageSquare,
   send: Send,

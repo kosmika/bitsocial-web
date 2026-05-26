@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "Chống spam",
-          "description": "Các mô-đun xác thực, lọc và kiểm duyệt cho cộng đồng Bitsocial."
+          "description": "Các mô-đun lọc và điều độ cho các cộng đồng Bitsocial."
         },
         "tools": {
           "label": "Công cụ",
           "description": "Tiện ích CLI và quản trị để chạy hoặc mở rộng các ứng dụng Bitsocial."
+        },
+        "identity": {
+          "description": "Các mô-đun thông tin đăng nhập và xác minh kiểm soát ai có thể đăng bài trong các cộng đồng Bitsocial.",
+          "label": "Nhân dạng"
         }
       },
       "platforms": {
@@ -528,6 +532,10 @@
         "5chan-board-manager": {
           "tagline": "Công cụ quản trị board cho các cộng đồng 5chan tùy chỉnh.",
           "description": "5chan Board Manager kết nối với Bitsocial CLI để giúp quản trị viên tạo, cấu hình và kiểm duyệt các board imageboard tùy chỉnh. Đây là lớp tiện ích dành cho chủ board muốn kiểm soát vận hành."
+        },
+        "flags-challenge": {
+          "tagline": "Thử thách cấp cấp cờ được xác minh cho huy hiệu quốc gia và bảng cụ thể.",
+          "description": "Flags Challenge chạy trên một nút cộng đồng Bitsocial và xác minh các khẳng định cờ được ký từ một dịch vụ nhà phát hành có thể định cấu hình. Hồ sơ đầu tiên được gói hướng tới 5chan, bao gồm cờ quốc gia, memeflags /pol/ và pony flags /mlp/, trong khi giữ mẫu tương tự có thể tái sử dụng cho bất kỳ máy khách nào chạy dịch vụ nhà phát hành và không gian tên của chính nó."
         }
       }
     },

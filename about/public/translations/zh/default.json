@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "反垃圾",
-          "description": "面向 Bitsocial 社区的认证、过滤和审核模块。"
+          "description": "Bitsocial 社区的过滤和审核模块。"
         },
         "tools": {
           "label": "工具",
           "description": "用于运行或扩展 Bitsocial 应用的 CLI 和管理工具。"
+        },
+        "identity": {
+          "description": "控制谁可以在 Bitsocial 社区中发布的凭证和验证模块。",
+          "label": "身份"
         }
       },
       "platforms": {
@@ -528,6 +532,9 @@
         "5chan-board-manager": {
           "tagline": "用于自定义 5chan communities 的 board 管理工具。",
           "description": "5chan Board Manager 连接到 Bitsocial CLI，帮助管理员创建、配置和管理自定义 imageboard 板块。它是为希望掌控运营的板块所有者提供的工具层。"
+        },
+        "flags-challenge": {
+          "description": "Flags Challenge在Bitsocial社区节点上运行，并验证来自可配置发行者服务的签名标志断言。第一个捆绑的配置文件以5chan为目标，涵盖国家旗帜、/pol/ memeflags和/mlp/ pony flags，同时保持相同的模式可供运行自己的发行者服务和命名空间的任何客户端重用。"
         }
       }
     },

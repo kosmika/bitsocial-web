@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "Anti-spam",
-          "description": "Modul autentikasi, penyaringan, dan moderasi untuk komunitas Bitsocial."
+          "description": "Modul penyaringan dan moderasi untuk komunitas Bitsocial."
         },
         "tools": {
           "label": "Alat",
           "description": "Utilitas CLI dan admin untuk menjalankan atau memperluas aplikasi Bitsocial."
+        },
+        "identity": {
+          "description": "Modul kredensial dan verifikasi yang mengontrol siapa yang dapat memposting di komunitas Bitsocial.",
+          "label": "Identitas"
         }
       },
       "platforms": {
@@ -528,6 +532,10 @@
         "5chan-board-manager": {
           "tagline": "Tool administrasi board untuk komunitas 5chan kustom.",
           "description": "5chan Board Manager terhubung ke Bitsocial CLI untuk membantu administrator membuat, mengonfigurasi, dan memoderasi board imageboard kustom. Ini adalah lapisan utilitas bagi pemilik board yang menginginkan kontrol operasional."
+        },
+        "flags-challenge": {
+          "tagline": "Tantangan penerbit bendera terverifikasi untuk lencana spesifik negara dan papan.",
+          "description": "Flags Challenge berjalan pada node komunitas Bitsocial dan memverifikasi pernyataan bendera yang ditandatangani dari layanan penerbit yang dapat dikonfigurasi. Profil bundel pertama menargetkan 5chan, mencakup bendera negara, memeflags /pol/, dan pony flags /mlp/, sambil menjaga pola yang sama dapat digunakan kembali untuk klien apa pun yang menjalankan penerbit dan ruang nama mereka sendiri."
         }
       }
     },

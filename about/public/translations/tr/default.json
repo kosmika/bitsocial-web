@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "Anti-spam",
-          "description": "Bitsocial toplulukları için kimlik doğrulama, filtreleme ve moderasyon modülleri."
+          "description": "Bitsocial toplulukları için filtreleme ve denetim modülleri."
         },
         "tools": {
           "label": "Araçlar",
           "description": "Bitsocial uygulamalarını çalıştırmak veya genişletmek için CLI ve yönetim araçları."
+        },
+        "identity": {
+          "description": "Bitsocial topluluklarında kimsin yayın yapabileceğini kontrol eden kimlik bilgisi ve doğrulama modülleri.",
+          "label": "Kimlik"
         }
       },
       "platforms": {
@@ -528,6 +532,10 @@
         "5chan-board-manager": {
           "tagline": "Özel 5chan toplulukları için board yönetim araçları.",
           "description": "5chan Board Manager, yöneticilerin özel imageboard panoları oluşturmasına, yapılandırmasına ve yönetmesine yardımcı olmak için Bitsocial CLI'ye bağlanır. Bu, operasyonel kontrol isteyen pano sahipleri için yardımcı katmandır."
+        },
+        "flags-challenge": {
+          "tagline": "Ülke ve forum özel rozet için doğrulanmış bayrak veren meydan okuma.",
+          "description": "Flags Challenge, bir Bitsocial toplum düğümünde çalışır ve yapılandırılabilir bir yayınlayan hizmetinden imzalı bayrak önerilişlerini doğrular. İlk paket profil, 5chan'ı hedefler, ülke bayraklarını, /pol/ memeflags ve /mlp/ pony flags kapsar ve kendi yayınlayan hizmetini ve ad alanını çalıştıran herhangi bir istemci için aynı deseni yeniden kullanılabilir olarak tutar."
         }
       }
     },

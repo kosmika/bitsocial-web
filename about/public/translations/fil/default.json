@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "Anti-spam",
-          "description": "Mga module para sa pagpapatunay, pag-filter, at pagmo-moderate para sa mga komunidad ng Bitsocial."
+          "description": "Mga modulo ng pagsusulit at pag-uusig para sa mga komunidad ng Bitsocial."
         },
         "tools": {
           "label": "Mga tool",
           "description": "Mga utility sa CLI at admin para sa pagpapatakbo o pagpapalawak ng mga app ng Bitsocial."
+        },
+        "identity": {
+          "description": "Mga modulo ng kredensyal at pagpapatunay na nag-kontrol kung sino ang maaaring magpost sa mga komunidad ng Bitsocial.",
+          "label": "Pagkakakilanlan"
         }
       },
       "platforms": {
@@ -528,6 +532,10 @@
         "5chan-board-manager": {
           "tagline": "Mga tool para sa board administration ng custom 5chan communities.",
           "description": "Kumokonekta ang 5chan Board Manager sa Bitsocial CLI para tulungan ang mga administrator na gumawa, mag-configure, at mag-moderate ng mga custom na imageboard board. Ito ang utility layer para sa mga may-ari ng board na gusto ng operational control."
+        },
+        "flags-challenge": {
+          "tagline": "Napatunayan na hamon ng flag issuer para sa bansa at board-specific na insignia.",
+          "description": "Ang Flags Challenge ay tumatakbo sa isang Bitsocial community node at nag-verify ng signed flag assertions mula sa isang configurable issuer service. Ang unang bundled profile ay nakatuon sa 5chan, sumasaklaw sa country flags, /pol/ memeflags, at /mlp/ pony flags, habang pinapanatili ang parehong pattern na maaaring gamitin muli para sa anumang client na gumagamit ng sariling issuer at namespace."
         }
       }
     },

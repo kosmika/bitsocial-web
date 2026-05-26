@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "Spam elleni",
-          "description": "Hitelesítési, szűrési és moderálási modulok a Bitsocial-közösségekhez."
+          "description": "Szűrési és moderációs modulok a Bitsocial-közösségekhez."
         },
         "tools": {
           "label": "Eszközök",
           "description": "CLI- és adminisztrációs segédprogramok a Bitsocial appok futtatásához vagy bővítéséhez."
+        },
+        "identity": {
+          "description": "Hitelesítési és ellenőrzési modulok, amelyek azt szabályozzák, hogy ki tehet közzé a Bitsocial közösségekben.",
+          "label": "Identitás"
         }
       },
       "platforms": {
@@ -528,6 +532,10 @@
         "5chan-board-manager": {
           "tagline": "Board-adminisztrációs eszközök egyedi 5chan közösségekhez.",
           "description": "A 5chan Board Manager csatlakozik a Bitsocial CLI-hoz, hogy segítsen az adminisztrátoroknak egyéni imageboard boardokat létrehozni, konfigurálni és moderálni. Ez a segéd réteg azoknak a boardtulajdonosoknak, akik működési kontrollt szeretnének."
+        },
+        "flags-challenge": {
+          "tagline": "Ellenőrzött zászló-kibocsátó kihívás ország- és tábla-specifikus jelvényekhez.",
+          "description": "A Flags Challenge egy Bitsocial közösségi csomóponton futtatódik, és aláírt flag állításokat ellenőriz egy konfigurálható kibocsátó szolgáltatástól. Az első csomagolt profil a 5chant célozza meg, az ország zászlóit, a /pol/ memeflags-okat és a /mlp/ pony flags-okat tartalmazza, miközben megtartja ugyanazt a mintát, amely újrahasználható bármely olyan ügyfél számára, amely saját kibocsátó szolgáltatást és névteret futtat."
         }
       }
     },

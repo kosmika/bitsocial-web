@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "アンチスパム",
-          "description": "Bitsocial コミュニティ向けの認証、フィルタリング、モデレーション用モジュール。"
+          "description": "Bitsocial コミュニティ向けのフィルタリングおよびモデレーション モジュール。"
         },
         "tools": {
           "label": "ツール",
           "description": "Bitsocial アプリを実行したり拡張したりするための CLI および管理用ユーティリティ。"
+        },
+        "identity": {
+          "description": "Bitsocial コミュニティに誰が投稿できるかを制御する資格情報と検証モジュール。",
+          "label": "アイデンティティ"
         }
       },
       "platforms": {
@@ -528,6 +532,10 @@
         "5chan-board-manager": {
           "tagline": "カスタム 5chan コミュニティ向けの掲示板管理ツール。",
           "description": "5chan Board Manager は Bitsocial CLI に接続し、管理者がカスタム imageboard ボードを作成、設定、モデレートするのを支援します。これは、運用面を管理したいボード所有者向けのユーティリティ層です。"
+        },
+        "flags-challenge": {
+          "tagline": "国とボード固有のバッジ用に検証されたフラグ発行者チャレンジ。",
+          "description": "Flags Challengeはビットソーシャルコミュニティノード上で実行され、設定可能な発行者サービスからの署名付きフラグアサーションを検証します。最初のバンドルプロファイルは5chanを対象とし、国旗、/pol/ミームフラグ、/mlpポニーフラグをカバーしながら、独自の発行者と名前空間を実行するすべてのクライアント向けに同じパターンを再利用可能に保ちます。"
         }
       }
     },

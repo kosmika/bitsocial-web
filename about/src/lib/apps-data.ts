@@ -1,6 +1,6 @@
 import type { TFunction } from "i18next";
 
-export type AppCategorySlug = "apps" | "anti-spam" | "tools";
+export type AppCategorySlug = "apps" | "identity" | "anti-spam" | "tools";
 
 export type AppPlatformSlug = "web" | "android" | "ios" | "desktop";
 
@@ -33,7 +33,8 @@ export type AppIconKey =
   | "ticket"
   | "blocks"
   | "terminal"
-  | "clipboard";
+  | "clipboard"
+  | "flag";
 
 export type DesktopVariant =
   | "windows"
@@ -47,7 +48,7 @@ export interface CategoryData {
   slug: AppCategorySlug;
   label: string;
   description: string;
-  icon: "layout-grid" | "shield" | "wrench";
+  icon: "layout-grid" | "badge-check" | "shield" | "wrench";
 }
 
 interface BaseAppLink {
@@ -100,9 +101,16 @@ export const CATEGORIES: CategoryData[] = [
     icon: "layout-grid",
   },
   {
+    slug: "identity",
+    label: "Identity",
+    description:
+      "Credential and verification modules that gate who can post in Bitsocial communities.",
+    icon: "badge-check",
+  },
+  {
     slug: "anti-spam",
     label: "Anti-Spam",
-    description: "Authentication, filtering, and moderation modules for Bitsocial communities.",
+    description: "Filtering and moderation modules for Bitsocial communities.",
     icon: "shield",
   },
   {
@@ -161,6 +169,10 @@ const CATEGORY_TRANSLATION_KEYS: Record<AppCategorySlug, { label: string; descri
   apps: {
     label: "apps.catalog.categories.apps.label",
     description: "apps.catalog.categories.apps.description",
+  },
+  identity: {
+    label: "apps.catalog.categories.identity.label",
+    description: "apps.catalog.categories.identity.description",
   },
   "anti-spam": {
     label: "apps.catalog.categories.anti-spam.label",
@@ -261,6 +273,10 @@ const APP_COPY_TRANSLATION_KEYS: Record<string, { tagline: string; description: 
   "evm-contract-call": {
     tagline: "apps.catalog.items.evm-contract-call.tagline",
     description: "apps.catalog.items.evm-contract-call.description",
+  },
+  "flags-challenge": {
+    tagline: "apps.catalog.items.flags-challenge.tagline",
+    description: "apps.catalog.items.flags-challenge.description",
   },
   "bitsocial-cli": {
     tagline: "apps.catalog.items.bitsocial-cli.tagline",
@@ -582,7 +598,7 @@ export const APPS: AppData[] = [
     tagline: "NFT-backed access control for communities that need stronger anti-spam gates.",
     description:
       "Mintpass is a flexible authentication layer for Bitsocial communities. It lets moderators mix NFT ownership, verification flows, and custom challenge modules without pushing everyone onto a central login system.",
-    category: "anti-spam",
+    category: "identity",
     tags: ["Verification", "Access control"],
     icon: "ticket",
     logoSrc: "https://mintpass.org/favicon.ico",
@@ -669,7 +685,7 @@ export const APPS: AppData[] = [
     tagline: "Invite-style voucher codes for communities that prefer controlled growth.",
     description:
       "Voucher Challenge lets moderators distribute trusted voucher codes that unlock publishing without a global identity provider. It is a good fit for invite-driven communities, niche boards, and gradual rollouts.",
-    category: "anti-spam",
+    category: "identity",
     tags: ["Invites", "Access control"],
     icon: "ticket",
     githubRepo: "bitsocialnet/voucher-challenge",
@@ -694,7 +710,7 @@ export const APPS: AppData[] = [
     tagline: "On-chain gating for communities that want token or contract checks.",
     description:
       "EVM Contract Call verifies publications by calling an EVM contract before a post is accepted. It lets communities build token gates, staking rules, or other on-chain checks into their moderation flow.",
-    category: "anti-spam",
+    category: "identity",
     tags: ["On-chain", "Contracts"],
     icon: "blocks",
     githubRepo: "bitsocialnet/evm-contract-call",
@@ -707,6 +723,26 @@ export const APPS: AppData[] = [
     ],
     relatedSlugs: ["voucher-challenge", "mintpass"],
     searchTerms: ["ethereum", "token gating", "smart contract"],
+  },
+  {
+    slug: "flags-challenge",
+    name: "Flags Challenge",
+    tagline: "Verified flag issuer challenge for country and board-specific flair.",
+    description:
+      "Flags Challenge runs on a Bitsocial community node and verifies signed flag assertions from a configurable issuer service. The first bundled profile targets 5chan, covering country flags, /pol/ memeflags, and /mlp/ pony flags, while keeping the same pattern reusable for any client that runs its own issuer and namespace.",
+    category: "identity",
+    tags: ["Verification", "Imageboard"],
+    icon: "flag",
+    githubRepo: "bitsocialnet/flags-challenge",
+    links: [
+      {
+        label: "@bitsocial/flags-challenge",
+        url: "https://www.npmjs.com/package/@bitsocial/flags-challenge",
+        kind: "package",
+      },
+    ],
+    relatedSlugs: ["5chan", "mintpass", "voucher-challenge", "ai-moderation-challenge"],
+    searchTerms: ["flags", "country", "memeflags", "pony", "flair", "5chan", "issuer"],
   },
   {
     slug: "bitsocial-cli",

@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "Anti-spam",
-          "description": "Mòduls d'autenticació, filtratge i moderació per a les comunitats de Bitsocial."
+          "description": "Mòduls de filtratge i moderació per a les comunitats de Bitsocial."
         },
         "tools": {
           "label": "Eines",
           "description": "Utilitats de CLI i d'administració per executar o ampliar les apps de Bitsocial."
+        },
+        "identity": {
+          "description": "Mòduls de credencial i verificació que controlen qui pot publicar a les comunitats de Bitsocial.",
+          "label": "Identitat"
         }
       },
       "platforms": {
@@ -528,6 +532,10 @@
         "5chan-board-manager": {
           "tagline": "Eines d’administració de taulers per a comunitats 5chan personalitzades.",
           "description": "5chan Board Manager es connecta amb Bitsocial CLI per ajudar els administradors a crear, configurar i moderar taulers d'imatges personalitzats. És la capa d'utilitat per als propietaris de taulers que volen control operatiu."
+        },
+        "flags-challenge": {
+          "tagline": "Desafiament verificat d'emissor de senyera per a insígnies específiques de país i tauler.",
+          "description": "Flags Challenge s'executa en un node comunitari de Bitsocial i verifica les afirmacions de flags signades d'un servei emissor configurable. El primer perfil agrupat es dirigeix a 5chan, cobreix banderes de país, memeflags de /pol/ i pony flags de /mlp/, mantenint el mateix patró reutilitzable per a qualsevol client que executar el seu propi servei emissor i espai de noms."
         }
       }
     },

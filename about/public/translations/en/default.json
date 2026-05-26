@@ -444,9 +444,13 @@
           "label": "Apps",
           "description": "User-facing Bitsocial clients you can open or install today."
         },
+        "identity": {
+          "label": "Identity",
+          "description": "Credential and verification modules that gate who can post in Bitsocial communities."
+        },
         "anti-spam": {
           "label": "Anti-Spam",
-          "description": "Authentication, filtering, and moderation modules for Bitsocial communities."
+          "description": "Filtering and moderation modules for Bitsocial communities."
         },
         "tools": {
           "label": "Tools",
@@ -536,6 +540,10 @@
         "evm-contract-call": {
           "tagline": "On-chain gating for communities that want token or contract checks.",
           "description": "EVM Contract Call verifies publications by calling an EVM contract before a post is accepted. It lets communities build token gates, staking rules, or other on-chain checks into their moderation flow."
+        },
+        "flags-challenge": {
+          "tagline": "Verified flag issuer challenge for country and board-specific flair.",
+          "description": "Flags Challenge runs on a Bitsocial community node and verifies signed flag assertions from a configurable issuer service. The first bundled profile targets 5chan, covering country flags, /pol/ memeflags, and /mlp/ pony flags, while keeping the same pattern reusable for any client that runs its own issuer and namespace."
         },
         "bitsocial-cli": {
           "tagline": "Command-line control for nodes, communities, and automation workflows.",

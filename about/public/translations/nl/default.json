@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "Anti-spam",
-          "description": "Modules voor authenticatie, filtering en moderatie voor Bitsocial-gemeenschappen."
+          "description": "Filter- en moderatiemodules voor Bitsocial-gemeenschappen."
         },
         "tools": {
           "label": "Hulpmiddelen",
           "description": "CLI- en beheertools om Bitsocial-apps uit te voeren of uit te breiden."
+        },
+        "identity": {
+          "description": "Referentie- en verificatiemodules die bepalen wie in Bitsocial-gemeenschappen mag posten.",
+          "label": "Identiteit"
         }
       },
       "platforms": {
@@ -528,6 +532,10 @@
         "5chan-board-manager": {
           "tagline": "Boardbeheer voor aangepaste 5chan-communities.",
           "description": "5chan Board Manager verbindt met Bitsocial CLI om beheerders te helpen aangepaste imageboard-borden te maken, configureren en modereren. Het is de hulplage voor bord-eigenaren die operationele controle willen."
+        },
+        "flags-challenge": {
+          "tagline": "Geverifieerde vlaggenuitgever-uitdaging voor land- en forumspecifieke insignes.",
+          "description": "Flags Challenge wordt uitgevoerd op een Bitsocial-communitynode en verifieert ondertekende vlagbeweringen van een configureerbare uitgevingsservice. Het eerste gebundelde profiel is gericht op 5chan, omvat landvlaggen, /pol/ memeflags en /mlp/ pony flags, terwijl hetzelfde patroon herbruikbaar blijft voor elke client die zijn eigen uitgevingsservice en naamruimte uitvoert."
         }
       }
     },

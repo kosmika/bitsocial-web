@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "Anti-spam",
-          "description": "Module për autentikim, filtrimin dhe moderimin për komunitetet Bitsocial."
+          "description": "Moduli filtrimi dhe moderimi për komunitetot Bitsocial."
         },
         "tools": {
           "label": "Vegla",
           "description": "Vegla CLI dhe administrimi për ekzekutimin ose zgjerimin e aplikacioneve Bitsocial."
+        },
+        "identity": {
+          "description": "Modulet e kredencialeve dhe verifikimit që kontrollojnë se kush mund të postojë në komunitetë Bitsocial.",
+          "label": "Identiteti"
         }
       },
       "platforms": {
@@ -528,6 +532,10 @@
         "5chan-board-manager": {
           "tagline": "Mjete administrimi board-esh për komunitete 5chan të personalizuara.",
           "description": "5chan Board Manager lidhet me Bitsocial CLI për t'i ndihmuar administratorët të krijojnë, konfigurojnë dhe moderojnë board-e imageboard të personalizuara. Është shtresa e shërbimeve për pronarët e board-eve që duan kontroll operacional."
+        },
+        "flags-challenge": {
+          "tagline": "Sfida e verifikuar e emetuesit të flamujve për insigne specifike të vendit dhe bordit.",
+          "description": "Flags Challenge funksionon në një nyje komunitetesh Bitsocial dhe verifikoi përfaqësimet e flamujve të nënshkruar nga një shërbim emetuesi i konfiguruar. Profili i parë i paketuar synon 5chan, mbulon flamujt kombëtarë, memeflags /pol/ dhe pony flags /mlp/, duke ruajtur të njëjtin model të ripërdorshëm për çdo klient që drejton shërbimin e vet të emetuesit dhe hapësirën e emrave."
         }
       }
     },

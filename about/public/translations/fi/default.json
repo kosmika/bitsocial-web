@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "Roskapostin esto",
-          "description": "Tunnistautumis-, suodatus- ja moderointimoduulit Bitsocial-yhteisöille."
+          "description": "Bitsocial-yhteisöjen suodatus- ja valvontamoduulit."
         },
         "tools": {
           "label": "Työkalut",
           "description": "CLI- ja ylläpitotyökalut Bitsocial-sovellusten ajamiseen tai laajentamiseen."
+        },
+        "identity": {
+          "description": "Tunnistusten ja vahvistuksen moduulit, jotka hallitsevat sitä, kuka voi kirjoittaa Bitsocial-yhteisöihin.",
+          "label": "Identiteetti"
         }
       },
       "platforms": {
@@ -528,6 +532,10 @@
         "5chan-board-manager": {
           "tagline": "Board-hallintatyökalut mukautetuille 5chan-yhteisöille.",
           "description": "5chan Board Manager yhdistyy Bitsocial CLI:hin auttaakseen ylläpitäjiä luomaan, määrittämään ja moderoimaan mukautettuja imageboard-foorumeita. Se on apukerros foorumien omistajille, jotka haluavat operatiivista hallintaa."
+        },
+        "flags-challenge": {
+          "tagline": "Vahvistettu lippujen myöntäjän haaste maa- ja lauta-spesifisille merkeille.",
+          "description": "Flags Challenge toimii Bitsocial-yhteisösolmussa ja tarkistaa allekirjoitettuja lipputehtäviä määritettävästä liikkeeseenlaskijapalvelusta. Ensimmäinen niputettu profiili kohdistuu 5chaniin, kattaa maakunnarit, /pol/ memekuntalaput ja /mlp/ pony-kunnarit, säilyttäen samalla kuvion uudelleenkäytettävänä kaikille asiakkaille, jotka käyttävät omaa liikkeeseenlaskijapalveluaan ja nimitilaa."
         }
       }
     },

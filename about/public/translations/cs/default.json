@@ -426,11 +426,15 @@
         },
         "anti-spam": {
           "label": "Anti-spam",
-          "description": "Moduly pro ověřování, filtrování a moderaci pro komunity Bitsocial."
+          "description": "Moduly filtrování a moderace pro komunity Bitsocial."
         },
         "tools": {
           "label": "Nástroje",
           "description": "Nástroje CLI a administrátorské utility pro provoz nebo rozšiřování aplikací Bitsocial."
+        },
+        "identity": {
+          "description": "Moduly přihlašovacích údajů a ověřování, které řídí, kdo může přispívat do komunit Bitsocial.",
+          "label": "Identita"
         }
       },
       "platforms": {
@@ -494,6 +498,10 @@
         },
         "bitsocial-cli": {
           "description": "Bitsocial CLI je oficiální terminálové rozhraní protokolu. Používejte ho ke správě uzlů, publikování obsahu, spuštění serveru WebSocket JSON-RPC pro programové řízení a automatizaci kódu, automatizaci administrátorských toků a přímé práci s primitivy Bitsocial bez GUI klienta."
+        },
+        "flags-challenge": {
+          "tagline": "Ověřená výzva vydavatele vlajky pro insígnie specifické pro zemi a desku.",
+          "description": "Flags Challenge běží na uzlu komunity Bitsocial a ověřuje podepsaná tvrzení vlajek od konfigurovatelné služby vydavatele. První balíčkový profil je zaměřen na 5chan a pokrývá národní vlajky, memeflags z /pol/ a pony flags z /mlp/, přičemž zachovává stejný vzor znovu použitelný pro jakéhokoli klienta, který provozuje svou vlastní službu vydavatele a obor názvů."
         }
       }
     },
