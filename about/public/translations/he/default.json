@@ -541,6 +541,10 @@
         "bitsocial-seeder": {
           "tagline": "זורע ציבורי לקהילות Bitsocial, מוכן ל-Docker ו-npm.",
           "description": "Bitsocial Seeder מיתדות דפי קהילה ראשונים, CID לאחר עדכון וניתוב נושא pubsub דרך daemon Bitsocial. הוא משתמש שוב ב-daemon מקומי שכבר פועל כאשר הוא זמין או מפעיל באופן אוטומטי את ה-daemon bitsocial-cli המוכלל, והוא משודר גם כתמונת Docker לפריסות VPS ללא פיקוח וגם כחבילת npm לאופרטורים Node-first."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "בדיקות ניהול תואמות OpenAI מול כללי כל קהילה.",
+          "description": "AI Moderation Challenge מעריך את תוכן התגובות של Bitsocial מול <code>community.rules</code> באמצעות model endpoint שתואם ל-OpenAI. קהילות יכולות לנתב פוסטים מסוכנים לבדיקה תוך שמירה על provider keys ו-prompts בהגדרות node פרטיות."
         }
       }
     },

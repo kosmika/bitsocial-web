@@ -540,6 +540,10 @@
         "bitsocial-seeder": {
           "tagline": "Bitsocial社区的公共播种者，为Docker和npm打包。",
           "description": "Bitsocial Seeder 通过 Bitsocial daemon 固定社区首页、更新后的 CID 和 pubsub 主题路由。当本地 daemon 可达时，它会重用已在运行的本地 daemon，或自动启动捆绑的 bitsocial-cli daemon，并同时作为 Docker 映像用于无人值守的 VPS 部署和 npm 包用于 Node-first 运营商提供。"
+        },
+        "ai-moderation-challenge": {
+          "tagline": "基于 OpenAI 兼容接口的审核检查，对照各社区规则。",
+          "description": "AI Moderation Challenge 通过 OpenAI-compatible model endpoint，对照 <code>community.rules</code> 评估 Bitsocial 评论内容。community 可以将 risky posts 路由到 review，同时将 provider keys 和 prompts 保留在 private node settings 中。"
         }
       }
     },

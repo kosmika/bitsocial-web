@@ -541,6 +541,10 @@
         "bitsocial-seeder": {
           "tagline": "Nyilvános seeder a Bitsocial-közösségekhez, Docker és npm csomagolásban.",
           "description": "A Bitsocial Seeder a közösség első oldalait, a frissítés utáni CID-eket és a pubsub témakörök irányítását egy Bitsocial daemon-on keresztül rögzíti. Újrafelhasználja egy már futó helyi daemon-t, ha elérhető, vagy automatikusan elindítja a csomagolt bitsocial-cli daemon-t, és Docker-képként sem feligyelt VPS-telepítésekhez, sem npm-csomagként Node-first operátorok számára érkezik."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "OpenAI-kompatibilis moderációs ellenőrzések minden közösség szabályai alapján.",
+          "description": "Az AI Moderation Challenge a Bitsocial kommenttartalmát a <code>community.rules</code> alapján értékeli egy OpenAI-kompatibilis model endpoint segítségével. A közösségek a kockázatos bejegyzéseket ellenőrzésre irányíthatják, miközben a provider kulcsokat és promptokat privát node beállításokban tartják."
         }
       }
     },

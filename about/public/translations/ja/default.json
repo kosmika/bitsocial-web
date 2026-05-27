@@ -541,6 +541,10 @@
         "bitsocial-seeder": {
           "tagline": "Bitsocialコミュニティ向けのパブリックシーダー、Dockerとnpmにパッケージされている。",
           "description": "Bitsocial Seederは、Bitsocial daemonを通じて、コミュニティの最初のページ、更新後のCID、およびpubsubトピックルーティングをピン留めします。すでに実行中のローカルdaemonが到達可能な場合は再利用するか、バンドルされたbitsocial-cli daemonを自動的に開始し、無人のVPS展開用のDockerイメージとNode-firstオペレータ向けのnpmパッケージの両方として提供されます。"
+        },
+        "ai-moderation-challenge": {
+          "tagline": "OpenAI互換のモデレーションチェックで、各コミュニティのルールに照合。",
+          "description": "AI Moderation Challengeは、OpenAI互換のモデルエンドポイントを使ってBitsocialのコメント内容を<code>community.rules</code>に照らして評価します。コミュニティは、providerキーとpromptをプライベートなnode設定に保ちながら、リスクの高い投稿をreviewに回せます。"
         }
       }
     },

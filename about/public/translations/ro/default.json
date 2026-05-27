@@ -541,6 +541,10 @@
         "bitsocial-seeder": {
           "tagline": "Seeder public pentru comunități Bitsocial, ambalat pentru Docker și npm.",
           "description": "Bitsocial Seeder fixează paginile prioritare ale comunității, CID-urile după actualizare și rutarea subiectelor pubsub prin intermediul unui daemon Bitsocial. Reutilizează un daemon local deja în execuție atunci când este accesibil sau pornește automat daemonul bitsocial-cli inclus și este furnizat atât ca imagine Docker pentru implementări VPS nesupravegheat cât și ca pachet npm pentru operatori Node-first."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "Verificări de moderare compatibile OpenAI conform regulilor fiecărei comunități.",
+          "description": "AI Moderation Challenge evaluează conținutul comentariilor Bitsocial față de <code>community.rules</code> cu un endpoint de model compatibil OpenAI. Comunitățile pot trimite postările riscante spre review, păstrând cheile providerului și prompturile în setările private ale nodului."
         }
       }
     },

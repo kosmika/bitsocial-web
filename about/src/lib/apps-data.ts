@@ -298,6 +298,10 @@ const APP_COPY_TRANSLATION_KEYS: Record<string, { tagline: string; description: 
     tagline: "apps.catalog.items.5chan-board-manager.tagline",
     description: "apps.catalog.items.5chan-board-manager.description",
   },
+  "ai-moderation-challenge": {
+    tagline: "apps.catalog.items.ai-moderation-challenge.tagline",
+    description: "apps.catalog.items.ai-moderation-challenge.description",
+  },
 };
 
 function translateCatalogValue(t: TFunction, key: string, fallback: string): string {

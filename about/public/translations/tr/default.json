@@ -541,6 +541,10 @@
         "bitsocial-seeder": {
           "tagline": "Bitsocial toplulukları için genel seeder, Docker ve npm için paketlenmiş.",
           "description": "Bitsocial Seeder, bir Bitsocial daemon aracılığıyla topluluk öncelikli sayfaları, güncelleme sonrası CID'leri ve pubsub konusu yönlendirmesini sabitleme. Erişilebilir olduğunda zaten çalışan bir yerel daemon'u yeniden kullanır veya paketlenmiş bitsocial-cli daemon'u otomatik olarak başlatır ve hem gözetimsiz VPS dağıtımları için Docker görüntüsü hem de Node-first operatörler için npm paketi olarak sunulur."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "Her topluluğun kurallarına göre OpenAI uyumlu moderasyon kontrolleri.",
+          "description": "AI Moderation Challenge, OpenAI uyumlu bir model endpoint'i kullanarak Bitsocial yorum içeriğini <code>community.rules</code> karşısında değerlendirir. Topluluklar, provider anahtarlarını ve prompt'ları private node ayarlarında tutarken riskli gönderileri incelemeye yönlendirebilir."
         }
       }
     },

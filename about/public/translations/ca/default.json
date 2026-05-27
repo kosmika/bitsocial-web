@@ -541,6 +541,10 @@
         "bitsocial-seeder": {
           "tagline": "Seeder públic per a comunitats de Bitsocial, empaquetat per a Docker i npm.",
           "description": "Bitsocial Seeder fixan les pàgines prioritàries de la comunitat, els CID post-actualització i l'encaminament de temes pubsub a través d'un daemon Bitsocial. Reutilitza un daemon local ja en execució quan és accessible o inicia automàticament el daemon bitsocial-cli inclòs, i s'ofereix tant com una imatge Docker per a desplegaments VPS desatesos com un paquet npm per a operadors node-first."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "Comprovacions de moderació compatibles amb OpenAI segons les regles de cada comunitat.",
+          "description": "AI Moderation Challenge avalua el contingut dels comentaris de Bitsocial segons <code>community.rules</code> amb un endpoint de model compatible amb OpenAI. Les comunitats poden enviar publicacions arriscades a revisió mentre mantenen les claus del proveïdor i els prompts en configuracions privades del node."
         }
       }
     },

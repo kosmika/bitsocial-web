@@ -541,6 +541,10 @@
         "bitsocial-seeder": {
           "tagline": "Bitsocial সম্প্রদায়ের জন্য পাবলিক সিডার, Docker এবং npm এর জন্য প্যাকেজ করা।",
           "description": "Bitsocial Seeder সম্প্রদায়ের প্রথম পৃষ্ঠা, post-update CID এবং pubsub বিষয় রুটিং পিন করে একটি Bitsocial daemon এর মাধ্যমে। এটি ইতিমধ্যে চলমান স্থানীয় daemon পুনরায় ব্যবহার করে যখন এটি পৌঁছানো যায় বা বান্ডিলকৃত bitsocial-cli daemon স্বয়ংক্রিয়ভাবে শুরু করে, এবং অপ্রত্যাশিত VPS স্থাপনার জন্য Docker ইমেজ এবং Node-first অপারেটরদের জন্য npm প্যাকেজ উভয় হিসাবে চালু হয়।"
+        },
+        "ai-moderation-challenge": {
+          "tagline": "প্রতিটি কমিউনিটির নিয়মের বিরুদ্ধে OpenAI-সামঞ্জস্যপূর্ণ মডারেশন পরীক্ষা।",
+          "description": "AI Moderation Challenge OpenAI-compatible model endpoint দিয়ে Bitsocial মন্তব্যের বিষয়বস্তুকে <code>community.rules</code>-এর বিরুদ্ধে মূল্যায়ন করে। communities ঝুঁকিপূর্ণ পোস্টগুলো review-তে পাঠাতে পারে, আর provider keys ও prompts private node settings-এ রাখতে পারে।"
         }
       }
     },

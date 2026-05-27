@@ -541,6 +541,10 @@
         "bitsocial-seeder": {
           "tagline": "Seeder công khai cho các cộng đồng Bitsocial, được đóng gói cho Docker và npm.",
           "description": "Bitsocial Seeder ghim các trang ưu tiên cộng đồng, CID sau cập nhật và định tuyến chủ đề pubsub thông qua daemon Bitsocial. Nó tái sử dụng một daemon cục bộ đang chạy sẵn khi có thể truy cập hoặc tự động khởi động daemon bitsocial-cli được gói gọn và được cung cấp như cả hình ảnh Docker cho triển khai VPS không giám sát và gói npm cho các nhà khai thác Node-first."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "Kiểm tra kiểm duyệt tương thích OpenAI theo quy tắc của từng cộng đồng.",
+          "description": "AI Moderation Challenge đánh giá nội dung bình luận Bitsocial so với <code>community.rules</code> bằng một model endpoint tương thích OpenAI. Các cộng đồng có thể chuyển các bài đăng rủi ro đi review trong khi giữ provider keys và prompts trong cài đặt node riêng tư."
         }
       }
     },

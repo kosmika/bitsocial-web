@@ -541,6 +541,10 @@
         "bitsocial-seeder": {
           "tagline": "Seeder สาธารณะสำหรับชุมชน Bitsocial บรรจุสำหรับ Docker และ npm",
           "description": "Bitsocial Seeder ปักหมุดหน้าคนแรกของชุมชน CID หลังการอัปเดต และการกำหนดเส้นทาง pubsub topic ผ่าน daemon Bitsocial ใช้ daemon ท้องถิ่นที่กำลังทำงานอยู่แล้วเมื่อถึงได้ หรือเริ่ม daemon bitsocial-cli ที่แพ็กเกจแล้วโดยอัตโนมัติ และส่งมอบเป็นทั้งอิมเมจ Docker สำหรับการปรับใช้ VPS ที่ไม่มีการเฝ้าดูและแพ็กเกจ npm สำหรับผู้ดำเนินการ Node-first"
+        },
+        "ai-moderation-challenge": {
+          "tagline": "การตรวจสอบการกลั่นกรองที่รองรับ OpenAI ตามกฎของแต่ละชุมชน.",
+          "description": "AI Moderation Challenge ประเมินเนื้อหาคอมเมนต์ของ Bitsocial เทียบกับ <code>community.rules</code> ด้วย OpenAI-compatible model endpoint Communities สามารถส่งโพสต์ที่เสี่ยงไป review ได้ ในขณะที่เก็บ provider keys และ prompts ไว้ใน private node settings"
         }
       }
     },

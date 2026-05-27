@@ -541,6 +541,10 @@
         "bitsocial-seeder": {
           "tagline": "Seeder publik untuk komunitas Bitsocial, dikemas untuk Docker dan npm.",
           "description": "Bitsocial Seeder menyematkan halaman pertama komunitas, CID pasca-pembaruan, dan perutean topik pubsub melalui daemon Bitsocial. Ini menggunakan kembali daemon lokal yang sudah berjalan saat dapat dijangkau atau memulai daemon bitsocial-cli bundel secara otomatis, dan dikirim sebagai citra Docker untuk penyebaran VPS tanpa pengawasan dan paket npm untuk operator Node-first."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "Pemeriksaan moderasi yang kompatibel dengan OpenAI sesuai aturan setiap komunitas.",
+          "description": "AI Moderation Challenge mengevaluasi konten komentar Bitsocial terhadap <code>community.rules</code> dengan endpoint model yang kompatibel dengan OpenAI. Komunitas dapat mengarahkan posting berisiko ke review sambil menyimpan kunci provider dan prompt di pengaturan node pribadi."
         }
       }
     },

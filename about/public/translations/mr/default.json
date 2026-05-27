@@ -541,6 +541,10 @@
         "bitsocial-seeder": {
           "tagline": "Bitsocial समाजांसाठी सार्वजनिक सीडर, Docker आणि npm साठी पॅकेज केला.",
           "description": "Bitsocial Seeder समुदायाचे पहिले पृष्ठ, पोस्ट-अपडेट CID आणि pubsub विषय मार्गदर्शन Bitsocial daemon द्वारे पिन करतात. हे आधीपासून चालू असलेले स्थानीय daemon पुनः वापरते जेव्हा ते पोहोचता येते किंवा बंडल केलेले bitsocial-cli daemon आपोआप सुरू करते, आणि त्याचे वितरण निरीक्षण न केलेली VPS तैनातीसाठी Docker प्रतिमा आणि Node-first ऑपरेटरसाठी npm पॅकेज दोन्हीच्या रूपात केले जाते."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "प्रत्येक समुदायाच्या नियमांविरुद्ध OpenAI-सुसंगत मॉडरेशन तपासणी.",
+          "description": "AI Moderation Challenge Bitsocial comment content ला OpenAI-compatible model endpoint वापरून <code>community.rules</code> यांच्याशी तुलना करून evaluate करतो. communities risky posts review साठी route करू शकतात, आणि provider keys व prompts private node settings मध्ये ठेवू शकतात."
         }
       }
     },

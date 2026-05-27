@@ -541,6 +541,10 @@
         "bitsocial-seeder": {
           "tagline": "Bitsocial సంఘాల కోసం పబ్లిక్ సీడర్, Docker మరియు npm కోసం ప్యాకేజ్ చేయబడింది.",
           "description": "Bitsocial Seeder కమ్యూనిటీ ఫర్స్ట్ పేజ్‌లు, పోస్ట్-అప్‌డేట్ CID లు మరియు pubsub టాపిక్ రూటింగ్‌ను Bitsocial daemon ద్వారా పిన్ చేస్తుంది. ఇది ఇప్పటికే నడుస్తున్న స్థానిక daemon ను దొరుకుతున్నప్పుడు పునः ఉపయోగించుకుంటుంది లేదా బండిల్ చేయబడిన bitsocial-cli daemon ను స్వయంచాలకంగా ప్రారంభిస్తుంది, మరియు అటెండెన్సీ లేని VPS విస్తరణల కోసం Docker ఇమేజ్ మరియు Node-first ఆపరేటర్‌ల కోసం npm ప్యాకేజీ రెండింటిగా పంపిణీ చేయబడుతుంది."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "ప్రతి కమ్యూనిటీ నియమాలకు వ్యతిరేకంగా OpenAI అనుకూల మోడరేషన్ తనిఖీలు.",
+          "description": "AI Moderation Challenge OpenAI-compatible model endpointతో Bitsocial comment contentను <code>community.rules</code>కు వ్యతిరేకంగా evaluate చేస్తుంది. communities risky postsను reviewకు route చేయవచ్చు, provider keys మరియు promptsను private node settingsలో ఉంచుకుంటూ."
         }
       }
     },

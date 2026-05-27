@@ -541,6 +541,10 @@
         "bitsocial-seeder": {
           "tagline": "Δημόσιο seeder για κοινότητες Bitsocial, συσκευασμένο για Docker και npm.",
           "description": "Το Bitsocial Seeder καρφιτσώνει σελίδες κοινότητας πρώτα, CIDs μετά την ενημέρωση και δρομολόγηση θεμάτων pubsub μέσω ενός daemon Bitsocial. Επαναχρησιμοποιεί ένα ήδη εκτελούμενο τοπικό daemon όταν είναι προσβάσιμο ή ξεκινά το επισυναπτόμενο daemon bitsocial-cli αυτόματα και παρέχεται ως εικόνα Docker για μη εποπτευόμενες ανάπτυξης VPS και πακέτο npm για χειριστές Node-first."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "Έλεγχοι συντονισμού συμβατοί με OpenAI έναντι των κανόνων κάθε κοινότητας.",
+          "description": "Το AI Moderation Challenge αξιολογεί το περιεχόμενο σχολίων Bitsocial έναντι του <code>community.rules</code> με ένα OpenAI-compatible model endpoint. Οι κοινότητες μπορούν να δρομολογούν ριψοκίνδυνες δημοσιεύσεις προς έλεγχο, διατηρώντας τα κλειδιά provider και τα prompts σε ιδιωτικές ρυθμίσεις κόμβου."
         }
       }
     },
