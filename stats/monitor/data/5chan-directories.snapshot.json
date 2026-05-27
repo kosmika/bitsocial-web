@@ -1,12 +1,29 @@
 {
-  "title": "/all/ - All 5chan Directories",
-  "description": "Each 5chan directory is assigned to a board handpicked by the team, until DAO curation is implemented.\n\nhttps://github.com/bitsocialnet/lists/blob/master/5chan-directories.json",
-  "createdAt": 1762179811,
-  "updatedAt": 1779102921,
+  "title": "5chan Directory Defaults",
+  "description": "Expected 5chan UX defaults by directory code. These defaults apply to the directory, not to individual candidate boards.",
+  "createdAt": 1779262179,
+  "updatedAt": 1779525738,
   "directories": [
     {
-      "title": "/a/ - Anime & Manga",
+      "directoryCode": "3",
+      "title": "/3/ - 3DCG",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "3dcg-posting.bso",
+      "publicKey": "12D3KooWBRCcwxWTx23tyK7Uhqs9ViE3MnSgvWSLip2ikrWaD3c2"
+    },
+    {
       "directoryCode": "a",
+      "title": "/a/ - Anime & Manga",
       "features": {
         "pseudonymityMode": "per-reply",
         "safeForWork": true,
@@ -22,212 +39,8 @@
       "publicKey": "12D3KooWMDt3RMVMHrm2pEEyfraBtHP86dmkim7EVAapDj3Mchdy"
     },
     {
-      "title": "/co/ - Comics & Cartoons",
-      "directoryCode": "co",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": false,
-        "noSpoilerReplies": false,
-        "postsPerPage": 15
-      },
-      "name": "comics-and-cartoons.bso",
-      "publicKey": "12D3KooWRLmyg671KVYb1xekZ8eTQSMfRraB3DmQZPsKbCdMsEuc"
-    },
-    {
-      "title": "/ck/ - Food & Cooking",
-      "directoryCode": "ck",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": true,
-        "noSpoilerReplies": true,
-        "postsPerPage": 15
-      },
-      "name": "food-and-cooking.bso",
-      "publicKey": "12D3KooWFfANpSeemwvqqGsXNPHDuyDMCK6wE8cxGTuNw7xoWUp7"
-    },
-    {
-      "title": "/pol/ - Politically Incorrect",
-      "directoryCode": "pol",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": false,
-        "hasFlags": true,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": true,
-        "noSpoilerReplies": true,
-        "postsPerPage": 20
-      },
-      "name": "politically-incorrect.bso",
-      "publicKey": "12D3KooWMVob74DQoTLGZ4B8kWgPwDfbtiWqdJE4DrGtf2rmVw36"
-    },
-    {
-      "title": "/biz/ - Business & Finance",
-      "directoryCode": "biz",
-      "features": {
-        "pseudonymityMode": "per-post",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": true,
-        "noSpoilerReplies": true,
-        "postsPerPage": 20
-      },
-      "name": "business-and-finance.bso",
-      "publicKey": "12D3KooWNMybS8JqELi38ZBX897PrjWbCrGoMKfw3bgoqzC2n1Dh"
-    },
-    {
-      "title": "/sci/ - Science & Math",
-      "directoryCode": "sci",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": true,
-        "noSpoilerReplies": true,
-        "postsPerPage": 15
-      },
-      "name": "science-and-math.bso",
-      "publicKey": "12D3KooWEtHqwtEpgHsXS8VSFcGDt2DhzeqaLm9tTCRFucXaWp62"
-    },
-    {
-      "title": "/g/ - Technology",
-      "directoryCode": "g",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": true,
-        "noSpoilerReplies": true,
-        "postsPerPage": 15
-      },
-      "name": "technology-posting.bso",
-      "publicKey": "12D3KooWFnLrUYHpvqki7gbL4w9JzdxjpQPKE2JBDEd23Ly6X82X"
-    },
-    {
-      "title": "/v/ - Video Games",
-      "directoryCode": "v",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": false,
-        "noSpoilerReplies": false,
-        "postsPerPage": 15
-      },
-      "name": "videogames-posting.bso",
-      "publicKey": "12D3KooWRAbo3HU5ThCAkJGQ5q7MTEJfhAX6Hu7xHyPtxHGi1Fgh"
-    },
-    {
-      "title": "/vg/ - Video Game Generals",
-      "directoryCode": "vg",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": false,
-        "noSpoilerReplies": false,
-        "postsPerPage": 20
-      },
-      "name": "videogame-generals.bso",
-      "publicKey": "12D3KooWMvAcJFV45CS3hSZcx7EFhwhQrXfXhVHXQJFPfKeakWfq"
-    },
-    {
-      "title": "/vr/ - Retro Games",
-      "directoryCode": "vr",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": false,
-        "noSpoilerReplies": false,
-        "postsPerPage": 15
-      },
-      "name": "retro-games.bso",
-      "publicKey": "12D3KooWJfwp2WRwU3gsaNNPjZ1iHgxc1QFySr361cQarkhLp1fY"
-    },
-    {
-      "title": "/fit/ - Fitness",
-      "directoryCode": "fit",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": true,
-        "noSpoilerReplies": true,
-        "postsPerPage": 15
-      },
-      "name": "fitness-posting.bso",
-      "publicKey": "12D3KooWHcqcJJmjAiBJA3uyhSW6ep4HFadUfteDrzU1Pn9ALkkw"
-    },
-    {
-      "title": "/sp/ - Sports",
-      "directoryCode": "sp",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": true,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": true,
-        "noSpoilerReplies": true,
-        "postsPerPage": 15
-      },
-      "name": "sports-posting.bso",
-      "publicKey": "12D3KooWGJA6zN3Q63FtSgwNhtfA26Skdzdxz5X7A9PFfE4FBMGE"
-    },
-    {
-      "title": "/tg/ - Traditional Games",
-      "directoryCode": "tg",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": false,
-        "noSpoilerReplies": false,
-        "postsPerPage": 15
-      },
-      "name": "traditional-games.bso",
-      "publicKey": "12D3KooWK6G3EHUCkfcgX6kPDihXJAdpucrZvn4WjPwf7fF484nt"
-    },
-    {
-      "title": "/adv/ - Advice",
       "directoryCode": "adv",
+      "title": "/adv/ - Advice",
       "features": {
         "pseudonymityMode": "per-reply",
         "safeForWork": true,
@@ -243,8 +56,8 @@
       "publicKey": "12D3KooWH5UFNs9yfwJVsSUhEW5bYrtF8KmzfeJzwg84qWMoFJVY"
     },
     {
-      "title": "/wsg/ - Worksafe GIF",
-      "directoryCode": "wsg",
+      "directoryCode": "an",
+      "title": "/an/ - Animals & Nature",
       "features": {
         "pseudonymityMode": "per-reply",
         "safeForWork": true,
@@ -256,148 +69,12 @@
         "noSpoilerReplies": true,
         "postsPerPage": 15
       },
-      "name": "worksafe-gif.bso",
-      "publicKey": "12D3KooWAGHV9th2FN48KPvHMJwxen8h5mSM39pkaZWvvzcWMPr9"
+      "name": "animals-and-nature.bso",
+      "publicKey": "12D3KooWSpKszPM2c17KBgbnoRrkWPCHJosGGFg3bKnzarYhHeSc"
     },
     {
-      "title": "/diy/ - Do It Yourself",
-      "directoryCode": "diy",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": true,
-        "noSpoilerReplies": true,
-        "postsPerPage": 15
-      },
-      "name": "do-it-yourself.bso",
-      "publicKey": "12D3KooWKKbiaFu7x2EwueN6wxw3DJRQsvCv8KVRGbTTYpsGZXVa"
-    },
-    {
-      "title": "/out/ - Outdoors",
-      "directoryCode": "out",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": true,
-        "noSpoilerReplies": true,
-        "postsPerPage": 15
-      },
-      "name": "outdoors-posting.bso",
-      "publicKey": "12D3KooWQ2nPGxQxuSMY92kM3zKu1rBekJsXxXb5uNkHLDfSSxTm"
-    },
-    {
-      "title": "/ic/ - Artwork/Critique",
-      "directoryCode": "ic",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": true,
-        "noSpoilerReplies": true,
-        "postsPerPage": 15
-      },
-      "name": "artwork-critique.bso",
-      "publicKey": "12D3KooWQZ5HkAspHUPGEVoSaAZgqachZGtxCXxAXYBDTreR4uWJ"
-    },
-    {
-      "title": "/mu/ - Music",
-      "directoryCode": "mu",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": true,
-        "noSpoilerReplies": true,
-        "postsPerPage": 15
-      },
-      "name": "music-posting.bso",
-      "publicKey": "12D3KooWQdQ6TkVA1Xe9zzaFP6vXBgsLeMAewpLpLwbsAYKivnQy"
-    },
-    {
-      "title": "/int/ - International",
-      "directoryCode": "int",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": true,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": true,
-        "noSpoilerReplies": true,
-        "postsPerPage": 15
-      },
-      "name": "international-sfw.bso",
-      "publicKey": "12D3KooWMSUYcergS2BwbRzFynR5hQURc962W9iR81eTJKz89Q6n"
-    },
-    {
-      "title": "/lit/ - Literature",
-      "directoryCode": "lit",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": false,
-        "noSpoilerReplies": false,
-        "postsPerPage": 15
-      },
-      "name": "literature-posting.bso",
-      "publicKey": "12D3KooWKXimxiZWtgF3LoTdaW3btHhDzJN7P3qrsgHwRkow186x"
-    },
-    {
-      "title": "/his/ - History & Humanities",
-      "directoryCode": "his",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": true,
-        "noSpoilerReplies": true,
-        "postsPerPage": 15
-      },
-      "name": "history-posting.bso",
-      "publicKey": "12D3KooWN7bzigSgU4rxayrPCjvq2ETJMN9Zv3cyazpRYh36QWiN"
-    },
-    {
-      "title": "/tv/ - Television & Film",
-      "directoryCode": "tv",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": false,
-        "noSpoilerReplies": false,
-        "postsPerPage": 15
-      },
-      "name": "television-and-film.bso",
-      "publicKey": "12D3KooWGSRg4crzV5vXEya1ghXD7UBTqimqXTQvNUqy9NdzZNyd"
-    },
-    {
-      "title": "/t/ - Torrents",
-      "directoryCode": "t",
+      "directoryCode": "b",
+      "title": "/b/ - Random",
       "features": {
         "pseudonymityMode": "per-reply",
         "safeForWork": false,
@@ -409,63 +86,12 @@
         "noSpoilerReplies": true,
         "postsPerPage": 15
       },
-      "name": "torrents-posting.bso",
-      "publicKey": "12D3KooWFwieYtPDEd3UBK5qG6HFZ3Qu8cDd4B4RcY2HJ9CBkfaZ"
+      "name": "random-nsfw.bso",
+      "publicKey": "12D3KooWJkJYkuVbJQhapcVGpo8oNmsXsKmFRrFqc1SHezZW9fX8"
     },
     {
-      "title": "/x/ - Paranormal",
-      "directoryCode": "x",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": true,
-        "noSpoilerReplies": true,
-        "postsPerPage": 15
-      },
-      "name": "paranormal-posting.bso",
-      "publicKey": "12D3KooWFZn7r5gYKbq5YQMr1FYQ5eUwoZr41Tjd8KmTgQ4dxTTP"
-    },
-    {
-      "title": "/vip/ - Very Important Posts",
-      "directoryCode": "vip",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": true,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": true,
-        "noSpoilerReplies": true,
-        "postsPerPage": 15
-      },
-      "name": "very-important-posts.bso",
-      "publicKey": "12D3KooWNMnBJ5phkBWrcjfdnzdqPwCARmXwGWeZDKNJvCVPR8GT"
-    },
-    {
-      "title": "/gif/ - Adult GIF",
-      "directoryCode": "gif",
-      "features": {
-        "pseudonymityMode": "per-reply",
-        "safeForWork": false,
-        "hasFlags": false,
-        "requirePostLink": true,
-        "requirePostLinkIsMedia": true,
-        "bumpLimit": 300,
-        "noSpoilers": true,
-        "noSpoilerReplies": true,
-        "postsPerPage": 15
-      },
-      "name": "adult-gif.bso",
-      "publicKey": "12D3KooWJP8v5VUzKUfxr38BbhQPb5yidF3WapGQ6CjLctBV6QC1"
-    },
-    {
-      "title": "/bant/ - International/Random",
       "directoryCode": "bant",
+      "title": "/bant/ - International/Random",
       "features": {
         "pseudonymityMode": "per-post",
         "safeForWork": false,
@@ -481,8 +107,161 @@
       "publicKey": "12D3KooWPuYtTzrq8gFnv6yM1r4egy1rd4cxLr1nsXTjfdYkfwcN"
     },
     {
-      "title": "/b/ - Random",
-      "directoryCode": "b",
+      "directoryCode": "biz",
+      "title": "/biz/ - Business & Finance",
+      "features": {
+        "pseudonymityMode": "per-post",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 20
+      },
+      "name": "business-and-finance.bso",
+      "publicKey": "12D3KooWNMybS8JqELi38ZBX897PrjWbCrGoMKfw3bgoqzC2n1Dh"
+    },
+    {
+      "directoryCode": "c",
+      "title": "/c/ - Anime/Cute",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "anime-cute.bso",
+      "publicKey": "12D3KooWMKVj7dzag2fcYP24kgmxDz2DSvE7yGzBW9fJEYA94aMC"
+    },
+    {
+      "directoryCode": "ck",
+      "title": "/ck/ - Food & Cooking",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "food-and-cooking.bso",
+      "publicKey": "12D3KooWFfANpSeemwvqqGsXNPHDuyDMCK6wE8cxGTuNw7xoWUp7"
+    },
+    {
+      "directoryCode": "co",
+      "title": "/co/ - Comics & Cartoons",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "postsPerPage": 15
+      },
+      "name": "comics-and-cartoons.bso",
+      "publicKey": "12D3KooWRLmyg671KVYb1xekZ8eTQSMfRraB3DmQZPsKbCdMsEuc"
+    },
+    {
+      "directoryCode": "diy",
+      "title": "/diy/ - Do It Yourself",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "do-it-yourself.bso",
+      "publicKey": "12D3KooWKKbiaFu7x2EwueN6wxw3DJRQsvCv8KVRGbTTYpsGZXVa"
+    },
+    {
+      "directoryCode": "fa",
+      "title": "/fa/ - Fashion",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "fashion-posting.bso",
+      "publicKey": "12D3KooWMLd7K4MKPY4YJrpwV2vrjFN357x93bHs2g4gSetTLJ6t"
+    },
+    {
+      "directoryCode": "fit",
+      "title": "/fit/ - Fitness",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "fitness-posting.bso",
+      "publicKey": "12D3KooWHcqcJJmjAiBJA3uyhSW6ep4HFadUfteDrzU1Pn9ALkkw"
+    },
+    {
+      "directoryCode": "g",
+      "title": "/g/ - Technology",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "technology-posting.bso",
+      "publicKey": "12D3KooWFnLrUYHpvqki7gbL4w9JzdxjpQPKE2JBDEd23Ly6X82X"
+    },
+    {
+      "directoryCode": "gd",
+      "title": "/gd/ - Graphic Design",
+      "features": {
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "safeForWork": true,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "pseudonymityMode": "per-reply",
+        "hasFlags": false,
+        "bumpLimit": 300,
+        "postsPerPage": 15
+      },
+      "name": "graphic-design.bso",
+      "publicKey": "12D3KooWSrH1Kp6TvaLxGS3vtoqqFdy3gRMkTKfrYGPaDAcJRJAd"
+    },
+    {
+      "directoryCode": "gif",
+      "title": "/gif/ - Adult GIF",
       "features": {
         "pseudonymityMode": "per-reply",
         "safeForWork": false,
@@ -494,8 +273,756 @@
         "noSpoilerReplies": true,
         "postsPerPage": 15
       },
-      "name": "random-nsfw.bso",
-      "publicKey": "12D3KooWJkJYkuVbJQhapcVGpo8oNmsXsKmFRrFqc1SHezZW9fX8"
+      "name": "adult-gif.bso",
+      "publicKey": "12D3KooWJP8v5VUzKUfxr38BbhQPb5yidF3WapGQ6CjLctBV6QC1"
+    },
+    {
+      "directoryCode": "his",
+      "title": "/his/ - History & Humanities",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "history-posting.bso",
+      "publicKey": "12D3KooWN7bzigSgU4rxayrPCjvq2ETJMN9Zv3cyazpRYh36QWiN"
+    },
+    {
+      "directoryCode": "ic",
+      "title": "/ic/ - Artwork/Critique",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "artwork-critique.bso",
+      "publicKey": "12D3KooWQZ5HkAspHUPGEVoSaAZgqachZGtxCXxAXYBDTreR4uWJ"
+    },
+    {
+      "directoryCode": "int",
+      "title": "/int/ - International",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": true,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "international-sfw.bso",
+      "publicKey": "12D3KooWMSUYcergS2BwbRzFynR5hQURc962W9iR81eTJKz89Q6n"
+    },
+    {
+      "directoryCode": "jp",
+      "title": "/jp/ - Otaku Culture",
+      "features": {
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "safeForWork": true,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "pseudonymityMode": "per-reply",
+        "hasFlags": false,
+        "bumpLimit": 300,
+        "postsPerPage": 15
+      },
+      "name": "otaku-culture.bso",
+      "publicKey": "12D3KooWFtPbTBQ6Lit5wH2PHCvQQqj3RB5v2QHPtT1cnGeKjBaW"
+    },
+    {
+      "directoryCode": "k",
+      "title": "/k/ - Weapons",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "weapons-posting.bso",
+      "publicKey": "12D3KooWNRSdq3aLHHCvm4zyFQfASgYzy5LGXRXnKC4uj6aUXzHq"
+    },
+    {
+      "directoryCode": "lit",
+      "title": "/lit/ - Literature",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "postsPerPage": 15
+      },
+      "name": "literature-posting.bso",
+      "publicKey": "12D3KooWKXimxiZWtgF3LoTdaW3btHhDzJN7P3qrsgHwRkow186x"
+    },
+    {
+      "directoryCode": "m",
+      "title": "/m/ - Mecha",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "postsPerPage": 15
+      },
+      "name": "mecha-posting.bso",
+      "publicKey": "12D3KooWH7TCLGzDmvptLmnoxbLK2EjSuysMfj1ScN1ekFuba1Fu"
+    },
+    {
+      "directoryCode": "mlp",
+      "title": "/mlp/ - Pony",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": true,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "postsPerPage": 15
+      },
+      "name": "pony-posting.bso",
+      "publicKey": "12D3KooWEViZKRnJjqKDXGadQtz1547wgLTFPAaFYPBZ5NVwJ3jJ"
+    },
+    {
+      "directoryCode": "mu",
+      "title": "/mu/ - Music",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "music-posting.bso",
+      "publicKey": "12D3KooWQdQ6TkVA1Xe9zzaFP6vXBgsLeMAewpLpLwbsAYKivnQy"
+    },
+    {
+      "directoryCode": "n",
+      "title": "/n/ - Transportation",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "transportation-posting.bso",
+      "publicKey": "12D3KooWBLfdUT4sbVjzsQBz6EFPGWJC5byjnG44i5HHBKk7XKc3"
+    },
+    {
+      "directoryCode": "news",
+      "title": "/news/ - Current News",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": false,
+        "requirePostLinkIsMedia": false,
+        "bumpLimit": 300,
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "postsPerPage": 15
+      },
+      "name": "current-news.bso",
+      "publicKey": "12D3KooWSdDpdxUajbj19SHhUxcNS7wG9QbQqYvj29mCwokqnFNS"
+    },
+    {
+      "directoryCode": "o",
+      "title": "/o/ - Auto",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "auto-posting.bso",
+      "publicKey": "12D3KooWBD4agW9pc73hBNXtXWTpZCukcFvigmkM8Z2MDKR72CCk"
+    },
+    {
+      "directoryCode": "out",
+      "title": "/out/ - Outdoors",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "outdoors-posting.bso",
+      "publicKey": "12D3KooWQ2nPGxQxuSMY92kM3zKu1rBekJsXxXb5uNkHLDfSSxTm"
+    },
+    {
+      "directoryCode": "p",
+      "title": "/p/ - Photography",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "photography-posting.bso",
+      "publicKey": "12D3KooWK7qqtH32qAeZ5nUZGHBEsiaGsXGhMU9AWDKYzKCcit7w"
+    },
+    {
+      "directoryCode": "po",
+      "title": "/po/ - Papercraft & Origami",
+      "features": {
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "safeForWork": true,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "pseudonymityMode": "per-reply",
+        "hasFlags": false,
+        "bumpLimit": 300,
+        "postsPerPage": 15
+      },
+      "name": "papercraft-and-origami.bso",
+      "publicKey": "12D3KooWGfhD9o9T4QRYX2RQgwXRmEmWXmaw4bAGyDHioz98g3ro"
+    },
+    {
+      "directoryCode": "pol",
+      "title": "/pol/ - Politically Incorrect",
+      "features": {
+        "pseudonymityMode": "per-post",
+        "safeForWork": false,
+        "hasFlags": true,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 20
+      },
+      "name": "politically-incorrect.bso",
+      "publicKey": "12D3KooWMVob74DQoTLGZ4B8kWgPwDfbtiWqdJE4DrGtf2rmVw36"
+    },
+    {
+      "directoryCode": "pw",
+      "title": "/pw/ - Professional Wrestling",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "professional-wrestling.bso",
+      "publicKey": "12D3KooWBMHPHSJhwKivg6KhbGScgau8xBBNqVQKZk24NZQo7beU"
+    },
+    {
+      "directoryCode": "qst",
+      "title": "/qst/ - Quests",
+      "features": {
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "safeForWork": true,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "pseudonymityMode": "per-reply",
+        "hasFlags": false,
+        "bumpLimit": 300,
+        "postsPerPage": 15
+      },
+      "name": "quests-posting.bso",
+      "publicKey": "12D3KooWBmh43DUBbqXAeJVxxu9qgWgMqn91UBECgP4aTuxS5uK2"
+    },
+    {
+      "directoryCode": "r9k",
+      "title": "/r9k/ - ROBOT9002",
+      "features": {
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "safeForWork": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "pseudonymityMode": "per-reply",
+        "hasFlags": false,
+        "bumpLimit": 300,
+        "postsPerPage": 15
+      },
+      "name": "robot9002.bso",
+      "publicKey": "12D3KooWPXkEw8GSZcM8N97fkWJjZGV7hLccZSrf2PqHUKrp4xJQ"
+    },
+    {
+      "directoryCode": "s5s",
+      "title": "/s5s/ - Shit 5chan Says",
+      "features": {
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "safeForWork": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "pseudonymityMode": "per-reply",
+        "hasFlags": false,
+        "bumpLimit": 300,
+        "postsPerPage": 15
+      },
+      "name": "shit-5chan-says.bso",
+      "publicKey": "12D3KooWR4vHjSsTHs3MU436avk4eW1XRqY9zKfVcvvZXkLdzJo6"
+    },
+    {
+      "directoryCode": "sci",
+      "title": "/sci/ - Science & Math",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "science-and-math.bso",
+      "publicKey": "12D3KooWEtHqwtEpgHsXS8VSFcGDt2DhzeqaLm9tTCRFucXaWp62"
+    },
+    {
+      "directoryCode": "soc",
+      "title": "/soc/ - Cams & Meetups",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": false,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "cams-and-meetups.bso",
+      "publicKey": "12D3KooWCGnYfbrm8UZpv8YxViXgJJx9hha486LCAFFXSEYNtj1B"
+    },
+    {
+      "directoryCode": "sp",
+      "title": "/sp/ - Sports",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": true,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "sports-posting.bso",
+      "publicKey": "12D3KooWGJA6zN3Q63FtSgwNhtfA26Skdzdxz5X7A9PFfE4FBMGE"
+    },
+    {
+      "directoryCode": "t",
+      "title": "/t/ - Torrents",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": false,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "torrents-posting.bso",
+      "publicKey": "12D3KooWFwieYtPDEd3UBK5qG6HFZ3Qu8cDd4B4RcY2HJ9CBkfaZ"
+    },
+    {
+      "directoryCode": "tg",
+      "title": "/tg/ - Traditional Games",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "postsPerPage": 15
+      },
+      "name": "traditional-games.bso",
+      "publicKey": "12D3KooWK6G3EHUCkfcgX6kPDihXJAdpucrZvn4WjPwf7fF484nt"
+    },
+    {
+      "directoryCode": "toy",
+      "title": "/toy/ - Toys",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "toys-posting.bso",
+      "publicKey": "12D3KooWQrRW8JHu1HagE9E3QUB7hAnSbeYHLkz5mTbSivhkoPtJ"
+    },
+    {
+      "directoryCode": "trv",
+      "title": "/trv/ - Travel",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "travel-posting.bso",
+      "publicKey": "12D3KooWP9kG9qYxHoyxfDSWiNpeuGfuxwbDdfu6vtRwvVY9uU96"
+    },
+    {
+      "directoryCode": "tv",
+      "title": "/tv/ - Television & Film",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "postsPerPage": 15
+      },
+      "name": "television-and-film.bso",
+      "publicKey": "12D3KooWGSRg4crzV5vXEya1ghXD7UBTqimqXTQvNUqy9NdzZNyd"
+    },
+    {
+      "directoryCode": "v",
+      "title": "/v/ - Video Games",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "postsPerPage": 15
+      },
+      "name": "videogames-posting.bso",
+      "publicKey": "12D3KooWRAbo3HU5ThCAkJGQ5q7MTEJfhAX6Hu7xHyPtxHGi1Fgh"
+    },
+    {
+      "directoryCode": "vg",
+      "title": "/vg/ - Video Game Generals",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "postsPerPage": 20
+      },
+      "name": "videogame-generals.bso",
+      "publicKey": "12D3KooWMvAcJFV45CS3hSZcx7EFhwhQrXfXhVHXQJFPfKeakWfq"
+    },
+    {
+      "directoryCode": "vip",
+      "title": "/vip/ - Very Important Posts",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "very-important-posts.bso",
+      "publicKey": "12D3KooWNMnBJ5phkBWrcjfdnzdqPwCARmXwGWeZDKNJvCVPR8GT"
+    },
+    {
+      "directoryCode": "vm",
+      "title": "/vm/ - Video Games/Multiplayer",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "postsPerPage": 15
+      },
+      "name": "videogames-multiplayer.bso",
+      "publicKey": "12D3KooWMW3B4R3C7z5M6zDo9Q9t3fCMuUwHbnPWARsDSqiUYybU"
+    },
+    {
+      "directoryCode": "vmg",
+      "title": "/vmg/ - Video Games/Mobile",
+      "features": {
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "safeForWork": true,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "pseudonymityMode": "per-reply",
+        "hasFlags": false,
+        "bumpLimit": 300,
+        "postsPerPage": 15
+      },
+      "name": "videogames-mobile.bso",
+      "publicKey": "12D3KooWLSaxYpQb4Wx7KxiJaXQD9SgzmBD67W41CN6gNLTxASVg"
+    },
+    {
+      "directoryCode": "vp",
+      "title": "/vp/ - Pokémon",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "postsPerPage": 15
+      },
+      "name": "pokemon-posting.bso",
+      "publicKey": "12D3KooWFhrazFTHLh6sSA9qL2wTf4piBar2HXtirKNTfTwSTjN3"
+    },
+    {
+      "directoryCode": "vr",
+      "title": "/vr/ - Retro Games",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "postsPerPage": 15
+      },
+      "name": "retro-games.bso",
+      "publicKey": "12D3KooWJfwp2WRwU3gsaNNPjZ1iHgxc1QFySr361cQarkhLp1fY"
+    },
+    {
+      "directoryCode": "vrpg",
+      "title": "/vrpg/ - Video Games/RPG",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "postsPerPage": 15
+      },
+      "name": "videogames-rpg.bso",
+      "publicKey": "12D3KooWJ4HZgaL3tPSRp5LfnFmwasxdQenPuDpPBYHHEaUMJDiF"
+    },
+    {
+      "directoryCode": "vst",
+      "title": "/vst/ - Video Games/Strategy",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "postsPerPage": 15
+      },
+      "name": "videogames-strategy.bso",
+      "publicKey": "12D3KooWBNAetYuTx5Zosf6jRVJ2GpMx3jzEQufDcP4DRTXzAgwp"
+    },
+    {
+      "directoryCode": "vt",
+      "title": "/vt/ - Virtual YouTubers",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": false,
+        "noSpoilerReplies": false,
+        "postsPerPage": 15
+      },
+      "name": "virtual-youtubers.bso",
+      "publicKey": "12D3KooWKiziqgcvVLMDThXQC4cPi5SJmFSQFoc6jv1kSRU1XXxV"
+    },
+    {
+      "directoryCode": "w",
+      "title": "/w/ - Anime/Wallpapers",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "anime-wallpapers.bso",
+      "publicKey": "12D3KooWPpdMSMLnz5qZ6NR3jTjqmqdpbMT3tDM5RwzWSPYtd9AV"
+    },
+    {
+      "directoryCode": "wg",
+      "title": "/wg/ - Wallpapers/General",
+      "features": {
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "safeForWork": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "pseudonymityMode": "per-reply",
+        "hasFlags": false,
+        "bumpLimit": 300,
+        "postsPerPage": 15
+      },
+      "name": "wallpapers-general.bso",
+      "publicKey": "12D3KooWJCXw8a5CKgH5248qXMDQdG5AFxP4ZvbsAmFCGfuykE3U"
+    },
+    {
+      "directoryCode": "wsg",
+      "title": "/wsg/ - Worksafe GIF",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "worksafe-gif.bso",
+      "publicKey": "12D3KooWAGHV9th2FN48KPvHMJwxen8h5mSM39pkaZWvvzcWMPr9"
+    },
+    {
+      "directoryCode": "wsr",
+      "title": "/wsr/ - Worksafe Requests",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "worksafe-requests.bso",
+      "publicKey": "12D3KooWKuKGqAAKQT7GY1cnXqiXcbeVPJULXPwTByfSy4Ci7eBg"
+    },
+    {
+      "directoryCode": "x",
+      "title": "/x/ - Paranormal",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "paranormal-posting.bso",
+      "publicKey": "12D3KooWFZn7r5gYKbq5YQMr1FYQ5eUwoZr41Tjd8KmTgQ4dxTTP"
+    },
+    {
+      "directoryCode": "xs",
+      "title": "/xs/ - Extreme Sports",
+      "features": {
+        "pseudonymityMode": "per-reply",
+        "safeForWork": true,
+        "hasFlags": false,
+        "requirePostLink": true,
+        "requirePostLinkIsMedia": true,
+        "bumpLimit": 300,
+        "noSpoilers": true,
+        "noSpoilerReplies": true,
+        "postsPerPage": 15
+      },
+      "name": "extreme-sports.bso",
+      "publicKey": "12D3KooWBwnXwtridc4b3VNnhK2KyNHsm52wDrGPYYGLNf8f34bm"
     }
   ]
 }
