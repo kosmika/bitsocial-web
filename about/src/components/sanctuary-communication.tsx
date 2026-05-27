@@ -2147,7 +2147,7 @@ export default function SanctuaryCommunication() {
                 />
                 <button
                   type="submit"
-                  className="ring-glow cta-glow inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-full border border-blue-core/30 bg-blue-core/[0.08] px-5 text-sm font-display font-semibold text-foreground/90 transition-[box-shadow,border-color,background-color,color,opacity] duration-300 hover:border-blue-glow hover:bg-blue-core/[0.14] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-glow focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-blue-core/45 dark:bg-blue-core/[0.18] dark:hover:bg-blue-core/[0.24] motion-reduce:transition-none"
+                  className="ring-glow cta-glow inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-full border border-blue-core/30 bg-blue-core/[0.08] px-5 text-sm font-display font-semibold text-foreground/90 transition-[box-shadow,border-color,background-color,color,opacity] duration-300 hover:border-blue-glow hover:bg-blue-core/[0.14] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-glow focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-blue-core/45 dark:bg-blue-core/[0.18] dark:hover:border-blue-glow dark:hover:bg-blue-core/[0.24] motion-reduce:transition-none"
                 >
                   {t("sanctuary.deepComparison.go")}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
