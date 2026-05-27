@@ -172,6 +172,15 @@
     border-color: var(--focus-app-blue);
     box-shadow: var(--focus-app-glow);
   }
+  /* Borderless search inputs inside a styled shell (Apps page) */
+  input.apps-search-input:focus,
+  input.apps-search-input:focus-visible {
+    outline: none;
+    border-color: transparent;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+  }
   a:focus-visible {
     outline: none;
     box-shadow: var(--focus-app-ring);

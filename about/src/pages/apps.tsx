@@ -249,7 +249,7 @@ export default function Apps() {
                   value={query}
                   onChange={(event) => updateSearchParams({ q: event.target.value || null })}
                   placeholder={t("apps.searchPlaceholder")}
-                  className="min-w-0 flex-1 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground/80"
+                  className="apps-search-input min-w-0 flex-1 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground/80"
                   aria-label={t("apps.searchPlaceholder")}
                 />
                 {query ? (
@@ -391,7 +391,7 @@ export default function Apps() {
                     name="q"
                     defaultValue={query}
                     placeholder={t("apps.searchPlaceholder")}
-                    className="min-w-0 flex-1 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground/80"
+                    className="apps-search-input min-w-0 flex-1 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground/80"
                     aria-label={t("apps.searchPlaceholder")}
                   />
                   {query ? (
