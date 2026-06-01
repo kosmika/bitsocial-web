@@ -234,7 +234,7 @@ function isMainModule() {
 }
 
 // Why the realpath check: generated skills are often reached through symlinked
-// harness directories (for example a demo repo's `.agents` -> source `.agents`).
+// harness directories (for example a demo repo's `.cursor` -> source `.cursor`).
 // Node resolves import.meta.url to the real file, while process.argv[1] keeps
 // the symlink path. Comparing canonical paths prevents a silent exit-0 no-op.
 if (isMainModule()) {

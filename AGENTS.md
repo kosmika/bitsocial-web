@@ -177,6 +177,7 @@ stats/                # Monitoring, Grafana, Prometheus, and deployment assets
 ### AI Tooling Rules
 
 - Treat `.codex/`, `.cursor/`, and `.claude/` as repo-managed contributor tooling, not private scratch space.
+- Do not add or use a repo-level `.agents/` directory. Keep skills in `.codex/skills/`, `.cursor/skills/`, and `.claude/skills/` only.
 - Keep equivalent workflow files aligned across all toolchains when their directories contain the same skill, hook, or agent.
 - Keep model names toolchain-specific: `composer-2` is Cursor-only and must not appear under `.claude/` or `.codex/`; `.codex/agents/**` should use `gpt-5.4` by default and `gpt-5.4-mini` only for intentionally lightweight tasks such as translation. Do not use `gpt-5.3-codex` or `gpt-5.3-codex-spark` in `.codex/`.
 - Keep shared policy in tracked files when possible: `AGENTS.md`, `about/AGENTS.md`, `about/src/AGENTS.md`, `docs/AGENTS.md`, `stats/AGENTS.md`, `scripts/AGENTS.md`, `docs/agent-playbooks/**`, and `scripts/agent-hooks/**`.
