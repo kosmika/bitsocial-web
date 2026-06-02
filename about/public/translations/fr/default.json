@@ -19,7 +19,8 @@
     "language": "Langue",
     "theme": "Thème",
     "sourceCode": "Code source",
-    "newsletter": "Infolettre"
+    "newsletter": "Infolettre",
+    "backToTop": "Retour en haut"
   },
   "footer": {
     "tagline": "Réseau P2P open source pour les applications sociales",

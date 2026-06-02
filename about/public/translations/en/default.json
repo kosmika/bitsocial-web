@@ -20,7 +20,8 @@
     "language": "Language",
     "theme": "Theme",
     "sourceCode": "Source code",
-    "newsletter": "Newsletter"
+    "newsletter": "Newsletter",
+    "backToTop": "Back to top"
   },
   "languageSelector": {
     "title": "Select Language",

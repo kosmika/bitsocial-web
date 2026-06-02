@@ -19,7 +19,8 @@
     "language": "Taal",
     "theme": "Thema",
     "sourceCode": "Broncode",
-    "newsletter": "Nieuwsbrief"
+    "newsletter": "Nieuwsbrief",
+    "backToTop": "Terug naar boven"
   },
   "footer": {
     "tagline": "Open Source P2P-netwerk voor sociale apps",

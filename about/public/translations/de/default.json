@@ -19,7 +19,8 @@
     "language": "Sprache",
     "theme": "Design",
     "sourceCode": "Quellcode",
-    "newsletter": "Newsletter"
+    "newsletter": "Newsletter",
+    "backToTop": "Nach oben"
   },
   "footer": {
     "tagline": "Open-Source-P2P-Netzwerk für soziale Apps",

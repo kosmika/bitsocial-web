@@ -19,7 +19,8 @@
     "language": "Nyelv",
     "theme": "Téma",
     "sourceCode": "Forráskód",
-    "newsletter": "Hírlevél"
+    "newsletter": "Hírlevél",
+    "backToTop": "Vissza a tetejére"
   },
   "footer": {
     "tagline": "Nyílt forráskódú P2P hálózat közösségi alkalmazásokhoz",

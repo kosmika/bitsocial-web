@@ -19,7 +19,8 @@
     "language": "Idioma",
     "theme": "Tema",
     "sourceCode": "Código fuente",
-    "newsletter": "Boletín"
+    "newsletter": "Boletín",
+    "backToTop": "Volver arriba"
   },
   "footer": {
     "tagline": "Red P2P de código abierto para aplicaciones sociales",

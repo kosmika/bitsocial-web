@@ -19,7 +19,8 @@
     "language": "Язык",
     "theme": "Тема",
     "sourceCode": "Исходный код",
-    "newsletter": "Рассылка"
+    "newsletter": "Рассылка",
+    "backToTop": "Наверх"
   },
   "footer": {
     "tagline": "Сеть P2P с открытым исходным кодом для социальных приложений",

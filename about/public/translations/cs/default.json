@@ -19,7 +19,8 @@
     "language": "Jazyk",
     "theme": "Téma",
     "sourceCode": "Zdrojový kód",
-    "newsletter": "Zpravodaj"
+    "newsletter": "Zpravodaj",
+    "backToTop": "Zpět nahoru"
   },
   "footer": {
     "tagline": "Síť P2P s otevřeným zdrojovým kódem pro sociální aplikace",

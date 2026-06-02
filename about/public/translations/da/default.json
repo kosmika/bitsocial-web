@@ -19,7 +19,8 @@
     "language": "Sprog",
     "theme": "Tema",
     "sourceCode": "Kildekode",
-    "newsletter": "Nyhedsbrev"
+    "newsletter": "Nyhedsbrev",
+    "backToTop": "Tilbage til toppen"
   },
   "footer": {
     "tagline": "Open Source P2P-netværk til sociale apps",

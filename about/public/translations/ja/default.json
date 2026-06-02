@@ -19,7 +19,8 @@
     "language": "言語",
     "theme": "テーマ",
     "sourceCode": "ソースコード",
-    "newsletter": "ニュースレター"
+    "newsletter": "ニュースレター",
+    "backToTop": "トップに戻る"
   },
   "footer": {
     "tagline": "ソーシャルアプリ向けオープンソースP2Pネットワーク",

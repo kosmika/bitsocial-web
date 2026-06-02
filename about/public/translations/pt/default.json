@@ -19,7 +19,8 @@
     "language": "Idioma",
     "theme": "Tema",
     "sourceCode": "Código-fonte",
-    "newsletter": "Boletim"
+    "newsletter": "Boletim",
+    "backToTop": "Voltar ao topo"
   },
   "footer": {
     "tagline": "Rede P2P de código aberto para aplicativos sociais",

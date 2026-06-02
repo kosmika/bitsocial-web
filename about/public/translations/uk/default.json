@@ -19,7 +19,8 @@
     "language": "Мова",
     "theme": "Тема",
     "sourceCode": "Вихідний код",
-    "newsletter": "Розсилка"
+    "newsletter": "Розсилка",
+    "backToTop": "Нагору"
   },
   "footer": {
     "tagline": "Мережа P2P з відкритим кодом для соціальних додатків",

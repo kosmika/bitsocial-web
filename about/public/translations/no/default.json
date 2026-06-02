@@ -19,7 +19,8 @@
     "language": "Språk",
     "theme": "Tema",
     "sourceCode": "Kildekode",
-    "newsletter": "Nyhetsbrev"
+    "newsletter": "Nyhetsbrev",
+    "backToTop": "Tilbake til toppen"
   },
   "footer": {
     "tagline": "Åpen kildekode P2P-nettverk for sosiale apper",

@@ -19,7 +19,8 @@
     "language": "Kieli",
     "theme": "Teema",
     "sourceCode": "Lähdekoodi",
-    "newsletter": "Uutiskirje"
+    "newsletter": "Uutiskirje",
+    "backToTop": "Takaisin ylös"
   },
   "footer": {
     "tagline": "Avoimen lähdekoodin P2P-verkko sosiaalisille sovelluksille",

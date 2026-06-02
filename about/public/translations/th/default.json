@@ -19,7 +19,8 @@
     "language": "ภาษา",
     "theme": "ธีม",
     "sourceCode": "ซอร์สโค้ด",
-    "newsletter": "จดหมายข่าว"
+    "newsletter": "จดหมายข่าว",
+    "backToTop": "กลับไปด้านบน"
   },
   "footer": {
     "tagline": "เครือข่าย P2P โอเพนซอร์สสำหรับแอปโซเชียล",
