@@ -62,7 +62,7 @@
     "cz-conventional-changelog": "3.3.0",
     "element-source": "0.0.5",
     "husky": "4.3.8",
-    "knip": "6.1.0",
+    "knip": "6.17.0",
     "lint-staged": "16.4.0",
     "oxfmt": "0.20.0",
     "oxlint": "1.56.0",
