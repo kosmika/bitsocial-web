@@ -563,6 +563,8 @@
         "mirrors": "Mirrors",
         "moderation": "Moderation",
         "onChain": "On-chain",
+        "operator": "Operator",
+        "pubsubRelay": "Pubsub relay",
         "riskScores": "Risk scores",
         "telegram": "Telegram",
         "verification": "Verification",
@@ -620,6 +622,10 @@
         "bitsocial-seeder": {
           "tagline": "Public seeder for Bitsocial communities, packaged for Docker and npm.",
           "description": "Bitsocial Seeder pins community first pages, post-update CIDs, and pubsub topic routing through a Bitsocial daemon. It reuses an already-running local daemon when one is reachable or starts the bundled bitsocial-cli daemon automatically, and ships as both a Docker image for unattended VPS deployments and an npm package for Node-first operators."
+        },
+        "pubsub-provider": {
+          "tagline": "Fallback pubsub relay and routing provider for Bitsocial operators.",
+          "description": "Pubsub Provider runs a bundled Kubo node with Bitsocial-compatible pubsub, gateway, name-provider, and delegated HTTP routing endpoints. It is useful as a fallback path for clients that disable pure browser P2P, and it defaults to swarm port 4002 so it can run beside bitsocial-seeder on the same host."
         },
         "telegram-bots": {
           "tagline": "Feed bots that relay new Bitsocial posts into Telegram channels or groups.",

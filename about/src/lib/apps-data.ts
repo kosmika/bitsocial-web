@@ -233,6 +233,8 @@ const APP_TAG_TRANSLATION_KEYS: Record<string, string> = {
   Mirrors: "apps.catalog.tags.mirrors",
   Moderation: "apps.catalog.tags.moderation",
   "On-chain": "apps.catalog.tags.onChain",
+  Operator: "apps.catalog.tags.operator",
+  "Pubsub relay": "apps.catalog.tags.pubsubRelay",
   "Risk scores": "apps.catalog.tags.riskScores",
   Telegram: "apps.catalog.tags.telegram",
   Verification: "apps.catalog.tags.verification",
@@ -295,6 +297,10 @@ const APP_COPY_TRANSLATION_KEYS: Record<string, { tagline: string; description: 
   "bitsocial-seeder": {
     tagline: "apps.catalog.items.bitsocial-seeder.tagline",
     description: "apps.catalog.items.bitsocial-seeder.description",
+  },
+  "pubsub-provider": {
+    tagline: "apps.catalog.items.pubsub-provider.tagline",
+    description: "apps.catalog.items.pubsub-provider.description",
   },
   "telegram-bots": {
     tagline: "apps.catalog.items.telegram-bots.tagline",
@@ -859,6 +865,26 @@ export const APPS: AppData[] = [
     ],
     relatedSlugs: ["bitsocial-cli", "5chan", "seedit", "5chan-board-manager"],
     searchTerms: ["seeder", "docker", "ipfs", "vps", "pubsub", "daemon", "pinning"],
+  },
+  {
+    slug: "pubsub-provider",
+    name: "Pubsub Provider",
+    tagline: "Fallback pubsub relay and routing provider for Bitsocial operators.",
+    description:
+      "Pubsub Provider runs a bundled Kubo node with Bitsocial-compatible pubsub, gateway, name-provider, and delegated HTTP routing endpoints. It is useful as a fallback path for clients that disable pure browser P2P, and it defaults to swarm port 4002 so it can run beside bitsocial-seeder on the same host.",
+    category: "tools",
+    tags: ["Pubsub relay", "Operator"],
+    icon: "share-2",
+    githubRepo: "bitsocialnet/pubsub-provider",
+    links: [
+      {
+        label: "ghcr.io/bitsocialnet/pubsub-provider",
+        url: "https://github.com/bitsocialnet/pubsub-provider/pkgs/container/pubsub-provider",
+        kind: "package",
+      },
+    ],
+    relatedSlugs: ["bitsocial-seeder", "bitsocial-cli", "5chan", "seedit"],
+    searchTerms: ["provider", "pubsub", "relay", "docker", "kubo", "ipfs", "vps", "routing"],
   },
   {
     slug: "telegram-bots",
