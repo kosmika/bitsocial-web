@@ -249,7 +249,7 @@ const APP_LINK_LABEL_TRANSLATION_KEYS: Record<string, string> = {
   "Open website": "apps.catalog.linkLabels.openWebsite",
   Windows: "apps.catalog.linkLabels.windows",
   "Windows Portable": "apps.catalog.linkLabels.windowsPortable",
-  "macOS Apple": "apps.catalog.linkLabels.macosApple",
+  "macOS Apple Silicon": "apps.catalog.linkLabels.macosApple",
   "macOS Intel": "apps.catalog.linkLabels.macosIntel",
 };
 
@@ -483,7 +483,7 @@ export const APPS: AppData[] = [
         variant: "linux",
       },
       {
-        label: "macOS Apple",
+        label: "macOS Apple Silicon",
         url: "/api/release-integrity?app=5chan&asset=download&variant=macos-arm64",
         kind: "download",
         platform: "desktop",
@@ -571,7 +571,7 @@ export const APPS: AppData[] = [
         variant: "linux",
       },
       {
-        label: "macOS Apple",
+        label: "macOS Apple Silicon",
         url: "/api/release-integrity?app=seedit&asset=download&variant=macos-arm64",
         kind: "download",
         platform: "desktop",
