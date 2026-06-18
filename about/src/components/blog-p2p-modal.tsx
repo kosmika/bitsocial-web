@@ -2,8 +2,23 @@ import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useAccount } from "@bitsocial/bitsocial-react-hooks";
 import { RefreshCw, X } from "lucide-react";
+import BlogPeerWorldMap from "@/components/blog-peer-world-map";
 import EasterEggOverlay from "@/components/easter-egg-overlay";
-import { readBlogP2PStats, type BlogP2PStats } from "@/lib/blog-p2p-stats";
+import {
+  COUNTRY_FLAG_HEIGHT,
+  COUNTRY_FLAG_WIDTH,
+  getCountryFlagPosition,
+  getCountryLabel,
+} from "@/lib/country-flags";
+import {
+  formatBytes,
+  getBlogP2PStats,
+  type ConnectedPeerEntry,
+  type ConnectedPeersStatRow,
+  type NodeEndpointStatRow,
+  type StatRow,
+  type TextStatRow,
+} from "@/lib/blog-p2p-stats";
 import { cn } from "@/lib/utils";
 
 interface BlogP2PModalProps {
@@ -13,16 +28,17 @@ interface BlogP2PModalProps {
 
 const REFRESH_INTERVAL_MS = 5_000;
 
+type StatsState =
+  | { status: "loading"; rows: null; lastUpdated: null }
+  | { status: "ready"; rows: StatRow[]; lastUpdated: number }
+  | { status: "error"; rows: null; lastUpdated: number | null; error: string };
+
 export default function BlogP2PModal({ open, onOpenChange }: BlogP2PModalProps) {
   const { t } = useTranslation();
   const account = useAccount();
-  type StatsState =
-    | { status: "loading"; stats: null; lastUpdated: null }
-    | { status: "ready"; stats: BlogP2PStats; lastUpdated: number }
-    | { status: "error"; stats: null; lastUpdated: number | null; error: string };
   const [state, setState] = useState<StatsState>({
     status: "loading",
-    stats: null,
+    rows: null,
     lastUpdated: null,
   });
   const [tick, setTick] = useState(0);
@@ -31,24 +47,22 @@ export default function BlogP2PModal({ open, onOpenChange }: BlogP2PModalProps) 
 
   useEffect(() => {
     if (!open) return;
-    let cancelled = false;
-    readBlogP2PStats(account)
-      .then((stats) => {
-        if (cancelled) return;
-        setState({ status: "ready", stats, lastUpdated: Date.now() });
+    const controller = new AbortController();
+    getBlogP2PStats(account, controller.signal)
+      .then((rows) => {
+        if (controller.signal.aborted) return;
+        setState({ status: "ready", rows, lastUpdated: Date.now() });
       })
       .catch((error: unknown) => {
-        if (cancelled) return;
+        if (controller.signal.aborted) return;
         setState((previous) => ({
           status: "error",
-          stats: null,
+          rows: null,
           lastUpdated: previous.lastUpdated,
           error: error instanceof Error ? error.message : String(error),
         }));
       });
-    return () => {
-      cancelled = true;
-    };
+    return () => controller.abort();
   }, [account, open, tick]);
 
   useEffect(() => {
@@ -62,49 +76,43 @@ export default function BlogP2PModal({ open, onOpenChange }: BlogP2PModalProps) 
       open={open}
       onOpenChange={onOpenChange}
       ariaLabel={t("blog.p2p.title")}
-      contentClassName="glass-card !rounded-[1.75rem] max-h-[88vh] w-[min(880px,calc(100vw-1.5rem))] overflow-y-auto overscroll-contain p-5 sm:p-6 md:p-8 shadow-[0_24px_80px_rgba(15,23,42,0.32)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      contentClassName="glass-card !rounded-3xl max-h-[calc(100vh-1rem)] w-[min(760px,calc(100vw-1rem))] overflow-y-auto overscroll-contain p-4 shadow-[0_20px_64px_rgba(15,23,42,0.3)] [scrollbar-width:none] sm:p-5 [&::-webkit-scrollbar]:hidden"
     >
-      <header className="flex items-start justify-between gap-4 pb-4">
-        <div>
-          <p className="text-xs font-display uppercase tracking-[0.2em] text-foreground/45">
+      <header className="flex items-start justify-between gap-3 border-b border-border/40 pb-3">
+        <div className="min-w-0">
+          <p className="text-[10px] font-display uppercase tracking-[0.16em] text-foreground/45">
             {t("blog.p2p.eyebrow")}
           </p>
-          <h2 className="mt-1 font-display text-2xl leading-tight text-foreground md:text-3xl">
+          <h2 className="mt-1 truncate font-display text-xl leading-tight text-foreground sm:text-2xl">
             {t("blog.p2p.title")}
           </h2>
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
-            {t("blog.p2p.description")}
+          <p className="mt-1 text-xs text-muted-foreground">
+            {state.lastUpdated
+              ? t("blog.p2p.updated", { time: new Date(state.lastUpdated).toLocaleTimeString() })
+              : t("blog.p2p.loading")}
           </p>
         </div>
-        <button
-          type="button"
-          onClick={() => onOpenChange(false)}
-          aria-label={t("blog.p2p.close")}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/60 text-muted-foreground transition-colors hover:border-blue-glow hover:text-foreground"
-        >
-          <X className="h-4 w-4" />
-        </button>
+        <div className="flex shrink-0 items-center gap-2">
+          <button
+            type="button"
+            onClick={refresh}
+            className="inline-flex h-9 items-center gap-2 rounded-full border border-border/60 px-3 text-xs font-semibold text-foreground/80 transition-colors hover:border-blue-glow hover:text-foreground"
+          >
+            <RefreshCw className="h-3.5 w-3.5" />
+            <span className="hidden sm:inline">{t("blog.p2p.refresh")}</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => onOpenChange(false)}
+            aria-label={t("blog.p2p.close")}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/60 text-muted-foreground transition-colors hover:border-blue-glow hover:text-foreground"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
       </header>
 
-      <div className="flex flex-wrap items-center justify-between gap-2 border-y border-border/40 py-3">
-        <span className="text-xs text-muted-foreground">
-          {state.lastUpdated
-            ? t("blog.p2p.updated", {
-                seconds: Math.max(0, Math.round((Date.now() - state.lastUpdated) / 1000)),
-              })
-            : t("blog.p2p.loading")}
-        </span>
-        <button
-          type="button"
-          onClick={refresh}
-          className="inline-flex items-center gap-2 rounded-full border border-border/60 px-3 py-1 text-xs font-semibold text-foreground/80 transition-colors hover:border-blue-glow hover:text-foreground"
-        >
-          <RefreshCw className="h-3.5 w-3.5" />
-          <span>{t("blog.p2p.refresh")}</span>
-        </button>
-      </div>
-
-      {state.status === "loading" && !state.stats ? (
+      {state.status === "loading" && !state.rows ? (
         <p className="py-10 text-center text-sm text-muted-foreground">{t("blog.p2p.loading")}</p>
       ) : null}
 
@@ -112,95 +120,149 @@ export default function BlogP2PModal({ open, onOpenChange }: BlogP2PModalProps) 
         <p className="py-10 text-center text-sm text-foreground/70">{state.error}</p>
       ) : null}
 
-      {state.status === "ready" && state.stats ? (
-        <div className="space-y-6 pt-5">
-          <dl className="grid gap-3 sm:grid-cols-2">
-            <StatRow label={t("blog.p2p.mode")} value={state.stats.mode} mono={false} />
-            <StatRow label={t("blog.p2p.peerId")} value={state.stats.peerId} mono />
-            <StatRow
-              label={t("blog.p2p.peerCount")}
-              value={String(state.stats.peerCount)}
-              mono={false}
-            />
-            <StatRow
-              label={t("blog.p2p.connectionCount")}
-              value={String(state.stats.connectionCount)}
-              mono={false}
-            />
-          </dl>
-
-          {state.stats.httpRouters.length > 0 ? (
-            <section>
-              <h3 className="text-xs font-display uppercase tracking-[0.18em] text-foreground/55">
-                {t("blog.p2p.routers")}
-              </h3>
-              <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
-                {state.stats.httpRouters.map((router) => (
-                  <li key={router} className="font-mono text-foreground/70">
-                    {router}
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ) : null}
-
-          <section>
-            <h3 className="text-xs font-display uppercase tracking-[0.18em] text-foreground/55">
-              {t("blog.p2p.connections")}
-            </h3>
-            {state.stats.connections.length === 0 ? (
-              <p className="mt-2 text-sm text-muted-foreground">{t("blog.p2p.noConnections")}</p>
-            ) : (
-              <ul className="mt-3 space-y-2">
-                {state.stats.connections.map((connection) => (
-                  <li
-                    key={connection.id}
-                    className="rounded-2xl border border-border/40 bg-background/40 p-3"
-                  >
-                    <div className="flex flex-wrap items-center gap-2 text-xs">
-                      <span className="rounded-full border border-blue-core/30 px-2 py-0.5 text-foreground/80">
-                        {connection.transport}
-                      </span>
-                      {connection.direction ? (
-                        <span className="text-muted-foreground">{connection.direction}</span>
-                      ) : null}
-                      {connection.status ? (
-                        <span className="text-muted-foreground">{connection.status}</span>
-                      ) : null}
-                    </div>
-                    <p className="mt-2 truncate font-mono text-[11px] text-foreground/70">
-                      {connection.peerId}
-                    </p>
-                    {connection.address ? (
-                      <p className="mt-1 truncate font-mono text-[11px] text-muted-foreground">
-                        {connection.address}
-                      </p>
-                    ) : null}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </section>
-        </div>
-      ) : null}
+      {state.status === "ready" && state.rows ? <StatsList rows={state.rows} /> : null}
     </EasterEggOverlay>
   );
 }
 
-function StatRow({ label, value, mono }: { label: string; value: string; mono: boolean }) {
+function StatsList({ rows }: { rows: StatRow[] }) {
   return (
-    <div className="rounded-2xl border border-border/40 bg-background/40 p-3">
-      <dt className="text-[11px] font-display uppercase tracking-[0.16em] text-foreground/45">
+    <dl className="grid gap-2.5 pt-4 sm:grid-cols-3">
+      {rows.map((row, index) => {
+        if (row.type === "connectedPeers") {
+          return <ConnectedPeersRow key={`${row.name}-${index}`} row={row} />;
+        }
+        if (row.type === "nodeEndpoint") {
+          return <NodeEndpointRow key={`${row.name}-${index}`} row={row} />;
+        }
+        return <TextRow key={`${row.name}-${index}`} row={row} />;
+      })}
+    </dl>
+  );
+}
+
+function StatCard({
+  label,
+  children,
+  fullWidth = false,
+  className,
+}: {
+  label: string;
+  children: React.ReactNode;
+  fullWidth?: boolean;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "rounded-xl border border-border/40 bg-background/40 p-2.5",
+        fullWidth ? "sm:col-span-3" : "",
+        className,
+      )}
+    >
+      <dt className="text-[10px] font-display uppercase tracking-[0.14em] text-foreground/45">
         {label}
       </dt>
-      <dd
+      <dd className="mt-1 text-sm leading-5 text-foreground/85">{children}</dd>
+    </div>
+  );
+}
+
+function TextRow({ row }: { row: TextStatRow }) {
+  const isMono = row.name === "Peer ID";
+  const className = row.name === "Peer ID" ? "sm:col-span-2" : undefined;
+  return (
+    <StatCard label={row.name} className={className}>
+      <span
         className={cn(
-          "mt-1 break-all text-sm text-foreground/85",
-          mono ? "font-mono text-xs leading-relaxed" : "",
+          "break-all",
+          isMono ? "font-mono text-xs leading-relaxed text-foreground/80" : "",
         )}
       >
-        {value}
-      </dd>
-    </div>
+        {row.value}
+      </span>
+    </StatCard>
+  );
+}
+
+function CountryFlag({ countryCode, className }: { countryCode?: string; className?: string }) {
+  const position = getCountryFlagPosition(countryCode);
+  if (!position) return null;
+  const label = getCountryLabel(countryCode);
+  return (
+    <>
+      <span
+        aria-hidden="true"
+        title={label}
+        className={cn("inline-block shrink-0", className)}
+        style={{
+          backgroundImage: "url('/assets/icons/flags-1.png')",
+          backgroundPosition: `-${position.x}px -${position.y}px`,
+          backgroundRepeat: "no-repeat",
+          width: COUNTRY_FLAG_WIDTH,
+          height: COUNTRY_FLAG_HEIGHT,
+          imageRendering: "pixelated",
+        }}
+      />
+      <span className="sr-only">{label ?? countryCode ?? "flag"}</span>
+    </>
+  );
+}
+
+function NodeEndpointRow({ row }: { row: NodeEndpointStatRow }) {
+  return (
+    <StatCard label={row.name}>
+      <span className="inline-flex flex-wrap items-center gap-2 break-all font-mono text-xs text-foreground/80">
+        <CountryFlag countryCode={row.countryCode} />
+        <span>{row.ip}</span>
+      </span>
+    </StatCard>
+  );
+}
+
+function ConnectedPeersRow({ row }: { row: ConnectedPeersStatRow }) {
+  return (
+    <StatCard label={`${row.name} (${row.peerCount}/${row.connectionCount})`} fullWidth>
+      {row.mapEntries && row.mapEntries.length > 0 ? (
+        <div className="mt-2">
+          <BlogPeerWorldMap peers={row.mapEntries} />
+        </div>
+      ) : null}
+      {row.entries.length === 0 ? (
+        <p className="mt-3 text-sm italic text-muted-foreground">
+          Still bootstrapping — connecting to peers…
+        </p>
+      ) : (
+        <ul className="mt-2 space-y-2">
+          {row.entries.map((entry) => (
+            <PeerListItem key={entry.id} entry={entry} />
+          ))}
+        </ul>
+      )}
+    </StatCard>
+  );
+}
+
+function PeerListItem({ entry }: { entry: ConnectedPeerEntry }) {
+  const downloaded = entry.transferStats?.downloadedBytes;
+  const uploaded = entry.transferStats?.uploadedBytes;
+  return (
+    <li className="rounded-lg border border-border/40 bg-background/40 p-2.5">
+      <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
+        <span className="inline-flex min-w-0 items-center gap-2">
+          {entry.countryCode ? <CountryFlag countryCode={entry.countryCode} /> : null}
+          <span className="rounded-full border border-blue-core/30 px-2 py-0.5 font-semibold text-foreground/85">
+            {entry.transport}
+          </span>
+        </span>
+        <span className="shrink-0 text-muted-foreground">
+          Received {formatBytes(downloaded ?? 0)} · Sent {formatBytes(uploaded ?? 0)}
+        </span>
+      </div>
+      <p className="mt-2 truncate font-mono text-[11px] text-foreground/70">{entry.peerId}</p>
+      {entry.address ? (
+        <p className="mt-1 truncate font-mono text-[11px] text-muted-foreground">{entry.address}</p>
+      ) : null}
+    </li>
   );
 }
