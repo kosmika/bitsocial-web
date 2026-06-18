@@ -1,3 +1,11 @@
+name: deploy
+
+x-json-log-rotation: &json-log-rotation
+  driver: json-file
+  options:
+    max-size: "50m"
+    max-file: "3"
+
 services:
   ipfs:
     build:
@@ -5,6 +13,7 @@ services:
       dockerfile: stats/monitor/Dockerfile
     command: node start-ipfs.js
     restart: unless-stopped
+    logging: *json-log-rotation
     volumes:
       - bitsocial-stats-ipfs-bin:/app/stats/monitor/bin
       - bitsocial-stats-ipfs-data:/app/stats/monitor/.ipfs
@@ -27,6 +36,7 @@ services:
       dockerfile: stats/monitor/Dockerfile
     command: node monitor.js
     restart: unless-stopped
+    logging: *json-log-rotation
     environment:
       BITSOCIAL_STATS_KUBO_RPC_URL: http://ipfs:11111
       BITSOCIAL_STATS_PUBSUB_KUBO_RPC_URL: http://ipfs:11111
@@ -61,6 +71,7 @@ services:
       - --storage.tsdb.path=/prometheus
       - --web.enable-lifecycle
     restart: unless-stopped
+    logging: *json-log-rotation
     depends_on:
       monitor:
         condition: service_healthy
@@ -73,6 +84,7 @@ services:
   grafana:
     image: grafana/grafana:12.4.2
     restart: unless-stopped
+    logging: *json-log-rotation
     depends_on:
       prometheus:
         condition: service_started
@@ -94,6 +106,7 @@ services:
 
   grafana-bootstrap:
     image: node:22.12.0-alpine
+    logging: *json-log-rotation
     depends_on:
       grafana:
         condition: service_started
