@@ -162,19 +162,7 @@ export default function About() {
                 {t("about.title")}
               </h1>
               <p className="mt-3 max-w-2xl text-base md:text-lg text-balance leading-relaxed text-muted-foreground">
-                <Trans
-                  i18nKey="about.subtitle"
-                  components={{
-                    pkcLink: (
-                      <a
-                        href="https://github.com/pkcprotocol"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-muted-foreground"
-                      />
-                    ),
-                  }}
-                />
+                {t("about.subtitle")}
               </p>
             </div>
             <div className="space-y-4">

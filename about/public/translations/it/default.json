@@ -619,7 +619,7 @@
   "about": {
     "sectionLabel": "Chi siamo",
     "title": "Team centrale di Bitsocial",
-    "subtitle": "Bitsocial è in sviluppo attivo dall'inizio del 2022. Stiamo anche costruendo <pkcLink>PKC</pkcLink>, un'implementazione barebone del backend peer-to-peer, destinata all'uso generale nello sviluppo.",
+    "subtitle": "Bitsocial è in sviluppo attivo dall'inizio del 2022, un progetto dal basso finanziato fin dal primo giorno dal fondatore Esteban Abaroa con i suoi risparmi.",
     "members": {
       "esteban": {
         "role": "Fondatore di Bitsocial, sviluppatore principale."
@@ -679,6 +679,8 @@
       "reality": "Non è una rete nascosta.",
       "notPrivate": "Il peer-to-peer non è del tutto anonimo: come con BitTorrent, il tuo IP può essere visibile agli altri peer.",
       "textOnly": "Protocollo solo testo: le immagini e i video sono incorporati da siti web esterni."
-    }
+    },
+    "quote": "Nessuno può costringere una comunità a censurarti, e nessuno può costringerla a non farlo. Se una comunità ha moderatori scadenti, puoi usarne un'altra.",
+    "quoteAttribution": "— Esteban Abaroa, fondatore di Bitsocial"
   }
 }

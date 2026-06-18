@@ -585,7 +585,7 @@
   "about": {
     "sectionLabel": "O nás",
     "title": "Jádrový tým Bitsocial",
-    "subtitle": "Bitsocial se aktivně vyvíjí od začátku roku 2022. Stavíme také <pkcLink>PKC</pkcLink>, barebone implementaci backendu peer-to-peer, určenou pro obecné vývojářské použití.",
+    "subtitle": "Bitsocial se aktivně vyvíjí od začátku roku 2022 — je to projekt vzešlý zdola, který od prvního dne financuje zakladatel Esteban Abaroa z vlastních úspor.",
     "members": {
       "esteban": {
         "role": "Bitsocial zakladatel, hlavní vývojář."
@@ -645,6 +645,8 @@
       "reality": "Není to skrytá síť.",
       "notPrivate": "Peer-to-peer není plně anonymní: stejně jako u BitTorrentu může být vaše IP viditelná pro ostatní účastníky.",
       "textOnly": "Pouze textový protokol: obrázky a videa se vkládají z externích webů."
-    }
+    },
+    "quote": "Nikdo nemůže komunitu přinutit, aby vás cenzurovala, a nikdo ji nemůže přinutit, aby to nedělala. Pokud má komunita špatné moderátory, můžete využít jinou.",
+    "quoteAttribution": "— Esteban Abaroa, zakladatel Bitsocial"
   }
 }

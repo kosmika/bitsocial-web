@@ -96,6 +96,8 @@ There's no global admin and no server to seize, so nobody can ban you from the w
 - Apps moderate too. Client developers can hide known-dangerous communities. Developers can run opt-in reputation and scoring services to increase safety.
 - Not a hidden network. Peer-to-peer is not fully anonymous: like BitTorrent, your IP can be visible to peers. Text-only protocol: images and videos are embedded from external websites.
 
+Founder note: No one can force a community to censor you, and no one can force it not to. If a community has bad mods, you can use another one.
+
 ### Master Plan
 
 Source: https://bitsocial.net/#master-plan

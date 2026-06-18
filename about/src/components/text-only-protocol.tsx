@@ -259,6 +259,14 @@ export default function TextOnlyProtocol() {
             </m.div>
           ))}
         </div>
+
+        <m.blockquote
+          {...reveal(0, 0.5, 0.8)}
+          className="mx-auto mt-14 block max-w-lg text-center text-xs italic text-muted-foreground/40 md:text-sm"
+        >
+          &ldquo;{t("textOnlyProtocol.quote")}&rdquo;
+          <span className="mt-1 block not-italic">{t("textOnlyProtocol.quoteAttribution")}</span>
+        </m.blockquote>
       </div>
     </section>
   );

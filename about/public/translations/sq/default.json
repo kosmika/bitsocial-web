@@ -619,7 +619,7 @@
   "about": {
     "sectionLabel": "Rreth nesh",
     "title": "Ekipi qendror i Bitsocial",
-    "subtitle": "Bitsocial ka qenë në zhvillim aktiv që nga fillimi i vitit 2022. Ne po ndërtojmë gjithashtu <pkcLink>PKC</pkcLink>, një implementim i zhveshur i backend-it peer-to-peer, i destinuar për përdorim të përgjithshëm të zhvillimit.",
+    "subtitle": "Bitsocial ka qenë në zhvillim aktiv që nga fillimi i vitit 2022, një projekt i nisur nga baza dhe i financuar që nga dita e parë nga themeluesi Esteban Abaroa me kursimet e tij personale.",
     "members": {
       "esteban": {
         "role": "Themeluesi i Bitsocial, udhëheqësi i dev."
@@ -679,6 +679,8 @@
       "reality": "Nuk është rrjet i fshehtë.",
       "notPrivate": "Peer-to-peer nuk është plotësisht anonim: si BitTorrent, IP-ja jote mund të jetë e dukshme për bashkëmoshatarët.",
       "textOnly": "Protokoll vetëm me tekst: imazhet dhe videot vendosen nga faqe interneti të jashtme."
-    }
+    },
+    "quote": "Askush nuk mund të detyrojë një komunitet të të censurojë, dhe askush nuk mund ta detyrojë të mos e bëjë. Nëse një komunitet ka moderatorë të këqij, mund të përdorësh një tjetër.",
+    "quoteAttribution": "— Esteban Abaroa, themeluesi i Bitsocial"
   }
 }

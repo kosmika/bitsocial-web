@@ -619,7 +619,7 @@
   "about": {
     "sectionLabel": "Tentang kami",
     "title": "Tim inti Bitsocial",
-    "subtitle": "Bitsocial telah aktif dalam pengembangan sejak awal tahun 2022. Kami juga sedang membangun <pkcLink>PKC</pkcLink>, implementasi sederhana dari backend peer-to-peer, yang ditujukan untuk penggunaan pengembangan umum.",
+    "subtitle": "Bitsocial telah dikembangkan secara aktif sejak awal 2022, sebuah proyek dari akar rumput yang didanai sejak hari pertama oleh pendirinya, Esteban Abaroa, dari tabungannya sendiri.",
     "members": {
       "esteban": {
         "role": "Pendiri Bitsocial, pemimpin pengembang."
@@ -679,6 +679,8 @@
       "reality": "Bukan jaringan tersembunyi.",
       "notPrivate": "Peer-to-peer tidak sepenuhnya anonim: seperti BitTorrent, IP Anda bisa terlihat oleh peer lain.",
       "textOnly": "Protokol teks saja: gambar dan video disematkan dari situs web eksternal."
-    }
+    },
+    "quote": "Tidak ada yang bisa memaksa sebuah komunitas untuk menyensor Anda, dan tidak ada pula yang bisa memaksanya untuk tidak melakukannya. Jika sebuah komunitas memiliki moderator yang buruk, Anda bisa menggunakan komunitas lain.",
+    "quoteAttribution": "— Esteban Abaroa, pendiri Bitsocial"
   }
 }

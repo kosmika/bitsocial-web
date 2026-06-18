@@ -619,7 +619,7 @@
   "about": {
     "sectionLabel": "Rólunk",
     "title": "Bitsocial magcsapata",
-    "subtitle": "A Bitsocial 2022 eleje óta aktív fejlesztés alatt áll. Építjük a <pkcLink>PKC</pkcLink>-t is, a peer-to-peer háttérrendszer barebone megvalósítását, amelyet általános fejlesztési használatra szántak.",
+    "subtitle": "A Bitsocial 2022 eleje óta aktív fejlesztés alatt áll; egy alulról szerveződő projekt, amelyet az első naptól kezdve Esteban Abaroa alapító finanszíroz a saját megtakarításaiból.",
     "members": {
       "esteban": {
         "role": "Bitsocial alapítója, vezető fejlesztő."
@@ -679,6 +679,8 @@
       "reality": "Nem rejtett hálózat.",
       "notPrivate": "A peer-to-peer nem teljesen névtelen: a BitTorrenthez hasonlóan az IP-címed látható lehet a többi résztvevő számára.",
       "textOnly": "Csak szöveges protokoll: a képek és videók külső webhelyekről vannak beágyazva."
-    }
+    },
+    "quote": "Senki sem kényszeríthet egy közösséget arra, hogy cenzúrázzon téged, és senki sem kényszerítheti arra, hogy ne tegye. Ha egy közösségnek rossz moderátorai vannak, használhatsz egy másikat.",
+    "quoteAttribution": "— Esteban Abaroa, a Bitsocial alapítója"
   }
 }

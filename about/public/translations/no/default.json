@@ -619,7 +619,7 @@
   "about": {
     "sectionLabel": "Om oss",
     "title": "Bitsocials kjerneteam",
-    "subtitle": "Bitsocial har vært i aktiv utvikling siden tidlig i 2022. Vi bygger også <pkcLink>PKC</pkcLink>, en barebones-implementering av peer-to-peer-backend, beregnet for generell utviklingsbruk.",
+    "subtitle": "Bitsocial har vært under aktiv utvikling siden begynnelsen av 2022, et folkelig prosjekt finansiert fra første dag av grunnlegger Esteban Abaroa med hans egne sparepenger.",
     "members": {
       "esteban": {
         "role": "Bitsocial grunnlegger, hovedutvikler."
@@ -679,6 +679,8 @@
       "reality": "Ikke et skjult nettverk.",
       "notPrivate": "Peer-to-peer er ikke helt anonymt: som BitTorrent kan IP-en din være synlig for peers.",
       "textOnly": "Kun-tekst-protokoll: bilder og videoer bygges inn fra eksterne nettsteder."
-    }
+    },
+    "quote": "Ingen kan tvinge et fellesskap til å sensurere deg, og ingen kan tvinge det til å la være. Hvis et fellesskap har dårlige moderatorer, kan du bruke et annet.",
+    "quoteAttribution": "— Esteban Abaroa, grunnlegger av Bitsocial"
   }
 }

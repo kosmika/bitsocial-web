@@ -619,7 +619,7 @@
   "about": {
     "sectionLabel": "Hakkımızda",
     "title": "Bitsocial çekirdek ekibi",
-    "subtitle": "Bitsocial, 2022'nin başından beri aktif olarak geliştiriliyor. Aynı zamanda genel geliştirme amaçlı kullanıma yönelik, eşler arası arka ucun barebone uygulaması olan <pkcLink>PKC</pkcLink>'yi de inşa ediyoruz.",
+    "subtitle": "Bitsocial 2022'nin başından beri etkin olarak geliştiriliyor; kurucusu Esteban Abaroa tarafından ilk günden itibaren kendi birikimleriyle finanse edilen, tabandan gelen bir proje.",
     "members": {
       "esteban": {
         "role": "Bitsocial Kurucusu, geliştirici lider."
@@ -679,6 +679,8 @@
       "reality": "Gizli bir ağ değil.",
       "notPrivate": "Eşler arası tümüyle anonim değildir: BitTorrent gibi, IP adresin eşlere görünebilir.",
       "textOnly": "Yalnızca metin protokolü: görseller ve videolar dış web sitelerinden gömülür."
-    }
+    },
+    "quote": "Hiç kimse bir topluluğu sizi sansürlemeye zorlayamaz, hiç kimse de sansürlememeye zorlayamaz. Bir topluluğun moderatörleri kötüyse, başka bir topluluğu kullanabilirsiniz.",
+    "quoteAttribution": "— Esteban Abaroa, Bitsocial kurucusu"
   }
 }

@@ -619,7 +619,7 @@
   "about": {
     "sectionLabel": "私たちについて",
     "title": "Bitsocial コアチーム",
-    "subtitle": "Bitsocial は 2022 年初頭から積極的に開発が行われています。また、一般的な開発用途を目的とした、ピアツーピア バックエンドのベアボーン実装である <pkcLink>PKC</pkcLink> も構築しています。",
+    "subtitle": "Bitsocial は2022年初頭から活発に開発が続けられており、創設者の Esteban Abaroa が初日から自身の貯蓄で資金を出してきた草の根のプロジェクトです。",
     "members": {
       "esteban": {
         "role": "Bitsocial 創設者、主任開発者。"
@@ -679,6 +679,8 @@
       "reality": "隠れたネットワークではありません。",
       "notPrivate": "ピアツーピアは完全に匿名ではありません。BitTorrent と同様、あなたの IP は他のピアに見えることがあります。",
       "textOnly": "テキスト専用プロトコル：画像や動画は外部サイトから埋め込まれます。"
-    }
+    },
+    "quote": "誰もコミュニティにあなたを取り締まるよう強制することはできず、誰もそれを止めるよう強制することもできません。あるコミュニティのモデレーターが良くなければ、別のコミュニティを使えばいいのです。",
+    "quoteAttribution": "— Esteban Abaroa、Bitsocial 創設者"
   }
 }

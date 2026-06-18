@@ -619,7 +619,7 @@
   "about": {
     "sectionLabel": "소개",
     "title": "Bitsocial 핵심 팀",
-    "subtitle": "Bitsocial은 2022년 초부터 활발한 개발을 진행해 왔습니다. 우리는 또한 일반적인 개발용으로 설계된 P2P 백엔드의 베어본 구현인 <pkcLink>PKC</pkcLink>를 구축하고 있습니다.",
+    "subtitle": "Bitsocial은 2022년 초부터 활발히 개발되어 왔으며, 창립자 Esteban Abaroa가 첫날부터 자신의 저축으로 자금을 댄 풀뿌리 프로젝트입니다.",
     "members": {
       "esteban": {
         "role": "Bitsocial 창립자, 수석 개발자."
@@ -679,6 +679,8 @@
       "reality": "숨겨진 네트워크가 아닙니다.",
       "notPrivate": "피어 투 피어는 완전히 익명이 아닙니다. BitTorrent처럼 당신의 IP가 다른 피어에게 보일 수 있습니다.",
       "textOnly": "텍스트 전용 프로토콜: 이미지와 동영상은 외부 웹사이트에서 임베드됩니다."
-    }
+    },
+    "quote": "누구도 커뮤니티에 당신을 검열하라고 강요할 수 없고, 검열하지 말라고 강요할 수도 없습니다. 커뮤니티의 운영진이 형편없다면, 다른 커뮤니티를 이용하면 됩니다.",
+    "quoteAttribution": "— Esteban Abaroa, Bitsocial 창립자"
   }
 }

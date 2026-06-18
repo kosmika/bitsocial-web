@@ -619,7 +619,7 @@
   "about": {
     "sectionLabel": "Despre noi",
     "title": "Echipa de bază Bitsocial",
-    "subtitle": "Bitsocial a fost în dezvoltare activă de la începutul anului 2022. De asemenea, construim <pkcLink>PKC</pkcLink>, o implementare simplă a backend-ului peer-to-peer, destinată dezvoltării generale.",
+    "subtitle": "Bitsocial este în dezvoltare activă încă de la începutul anului 2022, un proiect pornit de la firul ierbii, finanțat din prima zi de fondatorul Esteban Abaroa din propriile economii.",
     "members": {
       "esteban": {
         "role": "Fondator Bitsocial, dezvoltator principal."
@@ -679,6 +679,8 @@
       "reality": "Nu e o rețea ascunsă.",
       "notPrivate": "Peer-to-peer nu este complet anonim: la fel ca la BitTorrent, IP-ul tău poate fi vizibil pentru ceilalți parteneri.",
       "textOnly": "Protocol doar text: imaginile și videoclipurile sunt încorporate de pe site-uri web externe."
-    }
+    },
+    "quote": "Nimeni nu poate obliga o comunitate să te cenzureze și nimeni nu o poate obliga să nu o facă. Dacă o comunitate are moderatori slabi, poți folosi alta.",
+    "quoteAttribution": "— Esteban Abaroa, fondator Bitsocial"
   }
 }

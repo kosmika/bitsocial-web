@@ -619,7 +619,7 @@
   "about": {
     "sectionLabel": "Tungkol sa amin",
     "title": "Pangunahing Koponan ng Bitsocial",
-    "subtitle": "Ang Bitsocial ay nasa aktibong pag-unlad mula noong unang bahagi ng 2022. Bumubuo din kami ng <pkcLink>PKC</pkcLink>, isang barebones na pagpapatupad ng peer-to-peer backend, na nilayon para sa pangkalahatang paggamit ng development.",
+    "subtitle": "Aktibong binubuo ang Bitsocial simula pa noong unang bahagi ng 2022, isang proyektong mula sa hanay ng mga ordinaryong tao na pinondohan mula sa unang araw ng tagapagtatag nitong si Esteban Abaroa mula sa sarili niyang ipon.",
     "members": {
       "esteban": {
         "role": "Bitsocial Founder, lead dev."
@@ -679,6 +679,8 @@
       "reality": "Hindi itong nakatagong network.",
       "notPrivate": "Ang peer-to-peer ay hindi ganap na anonymous: tulad ng BitTorrent, makikita ng mga peer ang iyong IP.",
       "textOnly": "Protocol na teksto lamang: ang mga larawan at video ay naka-embed mula sa mga panlabas na website."
-    }
+    },
+    "quote": "Walang makapipilit sa isang komunidad na i-censor ka, at walang makapipilit dito na huwag kang i-censor. Kung may masasamang moderator ang isang komunidad, puwede kang gumamit ng iba.",
+    "quoteAttribution": "— Esteban Abaroa, tagapagtatag ng Bitsocial"
   }
 }

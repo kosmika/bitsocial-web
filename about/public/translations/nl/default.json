@@ -619,7 +619,7 @@
   "about": {
     "sectionLabel": "Over ons",
     "title": "Bitsocial-kernteam",
-    "subtitle": "Bitsocial is sinds begin 2022 actief in ontwikkeling. We bouwen ook <pkcLink>PKC</pkcLink>, een barebones-implementatie van de peer-to-peer backend, bedoeld voor algemeen ontwikkelingsgebruik.",
+    "subtitle": "Bitsocial is sinds begin 2022 in actieve ontwikkeling, een project vanuit de basis dat vanaf dag één door oprichter Esteban Abaroa uit zijn eigen spaargeld wordt gefinancierd.",
     "members": {
       "esteban": {
         "role": "Bitsocial-oprichter, hoofdontwikkelaar."
@@ -679,6 +679,8 @@
       "reality": "Geen verborgen netwerk.",
       "notPrivate": "Peer-to-peer is niet volledig anoniem: net als bij BitTorrent kan je IP zichtbaar zijn voor peers.",
       "textOnly": "Alleen-tekstprotocol: afbeeldingen en video's worden ingesloten vanaf externe websites."
-    }
+    },
+    "quote": "Niemand kan een community dwingen om je te censureren, en niemand kan haar dwingen om dat niet te doen. Als een community slechte moderators heeft, kun je een andere gebruiken.",
+    "quoteAttribution": "— Esteban Abaroa, Bitsocial-oprichter"
   }
 }

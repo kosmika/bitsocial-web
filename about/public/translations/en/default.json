@@ -381,7 +381,9 @@
       "reality": "Not a hidden network.",
       "notPrivate": "Peer-to-peer is not fully anonymous: like BitTorrent, your IP can be visible to peers.",
       "textOnly": "Text-only protocol: images and videos are embedded from external websites."
-    }
+    },
+    "quote": "No one can force a community to censor you, and no one can force it not to. If a community has bad mods, you can use another one.",
+    "quoteAttribution": "— Esteban Abaroa, Bitsocial founder"
   },
   "masterPlan": {
     "title": "A Call to Action",
@@ -735,7 +737,7 @@
   "about": {
     "sectionLabel": "About Us",
     "title": "Bitsocial Core Team",
-    "subtitle": "Bitsocial has been in active development since early 2022. We're also building <pkcLink>PKC</pkcLink>, a barebones implementation of the peer-to-peer backend, intended for general development use.",
+    "subtitle": "Bitsocial has been in active development since early 2022, a grassroots project funded from day one by founder Esteban Abaroa out of his own savings.",
     "members": {
       "esteban": {
         "role": "Bitsocial founder and lead developer"

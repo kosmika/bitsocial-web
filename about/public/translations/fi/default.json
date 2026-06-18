@@ -619,7 +619,7 @@
   "about": {
     "sectionLabel": "Tietoa meistä",
     "title": "Bitsocialin ydintiimi",
-    "subtitle": "Bitsocial on ollut aktiivisessa kehityksessä vuoden 2022 alusta lähtien. Rakennamme myös <pkcLink>PKC</pkcLink>, barebone-toteutusta peer-to-peer backendistä, joka on tarkoitettu yleiseen kehityskäyttöön.",
+    "subtitle": "Bitsocialia on kehitetty aktiivisesti vuoden 2022 alusta lähtien. Se on ruohonjuuritason hanke, jota perustaja Esteban Abaroa on rahoittanut ensimmäisestä päivästä lähtien omilla säästöillään.",
     "members": {
       "esteban": {
         "role": "Bitsocialin perustaja, johtava kehittäjä."
@@ -679,6 +679,8 @@
       "reality": "Ei piilotettu verkko.",
       "notPrivate": "Vertaisverkko ei ole täysin anonyymi: kuten BitTorrentissa, IP-osoitteesi voi näkyä vertaisille.",
       "textOnly": "Pelkkä teksti -protokolla: kuvat ja videot upotetaan ulkoisilta verkkosivustoilta."
-    }
+    },
+    "quote": "Kukaan ei voi pakottaa yhteisöä sensuroimaan sinua, eikä kukaan voi pakottaa sitä olemaan tekemättä niin. Jos yhteisöllä on huonot moderaattorit, voit käyttää toista.",
+    "quoteAttribution": "— Esteban Abaroa, Bitsocialin perustaja"
   }
 }

@@ -481,6 +481,7 @@ function buildLandingData(translations) {
         .filter((card) => card.reality || card.points.length),
       supporting: translationToSingleLine(textOnlyProtocol.supporting),
       title: translationToSingleLine(textOnlyProtocol.title),
+      quote: translationToSingleLine(textOnlyProtocol.quote),
     },
     comparison: {
       approaches: Object.values(sanctuary.approaches ?? {})
@@ -674,6 +675,8 @@ ${landing.textOnlyProtocol.title}
 ${landing.textOnlyProtocol.supporting}
 
 ${textOnlyCardRows}
+
+Founder note: ${landing.textOnlyProtocol.quote}
 
 ### Master Plan
 
