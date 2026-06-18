@@ -8,6 +8,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "Protocol notes",
       items: [
+        "layman-protocol-explanation",
         "peer-to-peer-protocol",
         "content-discovery",
         "custom-challenges",
@@ -54,6 +55,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "infrastructure/bso-resolver",
         "infrastructure/mintpass",
+        "infrastructure/pubsub-provider",
         "infrastructure/telegram-bots",
       ],
     },

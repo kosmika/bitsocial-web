@@ -7,6 +7,8 @@ description: Com utilitza Bitsocial IPFS/libp2p, adreçament de clau pública, p
 
 Bitsocial no utilitza una cadena de blocs, un servidor de federació o un backend centralitzat. En comptes d'això, combina dues idees: **adreçament basat en clau pública** i **pubsub peer-to-peer**, per permetre que qualsevol persona allotgi una comunitat de maquinari de consum mentre els usuaris llegeixen i publiquen sense comptes en cap servei controlat per l'empresa.
 
+Per a una guia menys tècnica, llegiu [Una explicació completa del protocol Bitsocial](./layman-protocol-explanation.md).
+
 ## Els dos problemes
 
 Una xarxa social descentralitzada ha de respondre a dues preguntes:

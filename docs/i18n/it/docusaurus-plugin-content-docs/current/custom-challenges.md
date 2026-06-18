@@ -7,6 +7,8 @@ description: Perché Bitsocial consente a ciascuna comunità di definire la prop
 
 Bitsocial non presuppone una difesa universale dallo spam. Ogni community può decidere cosa richiede un post o una risposta validi e la sfida può essere leggera o supponente a seconda delle esigenze dell'operatore.
 
+Per il flusso completo in inglese semplice dagli indirizzi della community ai post soggetti a sfide, leggi [Una spiegazione completa per i non addetti ai lavori del protocollo Bitsocial](./layman-protocol-explanation.md).
+
 ## Che sfida può essere
 
 - Un captcha

@@ -3,6 +3,7 @@ import { X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 import ArbitraryChallenges from "@/components/arbitrary-challenges";
+import BackToTop from "@/components/back-to-top";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import MailingList from "@/components/mailing-list";
@@ -206,6 +207,7 @@ export default function Home() {
             <TextOnlyProtocol />
             <MasterPlan />
             <MailingList />
+            <BackToTop />
             <Footer />
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Download, Github, Globe, Monitor, Package, Smartphone } from "lucide-react";
 import AppMirrorLinkCta from "@/components/app-mirror-link-cta";
@@ -14,6 +14,7 @@ import {
   type AppLink,
   type AppPlatformSlug,
   getAppDescription,
+  getAppDescriptionKey,
   getAppLinkLabel,
   getAppPlatforms,
   getAppTagLabel,
@@ -36,13 +37,15 @@ import { cn } from "@/lib/utils";
 interface AppCardProps {
   activeCategory?: AppCategorySlug | null;
   activePlatform?: AppPlatformSlug | null;
-  activeTag?: string | null;
+  activeTags?: string[];
   app: AppData;
   buildAppsHref?: (
     updates: Partial<Record<"category" | "platform" | "tag", string | null>>,
   ) => string;
   compact?: boolean;
   detailHref?: string;
+  /** True when the page is at the tag+category filter cap; disables pills that would add another. */
+  isAtFilterCap?: boolean;
   onCategorySelect?: (slug: AppCategorySlug) => void;
   onPlatformSelect?: (platform: AppPlatformSlug) => void;
   onTagSelect?: (tag: string) => void;
@@ -52,9 +55,10 @@ interface AppCardProps {
 export default function AppCard({
   activeCategory = null,
   activePlatform = null,
-  activeTag = null,
+  activeTags = [],
   app,
   buildAppsHref,
+  isAtFilterCap = false,
   onCategorySelect,
   onPlatformSelect,
   onTagSelect,
@@ -73,6 +77,7 @@ export default function AppCard({
   const sourceUrl = getGithubUrl(app);
   const tagline = getAppTagline(app, t);
   const description = getAppDescription(app, t);
+  const descriptionKey = getAppDescriptionKey(app);
   const resolvedDetailHref = detailHref ?? `/apps/${app.slug}`;
 
   return (
@@ -118,12 +123,25 @@ export default function AppCard({
         </div>
       </div>
 
-      {!compact ? <p className="text-sm leading-6 text-muted-foreground">{description}</p> : null}
+      {!compact ? (
+        <p className="text-sm leading-6 text-muted-foreground">
+          {descriptionKey ? (
+            <Trans
+              i18nKey={descriptionKey}
+              defaults={app.description}
+              components={descriptionRichTextComponents}
+            />
+          ) : (
+            description
+          )}
+        </p>
+      ) : null}
 
       <div className="flex flex-wrap gap-2">
         {category ? (
           <AppTagPill
             active={activeCategory === category.slug}
+            disabled={isAtFilterCap && !activeCategory}
             href={
               onCategorySelect
                 ? undefined
@@ -135,25 +153,30 @@ export default function AppCard({
             onClick={onCategorySelect ? () => onCategorySelect(category.slug) : undefined}
           />
         ) : null}
-        {app.tags.map((tag) => (
-          <AppTagPill
-            key={tag}
-            active={tagsMatchFilter(activeTag, tag)}
-            href={
-              onTagSelect
-                ? undefined
-                : buildAppsHref
-                  ? buildAppsHref({ tag })
-                  : `/apps?tag=${encodeURIComponent(tag)}`
-            }
-            label={getAppTagLabel(tag, t)}
-            onClick={onTagSelect ? () => onTagSelect(tag) : undefined}
-          />
-        ))}
+        {app.tags.map((tag) => {
+          const tagIsActive = tagsMatchFilter(activeTags, tag);
+          return (
+            <AppTagPill
+              key={tag}
+              active={tagIsActive}
+              disabled={isAtFilterCap && !tagIsActive}
+              href={
+                onTagSelect
+                  ? undefined
+                  : buildAppsHref
+                    ? buildAppsHref({ tag })
+                    : `/apps?tag=${encodeURIComponent(tag)}`
+              }
+              label={getAppTagLabel(tag, t)}
+              onClick={onTagSelect ? () => onTagSelect(tag) : undefined}
+            />
+          );
+        })}
         {platformTags.map((platform) => (
           <AppTagPill
             key={platform}
             active={activePlatform === platform}
+            disabled={isAtFilterCap && !activePlatform}
             href={
               onPlatformSelect
                 ? undefined
@@ -227,7 +250,7 @@ export default function AppCard({
         ) : null}
 
         {mirrors.length > 0 ? (
-          <div className="rounded-[1.25rem] border border-border/60 px-3 py-3">
+          <div className="rounded-[1.25rem] border border-border/60 p-3">
             <div className="mb-2 text-[11px] font-display uppercase tracking-[0.18em] text-foreground/45">
               {t("apps.mirrors")}
             </div>
@@ -257,6 +280,20 @@ export default function AppCard({
     </article>
   );
 }
+
+const descriptionRichTextComponents = {
+  code: (
+    <code className="rounded bg-foreground/10 px-1 py-0.5 font-mono text-[0.85em] text-foreground" />
+  ),
+  robot9000: (
+    <a
+      href="https://blog.xkcd.com/2008/01/14/robot9000-and-xkcd-signal-attacking-noise-in-chat/"
+      target="_blank"
+      rel="noreferrer"
+      className="text-foreground underline decoration-foreground/30 underline-offset-4 transition-colors hover:text-blue-core"
+    />
+  ),
+};
 
 function getStatusClassName(status: NonNullable<AppData["status"]>) {
   return cn(

@@ -1,7 +1,7 @@
 ---
 title: Telegram Bots
 description: Feed bots that monitor Bitsocial community lists and forward posts to Telegram channels.
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Telegram Bots

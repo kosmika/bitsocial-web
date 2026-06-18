@@ -7,6 +7,8 @@ description: Bitsocial, sunucusuz sosyal medya sunmak için IPFS/libp2p, genel a
 
 Bitsocial bir blok zinciri, bir federasyon sunucusu veya merkezi bir arka uç kullanmaz. Bunun yerine, **genel anahtar tabanlı adresleme** ve **eşler arası pubsub** olmak üzere iki fikri birleştirerek, kullanıcıların şirket tarafından kontrol edilen herhangi bir hizmette hesap olmadan okuma ve paylaşım yaparken herkesin tüketici donanımından bir topluluk barındırmasına olanak tanır.
 
+Daha az teknik bir açıklama için okuyun [Bitsocial protokolünün tam bir meslekten olmayan açıklaması](./layman-protocol-explanation.md).
+
 ## İki sorun
 
 Merkezi olmayan bir sosyal ağın iki soruyu yanıtlaması gerekir:

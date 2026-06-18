@@ -7,6 +7,8 @@ description: Hvordan Bitsocial bruker IPFS/libp2p, adressering med offentlig nø
 
 Bitsocial bruker ikke en blokkjede, en føderasjonsserver eller en sentralisert backend. I stedet kombinerer den to ideer – **offentlig nøkkelbasert adressering** og **node-til-node pubsub** – for å la hvem som helst være vert for et fellesskap fra forbrukermaskinvare mens brukere leser og legger ut uten kontoer på noen bedriftskontrollert tjeneste.
 
+For en mindre teknisk gjennomgang, les [En fullstendig lekmannsforklaring av Bitsocial-protokollen](./layman-protocol-explanation.md).
+
 ## De to problemene
 
 Et desentralisert sosialt nettverk må svare på to spørsmål:

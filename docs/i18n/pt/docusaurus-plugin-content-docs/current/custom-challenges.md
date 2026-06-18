@@ -7,6 +7,8 @@ description: Por que o Bitsocial permite que cada comunidade defina sua própria
 
 O Bitsocial não assume uma defesa universal contra spam. Cada comunidade pode decidir o que uma postagem ou resposta válida exige, e esse desafio pode ser tão leve ou opinativo quanto o operador desejar.
 
+Para obter o fluxo completo em inglês simples, desde endereços da comunidade até postagens restritas a desafios, leia [Uma explicação completa para leigos do protocolo Bitsocial](./layman-protocol-explanation.md).
+
 ## Que desafio pode ser
 
 - Um captcha

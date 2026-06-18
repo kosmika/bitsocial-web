@@ -7,6 +7,8 @@ description: Varför Bitsocial låter varje gemenskap definiera sin egen anti-sp
 
 Bitsocial utgår inte från ett universellt spamförsvar. Varje gemenskap kan bestämma vad ett giltigt inlägg eller svar kräver, och den utmaningen kan vara så lätt eller pålitlig som operatören vill.
 
+För det fullständiga flödet på vanlig engelska från communityadresser till utmaningsstyrda inlägg, läs [En komplett lekmannaförklaring av Bitsocial-protokollet](./layman-protocol-explanation.md).
+
 ## Vilken utmaning kan vara
 
 - En captcha

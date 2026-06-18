@@ -9,6 +9,8 @@ Bitsocial är inte modereringsfritt. Det är moderering utan en superadmin på p
 
 Samhällsägare sätter fortfarande regler för sina egna utrymmen. Appar bestämmer fortfarande vad de indexerar, rankar eller markerar. Vad Bitsocial inte inkluderar är en global myndighet som kan konfiskera en gemenskap eller radera en identitet från själva nätverket.
 
+För en bredare enkel engelsk genomgång av gemenskapsägande, publicering, utmaningar och moderatorsignaturer, läs [En komplett lekmannaförklaring av Bitsocial-protokollet](./layman-protocol-explanation.md).
+
 ## Hur moderering fungerar
 
 - En gruppägare kan moderera den gruppen

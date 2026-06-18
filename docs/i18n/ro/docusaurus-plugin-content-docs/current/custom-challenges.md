@@ -7,6 +7,8 @@ description: De ce Bitsocial permite fiecărei comunități să-și definească 
 
 Bitsocial nu își asumă o singură apărare universală împotriva spamului. Fiecare comunitate poate decide ce necesită o postare sau un răspuns valid, iar această provocare poate fi la fel de ușoară sau de opinie pe cât dorește operatorul.
 
+Pentru fluxul complet în limba engleză, de la adresele comunității până la postarea bazată pe provocări, citiți [O explicație completă a protocolului Bitsocial](./layman-protocol-explanation.md).
+
 ## Ce provocare poate fi
 
 - Un captcha

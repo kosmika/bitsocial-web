@@ -19,7 +19,8 @@
     "language": "Idioma",
     "theme": "Tema",
     "sourceCode": "Codi font",
-    "newsletter": "Butlletí"
+    "newsletter": "Butlletí",
+    "backToTop": "Tornar a dalt"
   },
   "footer": {
     "tagline": "Xarxa P2P de codi obert per a aplicacions socials",
@@ -399,10 +400,10 @@
     "mobileDownloads": "Descàrregues mòbils",
     "desktopDownloads": "Descàrregues d'escriptori",
     "extraDownloads": "Compilacions addicionals",
-    "subtitle": "Bitsocial està pensat per créixer fins a milers d'aplicacions, eines i serveis creats per qualsevol persona, sense l'aprovació dels guardians de l'accés. Explora el que ja és en línia i després envia el teu.",
+    "subtitle": "Bitsocial està pensat per créixer fins a milers d'aplicacions, eines i serveis creats per qualsevol persona, sense l'aprovació dels guardians de l'accés. Si ets dev, envia la teva pròpia app.",
     "experimental": "En proves",
     "sectionLabel": "Directori d'aplicacions",
-    "directoryLabel": "Directori",
+    "directoryLabel": "Categories",
     "notFoundDescription": "L'app que busques no existeix al directori.",
     "emptyCategoryDescription": "Encara no hi ha cap app en aquesta categoria. Sigues el primer a crear-ne una!",
     "emptyCategory": "Properament",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "Anti-spam",
-          "description": "Mòduls d'autenticació, filtratge i moderació per a les comunitats de Bitsocial."
+          "description": "Mòduls de filtratge i moderació per a les comunitats de Bitsocial."
         },
         "tools": {
           "label": "Eines",
           "description": "Utilitats de CLI i d'administració per executar o ampliar les apps de Bitsocial."
+        },
+        "identity": {
+          "description": "Mòduls de credencial i verificació que controlen qui pot publicar a les comunitats de Bitsocial.",
+          "label": "Identitat"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "On-chain",
         "riskScores": "Puntuacions de risc",
         "telegram": "Telegram",
-        "verification": "Verificació"
+        "verification": "Verificació",
+        "ai": "IA",
+        "antiRepost": "Antirepublicació"
       },
       "linkLabels": {
         "androidApk": "APK d'Android",
@@ -528,6 +535,22 @@
         "5chan-board-manager": {
           "tagline": "Eines d’administració de taulers per a comunitats 5chan personalitzades.",
           "description": "5chan Board Manager es connecta amb Bitsocial CLI per ajudar els administradors a crear, configurar i moderar taulers d'imatges personalitzats. És la capa d'utilitat per als propietaris de taulers que volen control operatiu."
+        },
+        "flags-challenge": {
+          "tagline": "Desafiament verificat d'emissor de senyera per a insígnies específiques de país i tauler.",
+          "description": "Flags Challenge s'executa en un node comunitari de Bitsocial i verifica les afirmacions de flags signades d'un servei emissor configurable. El primer perfil agrupat es dirigeix a 5chan, cobreix banderes de país, memeflags de /pol/ i pony flags de /mlp/, mantenint el mateix patró reutilitzable per a qualsevol client que executar el seu propi servei emissor i espai de noms."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Seeder públic per a comunitats de Bitsocial, empaquetat per a Docker i npm.",
+          "description": "Bitsocial Seeder fixan les pàgines prioritàries de la comunitat, els CID post-actualització i l'encaminament de temes pubsub a través d'un daemon Bitsocial. Reutilitza un daemon local ja en execució quan és accessible o inicia automàticament el daemon bitsocial-cli inclòs, i s'ofereix tant com una imatge Docker per a desplegaments VPS desatesos com un paquet npm per a operadors node-first."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "Comprovacions de moderació compatibles amb OpenAI segons les regles de cada comunitat.",
+          "description": "AI Moderation Challenge avalua el contingut dels comentaris de Bitsocial segons <code>community.rules</code> amb un endpoint de model compatible amb OpenAI. Les comunitats poden enviar publicacions arriscades a revisió mentre mantenen les claus del proveïdor i els prompts en configuracions privades del node."
+        },
+        "r9k-challenge": {
+          "tagline": "Porta d'originalitat a l'estil Robot9000 per a comunitats que volen una experiència de publicació anti-repost.",
+          "description": "R9K Challenge s'executa en un node de comunitat de Bitsocial i compara el text normalitzat de la publicació amb la base de dades local de comentaris del node propietari. Dona a les comunitats una experiència de publicació a l'estil <robot9000>Robot9000</robot9000>: els reposts exactes fallen abans de ser acceptats, els backlinks s'ignoren, els errors repetits activen bans temporals creixents i els hashes del text acceptat es mantenen en estat local privat en lloc de desar el text cru de la publicació. Aquest challenge no utilitza IA."
         }
       }
     },
@@ -539,8 +562,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "Explora apps de Bitsocial en desenvolupament a GitHub. Si n'estàs creant una, afegeix el topic \"bitsocial\" al teu repo perquè altres persones la trobin.",
-      "link": "Explora el topic a GitHub"
-    }
+      "link": "Explora el topic a GitHub",
+      "linkShort": "Explora GitHub"
+    },
+    "filterLimitReached": "Límit de filtres assolit",
+    "devsLabel": "Devs:",
+    "or": "o"
   },
   "privacy": {
     "eyebrow": "Com gestiona bitsocial.net les dades",

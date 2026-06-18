@@ -19,7 +19,8 @@
     "language": "Bahasa",
     "theme": "Tema",
     "sourceCode": "Kode sumber",
-    "newsletter": "Buletin"
+    "newsletter": "Buletin",
+    "backToTop": "Kembali ke atas"
   },
   "footer": {
     "tagline": "Jaringan P2P sumber terbuka untuk aplikasi sosial",
@@ -399,10 +400,10 @@
     "mobileDownloads": "Unduhan seluler",
     "desktopDownloads": "Unduhan desktop",
     "extraDownloads": "Build tambahan",
-    "subtitle": "Bitsocial dirancang untuk tumbuh menjadi ribuan aplikasi, alat, dan layanan yang bisa dibuat siapa saja, bukan hanya yang disetujui penjaga gerbang. Lihat apa yang sedang aktif sekarang, lalu kirim punyamu.",
+    "subtitle": "Bitsocial dirancang untuk tumbuh menjadi ribuan aplikasi, alat, dan layanan yang bisa dibuat siapa saja, bukan hanya yang disetujui penjaga gerbang. Kalau kamu developer, kirim aplikasimu sendiri.",
     "experimental": "Eksperimental",
     "sectionLabel": "Direktori aplikasi",
-    "directoryLabel": "Direktori",
+    "directoryLabel": "Kategori",
     "notFoundDescription": "Aplikasi yang Anda cari tidak ada di direktori.",
     "emptyCategoryDescription": "Belum ada aplikasi di kategori ini. Jadi yang pertama membangunnya!",
     "emptyCategory": "Segera hadir",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "Anti-spam",
-          "description": "Modul autentikasi, penyaringan, dan moderasi untuk komunitas Bitsocial."
+          "description": "Modul penyaringan dan moderasi untuk komunitas Bitsocial."
         },
         "tools": {
           "label": "Alat",
           "description": "Utilitas CLI dan admin untuk menjalankan atau memperluas aplikasi Bitsocial."
+        },
+        "identity": {
+          "description": "Modul kredensial dan verifikasi yang mengontrol siapa yang dapat memposting di komunitas Bitsocial.",
+          "label": "Identitas"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "On-chain",
         "riskScores": "Skor risiko",
         "telegram": "Telegram",
-        "verification": "Verifikasi"
+        "verification": "Verifikasi",
+        "ai": "AI",
+        "antiRepost": "Anti-repost"
       },
       "linkLabels": {
         "androidApk": "APK Android",
@@ -528,6 +535,22 @@
         "5chan-board-manager": {
           "tagline": "Tool administrasi board untuk komunitas 5chan kustom.",
           "description": "5chan Board Manager terhubung ke Bitsocial CLI untuk membantu administrator membuat, mengonfigurasi, dan memoderasi board imageboard kustom. Ini adalah lapisan utilitas bagi pemilik board yang menginginkan kontrol operasional."
+        },
+        "flags-challenge": {
+          "tagline": "Tantangan penerbit bendera terverifikasi untuk lencana spesifik negara dan papan.",
+          "description": "Flags Challenge berjalan pada node komunitas Bitsocial dan memverifikasi pernyataan bendera yang ditandatangani dari layanan penerbit yang dapat dikonfigurasi. Profil bundel pertama menargetkan 5chan, mencakup bendera negara, memeflags /pol/, dan pony flags /mlp/, sambil menjaga pola yang sama dapat digunakan kembali untuk klien apa pun yang menjalankan penerbit dan ruang nama mereka sendiri."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Seeder publik untuk komunitas Bitsocial, dikemas untuk Docker dan npm.",
+          "description": "Bitsocial Seeder menyematkan halaman pertama komunitas, CID pasca-pembaruan, dan perutean topik pubsub melalui daemon Bitsocial. Ini menggunakan kembali daemon lokal yang sudah berjalan saat dapat dijangkau atau memulai daemon bitsocial-cli bundel secara otomatis, dan dikirim sebagai citra Docker untuk penyebaran VPS tanpa pengawasan dan paket npm untuk operator Node-first."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "Pemeriksaan moderasi yang kompatibel dengan OpenAI sesuai aturan setiap komunitas.",
+          "description": "AI Moderation Challenge mengevaluasi konten komentar Bitsocial terhadap <code>community.rules</code> dengan endpoint model yang kompatibel dengan OpenAI. Komunitas dapat mengarahkan posting berisiko ke review sambil menyimpan kunci provider dan prompt di pengaturan node pribadi."
+        },
+        "r9k-challenge": {
+          "tagline": "Gerbang orisinalitas bergaya Robot9000 untuk komunitas yang menginginkan pengalaman posting anti-repost.",
+          "description": "R9K Challenge berjalan di node komunitas Bitsocial dan membandingkan teks posting yang sudah dinormalisasi dengan database komentar lokal milik node pemilik. Ini memberi komunitas pengalaman posting bergaya <robot9000>Robot9000</robot9000>: repost persis gagal sebelum diterima, backlink diabaikan, kegagalan berulang memicu ban sementara yang meningkat, dan hash teks yang diterima tetap berada di state lokal privat alih-alih menyimpan teks posting mentah. Challenge ini tidak menggunakan AI."
         }
       }
     },
@@ -539,8 +562,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "Jelajahi aplikasi Bitsocial yang sedang dikembangkan di GitHub. Jika kamu sedang membuatnya, tambahkan topic \"bitsocial\" ke repo-mu agar orang lain dapat menemukannya.",
-      "link": "Buka topic GitHub"
-    }
+      "link": "Buka topic GitHub",
+      "linkShort": "Buka GitHub"
+    },
+    "filterLimitReached": "Batas filter tercapai",
+    "devsLabel": "Devs:",
+    "or": "atau"
   },
   "privacy": {
     "eyebrow": "Cara bitsocial.net menangani data",

@@ -19,7 +19,8 @@
     "language": "Limbă",
     "theme": "Temă",
     "sourceCode": "Cod sursă",
-    "newsletter": "Buletin"
+    "newsletter": "Buletin",
+    "backToTop": "Înapoi sus"
   },
   "footer": {
     "tagline": "Rețea P2P open source pentru aplicații sociale",
@@ -399,10 +400,10 @@
     "mobileDownloads": "Descărcări pe mobil",
     "desktopDownloads": "Descărcări pentru desktop",
     "extraDownloads": "Builduri suplimentare",
-    "subtitle": "Bitsocial este conceput să crească până la mii de aplicații, instrumente și servicii construite de oricine, nu doar cele aprobate de paznicii porții. Vezi ce este live acum, apoi trimite-l pe al tău.",
+    "subtitle": "Bitsocial este conceput să crească până la mii de aplicații, instrumente și servicii construite de oricine, nu doar cele aprobate de paznicii porții. Dacă ești dev, trimite-ți propria aplicație.",
     "experimental": "În testare",
     "sectionLabel": "Catalog de aplicații",
-    "directoryLabel": "Catalog",
+    "directoryLabel": "Categorii",
     "notFoundDescription": "Aplicația pe care o cauți nu există în director.",
     "emptyCategoryDescription": "Nu există încă aplicații în această categorie. Fii primul care construiește una!",
     "emptyCategory": "În curând",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "Anti-spam",
-          "description": "Module de autentificare, filtrare și moderare pentru comunitățile Bitsocial."
+          "description": "Module de filtrare și moderare pentru comunități Bitsocial."
         },
         "tools": {
           "label": "Unelte",
           "description": "Utilitare CLI și de administrare pentru rularea sau extinderea aplicațiilor Bitsocial."
+        },
+        "identity": {
+          "description": "Module de certificare și verificare care controlează cine poate posta în comunități Bitsocial.",
+          "label": "Identitate"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "On-chain",
         "riskScores": "Scoruri de risc",
         "telegram": "Telegram",
-        "verification": "Verificare"
+        "verification": "Verificare",
+        "ai": "IA",
+        "antiRepost": "Anti-repost"
       },
       "linkLabels": {
         "androidApk": "APK Android",
@@ -528,6 +535,22 @@
         "5chan-board-manager": {
           "tagline": "Instrumente de administrare board pentru comunități 5chan personalizate.",
           "description": "5chan Board Manager se conectează la Bitsocial CLI pentru a-i ajuta pe administratori să creeze, să configureze și să modereze boarduri imageboard personalizate. Este stratul de utilitare pentru proprietarii de boarduri care vor control operațional."
+        },
+        "flags-challenge": {
+          "tagline": "Provocare verificată a emitentului de steaguri pentru insigne specifice țării și forumului.",
+          "description": "Flags Challenge rulează pe un nod comunitar Bitsocial și verifică afirmațiile de steag semnate de un serviciu de emitent configurabil. Primul profil agregat vizează 5chan, acoperă steaguri naționale, memeflags din /pol/ și pony flags din /mlp/, menținând același pattern reutilizabil pentru orice client care rulează propriul serviciu de emitent și spațiu de nume."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Seeder public pentru comunități Bitsocial, ambalat pentru Docker și npm.",
+          "description": "Bitsocial Seeder fixează paginile prioritare ale comunității, CID-urile după actualizare și rutarea subiectelor pubsub prin intermediul unui daemon Bitsocial. Reutilizează un daemon local deja în execuție atunci când este accesibil sau pornește automat daemonul bitsocial-cli inclus și este furnizat atât ca imagine Docker pentru implementări VPS nesupravegheat cât și ca pachet npm pentru operatori Node-first."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "Verificări de moderare compatibile OpenAI conform regulilor fiecărei comunități.",
+          "description": "AI Moderation Challenge evaluează conținutul comentariilor Bitsocial față de <code>community.rules</code> cu un endpoint de model compatibil OpenAI. Comunitățile pot trimite postările riscante spre review, păstrând cheile providerului și prompturile în setările private ale nodului."
+        },
+        "r9k-challenge": {
+          "tagline": "Poartă de originalitate în stil Robot9000 pentru comunități care vor o experiență de postare anti-repost.",
+          "description": "R9K Challenge rulează pe un nod de comunitate Bitsocial și compară textul normalizat al postării cu baza locală de comentarii a nodului proprietar. Oferă comunităților o experiență de postare în stil <robot9000>Robot9000</robot9000>: repostările exacte eșuează înainte de acceptare, backlinkurile sunt ignorate, eșecurile repetate declanșează banuri temporare crescătoare, iar hashurile textului acceptat rămân în stare locală privată în loc să stocheze textul brut al postării. Acest challenge nu folosește AI."
         }
       }
     },
@@ -539,8 +562,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "Explorează aplicații Bitsocial în dezvoltare pe GitHub. Dacă lucrezi la una, adaugă topicul \"bitsocial\" la repo-ul tău, ca alții să o poată găsi.",
-      "link": "Deschide topicul GitHub"
-    }
+      "link": "Deschide topicul GitHub",
+      "linkShort": "Deschide GitHub"
+    },
+    "filterLimitReached": "Limită de filtre atinsă",
+    "devsLabel": "Devs:",
+    "or": "sau"
   },
   "privacy": {
     "eyebrow": "Cum gestionează bitsocial.net datele",

@@ -19,7 +19,8 @@
     "language": "زبان",
     "theme": "تھیم",
     "sourceCode": "سورس کوڈ",
-    "newsletter": "نیوزلیٹر"
+    "newsletter": "نیوزلیٹر",
+    "backToTop": "اوپر جائیں"
   },
   "footer": {
     "tagline": "سوشل ایپس کے لیے اوپن سورس P2P نیٹ ورک",
@@ -399,10 +400,10 @@
     "mobileDownloads": "موبائل ڈاؤن لوڈز",
     "desktopDownloads": "ڈیسک ٹاپ ڈاؤن لوڈز",
     "extraDownloads": "اضافی بلڈز",
-    "subtitle": "Bitsocial اس طرح بنایا گیا ہے کہ یہ ہزاروں ایپس، ٹولز اور سروسز تک بڑھے، جنہیں کوئی بھی بنا سکے، صرف گیٹ کیپرز کی منظوری والی چیزیں نہیں۔ ابھی کیا لائیو ہے، دیکھیں، پھر اپنی چیز جمع کرائیں۔",
+    "subtitle": "Bitsocial اس طرح بنایا گیا ہے کہ یہ ہزاروں ایپس، ٹولز اور سروسز تک بڑھے، جنہیں کوئی بھی بنا سکے، صرف گیٹ کیپرز کی منظوری والی چیزیں نہیں۔ اگر آپ ڈویلپر ہیں، تو اپنی ایپ جمع کرائیں۔",
     "experimental": "تجرباتی",
     "sectionLabel": "ایپ ڈائریکٹری",
-    "directoryLabel": "فہرست",
+    "directoryLabel": "اقسام",
     "notFoundDescription": "جس ایپ کی آپ تلاش کر رہے ہیں وہ ڈائریکٹری میں موجود نہیں ہے۔",
     "emptyCategoryDescription": "اس زمرے میں ابھی کوئی ایپ نہیں ہے۔ پہلا ایپ بنانے والے بنیں!",
     "emptyCategory": "جلد آ رہا ہے",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "اینٹی اسپام",
-          "description": "Bitsocial کمیونٹیز کے لیے تصدیق، فلٹرنگ، اور ماڈریشن کے ماڈیولز۔"
+          "description": "Bitsocial کمیونٹیز کے لیے فلٹرنگ اور نگرانی ماڈیولز۔"
         },
         "tools": {
           "label": "ٹولز",
           "description": "Bitsocial ایپس چلانے یا بڑھانے کے لیے CLI اور انتظامی یوٹیلیٹیز۔"
+        },
+        "identity": {
+          "description": "اعتبار اور تصدیق کے ماڈیولز جو Bitsocial برادریوں میں کون پوسٹ کر سکتے ہیں اس کو کنٹرول کرتے ہیں۔",
+          "label": "شناخت"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "آن چین",
         "riskScores": "رسک اسکور",
         "telegram": "Telegram",
-        "verification": "تصدیق"
+        "verification": "تصدیق",
+        "ai": "ای آئی",
+        "antiRepost": "دوبارہ پوسٹ روکنے والا"
       },
       "linkLabels": {
         "androidApk": "Android APK",
@@ -528,6 +535,22 @@
         "5chan-board-manager": {
           "tagline": "custom 5chan communities کے لیے board administration tooling۔",
           "description": "5chan Board Manager، Bitsocial CLI سے منسلک ہوتا ہے تاکہ منتظمین کسٹم imageboard boards بنانے، ترتیب دینے اور moderation کرنے میں مدد پا سکیں۔ یہ board owners کے لیے utility layer ہے جو operational control چاہتے ہیں۔"
+        },
+        "flags-challenge": {
+          "tagline": "ملک اور بورڈ کے لیے درست کیے گئے فلیگ جاری کننے والے کا چیلنج۔",
+          "description": "Flags Challenge ایک Bitsocial کمیونٹی نوڈ پر چلتا ہے اور قابل تشکیل جاری کنندہ سروس سے دستخط شدہ فلیگ دعویٰ تصدیق کرتا ہے۔ پہلی بندل شدہ پروفائل 5chan کو نشانہ بناتی ہے، ملک کی پرچمیں، /pol/ memeflags اور /mlp/ pony flags کا احاطہ کرتی ہے، جبکہ اسی طریقے کو کسی بھی کلائنٹ کے لیے دوبارہ قابل استعمال رکھتی ہے جو اپنی جاری کنندہ سروس اور نام کی جگہ چلاتا ہے۔"
+        },
+        "bitsocial-seeder": {
+          "tagline": "Bitsocial کمیونٹیز کے لیے عوامی سیڈر، Docker اور npm کے لیے پیکج کیا گیا۔",
+          "description": "Bitsocial Seeder کمیونٹی کے پہلے صفحات، پوسٹ اپڈیٹ CIDs اور pubsub ٹاپک روٹنگ کو Bitsocial daemon کے ذریعے پن کرتا ہے۔ یہ جب پہنچایا جا سکے تو پہلے سے چل رہے مقامی daemon کو دوبارہ استعمال کرتا ہے یا بنڈل شدہ bitsocial-cli daemon کو خودکار طور پر شروع کرتا ہے، اور بغیر نگرانی VPS تعیناتی کے لیے Docker image اور Node-first آپریٹرز کے لیے npm پیکج دونوں کے طور پر شپ کیا جاتا ہے۔"
+        },
+        "ai-moderation-challenge": {
+          "tagline": "ہر کمیونٹی کے قواعد کے خلاف OpenAI مطابق moderation چیک۔",
+          "description": "AI Moderation Challenge OpenAI-compatible model endpoint کے ساتھ Bitsocial comment content کو <code>community.rules</code> کے خلاف evaluate کرتا ہے۔ communities risky posts کو review کے لیے route کر سکتی ہیں، جبکہ provider keys اور prompts private node settings میں رکھ سکتی ہیں۔"
+        },
+        "r9k-challenge": {
+          "tagline": "Anti-repost پوسٹنگ تجربہ چاہنے والی کمیونٹیز کے لیے Robot9000 طرز کا originality gate۔",
+          "description": "R9K Challenge ایک Bitsocial community node پر چلتا ہے اور normalized post text کو owner node کے local comments database سے ملاتا ہے۔ یہ کمیونٹیز کو <robot9000>Robot9000</robot9000> طرز کا posting experience دیتا ہے: exact reposts قبول ہونے سے پہلے fail ہو جاتے ہیں، backlinks نظرانداز ہوتے ہیں، repeated failures بڑھتے ہوئے temporary bans trigger کرتے ہیں، اور accepted-text hashes raw post text محفوظ کرنے کے بجائے private local state میں رہتے ہیں۔ اس challenge میں کوئی AI استعمال نہیں ہوتا۔"
         }
       }
     },
@@ -539,8 +562,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "GitHub پر زیرِ تکمیل Bitsocial ایپس دیکھیں۔ اگر آپ کوئی بنا رہے ہیں تو اپنے repo میں \"bitsocial\" topic شامل کریں تاکہ دوسرے اسے تلاش کر سکیں۔",
-      "link": "GitHub topic کھولیں"
-    }
+      "link": "GitHub topic کھولیں",
+      "linkShort": "GitHub کھولیں"
+    },
+    "filterLimitReached": "فلٹر کی حد پوری ہو گئی",
+    "devsLabel": "ڈیولپرز:",
+    "or": "یا"
   },
   "privacy": {
     "eyebrow": "bitsocial.net ڈیٹا کو کیسے سنبھالتا ہے",

@@ -7,6 +7,8 @@ description: Jak Bitsocial wykorzystuje IPFS/libp2p, adresowanie klucza publiczn
 
 Bitsocial nie korzysta z blockchainu, serwera federacyjnego ani scentralizowanego backendu. Zamiast tego łączy w sobie dwa pomysły — **adresowanie oparte na kluczu publicznym** i **pubsub peer-to-peer** — aby umożliwić każdemu hostowanie społeczności na sprzęcie konsumenckim, podczas gdy użytkownicy czytają i publikują posty bez konta w jakiejkolwiek usłudze kontrolowanej przez firmę.
 
+Aby zapoznać się z mniej technicznym przewodnikiem, przeczytaj [Kompletne wyjaśnienie protokołu Bitsocial dla laika](./layman-protocol-explanation.md).
+
 ## Dwa problemy
 
 Zdecentralizowana sieć społecznościowa musi odpowiedzieć na dwa pytania:

@@ -19,7 +19,8 @@
     "language": "Kieli",
     "theme": "Teema",
     "sourceCode": "Lähdekoodi",
-    "newsletter": "Uutiskirje"
+    "newsletter": "Uutiskirje",
+    "backToTop": "Takaisin ylös"
   },
   "footer": {
     "tagline": "Avoimen lähdekoodin P2P-verkko sosiaalisille sovelluksille",
@@ -399,10 +400,10 @@
     "mobileDownloads": "Mobiililataukset",
     "desktopDownloads": "Työpöytäasennukset",
     "extraDownloads": "Lisäversiot",
-    "subtitle": "Bitsocial on tarkoitettu kasvamaan tuhansiksi appeiksi, työkaluiksi ja palveluiksi, joita kuka tahansa voi rakentaa, ei vain portinvartijoiden hyväksymiä. Tutki, mitä on nyt käytössä, ja lähetä sitten omasi.",
+    "subtitle": "Bitsocial on tarkoitettu kasvamaan tuhansiksi appeiksi, työkaluiksi ja palveluiksi, joita kuka tahansa voi rakentaa, ei vain portinvartijoiden hyväksymiä. Jos olet kehittäjä, lähetä oma appisi.",
     "experimental": "Kokeellinen",
     "sectionLabel": "Sovellushakemisto",
-    "directoryLabel": "Hakemisto",
+    "directoryLabel": "Kategoriat",
     "notFoundDescription": "Etsimääsi sovellusta ei ole hakemistossa.",
     "emptyCategoryDescription": "Tässä kategoriassa ei ole vielä sovelluksia. Ole ensimmäinen, joka rakentaa sellaisen!",
     "emptyCategory": "Tulossa pian",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "Roskapostin esto",
-          "description": "Tunnistautumis-, suodatus- ja moderointimoduulit Bitsocial-yhteisöille."
+          "description": "Bitsocial-yhteisöjen suodatus- ja valvontamoduulit."
         },
         "tools": {
           "label": "Työkalut",
           "description": "CLI- ja ylläpitotyökalut Bitsocial-sovellusten ajamiseen tai laajentamiseen."
+        },
+        "identity": {
+          "description": "Tunnistusten ja vahvistuksen moduulit, jotka hallitsevat sitä, kuka voi kirjoittaa Bitsocial-yhteisöihin.",
+          "label": "Identiteetti"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "On-chain",
         "riskScores": "Riskipisteet",
         "telegram": "Telegram",
-        "verification": "Vahvistus"
+        "verification": "Vahvistus",
+        "ai": "AI",
+        "antiRepost": "Uudelleenjulkaisun esto"
       },
       "linkLabels": {
         "androidApk": "Android APK",
@@ -528,6 +535,22 @@
         "5chan-board-manager": {
           "tagline": "Board-hallintatyökalut mukautetuille 5chan-yhteisöille.",
           "description": "5chan Board Manager yhdistyy Bitsocial CLI:hin auttaakseen ylläpitäjiä luomaan, määrittämään ja moderoimaan mukautettuja imageboard-foorumeita. Se on apukerros foorumien omistajille, jotka haluavat operatiivista hallintaa."
+        },
+        "flags-challenge": {
+          "tagline": "Vahvistettu lippujen myöntäjän haaste maa- ja lauta-spesifisille merkeille.",
+          "description": "Flags Challenge toimii Bitsocial-yhteisösolmussa ja tarkistaa allekirjoitettuja lipputehtäviä määritettävästä liikkeeseenlaskijapalvelusta. Ensimmäinen niputettu profiili kohdistuu 5chaniin, kattaa maakunnarit, /pol/ memekuntalaput ja /mlp/ pony-kunnarit, säilyttäen samalla kuvion uudelleenkäytettävänä kaikille asiakkaille, jotka käyttävät omaa liikkeeseenlaskijapalveluaan ja nimitilaa."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Julkinen seeder Bitsocial-yhteisöille, pakattu Dockerille ja npmlle.",
+          "description": "Bitsocial Seeder kiinnittää yhteisön ensimmäiset sivut, päivityksen jälkeiset CID:t ja pubsub-aiheen reitityspyynnöt Bitsocial-daemonin kautta. Se käyttää uudelleen jo käynnissä olevaa paikallista daemonia, kun se on saavutettavissa, tai käynnistää pakatun bitsocial-cli-daemonin automaattisesti ja toimitetaan sekä Docker-kuvan muodossa valvomattomia VPS-käyttöönottoja varten että npm-pakettina Node-first-operaattoreille."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "OpenAI-yhteensopivat moderointitarkistukset kunkin yhteisön sääntöjä vasten.",
+          "description": "AI Moderation Challenge arvioi Bitsocial-kommenttien sisältöä <code>community.rules</code>-sääntöjä vasten OpenAI-yhteensopivan malli-endpointin avulla. Yhteisöt voivat ohjata riskialttiit julkaisut tarkistettavaksi pitäen provider-avaimet ja promptit yksityisissä node-asetuksissa."
+        },
+        "r9k-challenge": {
+          "tagline": "Robot9000-tyylinen omaperäisyysportti yhteisöille, jotka haluavat repostauksia estävän julkaisu-UX:n.",
+          "description": "R9K Challenge toimii Bitsocial-yhteisön nodessa ja vertaa normalisoitua julkaisun tekstiä omistajan noden paikalliseen kommenttitietokantaan. Se antaa yhteisöille <robot9000>Robot9000</robot9000>-tyylisen julkaisukokemuksen: täsmälliset repostaukset hylätään ennen hyväksyntää, backlinkit ohitetaan, toistuvat epäonnistumiset laukaisevat kasvavia väliaikaisia banneja ja hyväksytyn tekstin hashit pysyvät yksityisessä paikallisessa tilassa raakatekstin tallentamisen sijaan. Tässä challengessa ei käytetä tekoälyä."
         }
       }
     },
@@ -539,8 +562,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "Tutustu kehitteillä oleviin Bitsocial-sovelluksiin GitHubissa. Jos rakennat sellaista, lisää repoosi topic \"bitsocial\", jotta muut löytävät sen.",
-      "link": "Avaa GitHub-topic"
-    }
+      "link": "Avaa GitHub-topic",
+      "linkShort": "Avaa GitHub"
+    },
+    "filterLimitReached": "Suodatinraja täynnä",
+    "devsLabel": "Kehittäjät:",
+    "or": "tai"
   },
   "privacy": {
     "eyebrow": "Miten bitsocial.net käsittelee tietoja",

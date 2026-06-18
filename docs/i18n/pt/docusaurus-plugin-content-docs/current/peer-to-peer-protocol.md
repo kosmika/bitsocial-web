@@ -7,6 +7,8 @@ description: Como o Bitsocial usa IPFS/libp2p, endereçamento de chave pública,
 
 Bitsocial não usa blockchain, servidor de federação ou backend centralizado. Em vez disso, ele combina duas ideias — **endereçamento baseado em chave pública** e **pubsub peer-to-peer** — para permitir que qualquer pessoa hospede uma comunidade a partir de hardware de consumo enquanto os usuários leem e postam sem contas em qualquer serviço controlado pela empresa.
 
+Para um passo a passo menos técnico, leia [Uma explicação completa para leigos do protocolo Bitsocial](./layman-protocol-explanation.md).
+
 ## Os dois problemas
 
 Uma rede social descentralizada deve responder a duas questões:

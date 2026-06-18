@@ -19,7 +19,8 @@
     "language": "Språk",
     "theme": "Tema",
     "sourceCode": "Källkod",
-    "newsletter": "Nyhetsbrev"
+    "newsletter": "Nyhetsbrev",
+    "backToTop": "Till toppen"
   },
   "footer": {
     "tagline": "Öppen källkod P2P-nätverk för sociala appar",
@@ -399,10 +400,10 @@
     "mobileDownloads": "Mobilnedladdningar",
     "desktopDownloads": "Skrivbordsnedladdningar",
     "extraDownloads": "Extra byggen",
-    "subtitle": "Bitsocial är byggt för att växa till tusentals appar, verktyg och tjänster som vem som helst kan bygga, inte bara sådana som godkänts av grindväktare. Se vad som är live nu och skicka sedan in ditt eget.",
+    "subtitle": "Bitsocial är byggt för att växa till tusentals appar, verktyg och tjänster som vem som helst kan bygga, inte bara sådana som godkänts av grindväktare. Är du utvecklare, skicka in din egen app.",
     "experimental": "Experimentell",
     "sectionLabel": "Appkatalog",
-    "directoryLabel": "Katalog",
+    "directoryLabel": "Kategorier",
     "notFoundDescription": "Appen du letar efter finns inte i katalogen.",
     "emptyCategoryDescription": "Det finns inga appar i den här kategorin än. Var först med att bygga en!",
     "emptyCategory": "Kommer snart",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "Antispam",
-          "description": "Moduler för autentisering, filtrering och moderering för Bitsocial-gemenskaper."
+          "description": "Filterings- och modereringsmoduler för Bitsocial-gemenskaper."
         },
         "tools": {
           "label": "Verktyg",
           "description": "CLI- och administrationsverktyg för att köra eller bygga vidare på Bitsocial-appar."
+        },
+        "identity": {
+          "description": "Legitimations- och verifieringsmoduler som kontrollerar vem som kan posta i Bitsocial-gemenskaper.",
+          "label": "Identitet"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "On-chain",
         "riskScores": "Riskpoäng",
         "telegram": "Telegram",
-        "verification": "Verifiering"
+        "verification": "Verifiering",
+        "ai": "AI",
+        "antiRepost": "Anti-repost"
       },
       "linkLabels": {
         "androidApk": "Android APK",
@@ -528,6 +535,22 @@
         "5chan-board-manager": {
           "tagline": "Board-administrationsverktyg för anpassade 5chan-communities.",
           "description": "5chan Board Manager ansluter till Bitsocial CLI för att hjälpa administratörer att skapa, konfigurera och moderera anpassade imageboard-brädor. Det är verktygslagret för brädägare som vill ha operativ kontroll."
+        },
+        "flags-challenge": {
+          "tagline": "Verifierad flagg-utgivare-utmaning för lands- och forumspecifika emblem.",
+          "description": "Flags Challenge körs på en Bitsocial-community-nod och verifierar signerade flaggpåstäenden från en konfigurerbar utgivartjänst. Den första paketterade profilen är inriktad på 5chan, täcker landflaggor, /pol/ memeflags och /mlp/ pony flags, samtidigt som samma mönster hålls återanvändbart för alla klienter som kör sin egen utgivartjänst och namnrymd."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Offentlig seeder för Bitsocial-gemenskaper, paketerad för Docker och npm.",
+          "description": "Bitsocial Seeder fäster communitys-First-sidor, post-uppdaterings-CID och pubsub-ämnesroutning genom en Bitsocial daemon. Det återanvänder en redan körande lokal daemon när den är nåbar eller startar automatiskt den packade bitsocial-cli daemon, och levereras både som en Docker-avbildning för obevakad VPS-distribution och ett npm-paket för Node-first-operatörer."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "OpenAI-kompatibla modereringskontroller mot varje communitys regler.",
+          "description": "AI Moderation Challenge utvärderar Bitsocial-kommentarinnehåll mot <code>community.rules</code> med en OpenAI-kompatibel model-endpoint. Communities kan skicka riskfyllda inlägg till review medan provider-nycklar och prompts hålls i privata node-inställningar."
+        },
+        "r9k-challenge": {
+          "tagline": "Originalitetsgrind i Robot9000-stil för communities som vill ha en anti-repost-upplevelse vid publicering.",
+          "description": "R9K Challenge körs på en Bitsocial-communitynod och jämför normaliserad inläggstext mot ägarnodens lokala kommentarsdatabas. Den ger communities en publiceringsupplevelse i <robot9000>Robot9000</robot9000>-stil: exakta reposts fallerar före acceptans, backlinks ignoreras, upprepade misslyckanden utlöser eskalerande tillfälliga bans och hashar av accepterad text stannar i privat lokal state i stället för att lagra rå inläggstext. Den här challengen använder inte AI."
         }
       }
     },
@@ -539,8 +562,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "Utforska Bitsocial-appar under utveckling på GitHub. Om du bygger en, lägg till topic \"bitsocial\" i ditt repo så att andra kan hitta den.",
-      "link": "Öppna GitHub-topic"
-    }
+      "link": "Öppna GitHub-topic",
+      "linkShort": "Öppna GitHub"
+    },
+    "filterLimitReached": "Filtergräns nådd",
+    "devsLabel": "Utvecklare:",
+    "or": "eller"
   },
   "privacy": {
     "eyebrow": "Hur bitsocial.net hanterar data",

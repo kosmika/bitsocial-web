@@ -19,7 +19,8 @@
     "language": "语言",
     "theme": "主题",
     "sourceCode": "源代码",
-    "newsletter": "简报"
+    "newsletter": "简报",
+    "backToTop": "返回顶部"
   },
   "footer": {
     "tagline": "面向社交应用的开放源码 P2P 网络",
@@ -399,10 +400,10 @@
     "mobileDownloads": "移动端下载",
     "desktopDownloads": "桌面下载",
     "extraDownloads": "额外构建",
-    "subtitle": "Bitsocial 旨在成长为由任何人都能创建的成千上万款应用、工具和服务，而不是只经过守门人批准的那些。先看看现在已经上线了什么，然后提交你自己的。",
+    "subtitle": "Bitsocial 旨在成长为由任何人都能创建的成千上万款应用、工具和服务，而不是只经过守门人批准的那些。如果你是开发者，提交你自己的应用。",
     "experimental": "实验性",
     "sectionLabel": "应用目录",
-    "directoryLabel": "目录",
+    "directoryLabel": "分类",
     "notFoundDescription": "你要找的应用在目录中不存在。",
     "emptyCategoryDescription": "这个分类里还没有应用。成为第一个构建一个的人吧！",
     "emptyCategory": "即将推出",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "反垃圾",
-          "description": "面向 Bitsocial 社区的认证、过滤和审核模块。"
+          "description": "Bitsocial 社区的过滤和审核模块。"
         },
         "tools": {
           "label": "工具",
           "description": "用于运行或扩展 Bitsocial 应用的 CLI 和管理工具。"
+        },
+        "identity": {
+          "description": "控制谁可以在 Bitsocial 社区中发布的凭证和验证模块。",
+          "label": "身份"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "链上",
         "riskScores": "风险分数",
         "telegram": "Telegram",
-        "verification": "验证"
+        "verification": "验证",
+        "ai": "AI",
+        "antiRepost": "反重复发布"
       },
       "linkLabels": {
         "androidApk": "Android APK",
@@ -528,6 +535,21 @@
         "5chan-board-manager": {
           "tagline": "用于自定义 5chan communities 的 board 管理工具。",
           "description": "5chan Board Manager 连接到 Bitsocial CLI，帮助管理员创建、配置和管理自定义 imageboard 板块。它是为希望掌控运营的板块所有者提供的工具层。"
+        },
+        "flags-challenge": {
+          "description": "Flags Challenge在Bitsocial社区节点上运行，并验证来自可配置发行者服务的签名标志断言。第一个捆绑的配置文件以5chan为目标，涵盖国家旗帜、/pol/ memeflags和/mlp/ pony flags，同时保持相同的模式可供运行自己的发行者服务和命名空间的任何客户端重用。"
+        },
+        "bitsocial-seeder": {
+          "tagline": "Bitsocial社区的公共播种者，为Docker和npm打包。",
+          "description": "Bitsocial Seeder 通过 Bitsocial daemon 固定社区首页、更新后的 CID 和 pubsub 主题路由。当本地 daemon 可达时，它会重用已在运行的本地 daemon，或自动启动捆绑的 bitsocial-cli daemon，并同时作为 Docker 映像用于无人值守的 VPS 部署和 npm 包用于 Node-first 运营商提供。"
+        },
+        "ai-moderation-challenge": {
+          "tagline": "基于 OpenAI 兼容接口的审核检查，对照各社区规则。",
+          "description": "AI Moderation Challenge 通过 OpenAI-compatible model endpoint，对照 <code>community.rules</code> 评估 Bitsocial 评论内容。community 可以将 risky posts 路由到 review，同时将 provider keys 和 prompts 保留在 private node settings 中。"
+        },
+        "r9k-challenge": {
+          "tagline": "面向希望获得反重复发布体验的社区的 Robot9000 风格原创性门槛。",
+          "description": "R9K Challenge 在 Bitsocial 社区节点上运行，并将规范化后的帖子文本与所有者节点的本地评论数据库进行比对。它为社区提供 <robot9000>Robot9000</robot9000> 风格的发帖体验：完全重复的 repost 会在被接受前失败，backlink 会被忽略，反复失败会触发逐步升级的临时 ban，已接受文本的哈希会保留在私有本地状态中，而不是保存原始帖子文本。 这个 challenge 不使用 AI。"
         }
       }
     },
@@ -539,8 +561,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "在 GitHub 上探索开发中的 Bitsocial 应用。如果你正在构建一个，请在 repo 中添加 \"bitsocial\" topic，方便其他人找到。",
-      "link": "打开 GitHub topic"
-    }
+      "link": "打开 GitHub topic",
+      "linkShort": "打开 GitHub"
+    },
+    "filterLimitReached": "已达到筛选上限",
+    "devsLabel": "开发者:",
+    "or": "或"
   },
   "privacy": {
     "eyebrow": "bitsocial.net 如何处理数据",

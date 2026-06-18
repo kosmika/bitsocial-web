@@ -9,6 +9,8 @@ Bitsocial tidak bebas moderasi. Ini adalah moderasi tanpa admin super tingkat pr
 
 Pemilik komunitas masih menetapkan aturan untuk ruang mereka sendiri. Aplikasi tetap memutuskan apa yang diindeks, diberi peringkat, atau disorot. Yang tidak termasuk dalam Bitsocial adalah otoritas global yang dapat menyita komunitas atau menghapus identitas dari jaringan itu sendiri.
 
+Untuk panduan lebih luas dalam bahasa Inggris tentang kepemilikan komunitas, penerbitan, tantangan, dan tanda tangan moderator, baca [Penjelasan awam lengkap tentang protokol Bitsocial](./layman-protocol-explanation.md).
+
 ## Cara kerja moderasi
 
 - Pemilik komunitas dapat memoderasi komunitas tersebut

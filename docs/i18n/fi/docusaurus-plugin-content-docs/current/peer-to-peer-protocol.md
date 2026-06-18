@@ -7,6 +7,8 @@ description: Kuinka Bitsocial käyttää IPFS/libp2p:tä, julkisen avaimen osoit
 
 Bitsocial ei käytä lohkoketjua, liitospalvelinta tai keskitettyä taustajärjestelmää. Sen sijaan se yhdistää kaksi ideaa – **julkiseen avaimeen perustuva osoitus** ja **vertaispub** – joiden avulla kuka tahansa voi isännöidä yhteisöä kuluttajalaitteiston kautta, kun käyttäjät lukevat ja julkaisevat ilman tilejä yrityksen ohjaamissa palveluissa.
 
+Lue vähemmän tekninen esittely [Täydellinen maallikon selitys Bitsocial-protokollasta](./layman-protocol-explanation.md).
+
 ## Kaksi ongelmaa
 
 Hajautetun sosiaalisen verkoston on vastattava kahteen kysymykseen:

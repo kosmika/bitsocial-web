@@ -351,6 +351,7 @@ Details:
 
 - [BSO Resolver](https://bitsocial.net/docs/infrastructure/bso-resolver/): Resolve .bso domain names to public keys via Bitsocial TXT records, with built-in caching and cross-platform support.
 - [Mintpass](https://bitsocial.net/docs/infrastructure/mintpass/): NFT-based authentication system that helps Bitsocial communities verify users and reduce sybil attacks.
+- [Pubsub Provider](https://bitsocial.net/docs/infrastructure/pubsub-provider/): Fallback pubsub relay and delegated routing provider for Bitsocial operators.
 - [Telegram Bots](https://bitsocial.net/docs/infrastructure/telegram-bots/): Feed bots that monitor Bitsocial community lists and forward posts to Telegram channels.
 
 ## Contributor playbooks
@@ -369,6 +370,7 @@ Details:
 
 - [Content Discovery](https://bitsocial.net/docs/content-discovery/): How Bitsocial separates peer discovery from app-level curation.
 - [i18n Default Language Policy](https://bitsocial.net/docs/i18n-default-language-policy/): Anonymous visitors now resolve language in this order:
+- [A complete layman explanation of the Bitsocial protocol](https://bitsocial.net/docs/layman-protocol-explanation/): A plain-English walkthrough of Bitsocial communities, peer lookup, publishing, anti-spam challenges, moderation, and apps.
 
 ## Full docs corpus
 
@@ -382,6 +384,9 @@ Description: Why Bitsocial lets each community define its own anti-spam policy.
 
 Bitsocial does not assume one universal spam defense. Each community can decide what a valid post
 or reply requires, and that challenge can be as lightweight or opinionated as the operator wants.
+
+For the full plain-English flow from community addresses to challenge-gated posting, read
+[A complete layman explanation of the Bitsocial protocol](./layman-protocol-explanation.md).
 
 ## What a challenge can be
 
@@ -470,6 +475,10 @@ Community owners still set rules for their own spaces. Apps still decide what th
 highlight. What Bitsocial does not include is a global authority that can confiscate a community or
 erase an identity from the network itself.
 
+For a broader plain-English walkthrough of community ownership, publishing, challenges, and
+moderator signatures, read
+[A complete layman explanation of the Bitsocial protocol](./layman-protocol-explanation.md).
+
 ## How moderation works
 
 - A community owner can moderate that community
@@ -513,6 +522,9 @@ Bitsocial does not use a blockchain, a federation server, or a centralized backe
 uses the IPFS/libp2p stack to combine two ideas: **public-key-based addressing** and
 **peer-to-peer pubsub**. Together they let anyone host a community from consumer hardware while
 users read and post without accounts on any company-controlled service.
+
+For a less technical walkthrough, read
+[A complete layman explanation of the Bitsocial protocol](./layman-protocol-explanation.md).
 
 ## Does Bitsocial use IPFS?
 
@@ -2129,6 +2141,114 @@ Planned improvements include:
 - **Additional verification signals** -- Expand beyond SMS to other identity signals.
 - **Expanded admin tooling** -- Richer dashboards and controls for community operators.
 
+### Pubsub Provider
+
+Source: https://bitsocial.net/docs/infrastructure/pubsub-provider/
+Path: docs/infrastructure/pubsub-provider.md
+Description: Fallback pubsub relay and delegated routing provider for Bitsocial operators.
+
+# Pubsub Provider
+
+Pubsub Provider is an operator service for running a Bitsocial-compatible pubsub fallback relay with a bundled Kubo node. Modern Bitsocial clients such as 5chan and Seedit use pure peer-to-peer networking in the browser by default, but this service remains useful as an optional fallback path for users who disable browser P2P or for operators who want public compatibility endpoints.
+
+- **GitHub**: [bitsocialnet/pubsub-provider](https://github.com/bitsocialnet/pubsub-provider)
+- **Docker image**: [`ghcr.io/bitsocialnet/pubsub-provider`](https://github.com/bitsocialnet/pubsub-provider/pkgs/container/pubsub-provider)
+- **License**: GPL-3.0-or-later
+
+## What It Runs
+
+- a public HTTP proxy for pubsub, gateway, name-provider, and delegated routing routes
+- a bundled Kubo node with pubsub enabled
+- a delegated HTTP routing provider at `/routing/v1/providers`
+- Prometheus metrics at `/metrics`
+- optional basic-auth access to the full Kubo RPC API
+
+## Ports
+
+The defaults are chosen so Pubsub Provider can run next to [Bitsocial Seeder](/apps/bitsocial-seeder/) on the same VPS without a swarm-port conflict.
+
+| Purpose           | Default                      | Notes                                                |
+| ----------------- | ---------------------------- | ---------------------------------------------------- |
+| Public HTTP proxy | `8000` app, `80` Docker host | Set `PUBSUB_PROVIDER_HTTP_PORT` to change host port. |
+| Kubo swarm        | `4002` TCP/UDP               | Avoids the seeder's default Kubo swarm port `4001`.  |
+| Kubo API          | `5001` local only            | Used internally by the proxy.                        |
+| Kubo gateway      | `8080` local only            | Used internally by the proxy.                        |
+
+## Docker Setup
+
+```bash
+git clone https://github.com/bitsocialnet/pubsub-provider.git
+cd pubsub-provider
+docker compose pull
+docker compose up -d
+```
+
+Check logs:
+
+```bash
+docker logs --follow pubsub-provider
+```
+
+Test the proxy:
+
+```bash
+curl http://127.0.0.1/commit-hash
+```
+
+## Upgrading
+
+If you previously ran the old `latest` image, force Compose to recreate the container from the pinned published image:
+
+```bash
+git pull
+docker compose down
+docker compose pull
+docker compose up -d --force-recreate
+```
+
+Verify the fixed image is running:
+
+```bash
+docker inspect pubsub-provider --format 'image={{.Image}} restarts={{.RestartCount}}'
+docker exec pubsub-provider /app/bin/ipfs version
+curl http://127.0.0.1/commit-hash
+```
+
+The logs should include `using Kubo binary at /app/bin/ipfs` and should not include `downloading ipfs`.
+
+## Running With Bitsocial Seeder
+
+If the same host also runs `bitsocial-seeder`, keep Pubsub Provider on swarm port `4002` or another non-`4001` port:
+
+```bash
+PUBSUB_PROVIDER_SWARM_PORT=4002 docker compose up -d
+```
+
+This avoids the port conflict that happens when two Kubo nodes both try to bind TCP/UDP `4001`.
+
+## Configuration
+
+Common environment overrides:
+
+```env
+PUBSUB_PROVIDER_HTTP_PORT=80
+PUBSUB_PROVIDER_SWARM_PORT=4002
+PUBSUB_PROVIDER_PORTS=8000
+KUBO_RPC_URL=http://127.0.0.1:5001/api/v0
+IPFS_GATEWAY_URL=http://127.0.0.1:8080
+HTTP_ROUTER_URLS=https://example-router.invalid
+PUBSUB_PROVIDER_ROUTING_STORE_PATH=
+BASIC_AUTH_USERNAME=
+BASIC_AUTH_PASSWORD=
+IPFS_GATEWAY_USE_SUBDOMAINS=false
+SHUTDOWN_KEY=
+ETH_PROVIDER_URL=
+ETH_PROVIDER_URL_WS=
+SOL_PROVIDER_URL=
+```
+
+Use the provider as a fallback relay, not as a replacement for browser P2P. Keep running the tracker infrastructure separately when the network needs dedicated peer discovery capacity.
+
 ### Telegram Bots
 
 Source: https://bitsocial.net/docs/infrastructure/telegram-bots/
@@ -2903,6 +3023,223 @@ Anonymous visitors now resolve language in this order:
 | `zh`   | `CN`, `HK`, `SG`         | China 464, Moderate; Hong Kong 538, Moderate; Singapore Census 2020: English most frequently spoken at home for 48.3% | English in `SG`; browser/device language in `CN`, `HK` and other regions |
 
 Only the positive overrides are encoded in runtime logic. All other regions continue to prefer the browser/device language when it matches one of the supported locale codes.
+
+### A complete layman explanation of the Bitsocial protocol
+
+Source: https://bitsocial.net/docs/layman-protocol-explanation/
+Path: docs/layman-protocol-explanation.md
+Description: A plain-English walkthrough of Bitsocial communities, peer lookup, publishing, anti-spam challenges, moderation, and apps.
+
+# A complete layman explanation of the Bitsocial protocol
+
+This page explains Bitsocial without assuming you already understand peer-to-peer networking,
+cryptographic keys, IPFS, or pubsub.
+
+Some details are simplified on purpose. For the more technical version, read the
+[Peer-to-Peer Protocol](./peer-to-peer-protocol.md) page.
+
+## The short version
+
+Bitsocial is a protocol for social apps where communities are owned by keys instead of by a
+company database.
+
+A Bitsocial community has an address. Apps use that address to find peers that are serving the
+community, fetch the latest posts from those peers, and publish new posts through a peer-to-peer
+message channel. Before a post is accepted, the community can require an anti-spam challenge such
+as a captcha, invite code, payment, token check, AI moderation check, allowlist, or any other rule
+that can be coded.
+
+That is the core idea:
+
+1. A community is controlled by a private key.
+2. The public key gives the community a stable address.
+3. Peers help readers find and fetch the community.
+4. A community node accepts or rejects new posts.
+5. Anti-spam policy belongs to each community, not to one global platform.
+
+## Why hashes matter
+
+A hash is a short fingerprint for data.
+
+If two people hash the exact same file, they get the same fingerprint. If the file changes, the
+fingerprint changes. That makes hashes useful for finding and checking data without trusting a
+company to tell you what the file is.
+
+Peer-to-peer systems use this idea constantly. Instead of asking one website for "the file named
+photo.png", a peer can ask the network for the data with a specific fingerprint. If another peer
+returns the wrong data, the hash check fails.
+
+Bitsocial uses hashes and content identifiers for post data and other pieces of community state.
+The important point is simple: data can be addressed by what it is, not only by where a company
+hosted it.
+
+## Why public keys matter
+
+A public key and a private key are a matched pair.
+
+The private key is secret. It is the thing that gives control. The public key is safe to share. It
+lets everyone else check that a message, update, or moderation action really came from the matching
+private key.
+
+This is how Bitsocial avoids normal platform accounts. A company does not need to issue the
+identity. A database row does not need to define the owner. The keypair is the authority.
+
+In plain terms:
+
+- the private key is the owner's control handle
+- the public key is the public identity or address
+- signatures prove that an action came from the owner
+
+## What a Bitsocial community is
+
+A Bitsocial community is not just a page in one app.
+
+It has its own keypair. The public key gives the community a stable network address. The private key
+controls updates to the community's state, such as metadata, rules, moderator list, challenge
+configuration, and the pointers to the latest accepted content.
+
+That means a community can outlive one interface. One app can show it as a board. Another app can
+show it as a forum. A future app can show it in a profile-based feed. The app can change, but the
+community address still points to the same owned community.
+
+## How reading works
+
+When a user opens a Bitsocial community, the app does not ask one central database for the page.
+
+The flow is closer to this:
+
+1. The app already knows the community address, or gets it from a list, link, search surface, or
+   human-readable name.
+2. The app asks lightweight routers which peers currently provide that community address.
+3. The routers return peer addresses only. They do not return posts, rules, profiles, or community
+   metadata.
+4. The app connects to peers and fetches the latest community state.
+5. That state contains pointers to post content.
+6. The app fetches the post content from peers and renders it in a normal social interface.
+
+The router is only a lookup helper. It is closer to asking "who has this?" than asking "please
+serve me the whole website."
+
+For more detail on this split, read [Content Discovery](./content-discovery.md).
+
+## How posting works
+
+Posting is different from reading because open peer-to-peer networks can be spammed.
+
+Bitsocial handles publishing through a challenge-response flow:
+
+1. The user writes a post or reply.
+2. The app joins the community's peer-to-peer message topic.
+3. The app asks the community node for a challenge.
+4. The community node sends back the challenge.
+5. The user or app completes the challenge.
+6. The app sends the post plus the challenge answer.
+7. The community node checks the answer and the post.
+8. If it passes, the community node accepts the post into the community's next update.
+9. Other readers fetch the updated community state from peers.
+
+The challenge happens before the post becomes part of the accepted community state. That is the
+important difference from systems where spam is accepted first and hidden later.
+
+## Why anti-spam challenges matter
+
+Most social platforms turn anti-spam into platform policy. One company decides what counts as a
+valid account, valid post, valid reach, or valid user.
+
+Bitsocial separates those things. The protocol gives communities a way to require a challenge
+before accepting a post, but it does not force every community to use the same challenge.
+
+One community might use a captcha. Another might use invite codes. Another might require an SMS
+check, a payment, an NFT, a token balance, an AI moderation score, a proof of reputation, a
+community-specific allowlist, or a custom rule.
+
+That flexibility matters because spam changes. A protocol-level spam rule becomes stale. A
+community-level challenge can evolve without migrating the whole network.
+
+For the focused explanation, read [Custom Anti-Spam Challenges](./custom-challenges.md).
+
+## How moderation works
+
+Bitsocial is not moderation-free. It is moderation without one global super-admin.
+
+A community can have owners and moderators. Moderator addresses are part of the community state.
+When a moderator takes an action, that action can be signed. The community node and clients can
+check the signature against the moderator list.
+
+That gives moderation a local scope:
+
+- a community owner controls that community
+- moderators act through keys the community recognizes
+- apps can still choose what they index, rank, hide, or highlight
+- no protocol-level company account can erase every identity or seize every community
+
+In practice, this means a community can remove spam or enforce rules inside its own space without
+turning its rules into law for the entire network.
+
+For the policy view, read [Local Moderation, Not Global Bans](./local-moderation.md).
+
+## What apps add
+
+The protocol does not decide what the whole product should look like.
+
+An app adds the human experience around the protocol:
+
+- default community lists
+- search and discovery
+- feeds and ranking
+- layout and posting interface
+- media handling
+- moderation tools
+- mobile, desktop, or browser packaging
+- business model and defaults
+
+That is why Bitsocial can support different app styles. 5chan can feel like an imageboard. Seedit
+can feel like forum-style discussion. Other clients can build different discovery surfaces,
+ranking systems, moderation views, or community defaults while still using compatible Bitsocial
+communities underneath.
+
+The protocol keeps ownership and publishing portable. Apps compete on product quality.
+
+## What public RPC adds
+
+Running a peer-to-peer community node directly is powerful, but not everyone wants to manage an
+always-on machine.
+
+Public RPC is the service layer that can make Bitsocial more convenient. A public RPC provider can
+help users manage communities from a phone or lightweight client, while the long-term ownership
+model should still let users move away, self-host, or choose a competing provider.
+
+The distinction matters:
+
+- RPC can help with uptime and convenience
+- RPC should not become permanent custody
+- the owner relationship should remain tied to keys, not to one provider's database
+
+For the proposed service design, read [Permissionless Public RPC](./permissionless-public-rpc.md).
+
+## What Bitsocial is not
+
+Bitsocial is not a blockchain social network. Social media does not need every post to become a
+transaction in one global ledger.
+
+Bitsocial is not federation in the ActivityPub sense. A community does not need to be an account on
+one server with one domain, one admin, and one server database.
+
+Bitsocial is also not one app. It is a shared protocol layer for apps, communities, nodes, routers,
+RPC providers, discovery services, anti-spam modules, and moderation tools.
+
+The point is not that every user needs to understand all of this before posting. The point is that
+the product can feel normal while the ownership model underneath is different.
+
+## Where to go next
+
+- [Peer-to-Peer Protocol](./peer-to-peer-protocol.md) explains the technical flow.
+- [Content Discovery](./content-discovery.md) explains network lookup versus app curation.
+- [Custom Anti-Spam Challenges](./custom-challenges.md) explains the challenge system.
+- [Identity and Community Ownership](./identity-and-ownership.md) explains key-controlled
+  ownership.
+- [Build your own client](/build-your-own-client/) explains how independent apps can build on
+  the same network.
 
 ## Companion project READMEs
 
@@ -4252,6 +4589,126 @@ These settings are configured on the HTTP server, not in the challenge package:
 - bitsocial-js challenge orchestration: `pkc-js/src/runtime/node/community/challenges/index.ts`
 - MintPass iframe challenge: https://github.com/bitsociallabs/mintpass/tree/master/challenge
 
+### @bitsocial/r9k-challenge
+
+Repository: bitsocialnet/r9k-challenge
+Source: https://github.com/bitsocialnet/r9k-challenge#readme
+Description: Robot9000 style originality challenge for Bitsocial communities.
+
+# @bitsocial/r9k-challenge
+
+Robot9000-style originality challenge for Bitsocial communities.
+
+This package runs on a Bitsocial community owner node as a deterministic Bitsocial challenge. It is not specific to 5chan; any Bitsocial community can use it when the operator wants Robot9000-style anti-repost behavior. It does not use AI. It scans the community owner's local comments database for exact text reposts after Robot9000 normalization and applies escalating temporary bans for failed attempts.
+
+Robot9000 is based on the anti-repost idea originally described by Randall Munroe in [ROBOT9000 and #xkcd-signal: Attacking Noise in Chat](https://blog.xkcd.com/2008/01/14/robot9000-and-xkcd-signal-attacking-noise-in-chat/).
+
+## Installation
+
+Run this on the Bitsocial node that owns the community:
+
+```bash
+bitsocial challenge install @bitsocial/r9k-challenge
+```
+
+This challenge is listed in the Bitsocial app directory under anti-spam:
+
+https://bitsocial.net/apps?category=anti-spam
+
+## Configuration
+
+Add the challenge to the community's `settings.challenges`:
+
+```js
+[
+  { name: "@bitsocial/spam-blocker-challenge" },
+  { name: "@bitsocial/r9k-challenge" },
+];
+```
+
+Default options implement Robot9000-style behavior:
+
+| Option                              | Default                                 | Behavior                                                            |
+| ----------------------------------- | --------------------------------------- | ------------------------------------------------------------------- |
+| `statePath`                         | `~/.bitsocial-r9k-challenge-state.json` | Private JSON state for temporary bans and accepted-hash race guards |
+| `minimumOriginalContentLength`      | `16`                                    | Requires this many normalized text characters                       |
+| `transgressionDecayIntervalSeconds` | `86400`                                 | Forgives one transgression per day                                  |
+| `penaltyBaseSeconds`                | `2`                                     | Temporary ban duration is `2^n` seconds                             |
+| `maxPenaltySeconds`                 | empty                                   | No cap by default                                                   |
+| `blockUnicode`                      | `true`                                  | Rejects non-ASCII text                                              |
+| `stripBacklinks`                    | `true`                                  | Ignores numeric backlinks like `>>123`                              |
+| `requireText`                       | `true`                                  | Rejects posts without title/body text                               |
+| `error`                             | `Rejected by Robot9000.`                | Error prefix shown to users                                         |
+
+Posts require enough original content to avoid low-effort duplicates. This package uses `16` normalized characters as its default and keeps it configurable per board.
+
+## Behavior
+
+- Exact normalized text reposts are rejected by scanning the owner node's `comments` SQLite table during `getChallenge()`.
+- Numeric backlinks like `>>1` do not count toward originality.
+- Images, media links, and URLs are not included in the originality hash.
+- Unicode is rejected by default.
+- Posts need text; image-only posts fail.
+- A failed originality attempt temporarily bans the author for `2^n` seconds, where `n` is the current transgression count.
+- The transgression count decays by one every `transgressionDecayIntervalSeconds`.
+- State stores SHA-256 hashes for newly accepted text plus temporary-ban counters, not raw post text. Existing-board originality comes from the local database scan.
+
+## Ban Semantics
+
+Bitsocial exposes `author.community.banExpiresAt` for moderator bans, but a challenge failure happens before the offending comment is accepted and therefore has no accepted `commentCid` to moderate. This package enforces the same timed-ban behavior inside the challenge state and rejects the author's later challenge requests until `banExpiresAt`.
+
+If Bitsocial later exposes a safe challenge-side author-ban API for rejected publications, this package can map the same penalty state to native `banExpiresAt`.
+
+## Development
+
+```bash
+corepack yarn install
+corepack yarn type-check
+corepack yarn test
+corepack yarn test:coverage
+corepack yarn build
+```
+
+## Test Coverage
+
+The test suite covers Robot9000 normalization, minimum text checks, Unicode blocking, image/link exclusion, escalating and decaying temporary bans, content edits, missing database fail-closed behavior, and duplicate detection against both the challenge state file and a real in-memory SQLite `comments`/`commentUpdates` database.
+
+The coverage badge reports line coverage generated with `yarn test:coverage`. On pushes to `master`, CI writes a Shields-compatible endpoint payload and publishes it to GitHub Pages.
+
+These tests exercise the challenge package directly. They do not start a full Bitsocial node or publish over the network.
+
+## Publishing
+
+Create the GitHub release and changelog with release-it:
+
+```bash
+corepack yarn release 0.1.0
+```
+
+The command expects the current branch to have an upstream and needs a GitHub token that can create releases. It writes `CHANGELOG.md`, creates a `v0.1.0` tag, and opens the GitHub release.
+
+The first npm publish must create the package before trusted publishing can be configured:
+
+```bash
+npm publish --access public
+```
+
+After the package exists, configure npm trusted publishing:
+
+- Publisher: GitHub Actions
+- Organization: `bitsocialnet`
+- Repository: `r9k-challenge`
+- Workflow filename: `publish.yml`
+- Environment: leave blank
+
+Equivalent npm CLI command:
+
+```bash
+npm trust github @bitsocial/r9k-challenge --repo bitsocialnet/r9k-challenge --file publish.yml
+```
+
+Future releases publish automatically when `package.json` version changes on `master`. The publish workflow skips versions that already exist on npm.
+
 ### @bitsocial/captcha-canvas-challenge
 
 Repository: bitsocialnet/captcha-canvas-challenge
@@ -4699,6 +5156,224 @@ npm run typecheck
 npm run build
 npm test
 ```
+
+### @bitsocial/flags-challenge
+
+Repository: bitsocialnet/flags-challenge
+Source: https://github.com/bitsocialnet/flags-challenge#readme
+Description: Verified flag issuer challenge for Bitsocial communities and clients.
+
+# @bitsocial/flags-challenge
+
+Verified flag issuer challenge for Bitsocial communities and clients.
+
+This package runs on a Bitsocial community owner node as a challenge. It is not specific to 5chan: any Bitsocial client can use the same challenge pattern with its own issuer service, namespace, and flag profile. The first bundled profile is the 5chan profile. Country flags are issued by `flags.5chan.app`; `/pol/` memeflags and `/mlp/` pony flags are validated as board-choice flairs without an issuer iframe.
+
+For issuer-verified country flags, the challenge writes two pieces of data:
+
+- immutable comment data under a client namespace such as `comment["5chan"]`;
+- a compatibility mirror under `commentUpdate.author.community.flairs`, so clients that already render author flairs can show the same flag.
+
+For `/pol/` memeflags and `/mlp/` pony flags, clients should publish the selected flag as normal comment flair data. The challenge validates that the requested family is allowed and that the code is known, then accepts the publication without contacting the issuer service.
+
+The namespace is configurable. For example, a future Seedit profile could write to `comment["seedit"]` while using its own issuer and flag metadata.
+
+## Installation
+
+Run this on the Bitsocial node that owns the community:
+
+```bash
+bitsocial challenge install @bitsocial/flags-challenge
+```
+
+## Configuration
+
+Add the challenge to the community's `settings.challenges`:
+
+```js
+[{ name: "@bitsocial/flags-challenge" }];
+```
+
+Default options use the first bundled profile and target the 5chan issuer:
+
+| Option         | Default                          | Behavior                                              |
+| -------------- | -------------------------------- | ----------------------------------------------------- |
+| `serviceUrl`   | `https://flags.5chan.app/api/v1` | Flag issuer service endpoint                          |
+| `issuer`       | `flags.5chan.app`                | Expected issuer name in signed assertions             |
+| `namespace`    | `5chan`                          | Top-level comment object key for immutable data       |
+| `profile`      | `5chan`                          | Flag profile to validate; this release supports 5chan |
+| `allowedFlags` | `country,pol,pony`               | Comma-separated flag families accepted by the board   |
+| `emitFlair`    | `true`                           | Mirrors the verified flag to author community flairs  |
+| `error`        | `Flag verification failed.`      | Error prefix shown if verification fails              |
+
+Boards can restrict flag families:
+
+```js
+[
+  {
+    name: "@bitsocial/flags-challenge",
+    options: {
+      allowedFlags: "country,pol",
+    },
+  },
+];
+```
+
+For `/mlp/`, use:
+
+```js
+[
+  {
+    name: "@bitsocial/flags-challenge",
+    options: {
+      allowedFlags: "pony",
+    },
+  },
+];
+```
+
+## 5chan Flag Requests
+
+Clients request a flag by publishing a challenge-readable flag value on the comment, usually through `flair`:
+
+```js
+{
+  flair: { type: "country", code: "auto", text: "flag:country:auto" }
+}
+```
+
+Supported 5chan request strings:
+
+- `flag:country:auto`
+- `flag:pol:AC`
+- `flag:pony:AJ`
+
+Country flags use `auto` because the issuer service must derive the country from the challenge iframe request IP. The challenge does not trust a client-provided country code as proof of location. `/pol/` memeflags and `/mlp/` pony flags are free user choices, so they do not require the iframe flow.
+
+## Verified Comment Shape
+
+For a country flag, the challenge returns a result like:
+
+```js
+{
+  success: true,
+  comment: {
+    "5chan": {
+      country: "US",
+      flag: {
+        type: "country",
+        code: "US",
+        text: "flag:country:us",
+        label: "US"
+      },
+      issuer: "flags.5chan.app",
+      issuedAt: 1770000000,
+      signature: {
+        publicKey: "flag-service-public-key",
+        signature: "flag-service-signature",
+        type: "ed25519"
+      }
+    }
+  },
+  commentUpdate: {
+    author: {
+      community: {
+        flairs: [{ text: "flag:country:us", type: "country", code: "US" }]
+      }
+    }
+  }
+}
+```
+
+For `/pol/` memeflags and `/mlp/` pony flags, clients render the selected flag from the comment flair fields they publish. The challenge does not add a signed `comment["5chan"]` assertion for those board-choice flags.
+
+## Issuer Service Contract
+
+The challenge creates a lazy iframe URL:
+
+```text
+https://flags.5chan.app/api/v1/iframe/<sessionId>/lazy#payload=<base64url-cbor>
+```
+
+The payload includes:
+
+- the original challenge request;
+- `requestedFlag`;
+- `profile`, `namespace`, and `issuer`;
+- a community-signed CBOR payload signature.
+
+When the user completes the iframe flow, the challenge calls:
+
+```text
+POST https://flags.5chan.app/api/v1/challenge/verify
+Content-Type: application/cbor
+Accept: application/json
+```
+
+The issuer should return:
+
+```js
+{
+  success: true,
+  flag: {
+    type: "country",
+    code: "US",
+    issuer: "flags.5chan.app",
+    issuedAt: 1770000000,
+    signature: {
+      publicKey: "flag-service-public-key",
+      signature: "flag-service-signature",
+      type: "ed25519"
+    }
+  }
+}
+```
+
+For country flags, the service can also return `{ success: true, country: "US", issuer, issuedAt, signature }`.
+
+Issuer service deployment is intentionally outside this package. The challenge only defines the community-node integration and the issuer API contract.
+
+## Development
+
+```bash
+corepack yarn install
+corepack yarn type-check
+corepack yarn test
+corepack yarn test:coverage
+corepack yarn build
+```
+
+## Publishing
+
+Create the GitHub release and changelog with release-it:
+
+```bash
+corepack yarn release 0.1.0
+```
+
+The command expects the current branch to have an upstream and needs a GitHub token that can create releases. It writes `CHANGELOG.md`, creates a `v0.1.0` tag, and opens the GitHub release.
+
+The first npm publish must create the package before trusted publishing can be configured:
+
+```bash
+npm publish --access public
+```
+
+After the package exists, configure npm trusted publishing:
+
+- Publisher: GitHub Actions
+- Organization: `bitsocialnet`
+- Repository: `flags-challenge`
+- Workflow filename: `publish.yml`
+- Environment: leave blank
+
+Equivalent npm CLI command:
+
+```bash
+npm trust github @bitsocial/flags-challenge --repo bitsocialnet/flags-challenge --file publish.yml
+```
+
+Future releases publish automatically when `package.json` version changes on `master`. The publish workflow skips versions that already exist on npm.
 
 ### bitsocial-cli: A Bitsocial Node with WebSocket and Command Line Interface
 
@@ -5766,6 +6441,345 @@ We're always happy to receive pull requests. Few things to keep in mind:
 ## Feedback
 
 We would love your feedback on our community channels
+
+### bitsocial-seeder
+
+Repository: bitsocialnet/bitsocial-seeder
+Source: https://github.com/bitsocialnet/bitsocial-seeder#readme
+Description: Seeds Bitsocial community first pages, post update CIDs, pubsub topic routing CIDs, and pubsub topics through a bitsocial daemon.
+
+# bitsocial-seeder
+
+Seeds Bitsocial community first pages, post-update CIDs, pubsub topic routing CIDs, and pubsub topics through a `bitsocial daemon`.
+
+It reuses an already-running Kubo and PKC RPC when one is available. If it cannot find a local daemon, it starts the bundled `@bitsocial/bitsocial-cli` daemon automatically and seeds through that node.
+
+## Is this the only way to seed?
+
+No — and for most users it is not the recommended way. Bitsocial desktop apps such as the 5chan Electron app already seed automatically while they are running. If many users keep an app open, the network is well served without anyone running a dedicated seeder. **The apps are the load-bearing seeders of the protocol; this repo is supplemental.**
+
+`bitsocial-seeder` exists for operators who want to contribute consistent 24/7 seeding capacity from a VPS or a spare machine — for example, running closer to popular communities to lower fetch latency, or keeping data available during quiet periods when few app users are online. It is helpful but not required.
+
+This is also an **experimental repository**. Releases are cut frequently, internals change without warning between minor versions, and the project is treated as a place to try ideas that benefit the protocol but are not on its critical path. Please file issues if you hit anything; expect bumps.
+
+## Setup
+
+The fastest path is Docker Compose. Recommended for unattended VPS seeders — it gives you a predictable service wrapper, simpler updates, and fewer local Node/native dependency surprises.
+
+**1. Clone and start the container:**
+
+```sh
+git clone https://github.com/bitsocialnet/bitsocial-seeder.git
+cd bitsocial-seeder
+docker compose up -d
+```
+
+**2. Watch the logs to confirm it's seeding:**
+
+```sh
+docker compose logs -f
+```
+
+Within a couple of minutes you should see lines like:
+
+```
+discovered N communities to seed
+seeding N communities
+some-community.bso updated 2 minutes ago, page cids: 0, post updates cids: 3, ...
+some-community.bso queueing pubsub routing provide bafkrei...
+some-community.bso pinned Qm... in 1.2s
+```
+
+That's it — you're seeding. The container bundles its own Bitsocial daemon (Kubo IPFS + PKC), discovers communities from the [default 5chan directories](https://github.com/bitsocialnet/lists/tree/master/5chan-directories), and pins their content.
+
+**3. (Optional) Cap the workload on small VPSes:**
+
+```sh
+MAX_COMMUNITIES=10 PIN_CONCURRENCY=1 docker compose up -d
+```
+
+See [VPS Sizing](#vps-sizing) for capacity guidance.
+
+Compose pulls `ghcr.io/bitsocialnet/bitsocial-seeder:latest` by default. To pin a specific version, edit `docker-compose.yml` and set `image: ghcr.io/bitsocialnet/bitsocial-seeder:0.2.0`.
+
+### Run without Docker (npm)
+
+For local testing or Node-first operators (Node 24+ required):
+
+```sh
+npx @bitsocial/bitsocial-seeder
+```
+
+Or install globally:
+
+```sh
+npm install -g @bitsocial/bitsocial-seeder
+bitsocial-seeder
+```
+
+Same environment variables as the Docker image. Reuses an already-running Bitsocial daemon when one is reachable, otherwise starts the bundled one.
+
+### Seed a different list of communities
+
+Override `COMMUNITY_LIST_SOURCES` with one or more comma-separated URLs or local file paths pointing at JSON files in the format `{"communities": [{"address": "...", "publicKey": "..."}]}`. See [Configuration](#configuration) for the full list of env vars.
+
+### Add private communities to seed
+
+Set `COMMUNITY_EXTRA_LIST_SOURCES` to add operator-specific communities without replacing the default public lists:
+
+```sh
+COMMUNITY_EXTRA_LIST_SOURCES=/data/extra-communities.json docker compose up -d
+```
+
+Example `/data/extra-communities.json`:
+
+```json
+{"communities": [{"address": "my-community.bso", "publicKey": "12D3KooW..."}]}
+```
+
+Extra sources use the same format as `COMMUNITY_LIST_SOURCES`, can be URLs, files, or directories of JSON files, and are re-read on the normal discovery interval. `MAX_COMMUNITIES` caps only the public list entries; explicitly configured extra communities are always included. If an extra entry has the same `publicKey` or address as a public entry, the extra entry wins.
+
+### Verify what's being seeded
+
+The seeder's state lives in a SQLite database at `SEEDER_DB_PATH` (default `/data/seeder.db` in Docker):
+
+```sh
+docker compose exec bitsocial-seeder sqlite3 /data/seeder.db \
+  'SELECT address FROM communities'
+```
+
+See [State](#state) for the schema and other tables you can query.
+
+## Configuration
+
+The default config expects:
+
+- PKC RPC: `ws://127.0.0.1:9138`
+- Kubo RPC: `http://127.0.0.1:50019/api/v0`
+- community lists: `bitsocialnet/lists` 5chan directory files
+- daemon data: `/data/bitsocial`
+
+On Linux hosts the compose file uses `network_mode: host`, so the container can reach the host daemon through `127.0.0.1`.
+If no host daemon is running, the container starts its bundled daemon on those same local RPC addresses.
+
+Useful environment overrides:
+
+```sh
+PKC_RPC_URL=ws://127.0.0.1:9138
+KUBO_RPC_URL=http://127.0.0.1:50019/api/v0
+IPFS_GATEWAY_URL=http://127.0.0.1:6473
+COMMUNITY_LIST_SOURCES=https://api.github.com/repos/bitsocialnet/lists/contents/5chan-directories?ref=master
+COMMUNITY_EXTRA_LIST_SOURCES=/data/extra-communities.json
+SEEDER_DAEMON_AUTOSTART=true
+SEEDER_DAEMON_DATA_PATH=/data/bitsocial
+SEEDER_DAEMON_LOG_PATH=/data/logs
+SEEDER_DB_PATH=/data/seeder.db
+MAX_COMMUNITIES=20
+PIN_CONCURRENCY=2
+SEEDER_UPDATE_CHECK_ENABLED=true
+SEEDER_UPDATE_CHECK_INTERVAL_MS=86400000
+SEEDER_UPDATE_CHECK_TIMEOUT_MS=5000
+```
+
+## State
+
+The seeder keeps its operational state in a single SQLite file at `SEEDER_DB_PATH` (defaults to `./seeder.db`, set to `/data/seeder.db` in the Docker image). The file holds the seeded community list, per-pin bookkeeping for stale-pin GC, the pubsub-routing re-provide throttle, and the durable work queues + scheduler powered by [honker](https://github.com/russellromney/honker).
+
+On first start the seeder will migrate any pre-existing `seederState.json` into the database. After migration the JSON file is no longer read or written and can be removed at the operator's discretion.
+
+Inspect state with the host's `sqlite3` against the file directly, e.g. `sqlite3 /data/seeder.db 'SELECT community_key, address FROM communities'`.
+
+The seeder checks npm for a newer `@bitsocial/bitsocial-seeder` release on
+startup and once per day after that. When a newer release exists, it prints an
+update notice in the logs. Set `SEEDER_UPDATE_CHECK_ENABLED=false` to disable
+that check.
+
+## VPS Sizing
+
+For public seeding, size the host like a small Kubo node plus a lightweight Node.js seeder process.
+The seeder wrapper is small, but with `SEEDER_DAEMON_AUTOSTART=true` it also runs a bundled Bitsocial daemon and Kubo IPFS node.
+
+Recommended starting point:
+
+- CPU: 2 vCPU.
+- Memory: 4 GiB can work for a low-cost trial, especially with swap, but 6 GiB or more is the safer target for unattended public seeders. Kubo's [published baseline](https://docs.ipfs.tech/install/command-line/#system-requirements) is 6 GiB memory and 2 CPU cores.
+- Disk: 20 GiB minimum free space for Docker, logs, seeder state, and the IPFS repo; 50 GiB or more is more comfortable for long-running nodes or larger `MAX_COMMUNITIES` values.
+- Network: stable public IPv4 or IPv6 with unrestricted outbound TCP/UDP. Allow inbound Kubo swarm traffic if possible, usually TCP/UDP 4001 with the default Kubo config, but keep PKC and Kubo RPC ports private to the host.
+- Transfer: avoid tiny metered bandwidth caps. Start with at least 1 TB/month included transfer and monitor provider-level bandwidth, not only `ipfs stats bw`.
+
+The default 5chan directory source is dozens of small communities, not full media archiving.
+Disk and bandwidth mostly scale with `MAX_COMMUNITIES`, pinned page/update size, pubsub activity, and Kubo/libp2p overhead.
+On small VPSes, lower `MAX_COMMUNITIES` and keep `PIN_CONCURRENCY=1`.
+
+Bitsocial configures delegated HTTP routing/tracker endpoints for provider lookups, so it should be lighter than an untuned Kubo node doing full DHT provider sweeps.
+It still runs Kubo and joins pubsub topics, so treat it as Kubo-class infrastructure rather than a static HTTP service.
+
+## Local Development
+
+```sh
+npm install
+npm test
+npm start
+```
+
+## Releases
+
+Releases are driven by the `version` in `package.json`. On a successful push to
+`master`, CI updates `CHANGELOG.md`, pushes versioned Docker image tags, publishes
+`@bitsocial/bitsocial-seeder` to npm with trusted publishing, and creates the
+matching GitHub Release.
+
+The npm trusted publisher should be configured for:
+
+- npm package: `@bitsocial/bitsocial-seeder`
+- GitHub repository: `bitsocialnet/bitsocial-seeder`
+- workflow filename: `release.yml`
+- allowed action: `npm publish`
+
+The package must exist on npm before trusted publishing can be configured. After
+the first package version exists, future releases should publish through CI
+without long-lived npm tokens.
+
+For initial npm bootstrap, backfill historical package versions before cutting
+the next release if you want npm to show the full release line. Publish `0.1.0`
+and `0.1.1` only from their matching release code plus the minimum npm metadata
+needed for the scoped package; do not publish current code under an old version.
+
+### Bitsocial Pubsub Provider
+
+Repository: bitsocialnet/pubsub-provider
+Source: https://github.com/bitsocialnet/pubsub-provider#readme
+Description: Run a Bitsocial pubsub fallback provider with a bundled Kubo node.
+
+# Bitsocial Pubsub Provider
+
+Run a Bitsocial pubsub fallback provider with a bundled Kubo node.
+
+Modern Bitsocial apps such as 5chan use pure p2p in the browser by default. This provider is still useful as an optional fallback for clients that disable browser p2p, need a non-p2p pubsub relay, or want a public gateway/provider bundle for compatibility.
+
+## What It Runs
+
+- a public HTTP proxy for pubsub, gateway, name-provider, and delegated routing routes
+- a bundled Kubo node with pubsub enabled
+- a delegated HTTP routing provider at `/routing/v1/providers`
+- optional ENS/SNS proxy helpers when chain RPC environment variables are configured
+
+It includes the delegated HTTP routing compatibility endpoint that old provider clients used for provider lookup/provide requests. You can still run a dedicated tracker separately if you want that role split out.
+
+## Ports
+
+The defaults are chosen so this can run next to `bitsocial-seeder` on the same host.
+
+| Purpose | Default | Notes |
+| --- | ---: | --- |
+| Public HTTP proxy | `8000` in the app, `80` in Docker Compose | Set `PUBSUB_PROVIDER_HTTP_PORT` for the host port in Compose. |
+| Kubo swarm | `4002` TCP/UDP | Avoids the seeder's default Kubo swarm port `4001`. |
+| Kubo API | `5001` local only | Used internally by the proxy. |
+| Kubo gateway | `8080` local only | Used internally by the proxy. |
+
+## Quick Start
+
+The published Docker image includes the Kubo binary, so normal Docker users do not need to download Kubo during container startup.
+
+```sh
+git clone https://github.com/bitsocialnet/pubsub-provider.git
+cd pubsub-provider
+docker compose pull
+docker compose up -d
+```
+
+The default Compose file runs the pinned published image. To build from local source instead:
+
+```sh
+docker compose -f docker-compose.yml -f docker-compose.build.yml up --build -d
+```
+
+Check logs:
+
+```sh
+docker logs --follow pubsub-provider
+```
+
+Test the proxy:
+
+```sh
+curl http://127.0.0.1/commit-hash
+```
+
+## Configuration
+
+Useful environment overrides:
+
+```sh
+PUBSUB_PROVIDER_HTTP_PORT=80
+PUBSUB_PROVIDER_SWARM_PORT=4002
+PUBSUB_PROVIDER_PORTS=8000
+KUBO_RPC_URL=http://127.0.0.1:5001/api/v0
+IPFS_GATEWAY_URL=http://127.0.0.1:8080
+HTTP_ROUTER_URLS=https://example-router.invalid
+PUBSUB_PROVIDER_ROUTING_STORE_PATH=
+BASIC_AUTH_USERNAME=
+BASIC_AUTH_PASSWORD=
+IPFS_GATEWAY_USE_SUBDOMAINS=false
+SHUTDOWN_KEY=
+ETH_PROVIDER_URL=
+ETH_PROVIDER_URL_WS=
+SOL_PROVIDER_URL=
+```
+
+Source/local runs download Kubo automatically when `bin/ipfs` is missing. If your host has unreliable DNS or blocks the default download domains, you can provide comma-separated full URLs or base URLs:
+
+```sh
+PUBSUB_PROVIDER_KUBO_DOWNLOAD_URLS=https://dist.ipfs.tech/kubo,https://github.com/ipfs/kubo/releases/download
+PUBSUB_PROVIDER_KUBO_DOWNLOAD_ATTEMPTS=5
+PUBSUB_PROVIDER_KUBO_DOWNLOAD_TIMEOUT_MS=600000
+```
+
+If you also run `bitsocial-seeder`, keep this provider on swarm port `4002` or another non-`4001` port.
+
+## Upgrading
+
+If you previously ran `latest`, force Compose to recreate the container from the pinned image:
+
+```sh
+git pull
+docker compose down
+docker compose pull
+docker compose up -d --force-recreate
+```
+
+Verify the fixed image is running:
+
+```sh
+docker inspect pubsub-provider --format 'image={{.Image}} restarts={{.RestartCount}}'
+docker exec pubsub-provider /app/bin/ipfs version
+curl http://127.0.0.1/commit-hash
+```
+
+The logs should not contain `downloading ipfs`. If they do, the container is still running an old local image or an old checkout.
+
+## Local Development
+
+Requires Node.js 24 or newer.
+
+```sh
+npm install
+npm start -- [--ipfs-gateway-use-subdomains] [--shutdown-key <secret-key>]
+```
+
+Run tests:
+
+```sh
+npm test
+```
+
+## Cloudflare Note
+
+Pubsub subscriptions use long-lived HTTP connections. Cloudflare can time out those keepalive connections unless response buffering/streaming behavior is configured appropriately. If pubsub fallback is the reason you run this provider, prefer direct DNS or infrastructure that supports long-lived streaming responses.
+
+## License
+
+GPL-3.0-or-later. See [LICENSE](LICENSE).
 
 ### Bitsocial Telegram Bots
 

@@ -19,7 +19,8 @@
     "language": "Dil",
     "theme": "Tema",
     "sourceCode": "Kaynak kodu",
-    "newsletter": "Bülten"
+    "newsletter": "Bülten",
+    "backToTop": "Başa dön"
   },
   "footer": {
     "tagline": "Sosyal uygulamalar için açık kaynak P2P ağı",
@@ -399,10 +400,10 @@
     "mobileDownloads": "Mobil indirmeler",
     "desktopDownloads": "Masaüstü indirmeleri",
     "extraDownloads": "Ekstra derlemeler",
-    "subtitle": "Bitsocial, herkesin inşa edebileceği, kapı bekçilerinin onayladıklarıyla sınırlı olmayan binlerce uygulama, araç ve hizmete dönüşmek için tasarlandı. Şu anda yayında olanlara göz atın, sonra kendi gönderinizi yapın.",
+    "subtitle": "Bitsocial, herkesin inşa edebileceği, kapı bekçilerinin onayladıklarıyla sınırlı olmayan binlerce uygulama, araç ve hizmete dönüşmek için tasarlandı. Geliştiriciysen kendi uygulamanı gönder.",
     "experimental": "Deneysel",
     "sectionLabel": "Uygulama Dizini",
-    "directoryLabel": "Dizin",
+    "directoryLabel": "Kategoriler",
     "notFoundDescription": "Aradığınız uygulama dizinde yok.",
     "emptyCategoryDescription": "Bu kategoride henüz uygulama yok. İlkini siz oluşturun!",
     "emptyCategory": "Yakında",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "Anti-spam",
-          "description": "Bitsocial toplulukları için kimlik doğrulama, filtreleme ve moderasyon modülleri."
+          "description": "Bitsocial toplulukları için filtreleme ve denetim modülleri."
         },
         "tools": {
           "label": "Araçlar",
           "description": "Bitsocial uygulamalarını çalıştırmak veya genişletmek için CLI ve yönetim araçları."
+        },
+        "identity": {
+          "description": "Bitsocial topluluklarında kimsin yayın yapabileceğini kontrol eden kimlik bilgisi ve doğrulama modülleri.",
+          "label": "Kimlik"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "On-chain",
         "riskScores": "Risk puanları",
         "telegram": "Telegram",
-        "verification": "Doğrulama"
+        "verification": "Doğrulama",
+        "ai": "AI",
+        "antiRepost": "Yeniden paylaşım karşıtı"
       },
       "linkLabels": {
         "androidApk": "Android APK",
@@ -528,6 +535,22 @@
         "5chan-board-manager": {
           "tagline": "Özel 5chan toplulukları için board yönetim araçları.",
           "description": "5chan Board Manager, yöneticilerin özel imageboard panoları oluşturmasına, yapılandırmasına ve yönetmesine yardımcı olmak için Bitsocial CLI'ye bağlanır. Bu, operasyonel kontrol isteyen pano sahipleri için yardımcı katmandır."
+        },
+        "flags-challenge": {
+          "tagline": "Ülke ve forum özel rozet için doğrulanmış bayrak veren meydan okuma.",
+          "description": "Flags Challenge, bir Bitsocial toplum düğümünde çalışır ve yapılandırılabilir bir yayınlayan hizmetinden imzalı bayrak önerilişlerini doğrular. İlk paket profil, 5chan'ı hedefler, ülke bayraklarını, /pol/ memeflags ve /mlp/ pony flags kapsar ve kendi yayınlayan hizmetini ve ad alanını çalıştıran herhangi bir istemci için aynı deseni yeniden kullanılabilir olarak tutar."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Bitsocial toplulukları için genel seeder, Docker ve npm için paketlenmiş.",
+          "description": "Bitsocial Seeder, bir Bitsocial daemon aracılığıyla topluluk öncelikli sayfaları, güncelleme sonrası CID'leri ve pubsub konusu yönlendirmesini sabitleme. Erişilebilir olduğunda zaten çalışan bir yerel daemon'u yeniden kullanır veya paketlenmiş bitsocial-cli daemon'u otomatik olarak başlatır ve hem gözetimsiz VPS dağıtımları için Docker görüntüsü hem de Node-first operatörler için npm paketi olarak sunulur."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "Her topluluğun kurallarına göre OpenAI uyumlu moderasyon kontrolleri.",
+          "description": "AI Moderation Challenge, OpenAI uyumlu bir model endpoint'i kullanarak Bitsocial yorum içeriğini <code>community.rules</code> karşısında değerlendirir. Topluluklar, provider anahtarlarını ve prompt'ları private node ayarlarında tutarken riskli gönderileri incelemeye yönlendirebilir."
+        },
+        "r9k-challenge": {
+          "tagline": "Anti-repost gönderi deneyimi isteyen topluluklar için Robot9000 tarzı özgünlük kapısı.",
+          "description": "R9K Challenge bir Bitsocial topluluk node'unda çalışır ve normalize edilmiş gönderi metnini sahip node'un yerel yorum veritabanıyla karşılaştırır. Topluluklara <robot9000>Robot9000</robot9000> tarzı bir gönderi deneyimi verir: birebir repostlar kabul edilmeden önce başarısız olur, backlinks yok sayılır, tekrarlanan başarısızlıklar artan geçici banları tetikler ve kabul edilen metin hash'leri ham gönderi metnini saklamak yerine private local state içinde kalır. Bu challenge AI kullanmaz."
         }
       }
     },
@@ -539,8 +562,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "GitHub'da geliştirilmekte olan Bitsocial uygulamalarını keşfedin. Bir tane geliştiriyorsanız, başkalarının bulabilmesi için repo'nuza \"bitsocial\" topic ekleyin.",
-      "link": "GitHub topic'ini aç"
-    }
+      "link": "GitHub topic'ini aç",
+      "linkShort": "GitHub'ı aç"
+    },
+    "filterLimitReached": "Filtre sınırına ulaşıldı",
+    "devsLabel": "Devs:",
+    "or": "veya"
   },
   "privacy": {
     "eyebrow": "bitsocial.net verileri nasıl işler",

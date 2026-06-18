@@ -19,7 +19,8 @@
     "language": "Jazyk",
     "theme": "Téma",
     "sourceCode": "Zdrojový kód",
-    "newsletter": "Zpravodaj"
+    "newsletter": "Zpravodaj",
+    "backToTop": "Zpět nahoru"
   },
   "footer": {
     "tagline": "Síť P2P s otevřeným zdrojovým kódem pro sociální aplikace",
@@ -399,10 +400,10 @@
     "mobileDownloads": "Mobilní stahování",
     "desktopDownloads": "Stahování pro počítač",
     "extraDownloads": "Další sestavení",
-    "subtitle": "Bitsocial je navržen tak, aby mohl vyrůst v tisíce aplikací, nástrojů a služeb, které může vytvořit kdokoli, ne jen ty, které schválí strážci bran. Prohlédněte si, co je teď v provozu, a pak přidejte vlastní.",
+    "subtitle": "Bitsocial je navržen tak, aby mohl vyrůst v tisíce aplikací, nástrojů a služeb, které může vytvořit kdokoli, ne jen ty, které schválí strážci bran. Pokud jsi vývojář, přidej vlastní aplikaci.",
     "experimental": "Experimentální",
     "sectionLabel": "Adresář aplikací",
-    "directoryLabel": "Adresář",
+    "directoryLabel": "Kategorie",
     "notFoundDescription": "Aplikace, kterou hledáte, v adresáři neexistuje.",
     "emptyCategoryDescription": "V této kategorii zatím nejsou žádné aplikace. Buďte první, kdo jednu vytvoří!",
     "emptyCategory": "Již brzy",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "Anti-spam",
-          "description": "Moduly pro ověřování, filtrování a moderaci pro komunity Bitsocial."
+          "description": "Moduly filtrování a moderace pro komunity Bitsocial."
         },
         "tools": {
           "label": "Nástroje",
           "description": "Nástroje CLI a administrátorské utility pro provoz nebo rozšiřování aplikací Bitsocial."
+        },
+        "identity": {
+          "description": "Moduly přihlašovacích údajů a ověřování, které řídí, kdo může přispívat do komunit Bitsocial.",
+          "label": "Identita"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "On-chain",
         "riskScores": "Riziková skóre",
         "telegram": "Telegram",
-        "verification": "Ověření"
+        "verification": "Ověření",
+        "ai": "AI",
+        "antiRepost": "Proti repostům"
       },
       "linkLabels": {
         "androidApk": "APK pro Android",
@@ -494,6 +501,22 @@
         },
         "bitsocial-cli": {
           "description": "Bitsocial CLI je oficiální terminálové rozhraní protokolu. Používejte ho ke správě uzlů, publikování obsahu, spuštění serveru WebSocket JSON-RPC pro programové řízení a automatizaci kódu, automatizaci administrátorských toků a přímé práci s primitivy Bitsocial bez GUI klienta."
+        },
+        "flags-challenge": {
+          "tagline": "Ověřená výzva vydavatele vlajky pro insígnie specifické pro zemi a desku.",
+          "description": "Flags Challenge běží na uzlu komunity Bitsocial a ověřuje podepsaná tvrzení vlajek od konfigurovatelné služby vydavatele. První balíčkový profil je zaměřen na 5chan a pokrývá národní vlajky, memeflags z /pol/ a pony flags z /mlp/, přičemž zachovává stejný vzor znovu použitelný pro jakéhokoli klienta, který provozuje svou vlastní službu vydavatele a obor názvů."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Veřejný seeder pro komunity Bitsocial, zabalený pro Docker a npm.",
+          "description": "Bitsocial Seeder připevňuje stránky komunity na první místo, CID po aktualizaci a směrování tématu pubsub prostřednictvím daemona Bitsocial. Znovu používá již spuštěný místní daemon, pokud je dosažitelný, nebo automaticky spustí balený daemon bitsocial-cli a dodává se jako image Docker pro bezobslužné nasazení VPS a balíček npm pro operátory Node-first."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "Kontroly moderace kompatibilní s OpenAI podle pravidel každé komunity.",
+          "description": "AI Moderation Challenge vyhodnocuje obsah komentářů Bitsocial podle <code>community.rules</code> pomocí OpenAI-kompatibilního endpointu modelu. Komunity mohou rizikové příspěvky posílat ke kontrole a zároveň udržovat klíče poskytovatele a prompty v soukromém nastavení uzlu."
+        },
+        "r9k-challenge": {
+          "tagline": "Brána originality ve stylu Robot9000 pro komunity, které chtějí publikační UX proti repostům.",
+          "description": "R9K Challenge běží na komunitním uzlu Bitsocial a porovnává normalizovaný text příspěvku s lokální databází komentářů uzlu vlastníka. Komunitám dává publikační zkušenost ve stylu <robot9000>Robot9000</robot9000>: přesné reposty selžou před přijetím, backlinks se ignorují, opakovaná selhání spouštějí stupňující se dočasné bany a hashe přijatého textu zůstávají v soukromém lokálním stavu místo ukládání surového textu příspěvku. Tato challenge nepoužívá AI."
         }
       }
     },
@@ -505,8 +528,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "Prozkoumejte aplikace Bitsocial ve vývoji na GitHubu. Pokud nějakou vytváříte, přidejte do svého repo topic \"bitsocial\", aby ji ostatní našli.",
-      "link": "Prozkoumat GitHub topic"
-    }
+      "link": "Prozkoumat GitHub topic",
+      "linkShort": "Prozkoumat GitHub"
+    },
+    "filterLimitReached": "Dosažen limit filtrů",
+    "devsLabel": "Vývojáři:",
+    "or": "nebo"
   },
   "privacy": {
     "eyebrow": "Jak bitsocial.net zachází s daty",

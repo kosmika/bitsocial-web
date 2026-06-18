@@ -7,6 +7,8 @@ description: Jak Bitsocial používá IPFS/libp2p, adresování veřejného klí
 
 Bitsocial nepoužívá blockchain, federační server ani centralizovaný backend. Místo toho kombinuje dva nápady – **adresování založené na veřejném klíči** a **peer-to-peer pubsub** – umožňující komukoli hostit komunitu ze spotřebitelského hardwaru, zatímco uživatelé mohou číst a přispívat bez účtů v jakékoli společnosti kontrolované službě.
 
+Pro méně technický návod si přečtěte [Kompletní laické vysvětlení protokolu Bitsocial](./layman-protocol-explanation.md).
+
 ## Dva problémy
 
 Decentralizovaná sociální síť musí odpovědět na dvě otázky:

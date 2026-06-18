@@ -7,6 +7,8 @@ description: Cómo utiliza Bitsocial IPFS/libp2p, direccionamiento de clave púb
 
 Bitsocial no utiliza una cadena de bloques, un servidor de federación ni un backend centralizado. En lugar de eso, combina dos ideas (**direccionamiento basado en clave pública** y **pubsub de igual a igual**) para permitir que cualquiera albergue una comunidad desde hardware de consumo mientras los usuarios leen y publican sin cuentas en cualquier servicio controlado por la empresa.
 
+Para un tutorial menos técnico, lea [Una explicación completa y sencilla del protocolo Bitsocial.](./layman-protocol-explanation.md).
+
 ## Los dos problemas
 
 Una red social descentralizada tiene que responder dos preguntas:

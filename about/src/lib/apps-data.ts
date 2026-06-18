@@ -1,6 +1,6 @@
 import type { TFunction } from "i18next";
 
-export type AppCategorySlug = "apps" | "anti-spam" | "tools";
+export type AppCategorySlug = "apps" | "identity" | "anti-spam" | "tools";
 
 export type AppPlatformSlug = "web" | "android" | "ios" | "desktop";
 
@@ -26,6 +26,7 @@ export interface AppReleaseIntegrityProbe {
 }
 
 export type AppIconKey =
+  | "bot"
   | "image"
   | "message-square"
   | "send"
@@ -33,7 +34,11 @@ export type AppIconKey =
   | "ticket"
   | "blocks"
   | "terminal"
-  | "clipboard";
+  | "clipboard"
+  | "flag"
+  | "link-2"
+  | "share-2"
+  | "sparkles";
 
 export type DesktopVariant =
   | "windows"
@@ -47,7 +52,7 @@ export interface CategoryData {
   slug: AppCategorySlug;
   label: string;
   description: string;
-  icon: "layout-grid" | "shield" | "wrench";
+  icon: "layout-grid" | "badge-check" | "shield" | "wrench";
 }
 
 interface BaseAppLink {
@@ -100,9 +105,16 @@ export const CATEGORIES: CategoryData[] = [
     icon: "layout-grid",
   },
   {
+    slug: "identity",
+    label: "Identity",
+    description:
+      "Credential and verification modules that gate who can post in Bitsocial communities.",
+    icon: "badge-check",
+  },
+  {
     slug: "anti-spam",
     label: "Anti-Spam",
-    description: "Authentication, filtering, and moderation modules for Bitsocial communities.",
+    description: "Filtering and moderation modules for Bitsocial communities.",
     icon: "shield",
   },
   {
@@ -162,6 +174,10 @@ const CATEGORY_TRANSLATION_KEYS: Record<AppCategorySlug, { label: string; descri
     label: "apps.catalog.categories.apps.label",
     description: "apps.catalog.categories.apps.description",
   },
+  identity: {
+    label: "apps.catalog.categories.identity.label",
+    description: "apps.catalog.categories.identity.description",
+  },
   "anti-spam": {
     label: "apps.catalog.categories.anti-spam.label",
     description: "apps.catalog.categories.anti-spam.description",
@@ -200,6 +216,8 @@ const PLATFORM_TRANSLATION_KEYS: Record<
 
 const APP_TAG_TRANSLATION_KEYS: Record<string, string> = {
   "Access control": "apps.catalog.tags.accessControl",
+  AI: "apps.catalog.tags.ai",
+  "Anti-repost": "apps.catalog.tags.antiRepost",
   Automation: "apps.catalog.tags.automation",
   "Board admin": "apps.catalog.tags.boardAdmin",
   Bots: "apps.catalog.tags.bots",
@@ -215,6 +233,8 @@ const APP_TAG_TRANSLATION_KEYS: Record<string, string> = {
   Mirrors: "apps.catalog.tags.mirrors",
   Moderation: "apps.catalog.tags.moderation",
   "On-chain": "apps.catalog.tags.onChain",
+  Operator: "apps.catalog.tags.operator",
+  "Pubsub relay": "apps.catalog.tags.pubsubRelay",
   "Risk scores": "apps.catalog.tags.riskScores",
   Telegram: "apps.catalog.tags.telegram",
   Verification: "apps.catalog.tags.verification",
@@ -229,7 +249,7 @@ const APP_LINK_LABEL_TRANSLATION_KEYS: Record<string, string> = {
   "Open website": "apps.catalog.linkLabels.openWebsite",
   Windows: "apps.catalog.linkLabels.windows",
   "Windows Portable": "apps.catalog.linkLabels.windowsPortable",
-  "macOS Apple": "apps.catalog.linkLabels.macosApple",
+  "macOS Apple Silicon": "apps.catalog.linkLabels.macosApple",
   "macOS Intel": "apps.catalog.linkLabels.macosIntel",
 };
 
@@ -250,6 +270,10 @@ const APP_COPY_TRANSLATION_KEYS: Record<string, { tagline: string; description: 
     tagline: "apps.catalog.items.spam-blocker.tagline",
     description: "apps.catalog.items.spam-blocker.description",
   },
+  "r9k-challenge": {
+    tagline: "apps.catalog.items.r9k-challenge.tagline",
+    description: "apps.catalog.items.r9k-challenge.description",
+  },
   "captcha-canvas-challenge": {
     tagline: "apps.catalog.items.captcha-canvas-challenge.tagline",
     description: "apps.catalog.items.captcha-canvas-challenge.description",
@@ -262,9 +286,21 @@ const APP_COPY_TRANSLATION_KEYS: Record<string, { tagline: string; description: 
     tagline: "apps.catalog.items.evm-contract-call.tagline",
     description: "apps.catalog.items.evm-contract-call.description",
   },
+  "flags-challenge": {
+    tagline: "apps.catalog.items.flags-challenge.tagline",
+    description: "apps.catalog.items.flags-challenge.description",
+  },
   "bitsocial-cli": {
     tagline: "apps.catalog.items.bitsocial-cli.tagline",
     description: "apps.catalog.items.bitsocial-cli.description",
+  },
+  "bitsocial-seeder": {
+    tagline: "apps.catalog.items.bitsocial-seeder.tagline",
+    description: "apps.catalog.items.bitsocial-seeder.description",
+  },
+  "pubsub-provider": {
+    tagline: "apps.catalog.items.pubsub-provider.tagline",
+    description: "apps.catalog.items.pubsub-provider.description",
   },
   "telegram-bots": {
     tagline: "apps.catalog.items.telegram-bots.tagline",
@@ -273,6 +309,10 @@ const APP_COPY_TRANSLATION_KEYS: Record<string, { tagline: string; description: 
   "5chan-board-manager": {
     tagline: "apps.catalog.items.5chan-board-manager.tagline",
     description: "apps.catalog.items.5chan-board-manager.description",
+  },
+  "ai-moderation-challenge": {
+    tagline: "apps.catalog.items.ai-moderation-challenge.tagline",
+    description: "apps.catalog.items.ai-moderation-challenge.description",
   },
 };
 
@@ -389,6 +429,10 @@ export function getAppDescription(app: AppData, t: TFunction) {
   return key ? translateCatalogValue(t, key, app.description) : app.description;
 }
 
+export function getAppDescriptionKey(app: AppData): string | undefined {
+  return APP_COPY_TRANSLATION_KEYS[app.slug]?.description;
+}
+
 // Native release downloads go through the same-origin release API so they can track latest assets.
 export const APPS: AppData[] = [
   {
@@ -439,7 +483,7 @@ export const APPS: AppData[] = [
         variant: "linux",
       },
       {
-        label: "macOS Apple",
+        label: "macOS Apple Silicon",
         url: "/api/release-integrity?app=5chan&asset=download&variant=macos-arm64",
         kind: "download",
         platform: "desktop",
@@ -527,7 +571,7 @@ export const APPS: AppData[] = [
         variant: "linux",
       },
       {
-        label: "macOS Apple",
+        label: "macOS Apple Silicon",
         url: "/api/release-integrity?app=seedit&asset=download&variant=macos-arm64",
         kind: "download",
         platform: "desktop",
@@ -582,7 +626,7 @@ export const APPS: AppData[] = [
     tagline: "NFT-backed access control for communities that need stronger anti-spam gates.",
     description:
       "Mintpass is a flexible authentication layer for Bitsocial communities. It lets moderators mix NFT ownership, verification flows, and custom challenge modules without pushing everyone onto a central login system.",
-    category: "anti-spam",
+    category: "identity",
     tags: ["Verification", "Access control"],
     icon: "ticket",
     logoSrc: "https://mintpass.org/favicon.ico",
@@ -608,10 +652,10 @@ export const APPS: AppData[] = [
     name: "AI Moderation Challenge",
     tagline: "OpenAI-compatible moderation checks against each community's rules.",
     description:
-      "AI Moderation Challenge evaluates Bitsocial comment content against community.rules with an OpenAI-compatible model endpoint. Communities can route risky posts to review while keeping provider keys and prompts in private node settings.",
+      "AI Moderation Challenge evaluates Bitsocial comment content against <code>community.rules</code> with an OpenAI-compatible model endpoint. Communities can route risky posts to review while keeping provider keys and prompts in private node settings.",
     category: "anti-spam",
-    tags: ["Moderation", "Risk scores"],
-    icon: "shield",
+    tags: ["AI", "Moderation", "Risk scores"],
+    icon: "sparkles",
     githubRepo: "bitsocialnet/ai-moderation-challenge",
     links: [
       {
@@ -620,7 +664,12 @@ export const APPS: AppData[] = [
         kind: "package",
       },
     ],
-    relatedSlugs: ["spam-blocker", "captcha-canvas-challenge", "voucher-challenge"],
+    relatedSlugs: [
+      "spam-blocker",
+      "r9k-challenge",
+      "captcha-canvas-challenge",
+      "voucher-challenge",
+    ],
     searchTerms: ["ai", "openai", "llm", "rules", "review", "moderation"],
   },
   {
@@ -640,8 +689,46 @@ export const APPS: AppData[] = [
         kind: "package",
       },
     ],
-    relatedSlugs: ["ai-moderation-challenge", "mintpass", "captcha-canvas-challenge"],
+    relatedSlugs: [
+      "ai-moderation-challenge",
+      "r9k-challenge",
+      "mintpass",
+      "captcha-canvas-challenge",
+    ],
     searchTerms: ["filtering", "risk", "moderation"],
+  },
+  {
+    slug: "r9k-challenge",
+    name: "R9K Challenge",
+    tagline: "Robot9000-style originality gate for communities that want anti-repost posting UX.",
+    description:
+      "R9K Challenge runs on a Bitsocial community node and compares normalized post text against the owner node's local comments database. It gives communities a <robot9000>Robot9000</robot9000>-style posting experience without using AI: exact reposts fail before acceptance, backlinks are ignored, repeated failures trigger escalating temporary bans, and accepted-text hashes stay in private local state instead of storing raw post text.",
+    category: "anti-spam",
+    tags: ["Anti-repost", "Moderation"],
+    icon: "bot",
+    githubRepo: "bitsocialnet/r9k-challenge",
+    links: [
+      {
+        label: "@bitsocial/r9k-challenge",
+        url: "https://www.npmjs.com/package/@bitsocial/r9k-challenge",
+        kind: "package",
+      },
+    ],
+    relatedSlugs: [
+      "spam-blocker",
+      "ai-moderation-challenge",
+      "captcha-canvas-challenge",
+      "flags-challenge",
+    ],
+    searchTerms: [
+      "r9k",
+      "robot9000",
+      "robot9002",
+      "anti-repost",
+      "duplicates",
+      "originality",
+      "5chan",
+    ],
   },
   {
     slug: "captcha-canvas-challenge",
@@ -660,7 +747,13 @@ export const APPS: AppData[] = [
         kind: "package",
       },
     ],
-    relatedSlugs: ["ai-moderation-challenge", "mintpass", "voucher-challenge", "evm-contract-call"],
+    relatedSlugs: [
+      "ai-moderation-challenge",
+      "r9k-challenge",
+      "mintpass",
+      "voucher-challenge",
+      "evm-contract-call",
+    ],
     searchTerms: ["captcha", "verification", "images"],
   },
   {
@@ -669,7 +762,7 @@ export const APPS: AppData[] = [
     tagline: "Invite-style voucher codes for communities that prefer controlled growth.",
     description:
       "Voucher Challenge lets moderators distribute trusted voucher codes that unlock publishing without a global identity provider. It is a good fit for invite-driven communities, niche boards, and gradual rollouts.",
-    category: "anti-spam",
+    category: "identity",
     tags: ["Invites", "Access control"],
     icon: "ticket",
     githubRepo: "bitsocialnet/voucher-challenge",
@@ -694,9 +787,9 @@ export const APPS: AppData[] = [
     tagline: "On-chain gating for communities that want token or contract checks.",
     description:
       "EVM Contract Call verifies publications by calling an EVM contract before a post is accepted. It lets communities build token gates, staking rules, or other on-chain checks into their moderation flow.",
-    category: "anti-spam",
+    category: "identity",
     tags: ["On-chain", "Contracts"],
-    icon: "blocks",
+    icon: "link-2",
     githubRepo: "bitsocialnet/evm-contract-call",
     links: [
       {
@@ -707,6 +800,26 @@ export const APPS: AppData[] = [
     ],
     relatedSlugs: ["voucher-challenge", "mintpass"],
     searchTerms: ["ethereum", "token gating", "smart contract"],
+  },
+  {
+    slug: "flags-challenge",
+    name: "Flags Challenge",
+    tagline: "Verified flag issuer challenge for country and board-specific flair.",
+    description:
+      "Flags Challenge runs on a Bitsocial community node and verifies signed flag assertions from a configurable issuer service. The first bundled profile targets 5chan, covering country flags, /pol/ memeflags, and /mlp/ pony flags, while keeping the same pattern reusable for any client that runs its own issuer and namespace.",
+    category: "identity",
+    tags: ["Verification", "Imageboard"],
+    icon: "flag",
+    githubRepo: "bitsocialnet/flags-challenge",
+    links: [
+      {
+        label: "@bitsocial/flags-challenge",
+        url: "https://www.npmjs.com/package/@bitsocial/flags-challenge",
+        kind: "package",
+      },
+    ],
+    relatedSlugs: ["5chan", "mintpass", "voucher-challenge", "ai-moderation-challenge"],
+    searchTerms: ["flags", "country", "memeflags", "pony", "flair", "5chan", "issuer"],
   },
   {
     slug: "bitsocial-cli",
@@ -725,8 +838,53 @@ export const APPS: AppData[] = [
         kind: "package",
       },
     ],
-    relatedSlugs: ["5chan-board-manager"],
+    relatedSlugs: ["bitsocial-seeder", "5chan-board-manager"],
     searchTerms: ["terminal", "command line", "automation"],
+  },
+  {
+    slug: "bitsocial-seeder",
+    name: "Bitsocial Seeder",
+    tagline: "Public seeder for Bitsocial communities, packaged for Docker and npm.",
+    description:
+      "Bitsocial Seeder pins community first pages, post-update CIDs, and pubsub topic routing through a Bitsocial daemon. It reuses an already-running local daemon when one is reachable or starts the bundled bitsocial-cli daemon automatically, and ships as both a Docker image for unattended VPS deployments and an npm package for Node-first operators.",
+    category: "tools",
+    tags: ["Automation"],
+    icon: "share-2",
+    githubRepo: "bitsocialnet/bitsocial-seeder",
+    links: [
+      {
+        label: "@bitsocial/bitsocial-seeder",
+        url: "https://www.npmjs.com/package/@bitsocial/bitsocial-seeder",
+        kind: "package",
+      },
+      {
+        label: "ghcr.io/bitsocialnet/bitsocial-seeder",
+        url: "https://github.com/bitsocialnet/bitsocial-seeder/pkgs/container/bitsocial-seeder",
+        kind: "package",
+      },
+    ],
+    relatedSlugs: ["bitsocial-cli", "5chan", "seedit", "5chan-board-manager"],
+    searchTerms: ["seeder", "docker", "ipfs", "vps", "pubsub", "daemon", "pinning"],
+  },
+  {
+    slug: "pubsub-provider",
+    name: "Pubsub Provider",
+    tagline: "Fallback pubsub relay and routing provider for Bitsocial operators.",
+    description:
+      "Pubsub Provider runs a bundled Kubo node with Bitsocial-compatible pubsub, gateway, name-provider, and delegated HTTP routing endpoints. It is useful as a fallback path for clients that disable pure browser P2P, and it defaults to swarm port 4002 so it can run beside bitsocial-seeder on the same host.",
+    category: "tools",
+    tags: ["Pubsub relay", "Operator"],
+    icon: "share-2",
+    githubRepo: "bitsocialnet/pubsub-provider",
+    links: [
+      {
+        label: "ghcr.io/bitsocialnet/pubsub-provider",
+        url: "https://github.com/bitsocialnet/pubsub-provider/pkgs/container/pubsub-provider",
+        kind: "package",
+      },
+    ],
+    relatedSlugs: ["bitsocial-seeder", "bitsocial-cli", "5chan", "seedit"],
+    searchTerms: ["provider", "pubsub", "relay", "docker", "kubo", "ipfs", "vps", "routing"],
   },
   {
     slug: "telegram-bots",
@@ -865,17 +1023,50 @@ function isActionLink(link: AppLink): boolean {
   return link.kind === "launch" || link.kind === "download" || link.kind === "package";
 }
 
-/** Compares active filter tag from the URL to a tag string from app data (trim + case-insensitive). */
-export function tagsMatchFilter(active: string | null | undefined, candidate: string): boolean {
-  if (active == null || active === "") return false;
-  return normalizeTagForFilter(active) === normalizeTagForFilter(candidate);
+/** Parses a comma-separated tag URL param into a deduped list, preserving original casing. */
+export function parseTagFilter(value: string | null | undefined): string[] {
+  if (!value) return [];
+  const seen = new Set<string>();
+  const result: string[] = [];
+  for (const raw of value.split(",")) {
+    const trimmed = raw.trim();
+    if (!trimmed) continue;
+    const normalized = normalizeTagForFilter(trimmed);
+    if (seen.has(normalized)) continue;
+    seen.add(normalized);
+    result.push(trimmed);
+  }
+  return result;
 }
 
-export function appMatchesTag(app: AppData, tag: string | null): boolean {
-  if (!tag) return true;
+/** Serializes a tag list into the comma-separated URL param value, or null when empty. */
+export function serializeTagFilter(activeTags: string[]): string | null {
+  return activeTags.length > 0 ? activeTags.join(",") : null;
+}
 
+/** Adds `tag` to `activeTags` if absent, or removes it if present (case-insensitive). */
+export function toggleTagInList(activeTags: string[], tag: string): string[] {
   const normalized = normalizeTagForFilter(tag);
-  return app.tags.some((appTag) => normalizeTagForFilter(appTag) === normalized);
+  const existingIndex = activeTags.findIndex((t) => normalizeTagForFilter(t) === normalized);
+  if (existingIndex >= 0) {
+    return [...activeTags.slice(0, existingIndex), ...activeTags.slice(existingIndex + 1)];
+  }
+  return [...activeTags, tag];
+}
+
+/** True when `candidate` is in the active tag list (trim + case-insensitive). */
+export function tagsMatchFilter(activeTags: string[], candidate: string): boolean {
+  if (activeTags.length === 0) return false;
+  const normalizedCandidate = normalizeTagForFilter(candidate);
+  return activeTags.some((tag) => normalizeTagForFilter(tag) === normalizedCandidate);
+}
+
+/** True when the app has ALL active tags (AND filter; empty list always matches). */
+export function appMatchesTag(app: AppData, activeTags: string[]): boolean {
+  if (activeTags.length === 0) return true;
+
+  const appTagsNormalized = app.tags.map(normalizeTagForFilter);
+  return activeTags.every((tag) => appTagsNormalized.includes(normalizeTagForFilter(tag)));
 }
 
 function sortAppLinks(links: AppLink[], preferredPlatform?: AppPlatformSlug): AppLink[] {

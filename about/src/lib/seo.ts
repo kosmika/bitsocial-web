@@ -358,6 +358,8 @@ function getApplicationCategory(category: AppCategorySlug) {
   switch (category) {
     case "apps":
       return "Social networking";
+    case "identity":
+      return "Security";
     case "anti-spam":
       return "Security";
     case "tools":

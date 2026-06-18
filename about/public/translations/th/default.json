@@ -19,7 +19,8 @@
     "language": "ภาษา",
     "theme": "ธีม",
     "sourceCode": "ซอร์สโค้ด",
-    "newsletter": "จดหมายข่าว"
+    "newsletter": "จดหมายข่าว",
+    "backToTop": "กลับไปด้านบน"
   },
   "footer": {
     "tagline": "เครือข่าย P2P โอเพนซอร์สสำหรับแอปโซเชียล",
@@ -399,10 +400,10 @@
     "mobileDownloads": "ดาวน์โหลดบนมือถือ",
     "desktopDownloads": "ดาวน์โหลดสำหรับเดสก์ท็อป",
     "extraDownloads": "บิลด์เพิ่มเติม",
-    "subtitle": "Bitsocial ถูกออกแบบมาให้เติบโตไปเป็นแอป เครื่องมือ และบริการนับพัน ที่ใครก็สร้างได้ ไม่ใช่แค่สิ่งที่ผู้คุมประตูอนุมัติ ลองดูสิ่งที่เปิดใช้งานอยู่ตอนนี้ แล้วส่งของคุณเข้ามา",
+    "subtitle": "Bitsocial ถูกออกแบบมาให้เติบโตไปเป็นแอป เครื่องมือ และบริการนับพัน ที่ใครก็สร้างได้ ไม่ใช่แค่สิ่งที่ผู้คุมประตูอนุมัติ ถ้าคุณเป็นนักพัฒนา ส่งแอปของคุณเข้ามาได้เลย",
     "experimental": "เชิงทดลอง",
     "sectionLabel": "ไดเรกทอรีแอป",
-    "directoryLabel": "ไดเรกทอรี",
+    "directoryLabel": "หมวดหมู่",
     "notFoundDescription": "แอปที่คุณกำลังมองหาไม่มีอยู่ในไดเรกทอรี",
     "emptyCategoryDescription": "หมวดหมู่นี้ยังไม่มีแอปเลย เป็นคนแรกที่สร้างขึ้นมาสิ!",
     "emptyCategory": "เร็วๆ นี้",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "ป้องกันสแปม",
-          "description": "โมดูลสำหรับการยืนยันตัวตน การกรอง และการดูแลสำหรับชุมชน Bitsocial"
+          "description": "โมดูลการกรองและการควบคุมสำหรับชุมชน Bitsocial"
         },
         "tools": {
           "label": "เครื่องมือ",
           "description": "ยูทิลิตีสำหรับ CLI และแอดมินเพื่อรันหรือขยายแอป Bitsocial"
+        },
+        "identity": {
+          "description": "โมดูลการยืนยันตัวตนและการตรวจสอบที่ควบคุมว่าใครสามารถโพสต์ในชุมชน Bitsocial",
+          "label": "เอกลักษณ์"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "บนเชน",
         "riskScores": "คะแนนความเสี่ยง",
         "telegram": "Telegram",
-        "verification": "การยืนยัน"
+        "verification": "การยืนยัน",
+        "ai": "AI",
+        "antiRepost": "ป้องกันการรีโพสต์"
       },
       "linkLabels": {
         "androidApk": "APK สำหรับ Android",
@@ -528,6 +535,22 @@
         "5chan-board-manager": {
           "tagline": "เครื่องมือจัดการ board สำหรับ communities 5chan แบบกำหนดเอง.",
           "description": "5chan Board Manager เชื่อมต่อกับ Bitsocial CLI เพื่อช่วยผู้ดูแลระบบสร้าง กำหนดค่า และดูแลบอร์ด imageboard แบบกำหนดเอง เป็นเลเยอร์เครื่องมือสำหรับเจ้าของบอร์ดที่ต้องการการควบคุมการปฏิบัติงาน"
+        },
+        "flags-challenge": {
+          "tagline": "ความท้าทายของผู้ออกธงที่ได้รับการยืนยันสำหรับสัญลักษณ์เฉพาะของประเทศและบอร์ด",
+          "description": "Flags Challenge ทำงานบนโหนดชุมชน Bitsocial และตรวจสอบการยืนยันธงที่ลงนามจากบริการผู้ออกที่สามารถกำหนดค่าได้ โปรไฟล์ที่รวมกันแรกมีเป้าหมาย 5chan ครอบคลุมธงประเทศ memeflags ของ /pol/ และ pony flags ของ /mlp/ พร้อมทำให้รูปแบบเดียวกันนำมาใช้ซ้ำได้สำหรับไคลเอนต์ใด ๆ ที่เรียกใช้บริการผู้ออกและเนมสเปซของตัวเอง"
+        },
+        "bitsocial-seeder": {
+          "tagline": "Seeder สาธารณะสำหรับชุมชน Bitsocial บรรจุสำหรับ Docker และ npm",
+          "description": "Bitsocial Seeder ปักหมุดหน้าคนแรกของชุมชน CID หลังการอัปเดต และการกำหนดเส้นทาง pubsub topic ผ่าน daemon Bitsocial ใช้ daemon ท้องถิ่นที่กำลังทำงานอยู่แล้วเมื่อถึงได้ หรือเริ่ม daemon bitsocial-cli ที่แพ็กเกจแล้วโดยอัตโนมัติ และส่งมอบเป็นทั้งอิมเมจ Docker สำหรับการปรับใช้ VPS ที่ไม่มีการเฝ้าดูและแพ็กเกจ npm สำหรับผู้ดำเนินการ Node-first"
+        },
+        "ai-moderation-challenge": {
+          "tagline": "การตรวจสอบการกลั่นกรองที่รองรับ OpenAI ตามกฎของแต่ละชุมชน.",
+          "description": "AI Moderation Challenge ประเมินเนื้อหาคอมเมนต์ของ Bitsocial เทียบกับ <code>community.rules</code> ด้วย OpenAI-compatible model endpoint Communities สามารถส่งโพสต์ที่เสี่ยงไป review ได้ ในขณะที่เก็บ provider keys และ prompts ไว้ใน private node settings"
+        },
+        "r9k-challenge": {
+          "tagline": "ด่านความเป็นต้นฉบับสไตล์ Robot9000 สำหรับชุมชนที่ต้องการประสบการณ์โพสต์แบบกันรีโพสต์.",
+          "description": "R9K Challenge ทำงานบนโหนดชุมชน Bitsocial และเปรียบเทียบข้อความโพสต์ที่ normalize แล้วกับฐานข้อมูลคอมเมนต์ภายในของโหนดเจ้าของ มันให้ประสบการณ์โพสต์สไตล์ <robot9000>Robot9000</robot9000> กับชุมชน: รีโพสต์ที่ซ้ำแบบตรงตัวจะ fail ก่อนถูกยอมรับ, backlinks จะถูกมองข้าม, ความล้มเหลวซ้ำ ๆ จะ trigger temporary bans ที่เพิ่มระดับขึ้น และ hashes ของข้อความที่ยอมรับแล้วจะอยู่ใน private local state แทนการเก็บ raw post text. challenge นี้ไม่ใช้ AI."
         }
       }
     },
@@ -539,8 +562,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "สำรวจแอป Bitsocial ที่กำลังพัฒนาบน GitHub หากคุณกำลังสร้างแอปหนึ่งอยู่ ให้เพิ่ม topic \"bitsocial\" ใน repo ของคุณเพื่อให้คนอื่นค้นพบได้",
-      "link": "เปิด GitHub topic"
-    }
+      "link": "เปิด GitHub topic",
+      "linkShort": "เปิด GitHub"
+    },
+    "filterLimitReached": "ถึงขีดจำกัดตัวกรอง",
+    "devsLabel": "นักพัฒนา:",
+    "or": "หรือ"
   },
   "privacy": {
     "eyebrow": "bitsocial.net จัดการข้อมูลอย่างไร",

@@ -1,3 +1,13 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const monitorRoot = path.dirname(fileURLToPath(import.meta.url));
+const fiveChanDirectoriesSnapshotPath = path.join(
+  monitorRoot,
+  "data",
+  "5chan-directories.snapshot.json",
+);
+
 const parseCsvEnv = (value) =>
   value
     ?.split(",")
@@ -16,10 +26,7 @@ export default {
       {
         id: "5chan",
         label: "5chan",
-        sources: [
-          "https://raw.githubusercontent.com/bitsocialnet/lists/master/5chan-directories.json",
-          "./data/5chan-directories.snapshot.json",
-        ],
+        sources: [fiveChanDirectoriesSnapshotPath],
       },
     ],
     ipfsGatewayUrls: [
@@ -88,6 +95,27 @@ export default {
           email: "newsletter-monitor@example.com",
           list_uuids: ["00000000-0000-0000-0000-000000000000"],
         },
+      },
+      {
+        id: "spam_blocker_server",
+        label: "Spam Blocker server",
+        url: "https://spamblocker.bitsocial.net/",
+        expectedStatus: 200,
+        expectedBodyMatch: "spam.?blocker|Spam Blocker|@bitsocial",
+      },
+      {
+        id: "ai_moderation_challenge_server",
+        label: "AI Moderation Challenge server",
+        url: "https://ai.bitsocialforge.com/",
+        expectedStatus: 200,
+        expectedBodyMatch: "ai.?moderation|AI Moderation|bitsocialforge|@bitsocial",
+      },
+      {
+        id: "flags_challenge_server",
+        label: "Flags Challenge server",
+        url: "https://flags.5chan.app/",
+        expectedStatus: 200,
+        expectedBodyMatch: "flag|5chan|Flags Challenge|@bitsocial",
       },
     ],
     nfts: [],

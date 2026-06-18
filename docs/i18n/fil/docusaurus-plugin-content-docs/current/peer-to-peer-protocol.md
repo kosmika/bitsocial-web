@@ -7,6 +7,8 @@ description: Paano ginagamit ng Bitsocial ang IPFS/libp2p, public-key addressing
 
 Ang Bitsocial ay hindi gumagamit ng blockchain, federation server, o sentralisadong backend. Sa halip, pinagsasama nito ang dalawang ideya — **public-key-based addressing** at **peer-to-peer pubsub** — upang hayaan ang sinuman na mag-host ng isang komunidad mula sa consumer hardware habang ang mga user ay nagbabasa at nagpo-post nang walang mga account sa anumang serbisyong kontrolado ng kumpanya.
 
+Para sa hindi gaanong teknikal na walkthrough, basahin [Isang kumpletong paliwanag ng karaniwang tao sa Bitsocial protocol](./layman-protocol-explanation.md).
+
 ## Ang dalawang problema
 
 Ang isang desentralisadong social network ay kailangang sagutin ang dalawang tanong:

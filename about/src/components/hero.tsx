@@ -183,6 +183,7 @@ function TaglineLink({
           return;
         }
 
+        event.preventDefault();
         onNavigateToFeature(hash);
       }}
       className={className}

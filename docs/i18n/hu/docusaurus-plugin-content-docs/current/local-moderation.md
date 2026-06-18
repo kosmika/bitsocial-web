@@ -9,6 +9,8 @@ A Bitsocial nem moderálásmentes. Ez moderálás protokoll szintű szuper-admin
 
 A közösségi tulajdonosok továbbra is szabályokat határoznak meg saját tereikre vonatkozóan. Az alkalmazások továbbra is eldöntik, hogy mit indexelnek, rangsorolnak vagy kiemelnek. A Bitsocial nem tartalmaz olyan globális hatóságot, amely elkobozhat egy közösséget vagy törölhet egy identitást magából a hálózatból.
 
+A közösség tulajdonjogával, közzétételével, kihívásaival és moderátori aláírásaival kapcsolatos átfogóbb, egyszerű angol áttekintésért olvassa el [A Bitsocial protokoll teljes laikus magyarázata](./layman-protocol-explanation.md).
+
 ## Hogyan működik a moderálás
 
 - A közösség tulajdonosa moderálhatja a közösséget

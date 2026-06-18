@@ -7,6 +7,8 @@ description: Bitsocial neden her topluluğun kendi anti-spam politikasını tan�
 
 Bitsocial tek bir evrensel spam savunması üstlenmez. Her topluluk, geçerli bir gönderinin veya yanıtın neyi gerektirdiğine karar verebilir ve bu zorluk, operatörün istediği kadar hafif veya fikir odaklı olabilir.
 
+Topluluk adreslerinden sorgulamaya yönelik gönderilere kadar tam bir sade İngilizce akışı için şu adresi okuyun: [Bitsocial protokolünün tam bir meslekten olmayan açıklaması](./layman-protocol-explanation.md).
+
 ## Ne gibi bir zorluk olabilir
 
 - Bir captcha

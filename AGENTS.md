@@ -68,6 +68,7 @@ Agents may use compiled context to navigate quickly, but must verify against sou
 | New reviewable feature, fix, docs change, or chore started while on `master` | Create a short-lived `codex/feature/*`, `codex/fix/*`, `codex/docs/*`, or `codex/chore/*` branch from `master` before editing; use a separate worktree only for parallel tasks |
 | New unrelated task started while another task branch is already checked out or being worked on by another agent | Create a separate worktree from `master`, create a new short-lived task branch there, and keep each agent on its own worktree, branch, and PR |
 | Open PR needs feedback triage or merge readiness check | Use the `review-and-merge-pr` skill |
+| Before pushing or opening a PR with code, docs, or AI workflow changes | Run the advisory `code-quality-review` skill on the current diff; treat findings as suggestions, not blockers, and address only high-confidence improvements |
 | Repo AI workflow files changed (`.codex/**`, `.cursor/**`, `.claude/**`, `AGENTS.md`, `docs/agent-playbooks/**`, `scripts/agent-hooks/**`) | Keep the Codex, Cursor, and Claude copies aligned when they represent the same workflow; update `AGENTS.md` if the default agent policy changes |
 | GitHub operation needed | Use `gh` CLI, not GitHub MCP |
 | User asks for commit or issue phrasing | Use `docs/agent-playbooks/commit-issue-format.md` |
@@ -177,6 +178,7 @@ stats/                # Monitoring, Grafana, Prometheus, and deployment assets
 ### AI Tooling Rules
 
 - Treat `.codex/`, `.cursor/`, and `.claude/` as repo-managed contributor tooling, not private scratch space.
+- Do not add or use a repo-level `.agents/` directory. Keep skills in `.codex/skills/`, `.cursor/skills/`, and `.claude/skills/` only.
 - Keep equivalent workflow files aligned across all toolchains when their directories contain the same skill, hook, or agent.
 - Keep model names toolchain-specific: `composer-2` is Cursor-only and must not appear under `.claude/` or `.codex/`; `.codex/agents/**` should use `gpt-5.4` by default and `gpt-5.4-mini` only for intentionally lightweight tasks such as translation. Do not use `gpt-5.3-codex` or `gpt-5.3-codex-spark` in `.codex/`.
 - Keep shared policy in tracked files when possible: `AGENTS.md`, `about/AGENTS.md`, `about/src/AGENTS.md`, `docs/AGENTS.md`, `stats/AGENTS.md`, `scripts/AGENTS.md`, `docs/agent-playbooks/**`, and `scripts/agent-hooks/**`.

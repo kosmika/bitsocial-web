@@ -19,7 +19,8 @@
     "language": "Gjuha",
     "theme": "Tema",
     "sourceCode": "Kodi burimor",
-    "newsletter": "Buletini"
+    "newsletter": "Buletini",
+    "backToTop": "Kthehu lart"
   },
   "footer": {
     "tagline": "Rrjet P2P me burim të hapur për aplikacione sociale",
@@ -399,10 +400,10 @@
     "mobileDownloads": "Shkarkime për celular",
     "desktopDownloads": "Shkarkime për desktop",
     "extraDownloads": "Ndërtime shtesë",
-    "subtitle": "Bitsocial është menduar të rritet deri në mijëra aplikacione, mjete dhe shërbime që mund t’i krijojë kushdo, jo vetëm ato të miratuara nga rojet e portës. Shiko çfarë është live tani, pastaj dërgo tënden.",
+    "subtitle": "Bitsocial është menduar të rritet deri në mijëra aplikacione, mjete dhe shërbime që mund t’i krijojë kushdo, jo vetëm ato të miratuara nga rojet e portës. Nëse je zhvillues, dërgo aplikacionin tënd.",
     "experimental": "Eksperimental",
     "sectionLabel": "Katalogu i aplikacioneve",
-    "directoryLabel": "Katalog",
+    "directoryLabel": "Kategoritë",
     "notFoundDescription": "Aplikacioni që po kërkon nuk ekziston në direktori.",
     "emptyCategoryDescription": "Nuk ka ende aplikacione në këtë kategori. Bëhu i pari që ndërton një!",
     "emptyCategory": "Së shpejti",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "Anti-spam",
-          "description": "Module për autentikim, filtrimin dhe moderimin për komunitetet Bitsocial."
+          "description": "Moduli filtrimi dhe moderimi për komunitetot Bitsocial."
         },
         "tools": {
           "label": "Vegla",
           "description": "Vegla CLI dhe administrimi për ekzekutimin ose zgjerimin e aplikacioneve Bitsocial."
+        },
+        "identity": {
+          "description": "Modulet e kredencialeve dhe verifikimit që kontrollojnë se kush mund të postojë në komunitetë Bitsocial.",
+          "label": "Identiteti"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "On-chain",
         "riskScores": "Rezultate rreziku",
         "telegram": "Telegram",
-        "verification": "Verifikim"
+        "verification": "Verifikim",
+        "ai": "AI",
+        "antiRepost": "Kundër ripostimeve"
       },
       "linkLabels": {
         "androidApk": "APK për Android",
@@ -528,6 +535,22 @@
         "5chan-board-manager": {
           "tagline": "Mjete administrimi board-esh për komunitete 5chan të personalizuara.",
           "description": "5chan Board Manager lidhet me Bitsocial CLI për t'i ndihmuar administratorët të krijojnë, konfigurojnë dhe moderojnë board-e imageboard të personalizuara. Është shtresa e shërbimeve për pronarët e board-eve që duan kontroll operacional."
+        },
+        "flags-challenge": {
+          "tagline": "Sfida e verifikuar e emetuesit të flamujve për insigne specifike të vendit dhe bordit.",
+          "description": "Flags Challenge funksionon në një nyje komunitetesh Bitsocial dhe verifikoi përfaqësimet e flamujve të nënshkruar nga një shërbim emetuesi i konfiguruar. Profili i parë i paketuar synon 5chan, mbulon flamujt kombëtarë, memeflags /pol/ dhe pony flags /mlp/, duke ruajtur të njëjtin model të ripërdorshëm për çdo klient që drejton shërbimin e vet të emetuesit dhe hapësirën e emrave."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Seeder publik për komunitet Bitsocial, i paketuar për Docker dhe npm.",
+          "description": "Bitsocial Seeder fikson faqet e komunitetit të parë, CID pas përditësimit dhe rrugëzimin e temës pubsub përmes një daemon Bitsocial. Ajo ripërdor një daemon lokal që ekzekutohet tashmë kur është i arritshëm ose nis automatikisht daemon-in bitsocial-cli të paketuar dhe furnizohet si imazh Docker për shpërndarje VPS të pafamatë dhe paket npm për operatorë Node-first."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "Kontrolle moderimi të përputhshme me OpenAI sipas rregullave të çdo komuniteti.",
+          "description": "AI Moderation Challenge vlerëson përmbajtjen e komenteve Bitsocial kundrejt <code>community.rules</code> me një model endpoint të pajtueshëm me OpenAI. Komunitetet mund t'i drejtojnë postimet me rrezik në review duke mbajtur provider keys dhe prompts në cilësimet private të node."
+        },
+        "r9k-challenge": {
+          "tagline": "Portë origjinaliteti në stilin Robot9000 për komunitete që duan përvojë postimi kundër ripostimeve.",
+          "description": "R9K Challenge ekzekutohet në një nyje komuniteti Bitsocial dhe krahason tekstin e normalizuar të postimit me databazën lokale të komenteve të nyjes pronare. U jep komuniteteve një përvojë postimi në stilin <robot9000>Robot9000</robot9000>: ripostimet ekzakte dështojnë para pranimit, backlinks injorohen, dështimet e përsëritura shkaktojnë ndalime të përkohshme në rritje dhe hash-et e tekstit të pranuar mbeten në gjendje lokale private në vend që të ruhet teksti bruto i postimit. Ky challenge nuk përdor AI."
         }
       }
     },
@@ -539,8 +562,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "Eksploro aplikacionet Bitsocial në zhvillim në GitHub. Nëse po ndërton një të tillë, shto topic \"bitsocial\" në repo-n tënde që të tjerët ta gjejnë.",
-      "link": "Hap topic-un në GitHub"
-    }
+      "link": "Hap topic-un në GitHub",
+      "linkShort": "Hap GitHub"
+    },
+    "filterLimitReached": "U arrit kufiri i filtrave",
+    "devsLabel": "Devs:",
+    "or": "ose"
   },
   "privacy": {
     "eyebrow": "Si i trajton bitsocial.net të dhënat",

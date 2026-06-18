@@ -14,12 +14,14 @@
   },
   "nav": {
     "apps": "Apps",
+    "blog": "Blog",
     "docs": "Docs",
     "status": "Stats",
     "language": "Language",
     "theme": "Theme",
     "sourceCode": "Source code",
-    "newsletter": "Newsletter"
+    "newsletter": "Newsletter",
+    "backToTop": "Back to top"
   },
   "languageSelector": {
     "title": "Select Language",
@@ -428,9 +430,70 @@
     "subtitle": "Bitsocial wins by attracting as many builders as possible. Run your own unstoppable community, develop your own decentralized social app, or even launch your own business on top of Bitsocial. The tide rises with every builder.",
     "sectionLabel": "Master Plan"
   },
+  "blog": {
+    "title": "Bitsocial Updates",
+    "subtitle": "This Bitsocial blog is run by the <devs>Bitsocial core devs</devs> and published as an unstoppable peer-to-peer feed, so you can read it on any Bitsocial app at <address>{{address}}</address>.",
+    "sectionLabel": "Official Blog",
+    "searchPlaceholder": "Search updates, releases, and tutorials…",
+    "clearSearch": "Clear search",
+    "clearFilters": "Clear filters",
+    "loadMore": "Load more",
+    "subscribeNewsletter": "Subscribe to newsletter",
+    "noPosts": "No posts yet",
+    "noPostsDescription": "The devs haven’t published any updates yet. The full feed is also browsable from any Bitsocial app at <address>{{address}}</address>.",
+    "noMatches": "No posts match these filters",
+    "noMatchesDescription": "Try a different search term or clear the active filters.",
+    "untitled": "Untitled post",
+    "anonymous": "Anonymous",
+    "p2p": {
+      "button": "P2P status",
+      "eyebrow": "Pure P2P",
+      "title": "Bitsocial P2P status",
+      "description": "This blog page is itself a Bitsocial app. Posts are fetched directly from the peer-to-peer network through libp2p running in your browser — no servers, no central gateways.",
+      "close": "Close",
+      "mode": "Mode",
+      "peerId": "Your peer ID",
+      "peerCount": "Known peers",
+      "connectionCount": "Active connections",
+      "routers": "HTTP peer routers",
+      "connections": "Active connections",
+      "noConnections": "Still bootstrapping — connecting to peers…",
+      "refresh": "Refresh",
+      "loading": "Reading peers…",
+      "updated_one": "Updated {{seconds}}s ago",
+      "updated_other": "Updated {{seconds}}s ago",
+      "updated": "Updated {{seconds}}s ago"
+    },
+    "replies_one": "{{count}} reply",
+    "replies_other": "{{count}} replies",
+    "replies": "{{count}} replies",
+    "time": {
+      "justNow": "just now",
+      "minute_one": "{{count}} minute ago",
+      "minute_other": "{{count}} minutes ago",
+      "minute": "{{count}} minute ago",
+      "minutes": "{{count}} minutes ago",
+      "hour_one": "{{count}} hour ago",
+      "hour_other": "{{count}} hours ago",
+      "hour": "{{count}} hour ago",
+      "hours": "{{count}} hours ago",
+      "day_one": "{{count}} day ago",
+      "day_other": "{{count}} days ago",
+      "day": "{{count}} day ago",
+      "days": "{{count}} days ago",
+      "month_one": "{{count}} month ago",
+      "month_other": "{{count}} months ago",
+      "month": "{{count}} month ago",
+      "months": "{{count}} months ago",
+      "year_one": "{{count}} year ago",
+      "year_other": "{{count}} years ago",
+      "year": "{{count}} year ago",
+      "years": "{{count}} years ago"
+    }
+  },
   "apps": {
     "title": "Bitsocial Apps",
-    "subtitle": "Bitsocial is meant to grow into thousands of apps, tools, and services built by anyone, not approved by gatekeepers. Explore what’s live now, then submit your own.",
+    "subtitle": "Bitsocial is meant to grow into thousands of apps, tools, and services built by anyone, not approved by gatekeepers. If you’re a dev, submit your own app.",
     "allCategories": "All",
     "allProjects": "All Projects",
     "allProjectsDescription": "The full Bitsocial ecosystem, from user-facing clients to protocol tools.",
@@ -450,7 +513,10 @@
     "searchPlaceholder": "Search apps, tools, or tags",
     "clearSearch": "Clear search",
     "clearFilters": "Clear filters",
+    "devsLabel": "Devs:",
+    "filterLimitReached": "Filter limit reached",
     "noMatches": "No projects match these filters",
+    "or": "or",
     "noMatchesDescription": "Try a different search, platform, or category combination.",
     "viewDetails": "Details",
     "readyToUse": "Ready to use",
@@ -461,16 +527,20 @@
     "desktopDownloads": "Desktop downloads",
     "extraDownloads": "Extra builds",
     "sectionLabel": "App Directory",
-    "directoryLabel": "Directory",
+    "directoryLabel": "Categories",
     "catalog": {
       "categories": {
         "apps": {
           "label": "Apps",
           "description": "User-facing Bitsocial clients you can open or install today."
         },
+        "identity": {
+          "label": "Identity",
+          "description": "Credential and verification modules that gate who can post in Bitsocial communities."
+        },
         "anti-spam": {
           "label": "Anti-Spam",
-          "description": "Authentication, filtering, and moderation modules for Bitsocial communities."
+          "description": "Filtering and moderation modules for Bitsocial communities."
         },
         "tools": {
           "label": "Tools",
@@ -501,6 +571,7 @@
       },
       "tags": {
         "accessControl": "Access control",
+        "ai": "AI",
         "automation": "Automation",
         "boardAdmin": "Board admin",
         "bots": "Bots",
@@ -516,16 +587,19 @@
         "mirrors": "Mirrors",
         "moderation": "Moderation",
         "onChain": "On-chain",
+        "operator": "Operator",
+        "pubsubRelay": "Pubsub relay",
         "riskScores": "Risk scores",
         "telegram": "Telegram",
-        "verification": "Verification"
+        "verification": "Verification",
+        "antiRepost": "Anti-repost"
       },
       "linkLabels": {
         "androidApk": "Android APK",
         "linux": "Linux",
         "linuxArm": "Linux ARM",
         "linuxX64": "Linux x64",
-        "macosApple": "macOS Apple",
+        "macosApple": "macOS Apple Silicon",
         "macosIntel": "macOS Intel",
         "openWebApp": "Open web app",
         "openWebsite": "Open website",
@@ -561,9 +635,21 @@
           "tagline": "On-chain gating for communities that want token or contract checks.",
           "description": "EVM Contract Call verifies publications by calling an EVM contract before a post is accepted. It lets communities build token gates, staking rules, or other on-chain checks into their moderation flow."
         },
+        "flags-challenge": {
+          "tagline": "Verified flag issuer challenge for country and board-specific flair.",
+          "description": "Flags Challenge runs on a Bitsocial community node and verifies signed flag assertions from a configurable issuer service. The first bundled profile targets 5chan, covering country flags, /pol/ memeflags, and /mlp/ pony flags, while keeping the same pattern reusable for any client that runs its own issuer and namespace."
+        },
         "bitsocial-cli": {
           "tagline": "Command-line control for nodes, communities, and automation workflows.",
           "description": "Bitsocial CLI is the official terminal interface for the protocol. Use it to manage nodes, publish content, start a WebSocket JSON-RPC server for programmatic control and code automation, automate admin flows, and work directly against Bitsocial primitives without a GUI client."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Public seeder for Bitsocial communities, packaged for Docker and npm.",
+          "description": "Bitsocial Seeder pins community first pages, post-update CIDs, and pubsub topic routing through a Bitsocial daemon. It reuses an already-running local daemon when one is reachable or starts the bundled bitsocial-cli daemon automatically, and ships as both a Docker image for unattended VPS deployments and an npm package for Node-first operators."
+        },
+        "pubsub-provider": {
+          "tagline": "Fallback pubsub relay and routing provider for Bitsocial operators.",
+          "description": "Pubsub Provider runs a bundled Kubo node with Bitsocial-compatible pubsub, gateway, name-provider, and delegated HTTP routing endpoints. It is useful as a fallback path for clients that disable pure browser P2P, and it defaults to swarm port 4002 so it can run beside bitsocial-seeder on the same host."
         },
         "telegram-bots": {
           "tagline": "Feed bots that relay new Bitsocial posts into Telegram channels or groups.",
@@ -572,6 +658,14 @@
         "5chan-board-manager": {
           "tagline": "Board administration tooling for custom 5chan communities.",
           "description": "5chan Board Manager connects to Bitsocial CLI to help administrators create, configure, and moderate custom imageboard boards. It is the utility layer for board owners who want operational control."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "OpenAI-compatible moderation checks against each community's rules.",
+          "description": "AI Moderation Challenge evaluates Bitsocial comment content against <code>community.rules</code> with an OpenAI-compatible model endpoint. Communities can route risky posts to review while keeping provider keys and prompts in private node settings."
+        },
+        "r9k-challenge": {
+          "tagline": "Robot9000-style originality gate for communities that want anti-repost posting UX.",
+          "description": "R9K Challenge runs on a Bitsocial community node and compares normalized post text against the owner node's local comments database. It gives communities a <robot9000>Robot9000</robot9000>-style posting experience without using AI: exact reposts fail before acceptance, backlinks are ignored, repeated failures trigger escalating temporary bans, and accepted-text hashes stay in private local state instead of storing raw post text."
         }
       }
     },
@@ -583,7 +677,8 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "Explore Bitsocial apps under development on GitHub. If you are building one, add the \"bitsocial\" topic to your repo so others can find it.",
-      "link": "Explore GitHub topic"
+      "link": "Explore GitHub topic",
+      "linkShort": "Explore GitHub"
     }
   },
   "home": {

@@ -7,6 +7,8 @@ description: Wie Bitsocial IPFS/libp2p, Public-Key-Adressierung, Peer-to-Peer-Pu
 
 Bitsocial verwendet keine Blockchain, keinen Verbundserver oder ein zentralisiertes Backend. Stattdessen kombiniert es zwei Ideen – **Adressierung auf Basis öffentlicher Schlüssel** und **Peer-to-Peer-Pubsub** – um es jedem zu ermöglichen, eine Community über Consumer-Hardware zu hosten, während Benutzer ohne Konto auf einem vom Unternehmen kontrollierten Dienst lesen und posten können.
 
+Eine weniger technische Anleitung finden Sie hier [Eine vollständige Erklärung des Bitsocial-Protokolls für Laien](./layman-protocol-explanation.md).
+
 ## Die beiden Probleme
 
 Ein dezentrales soziales Netzwerk muss zwei Fragen beantworten:

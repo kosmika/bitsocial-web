@@ -19,7 +19,8 @@
     "language": "Nyelv",
     "theme": "Téma",
     "sourceCode": "Forráskód",
-    "newsletter": "Hírlevél"
+    "newsletter": "Hírlevél",
+    "backToTop": "Vissza a tetejére"
   },
   "footer": {
     "tagline": "Nyílt forráskódú P2P hálózat közösségi alkalmazásokhoz",
@@ -399,10 +400,10 @@
     "mobileDownloads": "Mobil letöltések",
     "desktopDownloads": "Asztali letöltések",
     "extraDownloads": "További buildek",
-    "subtitle": "A Bitsocialt úgy tervezték, hogy több ezer appá, eszközzé és szolgáltatássá nőjön, amelyeket bárki létrehozhat, nem csak a kapuőrök által jóváhagyottakat. Nézd meg, mi él most, aztán küldd be a sajátodat.",
+    "subtitle": "A Bitsocialt úgy tervezték, hogy több ezer appá, eszközzé és szolgáltatássá nőjön, amelyeket bárki létrehozhat, nem csak a kapuőrök által jóváhagyottakat. Ha fejlesztő vagy, küldd be a saját appodat.",
     "experimental": "Kísérleti",
     "sectionLabel": "Alkalmazáskönyvtár",
-    "directoryLabel": "Katalógus",
+    "directoryLabel": "Kategóriák",
     "notFoundDescription": "A keresett app nem létezik a könyvtárban.",
     "emptyCategoryDescription": "Ebben a kategóriában még nincsenek appok. Légy te az első, aki készít egyet!",
     "emptyCategory": "Hamarosan",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "Spam elleni",
-          "description": "Hitelesítési, szűrési és moderálási modulok a Bitsocial-közösségekhez."
+          "description": "Szűrési és moderációs modulok a Bitsocial-közösségekhez."
         },
         "tools": {
           "label": "Eszközök",
           "description": "CLI- és adminisztrációs segédprogramok a Bitsocial appok futtatásához vagy bővítéséhez."
+        },
+        "identity": {
+          "description": "Hitelesítési és ellenőrzési modulok, amelyek azt szabályozzák, hogy ki tehet közzé a Bitsocial közösségekben.",
+          "label": "Identitás"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "On-chain",
         "riskScores": "Kockázati pontszámok",
         "telegram": "Telegram",
-        "verification": "Ellenőrzés"
+        "verification": "Ellenőrzés",
+        "ai": "MI",
+        "antiRepost": "Újraküldés elleni"
       },
       "linkLabels": {
         "androidApk": "Android APK",
@@ -528,6 +535,22 @@
         "5chan-board-manager": {
           "tagline": "Board-adminisztrációs eszközök egyedi 5chan közösségekhez.",
           "description": "A 5chan Board Manager csatlakozik a Bitsocial CLI-hoz, hogy segítsen az adminisztrátoroknak egyéni imageboard boardokat létrehozni, konfigurálni és moderálni. Ez a segéd réteg azoknak a boardtulajdonosoknak, akik működési kontrollt szeretnének."
+        },
+        "flags-challenge": {
+          "tagline": "Ellenőrzött zászló-kibocsátó kihívás ország- és tábla-specifikus jelvényekhez.",
+          "description": "A Flags Challenge egy Bitsocial közösségi csomóponton futtatódik, és aláírt flag állításokat ellenőriz egy konfigurálható kibocsátó szolgáltatástól. Az első csomagolt profil a 5chant célozza meg, az ország zászlóit, a /pol/ memeflags-okat és a /mlp/ pony flags-okat tartalmazza, miközben megtartja ugyanazt a mintát, amely újrahasználható bármely olyan ügyfél számára, amely saját kibocsátó szolgáltatást és névteret futtat."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Nyilvános seeder a Bitsocial-közösségekhez, Docker és npm csomagolásban.",
+          "description": "A Bitsocial Seeder a közösség első oldalait, a frissítés utáni CID-eket és a pubsub témakörök irányítását egy Bitsocial daemon-on keresztül rögzíti. Újrafelhasználja egy már futó helyi daemon-t, ha elérhető, vagy automatikusan elindítja a csomagolt bitsocial-cli daemon-t, és Docker-képként sem feligyelt VPS-telepítésekhez, sem npm-csomagként Node-first operátorok számára érkezik."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "OpenAI-kompatibilis moderációs ellenőrzések minden közösség szabályai alapján.",
+          "description": "Az AI Moderation Challenge a Bitsocial kommenttartalmát a <code>community.rules</code> alapján értékeli egy OpenAI-kompatibilis model endpoint segítségével. A közösségek a kockázatos bejegyzéseket ellenőrzésre irányíthatják, miközben a provider kulcsokat és promptokat privát node beállításokban tartják."
+        },
+        "r9k-challenge": {
+          "tagline": "Robot9000-stílusú eredetiségkapu olyan közösségeknek, amelyek anti-repost posztolási élményt szeretnének.",
+          "description": "Az R9K Challenge egy Bitsocial közösségi node-on fut, és a normalizált posztszöveget összeveti a tulajdonos node helyi kommentadatbázisával. <robot9000>Robot9000</robot9000>-stílusú posztolási élményt ad a közösségeknek: a pontos repostok elfogadás előtt elbuknak, a backlinkek figyelmen kívül maradnak, az ismételt hibák fokozódó ideiglenes banokat indítanak, az elfogadott szöveg hash-ei pedig nyers posztszöveg tárolása helyett privát helyi állapotban maradnak. Ez a challenge nem használ AI-t."
         }
       }
     },
@@ -539,8 +562,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "Fedezd fel a fejlesztés alatt álló Bitsocial-appokat GitHubon. Ha ilyet építesz, add hozzá a \"bitsocial\" topicot a repódhoz, hogy mások is megtalálják.",
-      "link": "GitHub topic megnyitása"
-    }
+      "link": "GitHub topic megnyitása",
+      "linkShort": "GitHub megnyitása"
+    },
+    "filterLimitReached": "Szűrőkorlát elérve",
+    "devsLabel": "Fejlesztők:",
+    "or": "vagy"
   },
   "privacy": {
     "eyebrow": "Hogyan kezeli a bitsocial.net az adatokat",

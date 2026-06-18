@@ -19,7 +19,8 @@
     "language": "Språk",
     "theme": "Tema",
     "sourceCode": "Kildekode",
-    "newsletter": "Nyhetsbrev"
+    "newsletter": "Nyhetsbrev",
+    "backToTop": "Tilbake til toppen"
   },
   "footer": {
     "tagline": "Åpen kildekode P2P-nettverk for sosiale apper",
@@ -399,10 +400,10 @@
     "mobileDownloads": "Nedlastinger for mobil",
     "desktopDownloads": "Skrivebordsnedlastinger",
     "extraDownloads": "Ekstra builds",
-    "subtitle": "Bitsocial er ment å vokse til tusenvis av apper, verktøy og tjenester som hvem som helst kan bygge, ikke bare de som blir godkjent av portvoktere. Se hva som er live nå, og send deretter inn ditt eget.",
+    "subtitle": "Bitsocial er ment å vokse til tusenvis av apper, verktøy og tjenester som hvem som helst kan bygge, ikke bare de som blir godkjent av portvoktere. Er du utvikler, send inn din egen app.",
     "experimental": "Eksperimentell",
     "sectionLabel": "Appkatalog",
-    "directoryLabel": "Katalog",
+    "directoryLabel": "Kategorier",
     "notFoundDescription": "Appen du leter etter finnes ikke i katalogen.",
     "emptyCategoryDescription": "Det finnes ingen apper i denne kategorien ennå. Vær den første til å bygge en!",
     "emptyCategory": "Kommer snart",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "Antispam",
-          "description": "Moduler for autentisering, filtrering og moderering for Bitsocial-fellesskap."
+          "description": "Filter- og moderasjonsmoduler for Bitsocial-fellesskap."
         },
         "tools": {
           "label": "Verktøy",
           "description": "CLI- og administrasjonsverktøy for å kjøre eller utvide Bitsocial-apper."
+        },
+        "identity": {
+          "description": "Legitimasjons- og verifiseringsmoduler som kontrollerer hvem som kan poste i Bitsocial-felleskap.",
+          "label": "Identitet"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "On-chain",
         "riskScores": "Risikoskår",
         "telegram": "Telegram",
-        "verification": "Verifisering"
+        "verification": "Verifisering",
+        "ai": "AI",
+        "antiRepost": "Anti-repost"
       },
       "linkLabels": {
         "androidApk": "Android APK",
@@ -528,6 +535,22 @@
         "5chan-board-manager": {
           "tagline": "Verktøy for board-administrasjon for tilpassede 5chan-fellesskap.",
           "description": "5chan Board Manager kobler seg til Bitsocial CLI for å hjelpe administratorer med å opprette, konfigurere og moderere tilpassede imageboard-tavler. Det er verktøylaget for tavleeiere som vil ha operativ kontroll."
+        },
+        "flags-challenge": {
+          "tagline": "Verifisert flagg-utsteder-utfordring for land- og forum-spesifikke merker.",
+          "description": "Flags Challenge kjøres på en Bitsocial-communitynode og bekrefter signerte flaggpåstander fra en konfigurerbar utstedertjeneste. Den første pakkede profilen er rettet mot 5chan, dekker landsflagg, /pol/ memeflags og /mlp/ pony flags, mens det samme mønsteret beholdes som gjenbrukbart for alle klienter som kjører sin egen utstedertjeneste og navnerom."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Offentlig seeder for Bitsocial-fellesskap, pakket for Docker og npm.",
+          "description": "Bitsocial Seeder fester community-first-sider, post-update-CID-er og pubsub-emneruting gjennom en Bitsocial daemon. Den gjenbruker en allerede kjørende lokal daemon når den er tilgjengelig eller starter den medfølgende bitsocial-cli daemon automatisk, og leveres som både et Docker-image for uovervåket VPS-distribusjon og en npm-pakke for Node-first-operatører."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "OpenAI-kompatible modereringskontroller mot hvert fellesskaps regler.",
+          "description": "AI Moderation Challenge evaluerer Bitsocial-kommentarinnhold mot <code>community.rules</code> med et OpenAI-kompatibelt model-endpoint. Communities kan sende risikofylte innlegg til gjennomgang mens provider-nøkler og prompts holdes i private node-innstillinger."
+        },
+        "r9k-challenge": {
+          "tagline": "Robot9000-inspirert originalitetsport for fellesskap som vil ha en anti-repost-opplevelse for publisering.",
+          "description": "R9K Challenge kjører på en Bitsocial-communitynode og sammenligner normalisert innleggstekst med den lokale kommentardatabasen på eiernodens side. Den gir fellesskap en <robot9000>Robot9000</robot9000>-lignende publiseringsopplevelse: eksakte reposts feiler før aksept, backlinks ignoreres, gjentatte feil utløser eskalerende midlertidige bans, og hasher av akseptert tekst blir i privat lokal tilstand i stedet for å lagre rå innleggstekst. Denne challengen bruker ikke AI."
         }
       }
     },
@@ -539,8 +562,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "Utforsk Bitsocial-apper under utvikling på GitHub. Hvis du bygger en, legg til emnet \"bitsocial\" i repoet ditt slik at andre kan finne den.",
-      "link": "Åpne GitHub-topic"
-    }
+      "link": "Åpne GitHub-topic",
+      "linkShort": "Åpne GitHub"
+    },
+    "filterLimitReached": "Filtergrense nådd",
+    "devsLabel": "Utviklere:",
+    "or": "eller"
   },
   "privacy": {
     "eyebrow": "Hvordan bitsocial.net håndterer data",

@@ -7,6 +7,8 @@ description: Cum folosește Bitsocial IPFS/libp2p, adresarea cu cheie publică, 
 
 Bitsocial nu folosește un blockchain, un server de federație sau un backend centralizat. În schimb, combină două idei — **adresarea bazată pe cheie publică** și **pubsub peer-to-peer** — pentru a permite oricui să găzduiască o comunitate din hardware de consum, în timp ce utilizatorii citesc și postează fără conturi pe orice serviciu controlat de companie.
 
+Pentru o prezentare mai puțin tehnică, citiți [O explicație completă a protocolului Bitsocial](./layman-protocol-explanation.md).
+
 ## Cele două probleme
 
 O rețea socială descentralizată trebuie să răspundă la două întrebări:

@@ -11,6 +11,10 @@ Community owners still set rules for their own spaces. Apps still decide what th
 highlight. What Bitsocial does not include is a global authority that can confiscate a community or
 erase an identity from the network itself.
 
+For a broader plain-English walkthrough of community ownership, publishing, challenges, and
+moderator signatures, read
+[A complete layman explanation of the Bitsocial protocol](./layman-protocol-explanation.md).
+
 ## How moderation works
 
 - A community owner can moderate that community

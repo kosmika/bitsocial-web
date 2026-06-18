@@ -9,6 +9,8 @@ Bitsocial is niet moderatievrij. Het is moderatie zonder een superbeheerder op p
 
 Community-eigenaren stellen nog steeds regels op voor hun eigen ruimtes. Apps bepalen nog steeds wat ze indexeren, rangschikken of benadrukken. Wat Bitsocial niet omvat, is een mondiale autoriteit die een community in beslag kan nemen of een identiteit van het netwerk zelf kan wissen.
 
+Voor een breder, duidelijk Engels overzicht van community-eigendom, publicatie, uitdagingen en handtekeningen van moderators, lees [Een volledige uitleg voor leken van het Bitsocial-protocol](./layman-protocol-explanation.md).
+
 ## Hoe moderatie werkt
 
 - Een community-eigenaar kan die community modereren

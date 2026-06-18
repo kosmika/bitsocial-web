@@ -19,7 +19,8 @@
     "language": "שפה",
     "theme": "ערכת נושא",
     "sourceCode": "קוד מקור",
-    "newsletter": "עלון חדשות"
+    "newsletter": "עלון חדשות",
+    "backToTop": "חזרה למעלה"
   },
   "footer": {
     "tagline": "רשת P2P קוד פתוח לאפליקציות חברתיות",
@@ -399,10 +400,10 @@
     "mobileDownloads": "הורדות לנייד",
     "desktopDownloads": "הורדות למחשב",
     "extraDownloads": "בניות נוספות",
-    "subtitle": "Bitsocial מיועד לצמוח לאלפי אפליקציות, כלים ושירותים שכל אחד יכול לבנות, לא רק כאלה שאושרו על ידי שומרי סף. בדקו מה כבר פועל עכשיו, ואז הגישו את שלכם.",
+    "subtitle": "Bitsocial מיועד לצמוח לאלפי אפליקציות, כלים ושירותים שכל אחד יכול לבנות, לא רק כאלה שאושרו על ידי שומרי סף. אם אתם מפתחים, הגישו את האפליקציה שלכם.",
     "experimental": "ניסיוני",
     "sectionLabel": "ספריית אפליקציות",
-    "directoryLabel": "ספרייה",
+    "directoryLabel": "קטגוריות",
     "notFoundDescription": "האפליקציה שאתם מחפשים לא קיימת בספרייה.",
     "emptyCategoryDescription": "עדיין אין אפליקציות בקטגוריה הזו. היו הראשונים לבנות אחת!",
     "emptyCategory": "בקרוב",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "אנטי-ספאם",
-          "description": "מודולים לאימות, סינון וניהול עבור קהילות Bitsocial."
+          "description": "מודולי סינון והנהלת משמעת לקהילות Bitsocial."
         },
         "tools": {
           "label": "כלים",
           "description": "כלי CLI וכלי ניהול להפעלה או הרחבה של אפליקציות Bitsocial."
+        },
+        "identity": {
+          "description": "מודולי אישור והאימות השולטים במי יכול לפרסם בקהילות Bitsocial.",
+          "label": "זהות"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "On-chain",
         "riskScores": "ציוני סיכון",
         "telegram": "Telegram",
-        "verification": "אימות"
+        "verification": "אימות",
+        "ai": "בינה מלאכותית",
+        "antiRepost": "נגד פרסום חוזר"
       },
       "linkLabels": {
         "androidApk": "קובץ APK לאנדרואיד",
@@ -528,6 +535,22 @@
         "5chan-board-manager": {
           "tagline": "כלי ניהול boards עבור קהילות 5chan מותאמות.",
           "description": "5chan Board Manager מתחבר ל-Bitsocial CLI כדי לעזור למנהלים ליצור, להגדיר ולנהל לוחות imageboard מותאמים אישית. זו שכבת הכלים לבעלי לוחות שרוצים שליטה תפעולית."
+        },
+        "flags-challenge": {
+          "tagline": "אתגר מוכח של מנפיק דגלים לאות ייחודיות של מדינה ולוח.",
+          "description": "Flags Challenge פועל על צומת קהילה של Bitsocial ומאמת תביעות דגלים חתומות משירות מנפיק הניתן להגדרה. הפרופיל המקופל הראשון מכוון ל-5chan, מכסה דגלי ארצות, memeflags של /pol/ ו-pony flags של /mlp/, תוך שמירה על אותו דפוס שניתן לשימוש חוזר לכל לקוח שמפעיל את שירות המנפיק והמרחב השמות שלו."
+        },
+        "bitsocial-seeder": {
+          "tagline": "זורע ציבורי לקהילות Bitsocial, מוכן ל-Docker ו-npm.",
+          "description": "Bitsocial Seeder מיתדות דפי קהילה ראשונים, CID לאחר עדכון וניתוב נושא pubsub דרך daemon Bitsocial. הוא משתמש שוב ב-daemon מקומי שכבר פועל כאשר הוא זמין או מפעיל באופן אוטומטי את ה-daemon bitsocial-cli המוכלל, והוא משודר גם כתמונת Docker לפריסות VPS ללא פיקוח וגם כחבילת npm לאופרטורים Node-first."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "בדיקות ניהול תואמות OpenAI מול כללי כל קהילה.",
+          "description": "AI Moderation Challenge מעריך את תוכן התגובות של Bitsocial מול <code>community.rules</code> באמצעות model endpoint שתואם ל-OpenAI. קהילות יכולות לנתב פוסטים מסוכנים לבדיקה תוך שמירה על provider keys ו-prompts בהגדרות node פרטיות."
+        },
+        "r9k-challenge": {
+          "tagline": "שער מקוריות בסגנון Robot9000 לקהילות שרוצות חוויית פרסום שמונעת פרסומים חוזרים.",
+          "description": "R9K Challenge רץ על צומת קהילה של Bitsocial ומשווה טקסט פוסט מנורמל מול מסד התגובות המקומי של צומת הבעלים. הוא נותן לקהילות חוויית פרסום בסגנון <robot9000>Robot9000</robot9000>: פרסומים חוזרים זהים נכשלים לפני קבלה, backlinks מתעלמים מהם, כישלונות חוזרים מפעילים חסימות זמניות מדורגות, ו-hashes של טקסט שהתקבל נשארים במצב מקומי פרטי במקום לשמור את טקסט הפוסט הגולמי. האתגר הזה לא משתמש ב-AI."
         }
       }
     },
@@ -539,8 +562,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "גלו אפליקציות Bitsocial בפיתוח ב-GitHub. אם אתם בונים אחת, הוסיפו את ה-topic \"bitsocial\" ל-repo שלכם כדי שאחרים יוכלו למצוא אותה.",
-      "link": "פתיחת ה-topic ב-GitHub"
-    }
+      "link": "פתיחת ה-topic ב-GitHub",
+      "linkShort": "פתיחת GitHub"
+    },
+    "filterLimitReached": "הגעת למגבלת המסננים",
+    "devsLabel": "מפתחים:",
+    "or": "או"
   },
   "privacy": {
     "eyebrow": "איך bitsocial.net מטפל בנתונים",

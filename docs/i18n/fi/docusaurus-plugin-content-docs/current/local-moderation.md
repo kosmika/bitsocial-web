@@ -9,6 +9,8 @@ Bitsocial ei ole moderaatiovapaa. Se on moderointia ilman protokollatason super-
 
 Yhteisön omistajat asettavat edelleen säännöt omille tiloilleen. Sovellukset päättävät silti, mitä ne indeksoivat, sijoittavat tai korostavat. Bitsocial ei sisällä globaalia auktoriteettia, joka voi takavarikoida yhteisön tai poistaa identiteetin verkosta itsestään.
 
+Jos haluat laajemman englanninkielisen esittelyn yhteisön omistajuudesta, julkaisemisesta, haasteista ja moderaattorien allekirjoituksista, lue [Täydellinen maallikon selitys Bitsocial-protokollasta](./layman-protocol-explanation.md).
+
 ## Miten maltillisuus toimii
 
 - Yhteisön omistaja voi valvoa tätä yhteisöä

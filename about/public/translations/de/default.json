@@ -19,7 +19,8 @@
     "language": "Sprache",
     "theme": "Design",
     "sourceCode": "Quellcode",
-    "newsletter": "Newsletter"
+    "newsletter": "Newsletter",
+    "backToTop": "Nach oben"
   },
   "footer": {
     "tagline": "Open-Source-P2P-Netzwerk für soziale Apps",
@@ -399,10 +400,10 @@
     "mobileDownloads": "Mobile Downloads",
     "desktopDownloads": "Desktop-Downloads",
     "extraDownloads": "Zusätzliche Builds",
-    "subtitle": "Bitsocial soll zu Tausenden von Apps, Tools und Diensten wachsen, die von allen gebaut werden können, nicht nur von Gatekeepern abgesegnet. Schau dir an, was jetzt live ist, und reiche dann dein eigenes ein.",
+    "subtitle": "Bitsocial soll zu Tausenden von Apps, Tools und Diensten wachsen, die von allen gebaut werden können, nicht nur von Gatekeepern abgesegnet. Wenn du Entwickler bist, reiche deine eigene App ein.",
     "experimental": "Experimentell",
     "sectionLabel": "App-Verzeichnis",
-    "directoryLabel": "Katalog",
+    "directoryLabel": "Kategorien",
     "notFoundDescription": "Die App, nach der du suchst, existiert im Verzeichnis nicht.",
     "emptyCategoryDescription": "In dieser Kategorie gibt es noch keine Apps. Sei der Erste, der eine baut!",
     "emptyCategory": "Demnächst",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "Anti-Spam",
-          "description": "Module für Authentifizierung, Filterung und Moderation für Bitsocial-Communities."
+          "description": "Filter- und Moderationsmodule für Bitsocial-Gemeinschaften."
         },
         "tools": {
           "label": "Tools",
           "description": "CLI- und Admin-Werkzeuge zum Ausführen oder Erweitern von Bitsocial-Apps."
+        },
+        "identity": {
+          "description": "Authentifizierungs- und Verifizierungsmodule, die steuern, wer in Bitsocial-Gemeinschaften posten kann.",
+          "label": "Identität"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "On-Chain",
         "riskScores": "Risikowerte",
         "telegram": "Telegram",
-        "verification": "Verifizierung"
+        "verification": "Verifizierung",
+        "ai": "AI",
+        "antiRepost": "Anti-Repost"
       },
       "linkLabels": {
         "androidApk": "Android-APK",
@@ -528,6 +535,22 @@
         "5chan-board-manager": {
           "tagline": "Board-Administration für eigene 5chan-Communities.",
           "description": "5chan Board Manager verbindet sich mit Bitsocial CLI, um Administratoren dabei zu helfen, benutzerdefinierte Imageboard-Boards zu erstellen, zu konfigurieren und zu moderieren. Es ist die Hilfsschicht für Board-Betreiber, die operative Kontrolle wünschen."
+        },
+        "flags-challenge": {
+          "tagline": "Verifizierte Flag-Herausgeber-Herausforderung für länder- und board-spezifische Abzeichen.",
+          "description": "Flags Challenge läuft auf einem Bitsocial-Community-Node und verifiziert signierte Flag-Behauptungen von einem konfigurierbaren Ausstellerdienst. Das erste gebündelte Profil zielt auf 5chan ab, deckt Landesflaggen, /pol/ Meme-Flaggen und /mlp/ Pony-Flaggen ab und behält gleichzeitig das gleiche Muster für jeden Client wiederverwendbar, der seinen eigenen Ausstellerdienst und Namespace betreibt."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Öffentlicher Seeder für Bitsocial-Communities, gepackt für Docker und npm.",
+          "description": "Bitsocial Seeder fixiert Community-First-Seiten, Post-Update-CIDs und pubsub-Topic-Routing durch einen Bitsocial-Daemon. Es nutzt einen bereits laufenden lokalen Daemon wieder, wenn dieser erreichbar ist, oder startet den bündelten bitsocial-cli-Daemon automatisch. Es wird sowohl als Docker-Image für unbeaufsichtigte VPS-Implementierungen als auch als npm-Paket für Node-First-Betreiber bereitgestellt."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "OpenAI-kompatible Moderationsprüfungen gegen die Regeln jeder Community.",
+          "description": "AI Moderation Challenge bewertet Bitsocial-Kommentarinhalte anhand von <code>community.rules</code> mit einem OpenAI-kompatiblen Model-Endpoint. Communities können riskante Beiträge zur Überprüfung weiterleiten und dabei Provider-Keys und Prompts in privaten Node-Einstellungen behalten."
+        },
+        "r9k-challenge": {
+          "tagline": "Robot9000-artiges Originalitäts-Gate für Communities, die ein Anti-Repost-Posting-Erlebnis wollen.",
+          "description": "R9K Challenge läuft auf einem Bitsocial-Community-Node und vergleicht normalisierten Beitragstext mit der lokalen Kommentardatenbank des Owner-Nodes. Es gibt Communities ein Posting-Erlebnis im <robot9000>Robot9000</robot9000>-Stil: exakte Reposts scheitern vor der Annahme, Backlinks werden ignoriert, wiederholte Fehlschläge lösen eskalierende temporäre Sperren aus, und Hashes akzeptierter Texte bleiben im privaten lokalen Zustand, statt rohen Beitragstext zu speichern. Diese Challenge verwendet keine KI."
         }
       }
     },
@@ -539,8 +562,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "Erkunde Bitsocial-Apps in Entwicklung auf GitHub. Wenn du eine entwickelst, füge deinem Repo das Topic \"bitsocial\" hinzu, damit andere sie finden können.",
-      "link": "GitHub-Topic ansehen"
-    }
+      "link": "GitHub-Topic ansehen",
+      "linkShort": "GitHub ansehen"
+    },
+    "filterLimitReached": "Filterlimit erreicht",
+    "devsLabel": "Devs:",
+    "or": "oder"
   },
   "privacy": {
     "eyebrow": "Wie bitsocial.net mit Daten umgeht",

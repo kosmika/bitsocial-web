@@ -9,6 +9,8 @@ Bitsocial není bez moderování. Jedná se o moderování bez supersprávce na 
 
 Majitelé komunit si stále stanovují pravidla pro své vlastní prostory. Aplikace stále rozhodují o tom, co indexují, hodnotí nebo zvýrazní. Co Bitsocial nezahrnuje, je globální autorita, která může zabavit komunitu nebo vymazat identitu ze samotné sítě.
 
+Chcete-li získat širší jednoduchý anglický návod na vlastnictví komunity, publikování, výzvy a podpisy moderátorů, přečtěte si [Kompletní laické vysvětlení protokolu Bitsocial](./layman-protocol-explanation.md).
+
 ## Jak funguje moderování
 
 - Vlastník komunity může tuto komunitu moderovat

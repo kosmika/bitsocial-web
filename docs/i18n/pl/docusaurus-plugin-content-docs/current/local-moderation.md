@@ -9,6 +9,8 @@ Bitsocial nie jest wolny od moderacji. Jest to moderacja bez superadministratora
 
 Właściciele społeczności nadal ustalają zasady dotyczące swoich własnych przestrzeni. Aplikacje nadal decydują, co indeksują, oceniają i wyróżniają. Bitsocial nie obejmuje globalnego organu, który może skonfiskować społeczność lub usunąć tożsamość z samej sieci.
 
+Aby zapoznać się z szerszym, prostym angielskim przewodnikiem na temat własności społeczności, publikacji, wyzwań i podpisów moderatorów, przeczytaj [Kompletne wyjaśnienie protokołu Bitsocial dla laika](./layman-protocol-explanation.md).
+
 ## Jak działa umiar
 
 - Właściciel społeczności może moderować tę społeczność

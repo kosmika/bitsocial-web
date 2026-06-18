@@ -7,6 +7,8 @@ description: Cách Bitsocial sử dụng IPFS/libp2p, địa chỉ khóa công k
 
 Bitsocial không sử dụng blockchain, máy chủ liên kết hoặc chương trình phụ trợ tập trung. Thay vào đó, nó kết hợp hai ý tưởng — **địa chỉ dựa trên khóa công khai** và **pubsub ngang hàng** — để cho phép mọi người lưu trữ một cộng đồng từ phần cứng tiêu dùng trong khi người dùng đọc và đăng bài mà không cần tài khoản trên bất kỳ dịch vụ nào do công ty kiểm soát.
 
+Để có hướng dẫn ít kỹ thuật hơn, hãy đọc [Giải thích đầy đủ về giao thức Bitsocial](./layman-protocol-explanation.md).
+
 ## Hai vấn đề
 
 Một mạng xã hội phi tập trung phải trả lời hai câu hỏi:

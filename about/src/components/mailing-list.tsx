@@ -138,7 +138,7 @@ export default function MailingList() {
                   "hover:text-foreground hover:bg-blue-core/[0.14] hover:border-blue-glow",
                   "ring-glow cta-glow transition-[box-shadow,border-color,background-color,color,opacity] duration-300",
                   "disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-blue-core/30 disabled:hover:bg-blue-core/[0.08] disabled:hover:text-foreground/90 disabled:hover:shadow-none",
-                  "dark:border-blue-core/45 dark:bg-blue-core/[0.18] dark:hover:bg-blue-core/[0.24]",
+                  "dark:border-blue-core/45 dark:bg-blue-core/[0.18] dark:hover:border-blue-glow dark:hover:bg-blue-core/[0.24]",
                 )}
               >
                 {formState === "submitting" ? (

@@ -7,6 +7,8 @@ description: Bakit hinahayaan ng Bitsocial ang bawat komunidad na tukuyin ang sa
 
 Hindi ipinapalagay ng Bitsocial ang isang unibersal na pagtatanggol sa spam. Ang bawat komunidad ay maaaring magpasya kung ano ang kinakailangan ng isang wastong post o tugon, at ang hamon na iyon ay maaaring maging kasing-gaan o opinyon ayon sa gusto ng operator.
 
+Para sa buong plain-English na daloy mula sa mga address ng komunidad hanggang sa pag-post na may hamon, basahin [Isang kumpletong paliwanag ng karaniwang tao sa Bitsocial protocol](./layman-protocol-explanation.md).
+
 ## Ano ang maaaring maging hamon
 
 - Isang captcha

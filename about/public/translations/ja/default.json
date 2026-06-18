@@ -19,7 +19,8 @@
     "language": "言語",
     "theme": "テーマ",
     "sourceCode": "ソースコード",
-    "newsletter": "ニュースレター"
+    "newsletter": "ニュースレター",
+    "backToTop": "トップに戻る"
   },
   "footer": {
     "tagline": "ソーシャルアプリ向けオープンソースP2Pネットワーク",
@@ -399,10 +400,10 @@
     "mobileDownloads": "モバイルダウンロード",
     "desktopDownloads": "デスクトップのダウンロード",
     "extraDownloads": "追加ビルド",
-    "subtitle": "Bitsocial は、誰でも作れる何千ものアプリ、ツール、サービスへと育つことを目指しています。門番に承認されたものだけではありません。今公開されているものを見て、あなたのものを投稿してください。",
+    "subtitle": "Bitsocial は、誰でも作れる何千ものアプリ、ツール、サービスへと育つことを目指しています。門番に承認されたものだけではありません。開発者の方は、ご自身のアプリを投稿してください。",
     "experimental": "実験的",
     "sectionLabel": "アプリ一覧",
-    "directoryLabel": "一覧",
+    "directoryLabel": "カテゴリ",
     "notFoundDescription": "お探しのアプリはディレクトリに存在しません。",
     "emptyCategoryDescription": "このカテゴリにはまだアプリがありません。最初のひとつを作ってみてください！",
     "emptyCategory": "近日公開",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "アンチスパム",
-          "description": "Bitsocial コミュニティ向けの認証、フィルタリング、モデレーション用モジュール。"
+          "description": "Bitsocial コミュニティ向けのフィルタリングおよびモデレーション モジュール。"
         },
         "tools": {
           "label": "ツール",
           "description": "Bitsocial アプリを実行したり拡張したりするための CLI および管理用ユーティリティ。"
+        },
+        "identity": {
+          "description": "Bitsocial コミュニティに誰が投稿できるかを制御する資格情報と検証モジュール。",
+          "label": "アイデンティティ"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "オンチェーン",
         "riskScores": "リスクスコア",
         "telegram": "Telegram",
-        "verification": "本人確認"
+        "verification": "本人確認",
+        "ai": "AI",
+        "antiRepost": "再投稿防止"
       },
       "linkLabels": {
         "androidApk": "Android APK",
@@ -528,6 +535,22 @@
         "5chan-board-manager": {
           "tagline": "カスタム 5chan コミュニティ向けの掲示板管理ツール。",
           "description": "5chan Board Manager は Bitsocial CLI に接続し、管理者がカスタム imageboard ボードを作成、設定、モデレートするのを支援します。これは、運用面を管理したいボード所有者向けのユーティリティ層です。"
+        },
+        "flags-challenge": {
+          "tagline": "国とボード固有のバッジ用に検証されたフラグ発行者チャレンジ。",
+          "description": "Flags Challengeはビットソーシャルコミュニティノード上で実行され、設定可能な発行者サービスからの署名付きフラグアサーションを検証します。最初のバンドルプロファイルは5chanを対象とし、国旗、/pol/ミームフラグ、/mlpポニーフラグをカバーしながら、独自の発行者と名前空間を実行するすべてのクライアント向けに同じパターンを再利用可能に保ちます。"
+        },
+        "bitsocial-seeder": {
+          "tagline": "Bitsocialコミュニティ向けのパブリックシーダー、Dockerとnpmにパッケージされている。",
+          "description": "Bitsocial Seederは、Bitsocial daemonを通じて、コミュニティの最初のページ、更新後のCID、およびpubsubトピックルーティングをピン留めします。すでに実行中のローカルdaemonが到達可能な場合は再利用するか、バンドルされたbitsocial-cli daemonを自動的に開始し、無人のVPS展開用のDockerイメージとNode-firstオペレータ向けのnpmパッケージの両方として提供されます。"
+        },
+        "ai-moderation-challenge": {
+          "tagline": "OpenAI互換のモデレーションチェックで、各コミュニティのルールに照合。",
+          "description": "AI Moderation Challengeは、OpenAI互換のモデルエンドポイントを使ってBitsocialのコメント内容を<code>community.rules</code>に照らして評価します。コミュニティは、providerキーとpromptをプライベートなnode設定に保ちながら、リスクの高い投稿をreviewに回せます。"
+        },
+        "r9k-challenge": {
+          "tagline": "再投稿を防ぐ投稿体験がほしいコミュニティ向けの、Robot9000風オリジナリティゲート。",
+          "description": "R9K Challenge は Bitsocial コミュニティノードで動作し、正規化された投稿テキストをオーナーノードのローカルコメントデータベースと照合します。コミュニティに <robot9000>Robot9000</robot9000> 風の投稿体験を提供し、完全一致の再投稿は承認前に失敗し、バックリンクは無視され、失敗を繰り返すと段階的な一時BANが発生し、生の投稿テキストではなく承認済みテキストのハッシュだけがプライベートなローカル状態に残ります。 このチャレンジではAIを使用しません。"
         }
       }
     },
@@ -539,8 +562,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "GitHubで開発中のBitsocialアプリを探せます。作っているものがあれば、repoに\"bitsocial\" topicを追加して、他の人が見つけられるようにしてください。",
-      "link": "GitHub topic を開く"
-    }
+      "link": "GitHub topic を開く",
+      "linkShort": "GitHub を開く"
+    },
+    "filterLimitReached": "フィルターの上限に達しました",
+    "devsLabel": "開発者:",
+    "or": "または"
   },
   "privacy": {
     "eyebrow": "bitsocial.net がデータをどのように扱うか",

@@ -7,6 +7,8 @@ description: Hvordan Bitsocial bruger IPFS/libp2p, public-key-adressering, peer-
 
 Bitsocial bruger ikke en blockchain, en føderationsserver eller en centraliseret backend. I stedet kombinerer det to ideer - **offentlig nøglebaseret adressering** og **peer-to-peer pubsub** - for at lade enhver være vært for et fællesskab fra forbrugerhardware, mens brugere læser og poster uden konti på nogen virksomhedskontrolleret tjeneste.
 
+For en mindre teknisk gennemgang, læs [En komplet lægmandsforklaring af Bitsocial-protokollen](./layman-protocol-explanation.md).
+
 ## De to problemer
 
 Et decentraliseret socialt netværk skal besvare to spørgsmål:

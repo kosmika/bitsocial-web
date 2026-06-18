@@ -19,7 +19,8 @@
     "language": "Wika",
     "theme": "Tema",
     "sourceCode": "Source code",
-    "newsletter": "Balitaan"
+    "newsletter": "Balitaan",
+    "backToTop": "Bumalik sa itaas"
   },
   "footer": {
     "tagline": "Open Source na P2P Network para sa mga Social App",
@@ -399,10 +400,10 @@
     "mobileDownloads": "Mga download sa mobile",
     "desktopDownloads": "Mga desktop download",
     "extraDownloads": "Dagdag na build",
-    "subtitle": "Ang Bitsocial ay nakatakdang lumago sa libu-libong app, tool, at serbisyo na kayang buuin ng kahit sino, hindi lang yaong aprubado ng gatekeepers. Tingnan kung ano ang live ngayon, tapos isumite ang sa iyo.",
+    "subtitle": "Ang Bitsocial ay nakatakdang lumago sa libu-libong app, tool, at serbisyo na kayang buuin ng kahit sino, hindi lang yaong aprubado ng gatekeepers. Kung dev ka, isumite ang sarili mong app.",
     "experimental": "Pang-eksperimento",
     "sectionLabel": "Direktoryo ng mga app",
-    "directoryLabel": "Direktoryo",
+    "directoryLabel": "Mga Kategorya",
     "notFoundDescription": "Hindi umiiral sa direktoryo ang app na hinahanap mo.",
     "emptyCategoryDescription": "Wala pang app sa kategoryang ito. Ikaw ang mauna na bumuo ng isa!",
     "emptyCategory": "Malapit na",
@@ -426,11 +427,15 @@
         },
         "anti-spam": {
           "label": "Anti-spam",
-          "description": "Mga module para sa pagpapatunay, pag-filter, at pagmo-moderate para sa mga komunidad ng Bitsocial."
+          "description": "Mga modulo ng pagsusulit at pag-uusig para sa mga komunidad ng Bitsocial."
         },
         "tools": {
           "label": "Mga tool",
           "description": "Mga utility sa CLI at admin para sa pagpapatakbo o pagpapalawak ng mga app ng Bitsocial."
+        },
+        "identity": {
+          "description": "Mga modulo ng kredensyal at pagpapatunay na nag-kontrol kung sino ang maaaring magpost sa mga komunidad ng Bitsocial.",
+          "label": "Pagkakakilanlan"
         }
       },
       "platforms": {
@@ -474,7 +479,9 @@
         "onChain": "On-chain",
         "riskScores": "Mga score ng panganib",
         "telegram": "Telegram",
-        "verification": "Beripikasyon"
+        "verification": "Beripikasyon",
+        "ai": "AI",
+        "antiRepost": "Anti-repost"
       },
       "linkLabels": {
         "androidApk": "APK ng Android",
@@ -528,6 +535,22 @@
         "5chan-board-manager": {
           "tagline": "Mga tool para sa board administration ng custom 5chan communities.",
           "description": "Kumokonekta ang 5chan Board Manager sa Bitsocial CLI para tulungan ang mga administrator na gumawa, mag-configure, at mag-moderate ng mga custom na imageboard board. Ito ang utility layer para sa mga may-ari ng board na gusto ng operational control."
+        },
+        "flags-challenge": {
+          "tagline": "Napatunayan na hamon ng flag issuer para sa bansa at board-specific na insignia.",
+          "description": "Ang Flags Challenge ay tumatakbo sa isang Bitsocial community node at nag-verify ng signed flag assertions mula sa isang configurable issuer service. Ang unang bundled profile ay nakatuon sa 5chan, sumasaklaw sa country flags, /pol/ memeflags, at /mlp/ pony flags, habang pinapanatili ang parehong pattern na maaaring gamitin muli para sa anumang client na gumagamit ng sariling issuer at namespace."
+        },
+        "bitsocial-seeder": {
+          "tagline": "Pampubliko na seeder para sa Bitsocial na mga komunidad, na inihanda para sa Docker at npm.",
+          "description": "Ang Bitsocial Seeder ay nakakapin ng komunidad na unang mga pahina, post-update CID, at pubsub topic routing sa pamamagitan ng Bitsocial daemon. Ito ay muling gumagamit ng isang nang-tumatakbo na lokal na daemon kapag ito ay maaabot o awtomatikong nagsisimula ng bundled bitsocial-cli daemon, at ipinapadala bilang Docker image para sa unattended VPS deployments at npm package para sa Node-first operators."
+        },
+        "ai-moderation-challenge": {
+          "tagline": "Mga pagsusuri sa moderation na tugma sa OpenAI laban sa mga patakaran ng bawat komunidad.",
+          "description": "Sinusuri ng AI Moderation Challenge ang nilalaman ng komento sa Bitsocial laban sa <code>community.rules</code> gamit ang OpenAI-compatible na model endpoint. Maaaring i-route ng mga komunidad ang mga mapanganib na post para sa review habang pinapanatili ang provider keys at prompts sa pribadong node settings."
+        },
+        "r9k-challenge": {
+          "tagline": "Robot9000-style na originality gate para sa mga komunidad na gusto ng anti-repost na karanasan sa pag-post.",
+          "description": "Tumatakbo ang R9K Challenge sa isang Bitsocial community node at ikinukumpara ang normalized na post text sa lokal na comments database ng owner node. Binibigyan nito ang mga komunidad ng <robot9000>Robot9000</robot9000>-style na karanasan sa pag-post: bumabagsak ang eksaktong repost bago tanggapin, binabalewala ang backlinks, ang paulit-ulit na failure ay nagti-trigger ng papataas na temporary bans, at nananatili sa pribadong local state ang accepted-text hashes sa halip na i-store ang raw post text. Walang AI na ginagamit sa challenge na ito."
         }
       }
     },
@@ -539,8 +562,12 @@
     "mirrorWeb3CompanionLink": "Install IPFS Companion",
     "githubTopic": {
       "description": "I-explore ang mga Bitsocial app na ginagawa pa sa GitHub. Kung gumagawa ka ng isa, idagdag ang \"bitsocial\" topic sa repo mo para mahanap ito ng iba.",
-      "link": "Buksan ang GitHub topic"
-    }
+      "link": "Buksan ang GitHub topic",
+      "linkShort": "Buksan ang GitHub"
+    },
+    "filterLimitReached": "Naabot na limitasyon ng filter",
+    "devsLabel": "Devs:",
+    "or": "o"
   },
   "privacy": {
     "eyebrow": "Paano hinahandle ng bitsocial.net ang data",
