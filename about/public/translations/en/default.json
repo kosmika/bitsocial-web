@@ -575,7 +575,7 @@
         "linux": "Linux",
         "linuxArm": "Linux ARM",
         "linuxX64": "Linux x64",
-        "macosApple": "macOS Apple",
+        "macosApple": "macOS Apple Silicon",
         "macosIntel": "macOS Intel",
         "openWebApp": "Open web app",
         "openWebsite": "Open website",

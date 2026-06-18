@@ -50,6 +50,7 @@ Use this file as the short routing index for `https://bitsocial.net/docs/`. Use 
 
 - [BSO Resolver](https://bitsocial.net/docs/infrastructure/bso-resolver/): Resolve .bso domain names to public keys via Bitsocial TXT records, with built-in caching and cross-platform support.
 - [Mintpass](https://bitsocial.net/docs/infrastructure/mintpass/): NFT-based authentication system that helps Bitsocial communities verify users and reduce sybil attacks.
+- [Pubsub Provider](https://bitsocial.net/docs/infrastructure/pubsub-provider/): Fallback pubsub relay and delegated routing provider for Bitsocial operators.
 - [Telegram Bots](https://bitsocial.net/docs/infrastructure/telegram-bots/): Feed bots that monitor Bitsocial community lists and forward posts to Telegram channels.
 
 ## Contributor playbooks
