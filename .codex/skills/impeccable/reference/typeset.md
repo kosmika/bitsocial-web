@@ -57,7 +57,6 @@ Create a systematic plan:
 ### Font Selection
 
 If fonts need replacing:
-
 - Choose fonts that reflect the brand personality
 - Pair with genuine contrast (serif + sans, geometric + humanist), or use a single family in multiple weights
 - Ensure web font loading doesn't cause layout shift (`font-display: swap`, metric-matched fallbacks)
@@ -65,7 +64,6 @@ If fonts need replacing:
 ### Establish Hierarchy
 
 Build a clear type scale:
-
 - **5 sizes cover most needs**: caption, secondary, body, subheading, heading
 - **Use a consistent ratio** between levels (1.25, 1.333, or 1.5)
 - **Combine dimensions**: Size + weight + color + space for strong hierarchy. Don't rely on size alone
@@ -93,7 +91,6 @@ Build a clear type scale:
 - Load only the weights you actually use (each weight adds to page load)
 
 **NEVER**:
-
 - Use more than 2-3 font families
 - Pick sizes arbitrarily; commit to a scale
 - Set body text below 16px
@@ -112,7 +109,7 @@ Build a clear type scale:
 - **Performance**: Are web fonts loading efficiently without layout shift?
 - **Accessibility**: Does text meet WCAG contrast ratios? Is it zoomable to 200%?
 
-When the type carries the hierarchy on its own, hand off to `/impeccable polish` for the final pass.
+When the type carries the hierarchy on its own, hand off to `$impeccable polish` for the final pass.
 
 ## Live-mode signature params
 
@@ -146,13 +143,13 @@ The common mistake: too many font sizes that are too close together (14px, 15px,
 
 **Use fewer sizes with more contrast.** A 5-size system covers most needs:
 
-| Role | Typical Ratio | Use Case               |
-| ---- | ------------- | ---------------------- |
-| xs   | 0.75rem       | Captions, legal        |
-| sm   | 0.875rem      | Secondary UI, metadata |
-| base | 1rem          | Body text              |
-| lg   | 1.25-1.5rem   | Subheadings, lead text |
-| xl+  | 2-4rem        | Headlines, hero text   |
+| Role | Typical Ratio | Use Case |
+|------|---------------|----------|
+| xs | 0.75rem | Captions, legal |
+| sm | 0.875rem | Secondary UI, metadata |
+| base | 1rem | Body text |
+| lg | 1.25-1.5rem | Subheadings, lead text |
+| xl+ | 2-4rem | Headlines, hero text |
 
 Popular ratios: 1.25 (major third), 1.333 (perfect fourth), 1.5 (perfect fifth). Pick one and commit.
 
@@ -182,7 +179,6 @@ The tactical selection procedure and the reflex-reject list live in [reference/b
 **The non-obvious truth**: You often don't need a second font. One well-chosen font family in multiple weights creates cleaner hierarchy than two competing typefaces. Only add a second font when you need genuine contrast (e.g., display headlines + body serif).
 
 When pairing, contrast on multiple axes:
-
 - Serif + Sans (structure contrast)
 - Geometric + Humanist (personality contrast)
 - Condensed display + Wide body (proportion contrast)

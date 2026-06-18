@@ -92,13 +92,13 @@ Create a systematic plan:
 - Use the fewest dimensions needed for clear hierarchy. Space alone can be enough; generous whitespace around an element draws the eye. Some of the most polished designs achieve rhythm with just space and weight. Add color or size contrast only when simpler means aren't sufficient.
 - The best hierarchy combines 2–3 dimensions at once. A heading that's larger, bolder, AND has more space above it reads as primary without trying:
 
-| Tool         | Strong Hierarchy          | Weak Hierarchy    |
-| ------------ | ------------------------- | ----------------- |
-| **Size**     | 3:1 ratio or more         | <2:1 ratio        |
-| **Weight**   | Bold vs Regular           | Medium vs Regular |
-| **Color**    | High contrast             | Similar tones     |
-| **Position** | Top/left (primary)        | Bottom/right      |
-| **Space**    | Surrounded by white space | Crowded           |
+| Tool | Strong Hierarchy | Weak Hierarchy |
+|------|------------------|----------------|
+| **Size** | 3:1 ratio or more | <2:1 ratio |
+| **Weight** | Bold vs Regular | Medium vs Regular |
+| **Color** | High contrast | Similar tones |
+| **Position** | Top/left (primary) | Bottom/right |
+| **Space** | Surrounded by white space | Crowded |
 
 - Be aware of reading flow: in LTR languages, the eye naturally scans top-left to bottom-right, but primary action placement depends on context (e.g., bottom-right in dialogs, top in navigation).
 - Create clear content groupings through proximity and separation.
@@ -122,7 +122,6 @@ Create a systematic plan:
 ```
 
 **NEVER**:
-
 - Use arbitrary spacing values outside your scale
 - Make all spacing equal (variety creates hierarchy)
 - Wrap everything in cards (not everything needs a container)
