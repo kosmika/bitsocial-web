@@ -629,5 +629,29 @@
     },
     "quote": "L'única innovació de Bitsocial és resoldre spam i DDoS utilitzant desafiaments arbitraris com captchas en p2p.",
     "quoteAttribution": "— Esteban Abaroa, fundador de Bitsocial"
+  },
+  "textOnlyProtocol": {
+    "sectionLabel": "Protocol només de text",
+    "title": "La llibertat té moderació.",
+    "supporting": "No hi ha cap administrador global ni cap servidor per confiscar, així que ningú no pot expulsar-te de tota la xarxa. La moderació simplement s'acosta a tu.",
+    "carouselLabel": "Dubtes habituals, resolts",
+    "communities": {
+      "myth": "Sense expulsions, això és una selva.",
+      "reality": "Les comunitats moderen.",
+      "rules": "Cada comunitat estableix i aplica les seves pròpies normes, amb el seu propi anti-spam.",
+      "noGlobalAdmin": "Simplement no hi ha cap administrador únic per damunt de la xarxa que pugui expulsar-te d'arreu."
+    },
+    "apps": {
+      "myth": "Els clients oberts volen dir que ningú no en respon.",
+      "reality": "Les apps també moderen.",
+      "blacklist": "Els desenvolupadors de clients poden amagar comunitats reconegudes com a perilloses.",
+      "reputation": "Els desenvolupadors poden oferir serveis opcionals de reputació i puntuació per augmentar la seguretat."
+    },
+    "media": {
+      "myth": "La gent difondrà contingut il·legal.",
+      "reality": "No és una xarxa oculta.",
+      "notPrivate": "El peer-to-peer no és del tot anònim: com a BitTorrent, la teva IP pot ser visible per a altres parells.",
+      "textOnly": "Protocol només de text: les imatges i els vídeos s'incrusten des de llocs web externs."
+    }
   }
 }

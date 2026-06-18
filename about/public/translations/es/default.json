@@ -629,5 +629,29 @@
     },
     "quote": "La única innovación de Bitsocial es resolver spam y DDoS mediante desafíos arbitrarios como captchas en p2p.",
     "quoteAttribution": "— Esteban Abaroa, fundador de Bitsocial"
+  },
+  "textOnlyProtocol": {
+    "sectionLabel": "Protocolo solo de texto",
+    "title": "La libertad tiene moderación.",
+    "supporting": "No hay un administrador global ni un servidor que confiscar, así que nadie puede expulsarte de toda la red. La moderación simplemente se acerca a ti.",
+    "carouselLabel": "Dudas habituales, resueltas",
+    "communities": {
+      "myth": "Sin baneos, esto es una jungla.",
+      "reality": "Las comunidades moderan.",
+      "rules": "Cada comunidad fija y aplica sus propias reglas, con su propio anti-spam.",
+      "noGlobalAdmin": "Simplemente no hay un único administrador por encima de la red que pueda expulsarte de todas partes."
+    },
+    "apps": {
+      "myth": "Clientes abiertos significan que nadie rinde cuentas.",
+      "reality": "Las apps también moderan.",
+      "blacklist": "Los desarrolladores de clientes pueden ocultar comunidades reconocidas como peligrosas.",
+      "reputation": "Los desarrolladores pueden ofrecer servicios opcionales de reputación y puntuación para aumentar la seguridad."
+    },
+    "media": {
+      "myth": "La gente difundirá contenido ilegal.",
+      "reality": "No es una red oculta.",
+      "notPrivate": "El peer-to-peer no es totalmente anónimo: como en BitTorrent, tu IP puede ser visible para otros pares.",
+      "textOnly": "Protocolo solo de texto: las imágenes y los vídeos se incrustan desde sitios web externos."
+    }
   }
 }

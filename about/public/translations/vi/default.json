@@ -629,5 +629,29 @@
     },
     "quote": "Chỉ có một sáng kiến duy nhất của Bitsocial là giải quyết spam và DDoS bằng cách sử dụng các thách thức tùy ý như captchas trên p2p.",
     "quoteAttribution": "— Esteban Abaroa, nhà sáng lập Bitsocial"
+  },
+  "textOnlyProtocol": {
+    "sectionLabel": "Giao thức chỉ văn bản",
+    "title": "Tự do vẫn có kiểm duyệt.",
+    "supporting": "Không có quản trị viên toàn cục và không có máy chủ nào để tịch thu, nên không ai có thể cấm bạn khỏi toàn bộ mạng lưới. Việc kiểm duyệt chỉ đến gần bạn hơn mà thôi.",
+    "carouselLabel": "Giải đáp những lo ngại thường gặp",
+    "communities": {
+      "myth": "Không cấm đoán nghĩa là loạn lạc, ai muốn làm gì thì làm.",
+      "reality": "Các cộng đồng tự kiểm duyệt.",
+      "rules": "Mỗi cộng đồng tự đặt ra và thực thi quy tắc riêng, với cơ chế chống spam riêng.",
+      "noGlobalAdmin": "Chỉ là không có một quản trị viên duy nhất đứng trên mạng lưới để cấm bạn ở mọi nơi."
+    },
+    "apps": {
+      "myth": "Client mở nghĩa là không ai chịu trách nhiệm.",
+      "reality": "Ứng dụng cũng kiểm duyệt.",
+      "blacklist": "Nhà phát triển client có thể ẩn những cộng đồng đã biết là nguy hiểm.",
+      "reputation": "Nhà phát triển có thể vận hành các dịch vụ uy tín và chấm điểm theo hình thức tự nguyện để tăng độ an toàn."
+    },
+    "media": {
+      "myth": "Người ta sẽ phát tán nội dung bất hợp pháp.",
+      "reality": "Không phải là mạng lưới ẩn danh.",
+      "notPrivate": "Mạng ngang hàng không hoàn toàn ẩn danh: giống như BitTorrent, IP của bạn có thể bị các peer nhìn thấy.",
+      "textOnly": "Giao thức chỉ văn bản: hình ảnh và video được nhúng từ các trang web bên ngoài."
+    }
   }
 }

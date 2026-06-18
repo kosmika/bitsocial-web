@@ -8,6 +8,7 @@ import Hero from "@/components/hero";
 import MailingList from "@/components/mailing-list";
 import MasterPlan from "@/components/master-plan";
 import SanctuaryCommunication from "@/components/sanctuary-communication";
+import TextOnlyProtocol from "@/components/text-only-protocol";
 import Topbar from "@/components/topbar";
 import Features from "@/components/features";
 import { MAILING_LIST_HASH, scheduleMailingListHashScroll } from "@/lib/mailing-list-nav";
@@ -16,6 +17,7 @@ import { getScrollBehavior } from "@/lib/utils";
 const HOME_SECTION_HASHES = new Set([
   "#sanctuary-communication",
   "#arbitrary-challenges",
+  "#text-only-protocol",
   "#master-plan",
 ]);
 const HOME_SECTION_LAYOUT_DELTA_PX = 1;
@@ -201,6 +203,7 @@ export default function Home() {
             <Features />
             <SanctuaryCommunication />
             <ArbitraryChallenges />
+            <TextOnlyProtocol />
             <MasterPlan />
             <MailingList />
             <Footer />

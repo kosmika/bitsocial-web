@@ -629,5 +629,29 @@
     },
     "quote": "Inovacioni i vetëm i Bitsocial është zgjidhja e spamit dhe sulmeve DDoS duke përdorur sfidat arbitrare si captchas përmes p2p.",
     "quoteAttribution": "— Esteban Abaroa, themeluesi i Bitsocial"
+  },
+  "textOnlyProtocol": {
+    "sectionLabel": "Protokoll vetëm me tekst",
+    "title": "Liria ka moderim.",
+    "supporting": "Nuk ka administrator global dhe asnjë server për t'u rrëmbyer, ndaj askush nuk mund të të ndalojë nga i gjithë rrjeti. Moderimi thjesht zhvendoset më pranë teje.",
+    "carouselLabel": "Shqetësime të zakonshme, me përgjigje",
+    "communities": {
+      "myth": "Pa ndalime do të thotë rrëmujë e plotë.",
+      "reality": "Komunitetet moderojnë.",
+      "rules": "Çdo komunitet vendos dhe zbaton rregullat e veta, me anti-spam-in e vet.",
+      "noGlobalAdmin": "Thjesht nuk ka një administrator të vetëm mbi rrjetin që mund të të ndalojë kudo."
+    },
+    "apps": {
+      "myth": "Klientët e hapur do të thonë mungesë përgjegjshmërie.",
+      "reality": "Edhe aplikacionet moderojnë.",
+      "blacklist": "Zhvilluesit e klientëve mund të fshehin komunitetet e njohura si të rrezikshme.",
+      "reputation": "Zhvilluesit mund të ofrojnë shërbime vullnetare reputacioni dhe vlerësimi për të rritur sigurinë."
+    },
+    "media": {
+      "myth": "Njerëzit do të përhapin përmbajtje të paligjshme.",
+      "reality": "Nuk është rrjet i fshehtë.",
+      "notPrivate": "Peer-to-peer nuk është plotësisht anonim: si BitTorrent, IP-ja jote mund të jetë e dukshme për bashkëmoshatarët.",
+      "textOnly": "Protokoll vetëm me tekst: imazhet dhe videot vendosen nga faqe interneti të jashtme."
+    }
   }
 }

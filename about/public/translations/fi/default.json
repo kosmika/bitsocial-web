@@ -629,5 +629,29 @@
     },
     "quote": "Bitsocialin ainoa innovaatio on roskapostin ja DDoS-hyökkäysten ratkaiseminen mielivaltaisilla haasteilla, kuten captchoilla p2p:n yli.",
     "quoteAttribution": "— Esteban Abaroa, Bitsocialin perustaja"
+  },
+  "textOnlyProtocol": {
+    "sectionLabel": "Pelkkä teksti -protokolla",
+    "title": "Vapaudella on moderointi.",
+    "supporting": "Globaalia ylläpitäjää ei ole eikä takavarikoitavaa palvelinta, joten kukaan ei voi estää sinua koko verkosta. Moderointi vain siirtyy lähemmäs sinua.",
+    "carouselLabel": "Yleisiä huolia, vastattuina",
+    "communities": {
+      "myth": "Eston puute tarkoittaa, että kaikki on sallittua.",
+      "reality": "Yhteisöt moderoivat.",
+      "rules": "Jokainen yhteisö asettaa ja valvoo omat sääntönsä omalla roskapostisuojallaan.",
+      "noGlobalAdmin": "Verkon yläpuolella ei vain ole yhtä ylläpitäjää, joka voisi estää sinut kaikkialla."
+    },
+    "apps": {
+      "myth": "Avoimet sovellukset tarkoittavat vastuuttomuutta.",
+      "reality": "Myös sovellukset moderoivat.",
+      "blacklist": "Sovelluskehittäjät voivat piilottaa tunnetusti vaaralliset yhteisöt.",
+      "reputation": "Kehittäjät voivat tarjota vapaaehtoisia maine- ja pisteytyspalveluita turvallisuuden lisäämiseksi."
+    },
+    "media": {
+      "myth": "Ihmiset levittävät laitonta sisältöä.",
+      "reality": "Ei piilotettu verkko.",
+      "notPrivate": "Vertaisverkko ei ole täysin anonyymi: kuten BitTorrentissa, IP-osoitteesi voi näkyä vertaisille.",
+      "textOnly": "Pelkkä teksti -protokolla: kuvat ja videot upotetaan ulkoisilta verkkosivustoilta."
+    }
   }
 }

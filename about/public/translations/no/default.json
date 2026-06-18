@@ -629,5 +629,29 @@
     },
     "quote": "Bitsocials eneste innovasjon er å løse spam og DDoS-angrep ved hjelp av vilkårlige utfordringer som captchas over p2p.",
     "quoteAttribution": "— Esteban Abaroa, grunnlegger av Bitsocial"
+  },
+  "textOnlyProtocol": {
+    "sectionLabel": "Kun-tekst-protokoll",
+    "title": "Frihet har moderering.",
+    "supporting": "Det finnes ingen global admin og ingen server å beslaglegge, så ingen kan utestenge deg fra hele nettverket. Moderering flytter seg bare nærmere deg.",
+    "carouselLabel": "Vanlige bekymringer, besvart",
+    "communities": {
+      "myth": "Ingen utestengelser betyr at alt er lov.",
+      "reality": "Fellesskap modererer.",
+      "rules": "Hvert fellesskap fastsetter og håndhever sine egne regler, med sin egen anti-spam.",
+      "noGlobalAdmin": "Det finnes bare ingen enkelt admin over nettverket som kan utestenge deg overalt."
+    },
+    "apps": {
+      "myth": "Åpne klienter betyr ingen ansvarlighet.",
+      "reality": "Apper modererer også.",
+      "blacklist": "Klientutviklere kan skjule kjente farlige fellesskap.",
+      "reputation": "Utviklere kan kjøre frivillige omdømme- og poengtjenester for å øke sikkerheten."
+    },
+    "media": {
+      "myth": "Folk vil spre ulovlig innhold.",
+      "reality": "Ikke et skjult nettverk.",
+      "notPrivate": "Peer-to-peer er ikke helt anonymt: som BitTorrent kan IP-en din være synlig for peers.",
+      "textOnly": "Kun-tekst-protokoll: bilder og videoer bygges inn fra eksterne nettsteder."
+    }
   }
 }

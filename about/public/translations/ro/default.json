@@ -629,5 +629,29 @@
     },
     "quote": "Singura inovație a Bitsocial este rezolvarea spam și a atacurilor DDoS folosind provocări arbitrare precum captchas peste p2p.",
     "quoteAttribution": "— Esteban Abaroa, fondator Bitsocial"
+  },
+  "textOnlyProtocol": {
+    "sectionLabel": "Protocol doar text",
+    "title": "Libertatea are moderare.",
+    "supporting": "Nu există un administrator global și niciun server de confiscat, așa că nimeni nu te poate exclude din întreaga rețea. Moderarea pur și simplu se apropie de tine.",
+    "carouselLabel": "Întrebări frecvente, lămurite",
+    "communities": {
+      "myth": "Fără excluderi, e haos total.",
+      "reality": "Comunitățile moderează.",
+      "rules": "Fiecare comunitate își stabilește și aplică propriile reguli, cu propriul anti-spam.",
+      "noGlobalAdmin": "Pur și simplu nu există un singur administrator deasupra rețelei care să te poată exclude de peste tot."
+    },
+    "apps": {
+      "myth": "Clienții deschiși înseamnă lipsă de responsabilitate.",
+      "reality": "Și aplicațiile moderează.",
+      "blacklist": "Dezvoltatorii de clienți pot ascunde comunitățile recunoscute ca periculoase.",
+      "reputation": "Dezvoltatorii pot oferi servicii opționale de reputație și scoring pentru a crește siguranța."
+    },
+    "media": {
+      "myth": "Oamenii vor răspândi conținut ilegal.",
+      "reality": "Nu e o rețea ascunsă.",
+      "notPrivate": "Peer-to-peer nu este complet anonim: la fel ca la BitTorrent, IP-ul tău poate fi vizibil pentru ceilalți parteneri.",
+      "textOnly": "Protocol doar text: imaginile și videoclipurile sunt încorporate de pe site-uri web externe."
+    }
   }
 }

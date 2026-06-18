@@ -629,5 +629,29 @@
     },
     "quote": "Bitsocial唯一的创新是使用p2p上的验证码等任意挑战来解决垃圾邮件和DDoS攻击。",
     "quoteAttribution": "— Esteban Abaroa，Bitsocial 创始人"
+  },
+  "textOnlyProtocol": {
+    "sectionLabel": "纯文本协议",
+    "title": "自由也有约束。",
+    "supporting": "没有全局管理员，也没有可被查封的服务器，所以没人能把你从整个网络中封禁。约束只是离你更近了。",
+    "carouselLabel": "常见疑虑，逐一解答",
+    "communities": {
+      "myth": "不封号就意味着毫无秩序。",
+      "reality": "社区会自我约束。",
+      "rules": "每个社区都自行制定并执行规则，并配有自己的反垃圾机制。",
+      "noGlobalAdmin": "只是没有一个凌驾于网络之上、能在任何地方封禁你的单一管理员。"
+    },
+    "apps": {
+      "myth": "开放客户端意味着无人担责。",
+      "reality": "应用也会约束。",
+      "blacklist": "客户端开发者可以隐藏已知的危险社区。",
+      "reputation": "开发者可以提供可自愿加入的信誉与评分服务，以提升安全性。"
+    },
+    "media": {
+      "myth": "人们会传播违法内容。",
+      "reality": "并非隐匿的网络。",
+      "notPrivate": "点对点网络并非完全匿名：和 BitTorrent 一样，你的 IP 可能被其他节点看到。",
+      "textOnly": "纯文本协议：图片和视频均由外部网站嵌入。"
+    }
   }
 }

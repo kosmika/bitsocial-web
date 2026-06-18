@@ -629,5 +629,29 @@
     },
     "quote": "Ang tanging innovation ng Bitsocial ay ang paglutas sa spam at DDoS gamit ang arbitrary challenges tulad ng captchas sa p2p.",
     "quoteAttribution": "— Esteban Abaroa, tagapagtatag ng Bitsocial"
+  },
+  "textOnlyProtocol": {
+    "sectionLabel": "Protocol na Teksto Lamang",
+    "title": "May moderation pa rin ang kalayaan.",
+    "supporting": "Walang global admin at walang server na puwedeng samsamin, kaya walang makakapag-ban sa iyo sa buong network. Lumalapit lang sa iyo ang moderation.",
+    "carouselLabel": "Mga karaniwang alalahanin, sinagot",
+    "communities": {
+      "myth": "Kapag walang ban, wala nang patakaran ang lahat.",
+      "reality": "Nagmo-moderate ang mga komunidad.",
+      "rules": "Ang bawat komunidad ay may sariling mga patakaran na ipinapatupad nito, kasama ang sarili nitong anti-spam.",
+      "noGlobalAdmin": "Wala lang iisang admin sa ibabaw ng network na puwedeng mag-ban sa iyo kahit saan."
+    },
+    "apps": {
+      "myth": "Ibig sabihin ng bukas na client ay walang mananagot.",
+      "reality": "Nagmo-moderate din ang mga app.",
+      "blacklist": "Maaaring itago ng mga developer ng client ang mga komunidad na kilalang mapanganib.",
+      "reputation": "Maaaring magpatakbo ang mga developer ng opt-in na serbisyo sa reputasyon at pagmamarka para mapataas ang kaligtasan."
+    },
+    "media": {
+      "myth": "Magkakalat ng ilegal na nilalaman ang mga tao.",
+      "reality": "Hindi itong nakatagong network.",
+      "notPrivate": "Ang peer-to-peer ay hindi ganap na anonymous: tulad ng BitTorrent, makikita ng mga peer ang iyong IP.",
+      "textOnly": "Protocol na teksto lamang: ang mga larawan at video ay naka-embed mula sa mga panlabas na website."
+    }
   }
 }

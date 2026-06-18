@@ -629,5 +629,29 @@
     },
     "quote": "Satu-satunya inovasi Bitsocial adalah menyelesaikan spam dan serangan DDoS menggunakan tantangan arbitrer seperti captchas melalui p2p.",
     "quoteAttribution": "— Esteban Abaroa, pendiri Bitsocial"
+  },
+  "textOnlyProtocol": {
+    "sectionLabel": "Protokol Teks Saja",
+    "title": "Kebebasan tetap ada moderasinya.",
+    "supporting": "Tidak ada admin global dan tidak ada server yang bisa disita, jadi tak seorang pun bisa memblokir Anda dari seluruh jaringan. Moderasi hanya bergeser lebih dekat kepada Anda.",
+    "carouselLabel": "Kekhawatiran umum, terjawab",
+    "communities": {
+      "myth": "Tanpa pemblokiran, semua jadi bebas tanpa aturan.",
+      "reality": "Komunitas melakukan moderasi.",
+      "rules": "Setiap komunitas menetapkan dan menegakkan aturannya sendiri, dengan anti-spamnya sendiri.",
+      "noGlobalAdmin": "Hanya saja tidak ada satu admin di atas jaringan yang bisa memblokir Anda di mana-mana."
+    },
+    "apps": {
+      "myth": "Klien terbuka berarti tidak ada pertanggungjawaban.",
+      "reality": "Aplikasi juga melakukan moderasi.",
+      "blacklist": "Pengembang klien dapat menyembunyikan komunitas yang diketahui berbahaya.",
+      "reputation": "Pengembang dapat menjalankan layanan reputasi dan penilaian yang bersifat sukarela untuk meningkatkan keamanan."
+    },
+    "media": {
+      "myth": "Orang-orang akan menyebarkan konten ilegal.",
+      "reality": "Bukan jaringan tersembunyi.",
+      "notPrivate": "Peer-to-peer tidak sepenuhnya anonim: seperti BitTorrent, IP Anda bisa terlihat oleh peer lain.",
+      "textOnly": "Protokol teks saja: gambar dan video disematkan dari situs web eksternal."
+    }
   }
 }

@@ -442,6 +442,7 @@ function buildLandingData(translations) {
   const sanctuary = translations.sanctuary ?? {};
   const deepComparison = sanctuary.deepComparison ?? {};
   const arbitraryChallenges = translations.arbitraryChallenges ?? {};
+  const textOnlyProtocol = translations.textOnlyProtocol ?? {};
   const masterPlan = translations.masterPlan ?? {};
 
   const deepServices = landingDeepComparisonServices
@@ -466,6 +467,20 @@ function buildLandingData(translations) {
         .filter(Boolean),
       supporting: translationToSingleLine(arbitraryChallenges.supporting),
       title: translationToSingleLine(arbitraryChallenges.title),
+    },
+    textOnlyProtocol: {
+      cards: ["communities", "apps", "media"]
+        .map((id) => {
+          const { myth, reality, ...points } = textOnlyProtocol[id] ?? {};
+          return {
+            myth: translationToSingleLine(myth),
+            reality: translationToSingleLine(reality),
+            points: Object.values(points).map(translationToSingleLine).filter(Boolean),
+          };
+        })
+        .filter((card) => card.reality || card.points.length),
+      supporting: translationToSingleLine(textOnlyProtocol.supporting),
+      title: translationToSingleLine(textOnlyProtocol.title),
     },
     comparison: {
       approaches: Object.values(sanctuary.approaches ?? {})
@@ -528,6 +543,7 @@ function renderLandingShortIndex(landing, heading = "Landing page highlights") {
 - [Sanctuary comparison](${siteOrigin}/#sanctuary-communication): Compares ${landing.comparison.approaches.join("; ")} across self-hosting cost, who keeps content online, scaling, custom anti-spam logic, and takedown choke points.
 - [Deep comparison tables](${siteOrigin}/#nostr-comparison): Sourced modal tables compare Bitsocial with ${deepServices} across ${deepRows}.
 - [Arbitrary Challenges](${siteOrigin}/#arbitrary-challenges): ${landing.arbitraryChallenges.supporting} Example modules include ${challengeOptions}.
+- [Text-only Protocol](${siteOrigin}/#text-only-protocol): ${landing.textOnlyProtocol.supporting}
 - [Master Plan](${siteOrigin}/#master-plan): ${landing.masterPlan.subtitle}
 `);
 }
@@ -615,6 +631,9 @@ function renderLandingFullCorpus(landing) {
   const featureRows = landing.features
     .map((feature) => `- ${feature.title}: ${feature.description}`)
     .join("\n");
+  const textOnlyCardRows = landing.textOnlyProtocol.cards
+    .map((card) => `- ${card.reality} ${card.points.join(" ")}`.trim())
+    .join("\n");
   const masterPlanRows = landing.masterPlan.phases
     .map((phase) => `- ${phase.phase} - ${phase.title}: ${phase.description}`)
     .join("\n");
@@ -645,6 +664,16 @@ ${landing.arbitraryChallenges.supporting}
 Plug-in examples: ${landing.arbitraryChallenges.options.join(", ")}.
 
 Founder note: ${landing.arbitraryChallenges.quote}
+
+### Text-only Protocol
+
+Source: ${siteOrigin}/#text-only-protocol
+
+${landing.textOnlyProtocol.title}
+
+${landing.textOnlyProtocol.supporting}
+
+${textOnlyCardRows}
 
 ### Master Plan
 

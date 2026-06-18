@@ -629,5 +629,29 @@
     },
     "quote": "Bitsocial'ın tek yeniliği, p2p üzerinden captchalar gibi keyfi zorlukları kullanarak spam ve DDoS saldırılarını çözmektir.",
     "quoteAttribution": "— Esteban Abaroa, Bitsocial kurucusu"
+  },
+  "textOnlyProtocol": {
+    "sectionLabel": "Yalnızca Metin Protokolü",
+    "title": "Özgürlüğün de bir denetimi var.",
+    "supporting": "Genel bir yönetici ya da ele geçirilecek bir sunucu yok, dolayısıyla kimse seni tüm ağdan yasaklayamaz. Denetim yalnızca sana yaklaşır.",
+    "carouselLabel": "Sık duyulan kaygılar, yanıtlarıyla",
+    "communities": {
+      "myth": "Yasak yoksa her şey serbesttir.",
+      "reality": "Topluluklar denetler.",
+      "rules": "Her topluluk kendi kurallarını belirler ve uygular, kendi anti-spam'iyle birlikte.",
+      "noGlobalAdmin": "Sadece ağın üzerinde seni her yerden yasaklayabilecek tek bir yönetici yoktur."
+    },
+    "apps": {
+      "myth": "Açık istemciler hesap verebilirlik yok demektir.",
+      "reality": "Uygulamalar da denetler.",
+      "blacklist": "İstemci geliştiricileri tehlikeli olduğu bilinen toplulukları gizleyebilir.",
+      "reputation": "Geliştiriciler güvenliği artırmak için isteğe bağlı itibar ve puanlama hizmetleri çalıştırabilir."
+    },
+    "media": {
+      "myth": "İnsanlar yasa dışı içerik yayacak.",
+      "reality": "Gizli bir ağ değil.",
+      "notPrivate": "Eşler arası tümüyle anonim değildir: BitTorrent gibi, IP adresin eşlere görünebilir.",
+      "textOnly": "Yalnızca metin protokolü: görseller ve videolar dış web sitelerinden gömülür."
+    }
   }
 }

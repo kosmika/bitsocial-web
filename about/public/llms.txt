@@ -17,6 +17,7 @@ Use `https://bitsocial.net/` for the public product overview and `https://bitsoc
 - [Sanctuary comparison](https://bitsocial.net/#sanctuary-communication): Compares Federated (Bluesky, Mastodon, Lemmy); Chain / Hub (Farcaster, Lens, DeSo, Steemit); Bitsocial (Pure P2P with arbitrary anti-spam challenges) across self-hosting cost, who keeps content online, scaling, custom anti-spam logic, and takedown choke points.
 - [Deep comparison tables](https://bitsocial.net/#nostr-comparison): Sourced modal tables compare Bitsocial with Nostr, Bluesky, ActivityPub / Fediverse, Farcaster, Lens, DeSo, Steemit across Spam replies, Community rules, Scaling costs, Data hosting, Censorship points, Who accepts posts?, First post, Human names, Finding content.
 - [Arbitrary Challenges](https://bitsocial.net/#arbitrary-challenges): Each node runs its own anti-spam challenge, exchanged purely peer-to-peer with the user. When spam evolves, nodes adapt without changing the protocol. Example modules include any code, AI-powered moderation, SMS OTP, whatever comes next.
+- [Text-only Protocol](https://bitsocial.net/#text-only-protocol): There's no global admin and no server to seize, so nobody can ban you from the whole network. Moderation just moves closer to you.
 - [Master Plan](https://bitsocial.net/#master-plan): Bitsocial wins by attracting as many builders as possible. Run your own unstoppable community, develop your own decentralized social app, or even launch your own business on top of Bitsocial. The tide rises with every builder.
 
 ## Apps and tools

@@ -629,5 +629,29 @@
     },
     "quote": "De enige innovatie van Bitsocial is het oplossen van spam en DDoS-aanvallen met behulp van willekeurige uitdagingen zoals captchas over p2p.",
     "quoteAttribution": "— Esteban Abaroa, Bitsocial-oprichter"
+  },
+  "textOnlyProtocol": {
+    "sectionLabel": "Alleen-tekstprotocol",
+    "title": "Vrijheid heeft moderatie.",
+    "supporting": "Er is geen wereldwijde beheerder en geen server om in beslag te nemen, dus niemand kan je uit het hele netwerk verbannen. Moderatie komt gewoon dichter bij jou.",
+    "carouselLabel": "Veelvoorkomende zorgen, beantwoord",
+    "communities": {
+      "myth": "Geen verbanningen betekent dat het een vrijbrief is.",
+      "reality": "Communities modereren.",
+      "rules": "Elke community stelt eigen regels op en handhaaft die, met eigen anti-spam.",
+      "noGlobalAdmin": "Er is alleen geen enkele beheerder boven het netwerk die je overal kan verbannen."
+    },
+    "apps": {
+      "myth": "Open clients betekenen geen verantwoording.",
+      "reality": "Apps modereren ook.",
+      "blacklist": "Clientontwikkelaars kunnen bekende gevaarlijke communities verbergen.",
+      "reputation": "Ontwikkelaars kunnen optionele reputatie- en scorediensten draaien om de veiligheid te vergroten."
+    },
+    "media": {
+      "myth": "Mensen zullen illegale content verspreiden.",
+      "reality": "Geen verborgen netwerk.",
+      "notPrivate": "Peer-to-peer is niet volledig anoniem: net als bij BitTorrent kan je IP zichtbaar zijn voor peers.",
+      "textOnly": "Alleen-tekstprotocol: afbeeldingen en video's worden ingesloten vanaf externe websites."
+    }
   }
 }

@@ -595,5 +595,29 @@
     },
     "quote": "Jediná inovace Bitsocial je řešení spamu a DDoS útoků pomocí libovolných výzev, jako jsou captchas přes p2p.",
     "quoteAttribution": "— Esteban Abaroa, zakladatel Bitsocial"
+  },
+  "textOnlyProtocol": {
+    "sectionLabel": "Pouze textový protokol",
+    "title": "Svoboda má moderaci.",
+    "supporting": "Neexistuje žádný globální administrátor ani server, který by šlo zabavit, takže nikdo vás nemůže vykázat z celé sítě. Moderace se jen přesouvá blíž k vám.",
+    "carouselLabel": "Odpovědi na časté obavy",
+    "communities": {
+      "myth": "Žádné bany znamenají, že tu vládne naprostá libovůle.",
+      "reality": "Komunity moderují.",
+      "rules": "Každá komunita si nastavuje a vynucuje vlastní pravidla i vlastní ochranu proti spamu.",
+      "noGlobalAdmin": "Jen tu není jediný administrátor nad sítí, který by vás mohl vykázat všude."
+    },
+    "apps": {
+      "myth": "Otevření klienti znamenají nulovou odpovědnost.",
+      "reality": "Aplikace také moderují.",
+      "blacklist": "Vývojáři klientů mohou skrývat známé nebezpečné komunity.",
+      "reputation": "Vývojáři mohou provozovat dobrovolné služby reputace a hodnocení pro zvýšení bezpečnosti."
+    },
+    "media": {
+      "myth": "Lidé budou šířit nelegální obsah.",
+      "reality": "Není to skrytá síť.",
+      "notPrivate": "Peer-to-peer není plně anonymní: stejně jako u BitTorrentu může být vaše IP viditelná pro ostatní účastníky.",
+      "textOnly": "Pouze textový protokol: obrázky a videa se vkládají z externích webů."
+    }
   }
 }
