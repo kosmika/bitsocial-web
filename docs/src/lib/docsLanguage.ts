@@ -40,8 +40,8 @@ function getBrowserLocaleCandidates(): string[] {
 
   const candidates = [
     window.navigator.language,
-    getResolvedBrowserLocale(),
     ...(window.navigator.languages ?? []),
+    getResolvedBrowserLocale(),
   ];
   const seen = new Set<string>();
 
@@ -96,11 +96,8 @@ export function resolveDocsLanguage(search: string): SupportedLanguageCode {
   }
 
   const localeCandidates = getBrowserLocaleCandidates();
-  const primaryRegionLocale = canUseDom()
-    ? window.navigator.language || getResolvedBrowserLocale()
-    : null;
 
-  return resolveAutomaticLanguage(localeCandidates, primaryRegionLocale);
+  return resolveAutomaticLanguage(localeCandidates);
 }
 
 export function persistDocsLanguage(language: string | null | undefined) {

@@ -14,7 +14,7 @@ import {
   resolveAutomaticLanguage,
 } from "@/lib/locales";
 
-const REGION_AWARE_NAVIGATOR_DETECTOR_NAME = "bitsocialRegionAwareNavigator";
+const BROWSER_LANGUAGE_DETECTOR_NAME = "bitsocialBrowserLanguage";
 
 function getResolvedBrowserLocale(): string | null {
   try {
@@ -28,8 +28,8 @@ function getResolvedBrowserLocale(): string | null {
 function getBrowserLocaleCandidates(): string[] {
   const candidates = [
     navigator.language,
-    getResolvedBrowserLocale(),
     ...(navigator.languages ?? []),
+    getResolvedBrowserLocale(),
   ];
   const seen = new Set<string>();
 
@@ -46,12 +46,11 @@ function getBrowserLocaleCandidates(): string[] {
 const languageDetector = new LanguageDetector();
 
 languageDetector.addDetector({
-  name: REGION_AWARE_NAVIGATOR_DETECTOR_NAME,
+  name: BROWSER_LANGUAGE_DETECTOR_NAME,
   lookup() {
     const localeCandidates = getBrowserLocaleCandidates();
-    const primaryRegionLocale = navigator.language || getResolvedBrowserLocale();
 
-    return resolveAutomaticLanguage(localeCandidates, primaryRegionLocale);
+    return resolveAutomaticLanguage(localeCandidates);
   },
 });
 
@@ -103,7 +102,7 @@ function initWithBrowserDetection() {
   return i18n.init({
     ...createBaseConfig(),
     detection: {
-      order: ["querystring", "localStorage", REGION_AWARE_NAVIGATOR_DETECTOR_NAME],
+      order: ["querystring", "localStorage", BROWSER_LANGUAGE_DETECTOR_NAME],
       caches: ["localStorage"],
       lookupLocalStorage: LANGUAGE_STORAGE_KEY,
       lookupQuerystring: LANGUAGE_QUERY_PARAM,

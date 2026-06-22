@@ -93,29 +93,6 @@ const SUPPORTED_LANGUAGE_BY_CODE = new Map<string, SupportedLanguage>(
   SUPPORTED_LANGUAGES.map((language) => [language.code, language]),
 );
 const DEFAULT_LANGUAGE = SUPPORTED_LANGUAGE_BY_CODE.get(DEFAULT_LANGUAGE_CODE)!;
-const ENGLISH_DEFAULT_REGION_CODES = new Set([
-  // EF EPI 2025 High/Very high proficiency markets relevant to supported locales.
-  "AT",
-  "BE",
-  "CH",
-  "CZ",
-  "DE",
-  "DK",
-  "FI",
-  "GR",
-  "HU",
-  "MY",
-  "NL",
-  "NO",
-  "PH",
-  "PL",
-  "PT",
-  "RO",
-  "SE",
-  // Singapore Census 2020: English is the most frequently spoken home language.
-  "SG",
-]);
-
 function getNormalizedLocaleTag(language: string): string {
   return language.trim().replace(/_/g, "-");
 }
@@ -149,59 +126,9 @@ export function getSupportedLanguage(language: string | null | undefined): Suppo
   return SUPPORTED_LANGUAGE_BY_CODE.get(normalizeLanguageCode(language)) ?? DEFAULT_LANGUAGE;
 }
 
-export function extractRegionCode(locale: string | null | undefined): string | null {
-  if (!locale) {
-    return null;
-  }
-
-  const normalizedLocale = getNormalizedLocaleTag(locale);
-  if (normalizedLocale === "") {
-    return null;
-  }
-
-  if (typeof Intl !== "undefined" && typeof Intl.Locale === "function") {
-    try {
-      const parsedLocale = new Intl.Locale(normalizedLocale);
-      if (parsedLocale.region) {
-        return parsedLocale.region.toUpperCase();
-      }
-    } catch {
-      // Fall through to the lightweight parser for malformed or unsupported locale tags.
-    }
-  }
-
-  const parts = normalizedLocale.split("-");
-  for (const part of parts.slice(1)) {
-    if (/^[A-Za-z]{4}$/.test(part)) {
-      continue;
-    }
-    if (/^[A-Za-z]{2}$/.test(part)) {
-      return part.toUpperCase();
-    }
-    break;
-  }
-
-  return null;
-}
-
-export function shouldDefaultToEnglishByRegion(regionCode: string | null | undefined): boolean {
-  if (!regionCode) {
-    return false;
-  }
-
-  return ENGLISH_DEFAULT_REGION_CODES.has(regionCode.trim().toUpperCase());
-}
-
 export function resolveAutomaticLanguage(
   languageLocales: readonly string[],
-  primaryRegionLocale?: string | null,
 ): SupportedLanguageCode {
-  const regionCode = extractRegionCode(primaryRegionLocale ?? languageLocales[0] ?? null);
-
-  if (regionCode && shouldDefaultToEnglishByRegion(regionCode)) {
-    return DEFAULT_LANGUAGE_CODE;
-  }
-
   for (const locale of languageLocales) {
     const supportedLanguage = resolveSupportedLanguageCode(locale);
     if (supportedLanguage) {
@@ -302,5 +229,5 @@ export function resolveRequestLanguage(input: {
   }
 
   const acceptLanguageCandidates = parseAcceptLanguageHeader(input.acceptLanguageHeader);
-  return resolveAutomaticLanguage(acceptLanguageCandidates, acceptLanguageCandidates[0] ?? null);
+  return resolveAutomaticLanguage(acceptLanguageCandidates);
 }
