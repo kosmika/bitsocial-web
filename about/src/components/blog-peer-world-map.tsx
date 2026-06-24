@@ -67,7 +67,7 @@ export default function BlogPeerWorldMap({ peers }: BlogPeerWorldMapProps) {
   if (plotted.length === 0) return null;
 
   return (
-    <figure className="overflow-hidden rounded-xl border border-border/40 bg-background/40 text-muted-foreground">
+    <figure className="overflow-hidden rounded-xl border border-foreground/10 bg-foreground/5 text-muted-foreground dark:border-border/40 dark:bg-background/40">
       <svg
         viewBox="0 8 360 140"
         shapeRendering="crispEdges"

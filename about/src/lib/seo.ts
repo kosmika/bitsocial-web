@@ -387,6 +387,45 @@ function buildAboutSeoMetadata(): SeoMetadata {
   };
 }
 
+function buildBlogSeoMetadata(search: string): SeoMetadata {
+  const hasSearchParams = new URLSearchParams(search).size > 0;
+  const canonicalUrl = toAbsoluteUrl("/blog");
+
+  return {
+    title: "Bitsocial Blog | Updates, Releases, and Tutorials",
+    description: truncateDescription(
+      "The official Bitsocial blog from the core devs, published as an unstoppable peer-to-peer feed. Read product updates, release notes, and tutorials from any Bitsocial app.",
+    ),
+    canonicalUrl,
+    robots: hasSearchParams ? NOINDEX_ROBOTS : DEFAULT_ROBOTS,
+    ogType: "website",
+    imageUrl: toAbsoluteUrl(DEFAULT_IMAGE_PATH),
+    imageAlt: "Bitsocial blog preview",
+    structuredData: createStructuredData([
+      buildOrganizationSchema(),
+      buildWebsiteSchema(),
+      {
+        "@type": "Blog",
+        "@id": `${canonicalUrl}#webpage`,
+        url: canonicalUrl,
+        name: "Bitsocial Blog",
+        description:
+          "The official Bitsocial blog from the core devs, published as an unstoppable peer-to-peer feed.",
+        isPartOf: {
+          "@id": `${SITE_ORIGIN}/#website`,
+        },
+        publisher: {
+          "@id": `${SITE_ORIGIN}/#organization`,
+        },
+      },
+      buildBreadcrumbSchema([
+        { name: SITE_NAME, url: toAbsoluteUrl("/") },
+        { name: "Blog", url: canonicalUrl },
+      ]),
+    ]),
+  };
+}
+
 function getApplicationCategory(category: AppCategorySlug) {
   switch (category) {
     case "apps":
@@ -536,6 +575,10 @@ export function getSeoMetadata(pathname: string, search = ""): SeoMetadata {
     return buildAboutSeoMetadata();
   }
 
+  if (normalizedPath === "/blog") {
+    return buildBlogSeoMetadata(search);
+  }
+
   const appSlugMatch = normalizedPath.match(/^\/apps\/([^/]+)$/);
   if (appSlugMatch?.[1]) {
     const app = getAppBySlug(appSlugMatch[1]);
@@ -548,7 +591,7 @@ export function getSeoMetadata(pathname: string, search = ""): SeoMetadata {
 }
 
 export function getStaticSeoRoutes(): StaticSeoRoute[] {
-  return ["/", "/projects", "/privacy", ...APPS.map((app) => `/apps/${app.slug}`)].map(
+  return ["/", "/projects", "/privacy", "/blog", ...APPS.map((app) => `/apps/${app.slug}`)].map(
     (pathname) => ({
       pathname,
       seo: getSeoMetadata(pathname),

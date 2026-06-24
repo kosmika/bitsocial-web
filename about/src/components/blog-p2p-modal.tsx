@@ -76,7 +76,7 @@ export default function BlogP2PModal({ open, onOpenChange }: BlogP2PModalProps) 
       open={open}
       onOpenChange={onOpenChange}
       ariaLabel={t("blog.p2p.title")}
-      contentClassName="glass-card !rounded-3xl max-h-[calc(100vh-1rem)] w-[min(760px,calc(100vw-1rem))] overflow-y-auto overscroll-contain p-4 shadow-[0_20px_64px_rgba(15,23,42,0.3)] [scrollbar-width:none] sm:p-5 [&::-webkit-scrollbar]:hidden"
+      contentClassName="glass-card blog-p2p-modal-surface !rounded-3xl max-h-[calc(100vh-1rem)] w-[min(760px,calc(100vw-1rem))] overflow-y-auto overscroll-contain p-4 shadow-[0_20px_64px_rgba(15,23,42,0.3)] [scrollbar-width:none] sm:p-5 [&::-webkit-scrollbar]:hidden"
     >
       <header className="flex items-start justify-between gap-3 border-b border-border/40 pb-3">
         <div className="min-w-0">
@@ -155,7 +155,7 @@ function StatCard({
   return (
     <div
       className={cn(
-        "rounded-xl border border-border/40 bg-background/40 p-2.5",
+        "rounded-xl border border-foreground/10 bg-foreground/5 p-2.5 dark:border-border/40 dark:bg-background/40",
         fullWidth ? "sm:col-span-3" : "",
         className,
       )}
@@ -247,7 +247,7 @@ function PeerListItem({ entry }: { entry: ConnectedPeerEntry }) {
   const downloaded = entry.transferStats?.downloadedBytes;
   const uploaded = entry.transferStats?.uploadedBytes;
   return (
-    <li className="rounded-lg border border-border/40 bg-background/40 p-2.5">
+    <li className="rounded-lg border border-foreground/10 bg-foreground/5 p-2.5 dark:border-border/40 dark:bg-background/40">
       <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
         <span className="inline-flex min-w-0 items-center gap-2">
           {entry.countryCode ? <CountryFlag countryCode={entry.countryCode} /> : null}
