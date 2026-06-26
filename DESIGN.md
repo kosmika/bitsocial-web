@@ -1,4 +1,5 @@
 ---
+version: alpha
 name: Bitsocial Web
 description: Public Bitsocial brand site, docs gateway, and ecosystem directory.
 colors:
@@ -73,9 +74,7 @@ components:
     padding: "0.75rem 2.75rem"
 ---
 
-# Design System: Bitsocial Web
-
-## 1. Overview
+## Overview
 
 **Creative North Star: "Protocol Observatory"**
 
@@ -91,7 +90,7 @@ The system is brand-led, but it includes product-like surfaces such as the app d
 - Large Exo display type for thesis moments, Manrope for readable supporting copy.
 - No-JS, reduced-motion, and simplified-graphics paths are first-class design states.
 
-## 2. Colors
+## Colors
 
 The palette is a restrained protocol palette: near-black and graphite foundations, silver text, and a focused electric blue accent.
 
@@ -120,7 +119,7 @@ The palette is a restrained protocol palette: near-black and graphite foundation
 
 **The Neutral Stage Rule.** Most surfaces should stay neutral so the protocol visuals, app logos, and blue states can carry meaning.
 
-## 3. Typography
+## Typography
 
 **Display Font:** Exo, locally hosted for headings and brand labels.
 **Body Font:** Manrope from Google Fonts, with sans-serif fallback.
@@ -140,7 +139,20 @@ The palette is a restrained protocol palette: near-black and graphite foundation
 
 **The Thesis Scale Rule.** Reserve the largest display sizes for route-level claims. Inside cards and controls, keep type compact and scannable.
 
-## 4. Elevation
+## Layout
+
+Layout is spacious and editorial on brand routes, then tightens into denser, more functional grids on product surfaces such as the app directory. A single spacing scale drives rhythm.
+
+- **xs–xl** (`0.5rem` → `2rem`): component padding, gaps, and stack spacing.
+- **section-y** (`6rem`): vertical breathing room between major route sections.
+
+The home route uses generous vertical spacing and large hero moments; the app directory and detail views stay denser so users can compare options. Preserve no-JS, reduced-motion, RTL, and long-label behavior at every breakpoint.
+
+### Named Rules
+
+**The Two-Density Rule.** Brand routes may breathe; product routes such as the directory and app detail should stay compact and scannable.
+
+## Elevation & Depth
 
 Depth is mostly tonal and atmospheric. The default surface is a bordered glass card with subtle gradient fill and backdrop blur. Shadows appear on active app statuses, hover states, focused controls, sheets, and selected filters.
 
@@ -157,7 +169,22 @@ Depth is mostly tonal and atmospheric. The default surface is a bordered glass c
 
 **The State-Only Glow Rule.** Glow should come from state, hierarchy, or protocol emphasis. Static pages should not accumulate ambient glow everywhere.
 
-## 5. Components
+## Shapes
+
+Surfaces are softly rounded glass. Radius scales with surface size, and pills are reserved for interactive controls.
+
+- **pill** (`999px`): buttons, chips, and search inputs.
+- **sm / md** (`0.75rem` / `1rem`): small controls and inner surfaces.
+- **card** (`1.5rem`): content cards and grouped panels.
+- **sheet** (`2rem`): large footer and slide-over edges.
+
+Keep corner radius consistent within a surface tier and do not mix sharp and round on the same control. Simplified-graphics fallbacks keep the same radii with solid fills.
+
+### Named Rules
+
+**The Rounded Consistency Rule.** Match radius to surface size using the scale above instead of choosing arbitrary corner values.
+
+## Components
 
 ### Buttons
 
@@ -191,7 +218,7 @@ Depth is mostly tonal and atmospheric. The default surface is a bordered glass c
 - **Mobile Menu:** Uses the same glass/sheet language, with no-JS details fallback where needed.
 - **Footer:** Rounded frosted top surface, compact grouped links, and subdued brand mark.
 
-## 6. Do's and Don'ts
+## Do's and Don'ts
 
 **Do:**
 
