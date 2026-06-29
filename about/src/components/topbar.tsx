@@ -359,7 +359,7 @@ export default function Topbar() {
             isMenuExpanded ? "rounded-[2rem]" : "rounded-full",
           )}
         >
-          <div className="relative px-5 md:px-7 py-2">
+          <div className="relative px-4 md:px-5 py-2">
             <div
               ref={desktopNavMeasureRef}
               aria-hidden="true"
