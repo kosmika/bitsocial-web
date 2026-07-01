@@ -7,6 +7,7 @@
   "author": "Bitsocial Forge",
   "workspaces": [
     "about",
+    "chain",
     "docs",
     "stats",
     "stats/monitor"
@@ -22,6 +23,8 @@
     "start:stats-monitor": "yarn workspace @bitsocial/stats-monitor start",
     "build:verify": "node scripts/verify-build.mjs",
     "build:about": "tsgo --noEmit --project about/tsconfig.json && vite build --config about/vite.config.ts",
+    "build:chain": "tsgo --noEmit --project chain/tsconfig.json && vite build --config chain/vite.config.ts",
+    "start:chain": "vite --config chain/vite.config.ts",
     "build:stats-monitor": "node scripts/build-stats-monitor.mjs",
     "build:stats-dashboards": "yarn workspace bitsocial-stats build:dashboards && oxfmt stats/grafana/dashboards/5chan-stats.json stats/grafana/dashboards/bitsocial-stats.json stats/monitor/data/5chan-directories.snapshot.json",
     "stats:up": "yarn workspace bitsocial-stats up",

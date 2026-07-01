@@ -3,6 +3,7 @@
 .vercel
 node_modules
 dist
+dist-chain
 .vite
 docs/.docusaurus
 about/playwright-report
