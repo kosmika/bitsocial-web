@@ -68,6 +68,6 @@ Tämä on ero mukavuuden ja huoltajuuden välillä.
 
 ## Miksi siitä voi tulla kaikenlainen sovellus
 
-Jos Bitsocial Network antaa sovelluksille kestävän nimeämisen, maksut, juomarahat, palkinnot ja muut taloudelliset rajoitukset, lippulaivasovelluksesta voi tulla paljon enemmän kuin syöteasiakas.
+Jos Bitsocial Chain antaa sovelluksille kestävän nimeämisen, maksut, juomarahat, palkinnot ja muut taloudelliset rajoitukset, lippulaivasovelluksesta voi tulla paljon enemmän kuin syöteasiakas.
 
 Tärkeä rajoitus on, että sovelluksesta ei tule verkon uutta omistajaa. Se voi olla suuri asiakas, ehkä jopa suosituin asiakas, mutta jättää silti tilaa kilpaileville sovelluksille, kilpaileville RPC:ille, kilpaileville syötealgoritmeille ja itseisännöityille profiilisolmuille.

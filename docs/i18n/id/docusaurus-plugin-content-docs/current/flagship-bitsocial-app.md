@@ -68,6 +68,6 @@ Itulah perbedaan antara kenyamanan dan hak asuh.
 
 ## Mengapa ini bisa menjadi aplikasi segalanya
 
-Jika Bitsocial Network memberi aplikasi penamaan, pembayaran, pemberian tip, penghargaan, dan jalur finansial lainnya yang tahan lama pada aplikasi, aplikasi andalan bisa menjadi lebih dari sekadar klien feed.
+Jika Bitsocial Chain memberi aplikasi penamaan, pembayaran, pemberian tip, penghargaan, dan jalur finansial lainnya yang tahan lama pada aplikasi, aplikasi andalan bisa menjadi lebih dari sekadar klien feed.
 
 Kendala pentingnya adalah aplikasi tidak boleh menjadi pemilik baru jaringan. Ini bisa berupa klien besar, bahkan mungkin klien paling populer, namun tetap menyisakan ruang untuk aplikasi pesaing, RPC pesaing, algoritme umpan pesaing, dan node profil yang dihosting sendiri.

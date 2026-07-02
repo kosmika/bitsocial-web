@@ -431,12 +431,12 @@
     "description": "Roadmap card eyebrow."
   },
   "docs.home.roadmap.card.phase4.title": {
-    "message": "Bitsocial Network",
-    "description": "Roadmap card title for Bitsocial Network."
+    "message": "Bitsocial Chain",
+    "description": "Roadmap card title for Bitsocial Chain."
   },
   "docs.home.roadmap.card.phase4.body": {
     "message": "Il layer appchain proposto per alimentare liquidità condivisa, domini decentralizzati e incentivi durevoli tra le app.",
-    "description": "Roadmap card description for Bitsocial Network."
+    "description": "Roadmap card description for Bitsocial Chain."
   },
   "docs.home.roadmap.card.phase5.eyebrow": {
     "message": "Fase 5",

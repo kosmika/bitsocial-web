@@ -68,6 +68,6 @@ Aceasta este diferența dintre comoditate și custodie.
 
 ## De ce poate deveni o aplicație totul
 
-Dacă Bitsocial Network oferă aplicațiilor denumire durabilă, plăți, bacșișuri, premii și alte linii financiare, aplicația emblematică ar putea deveni mult mai mult decât un client de feed.
+Dacă Bitsocial Chain oferă aplicațiilor denumire durabilă, plăți, bacșișuri, premii și alte linii financiare, aplicația emblematică ar putea deveni mult mai mult decât un client de feed.
 
 Constrângerea importantă este că aplicația nu ar trebui să devină noul proprietar al rețelei. Poate fi un client mare, poate chiar cel mai popular client, lăsând totuși loc pentru aplicații concurente, RPC-uri concurente, algoritmi de feed concurenți și noduri de profil auto-găzduite.

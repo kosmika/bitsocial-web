@@ -7,11 +7,12 @@ export const DOCS_LINKS = {
   identityAndOwnership: "/docs/identity-and-ownership/",
   buildYourOwnClient: "/docs/build-your-own-client/",
   permissionlessPublicRpc: "/docs/permissionless-public-rpc/",
-  bitsocialNetwork: "/docs/bitsocial-network/",
   flagshipBitsocialApp: "/docs/flagship-bitsocial-app/",
   scaleBitsocialEconomies: "/docs/scale-bitsocial-economies/",
   decentralizeAllSocialMedia: "/docs/decentralize-all-social-media/",
 } as const;
+
+export const CHAIN_SITE_URL = "https://chain.bitsocial.net" as const;
 
 export const STATS_LINKS = {
   home: "/stats/",

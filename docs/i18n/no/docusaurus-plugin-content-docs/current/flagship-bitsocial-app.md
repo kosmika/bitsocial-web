@@ -68,6 +68,6 @@ Det er forskjellen mellom bekvemmelighet og varetekt.
 
 ## Hvorfor det kan bli en alt-app
 
-Hvis Bitsocial Network gir apper varige navn, betalinger, tips, priser og andre økonomiske spor, kan flaggskipappen bli mye mer enn en feedklient.
+Hvis Bitsocial Chain gir apper varige navn, betalinger, tips, priser og andre økonomiske spor, kan flaggskipappen bli mye mer enn en feedklient.
 
 Den viktige begrensningen er at appen ikke skal bli den nye eieren av nettverket. Det kan være en stor klient, kanskje til og med den mest populære klienten, mens den fortsatt gir plass til konkurrerende apper, konkurrerende RPC-er, konkurrerende feedalgoritmer og selvvertsbaserte profilnoder.

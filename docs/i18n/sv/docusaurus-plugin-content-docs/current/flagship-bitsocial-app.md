@@ -68,6 +68,6 @@ Det är skillnaden mellan bekvämlighet och vårdnad.
 
 ## Varför det kan bli en allt-app
 
-Om Bitsocial Network ger appar varaktiga namn, betalningar, dricks, utmärkelser och andra finansiella skenor, kan flaggskeppsappen bli mycket mer än en flödesklient.
+Om Bitsocial Chain ger appar varaktiga namn, betalningar, dricks, utmärkelser och andra finansiella skenor, kan flaggskeppsappen bli mycket mer än en flödesklient.
 
 Den viktiga begränsningen är att appen inte ska bli den nya ägaren av nätverket. Det kan vara en stor klient, kanske till och med den mest populära klienten, samtidigt som den lämnar utrymme för konkurrerande appar, konkurrerande RPC:er, konkurrerande flödesalgoritmer och egenvärdiga profilnoder.

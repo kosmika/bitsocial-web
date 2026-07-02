@@ -4,7 +4,7 @@ import { type ReactNode, type RefObject, useRef, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import CardInlineCta, { prominentCtaClassName } from "@/components/card-inline-cta";
 import EasterEggOverlay from "@/components/easter-egg-overlay";
-import { DOCS_LINKS } from "@/lib/docs-links";
+import { CHAIN_SITE_URL, DOCS_LINKS } from "@/lib/docs-links";
 
 const EASTER_EGG_GIF = "/spongebob-easter-egg.gif";
 const masterPlanLogoSrcSet = "/logo-small.png 64w, /apple-touch-icon.png 180w, /logo.png 640w";
@@ -132,7 +132,7 @@ function getPhases(t: TFunction): PhaseItem[] {
     {
       ctas: [
         {
-          href: DOCS_LINKS.bitsocialNetwork,
+          href: CHAIN_SITE_URL,
           label: t("masterPlan.cta.learnMore"),
           context: t("masterPlan.phases.phase2.title"),
         },

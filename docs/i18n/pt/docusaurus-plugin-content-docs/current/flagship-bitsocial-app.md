@@ -68,6 +68,6 @@ Essa é a diferença entre conveniência e custódia.
 
 ## Por que pode se tornar um aplicativo para tudo
 
-Se a Bitsocial Network fornecer aos aplicativos nomes, pagamentos, gorjetas, prêmios e outros recursos financeiros duráveis, o aplicativo principal poderá se tornar muito mais do que um cliente de feed.
+Se a Bitsocial Chain fornecer aos aplicativos nomes, pagamentos, gorjetas, prêmios e outros recursos financeiros duráveis, o aplicativo principal poderá se tornar muito mais do que um cliente de feed.
 
 A restrição importante é que o aplicativo não se torne o novo proprietário da rede. Pode ser um cliente grande, talvez até o cliente mais popular, mas ainda deixa espaço para aplicativos concorrentes, RPCs concorrentes, algoritmos de feed concorrentes e nós de perfil auto-hospedados.

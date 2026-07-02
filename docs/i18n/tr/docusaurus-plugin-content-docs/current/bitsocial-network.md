@@ -1,11 +1,11 @@
 ---
-title: Bitsocial Network
+title: Bitsocial Chain
 description: Bitsocial uygulamaları için önerilen paylaşılan uygulama zinciri katmanını kapsayan master planın 4. aşaması.
 ---
 
-# Bitsocial Network
+# Bitsocial Chain
 
-Bitsocial Network, Bitsocial uygulamalarının altında yer alacak paylaşılan uygulama zinciri katmanının ana planında kullanılan addır.
+Bitsocial Chain, Bitsocial uygulamalarının altında yer alacak paylaşılan uygulama zinciri katmanının ana planında kullanılan addır.
 
 Buradaki fikir, eşler arası sosyal katmanın yerini almak değil. Sosyal uygulamaların, yerleşik platformlarla geniş ölçekte rekabet edebilmesi için ihtiyaç duyacağı ortak ekonomik ve koordinasyon ilkelerini sağlamaktır.
 
@@ -25,7 +25,7 @@ Ekonomik katman hala bir avuç merkezi raya bağlıysa, o zaman uygulamalara bas
 
 ## Bitsocial'ın geri kalanıyla ilişki
 
-Bitsocial Network, kullanıcıların her gün doğrudan etkileşime girdiği bir ürün olarak değil, Bitsocial uygulamaları için paylaşımlı bir altyapı olarak öneriliyor.
+Bitsocial Chain, kullanıcıların her gün doğrudan etkileşime girdiği bir ürün olarak değil, Bitsocial uygulamaları için paylaşımlı bir altyapı olarak öneriliyor.
 
 Kamuya açık sonuç şöyle olacaktır:
 
@@ -41,16 +41,16 @@ Ana plan bunu daha önceki uygulama düzeyindeki kanıt noktalarından sonra yer
 1. görüntü panolarını merkezi olmayan hale getirmek
 2. Bitsocial RPC'yi başlat
 3. forumları merkezileştirmek
-4. Bitsocial Network'ü başlat
+4. Bitsocial Chain'ü başlat
 
 Bu sıralama mantıklıdır çünkü ekosistem düzeyindeki bir koordinasyon katmanı, gerçek uygulamalar ve gerçek kullanıcı davranışı ağda zaten mevcut olduğunda daha kullanışlı olur.
 
 ## Tasarım İlkeleri
 
-Bitsocial Network hâlâ yayımlanmış bir ürün değil, önerilmiş bir altyapı olduğu için mevcut planın birkaç konuda disiplinli kalması gerekir:
+Bitsocial Chain hâlâ yayımlanmış bir ürün değil, önerilmiş bir altyapı olduğu için mevcut planın birkaç konuda disiplinli kalması gerekir:
 
 - Önce uygulamalar ve topluluklar. Ağ katmanı, spekülatif finansal özelliklerle öne geçmek yerine Bitsocial uygulamalarındaki gerçek kullanımı takip etmelidir.
 - Heyecandan önce gerçek katkı. Bitsocial ileride topluluk, üretici veya istemci düzeyinde varlıklar eklerse, bunlar kopya lansmanlar ya da kısa vadeli al-sat yerine katılımı ve uzun vadeli inşayı ödüllendirmelidir.
 - Kürasyon kabul edilebilir. Bitsocial uygulamaları sıralamaları, varsayılanları, keşfi ve rollout zamanlamasını, casino benzeri davranışlar yerine kalıcı toplulukları destekleyecek şekilde biçimlendirebilir.
 - Kademeli rollout sağlıklıdır. Appchain'e özgü finansal özellikleri, ekosistem bunları güvenle destekleyebilecek yeterli kullanıcıya, moderasyon aracına ve ürün netliğine ulaşana kadar ertelemek makuldür.
-- Kesin mekanikler hâlâ açıktır. Bu sayfa Bitsocial Network'ün rolünü açıklar; token launcher'lar, ücret formülleri veya nihai tokenomics hakkında kilitlenmiş bir vaat değildir.
+- Kesin mekanikler hâlâ açıktır. Bu sayfa Bitsocial Chain'ün rolünü açıklar; token launcher'lar, ücret formülleri veya nihai tokenomics hakkında kilitlenmiş bir vaat değildir.

@@ -35,7 +35,7 @@ Les communautés et les profils toujours actifs deviennent beaucoup plus pratiqu
 
 ## Pourquoi la couche réseau est importante ici
 
-Si la monétisation du contenu peut être interrompue par la pression bancaire ordinaire ou par la pression des plateformes, l’écosystème reste alors fragile. Bitsocial Network est proposé comme la couche économique qui rend la concurrence à long terme plus crédible.
+Si la monétisation du contenu peut être interrompue par la pression bancaire ordinaire ou par la pression des plateformes, l’écosystème reste alors fragile. Bitsocial Chain est proposé comme la couche économique qui rend la concurrence à long terme plus crédible.
 
 ## Le pari principal
 

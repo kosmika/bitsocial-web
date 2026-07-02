@@ -141,7 +141,7 @@ const config: Config = {
           title: "Roadmap",
           items: [
             { label: "Permissionless public RPC", to: "/permissionless-public-rpc/" },
-            { label: "Bitsocial Network", to: "/bitsocial-network/" },
+            { label: "Bitsocial Chain", to: "/bitsocial-network/" },
             { label: "Flagship Bitsocial app", to: "/flagship-bitsocial-app/" },
             { label: "Scale Bitsocial economies", to: "/scale-bitsocial-economies/" },
             {

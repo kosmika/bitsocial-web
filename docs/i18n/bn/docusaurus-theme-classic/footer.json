@@ -31,9 +31,9 @@
     "message": "অনুমতিহীন পাবলিক RPC",
     "description": "The label of footer link with label=Permissionless public RPC linking to /permissionless-public-rpc/"
   },
-  "link.item.label.Bitsocial Network": {
+  "link.item.label.Bitsocial Chain": {
     "message": "বিটসোশ্যাল নেটওয়ার্ক",
-    "description": "The label of footer link with label=Bitsocial Network linking to /bitsocial-network/"
+    "description": "The label of footer link with label=Bitsocial Chain linking to /bitsocial-network/"
   },
   "link.item.label.Decentralize all social media": {
     "message": "সমস্ত সোশ্যাল মিডিয়াকে বিকেন্দ্রীকরণ করুন",

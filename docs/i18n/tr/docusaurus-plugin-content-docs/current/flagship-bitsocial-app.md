@@ -68,6 +68,6 @@ Kolaylık ve velayet arasındaki fark budur.
 
 ## Neden her şeyi kapsayan bir uygulama haline gelebilir?
 
-Bitsocial Network, uygulamalara kalıcı isimlendirme, ödemeler, bahşişler, ödüller ve diğer finansal kolaylıklar sağlarsa, amiral gemisi uygulaması bir yayın istemcisinden çok daha fazlası haline gelebilir.
+Bitsocial Chain, uygulamalara kalıcı isimlendirme, ödemeler, bahşişler, ödüller ve diğer finansal kolaylıklar sağlarsa, amiral gemisi uygulaması bir yayın istemcisinden çok daha fazlası haline gelebilir.
 
 Önemli kısıtlama, uygulamanın ağın yeni sahibi olmamasıdır. Büyük bir istemci, hatta belki de en popüler istemci olabilir, ancak yine de rakip uygulamalara, rakip RPC'lere, rakip feed algoritmalarına ve kendi kendine barındırılan profil düğümlerine yer bırakır.

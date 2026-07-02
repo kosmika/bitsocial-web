@@ -68,6 +68,6 @@ Det er forskellen mellem bekvemmelighed og forældremyndighed.
 
 ## Hvorfor det kan blive en alt-app
 
-Hvis Bitsocial Network giver apps holdbare navngivning, betalinger, drikkepenge, priser og andre økonomiske spor, kan flagskibsappen blive meget mere end en feed-klient.
+Hvis Bitsocial Chain giver apps holdbare navngivning, betalinger, drikkepenge, priser og andre økonomiske spor, kan flagskibsappen blive meget mere end en feed-klient.
 
 Den vigtige begrænsning er, at appen ikke skal blive den nye ejer af netværket. Det kan være en stor klient, måske endda den mest populære klient, mens den stadig efterlader plads til konkurrerende apps, konkurrerende RPC'er, konkurrerende feedalgoritmer og selvhostede profilknuder.

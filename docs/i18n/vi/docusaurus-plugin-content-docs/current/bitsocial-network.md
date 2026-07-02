@@ -1,9 +1,9 @@
 ---
-title: Bitsocial Network
+title: Bitsocial Chain
 description: Giai đoạn 4 của kế hoạch tổng thể, bao gồm lớp chuỗi ứng dụng dùng chung được đề xuất cho các ứng dụng Bitsocial.
 ---
 
-# Bitsocial Network
+# Bitsocial Chain
 
 Mạng Bitsocial là tên được sử dụng trong kế hoạch tổng thể cho lớp chuỗi ứng dụng được chia sẻ sẽ nằm trong các ứng dụng Bitsocial.
 
@@ -47,10 +47,10 @@ Trình tự đó có ý nghĩa vì lớp phối hợp ở cấp hệ sinh thái 
 
 ## Nguyên tắc thiết kế
 
-Vì Bitsocial Network vẫn là hạ tầng được đề xuất chứ chưa phải sản phẩm đã ra mắt, kế hoạch hiện tại nên giữ kỷ luật ở một số điểm:
+Vì Bitsocial Chain vẫn là hạ tầng được đề xuất chứ chưa phải sản phẩm đã ra mắt, kế hoạch hiện tại nên giữ kỷ luật ở một số điểm:
 
 - ứng dụng và cộng đồng đi trước. Lớp mạng nên đi theo mức sử dụng thực tế trong các ứng dụng Bitsocial, chứ không nên dẫn đầu bằng các tính năng tài chính mang tính đầu cơ.
 - đóng góp thực chất quan trọng hơn hype. Nếu sau này Bitsocial bổ sung tài sản ở cấp cộng đồng, nhà sáng tạo hoặc client, chúng nên thưởng cho sự tham gia và xây dựng dài hạn thay vì các đợt ra mắt bắt chước hay giao dịch ngắn hạn.
 - curation là hợp lệ. Các ứng dụng Bitsocial có thể định hình bảng xếp hạng, mặc định, khả năng khám phá và nhịp rollout để ưu tiên các cộng đồng bền vững hơn hành vi kiểu sòng bạc.
 - rollout dần dần là lành mạnh. Việc trì hoãn các tính năng tài chính gốc của appchain là hợp lý cho đến khi hệ sinh thái có đủ người dùng, công cụ kiểm duyệt và độ rõ ràng của sản phẩm để hỗ trợ chúng một cách an toàn.
-- các cơ chế chính xác vẫn còn để ngỏ. Trang này giải thích vai trò của Bitsocial Network, chứ không phải một lời hứa cố định về token launcher, công thức phí hay tokenomics cuối cùng.
+- các cơ chế chính xác vẫn còn để ngỏ. Trang này giải thích vai trò của Bitsocial Chain, chứ không phải một lời hứa cố định về token launcher, công thức phí hay tokenomics cuối cùng.

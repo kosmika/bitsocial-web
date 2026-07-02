@@ -1,11 +1,11 @@
 ---
-title: Bitsocial Network
+title: Bitsocial Chain
 description: Phase 4 ng master plan, na sumasaklaw sa nakabahaging appchain layer na iminungkahi para sa Bitsocial app.
 ---
 
-# Bitsocial Network
+# Bitsocial Chain
 
-Ang Bitsocial Network ay ang pangalang ginamit sa master plan para sa nakabahaging layer ng appchain na makikita sa ilalim ng mga Bitsocial app.
+Ang Bitsocial Chain ay ang pangalang ginamit sa master plan para sa nakabahaging layer ng appchain na makikita sa ilalim ng mga Bitsocial app.
 
 Ang ideya ay hindi palitan ang peer-to-peer social layer. Ito ay upang magbigay ng nakabahaging pang-ekonomiya at koordinasyon na mga primitive na kakailanganin ng mga social app kung sila ay makikipagkumpitensya sa kasalukuyang mga platform sa sukat.
 
@@ -21,11 +21,11 @@ Ang ideya ay hindi palitan ang peer-to-peer social layer. Ito ay upang magbigay 
 
 Ang desentralisasyon ng mga komunidad at pagkakakilanlan ay kailangan, ngunit hindi ito sapat para i-desentralisa ang lahat ng social media.
 
-Kung ang economic layer ay nakadepende pa rin sa ilang mga sentralisadong riles, kung gayon ang mga app ay mananatiling madaling i-pressure, i-deplatform, o magutom sa pananalapi. Ang Bitsocial Network ay ang iminungkahing sagot sa pangalawang layer ng dependency.
+Kung ang economic layer ay nakadepende pa rin sa ilang mga sentralisadong riles, kung gayon ang mga app ay mananatiling madaling i-pressure, i-deplatform, o magutom sa pananalapi. Ang Bitsocial Chain ay ang iminungkahing sagot sa pangalawang layer ng dependency.
 
 ## Relasyon sa natitirang bahagi ng Bitsocial
 
-Ang Bitsocial Network ay iminungkahi bilang nakabahaging imprastraktura para sa Bitsocial app, hindi bilang produkto na direktang nakikipag-ugnayan sa mga user araw-araw.
+Ang Bitsocial Chain ay iminungkahi bilang nakabahaging imprastraktura para sa Bitsocial app, hindi bilang produkto na direktang nakikipag-ugnayan sa mga user araw-araw.
 
 Ang resulta na nakaharap sa publiko ay:
 
@@ -41,16 +41,16 @@ Inilalagay ito ng master plan pagkatapos ng mga naunang punto ng patunay sa anta
 1. desentralisahin ang mga imageboard
 2. ilunsad ang Bitsocial RPC
 3. desentralisado ang mga forum
-4. ilunsad ang Bitsocial Network
+4. ilunsad ang Bitsocial Chain
 
 Makatuwiran ang pagkakasunud-sunod na iyon dahil mas kapaki-pakinabang ang isang layer ng koordinasyon sa antas ng ecosystem kapag umiral na ang mga totoong app at totoong gawi ng user sa network.
 
 ## Mga Prinsipyo sa Disenyo
 
-Dahil iminungkahing imprastraktura pa lamang ang Bitsocial Network at hindi pa inilulunsad na produkto, dapat manatiling disiplinado ang kasalukuyang plano sa ilang bagay:
+Dahil iminungkahing imprastraktura pa lamang ang Bitsocial Chain at hindi pa inilulunsad na produkto, dapat manatiling disiplinado ang kasalukuyang plano sa ilang bagay:
 
 - Unahin ang mga app at komunidad. Dapat sumunod ang network layer sa totoong paggamit sa loob ng mga Bitsocial app, hindi mauna sa mga mapagsapalarang financial feature.
 - Mas mahalaga ang tunay na ambag kaysa hype. Kung magdadagdag ang Bitsocial sa hinaharap ng mga asset sa antas ng komunidad, creator, o client, dapat nitong gantimpalaan ang pakikilahok at pangmatagalang pagbuo kaysa panggagayang launch o panandaliang trading.
 - Pinapayagan ang curation. Maaaring hubugin ng mga Bitsocial app ang rankings, defaults, discovery, at timing ng rollout upang paboran ang matitibay na komunidad kaysa asal na parang casino.
 - Mabuti ang unti-unting rollout. Makatuwirang ipagpaliban ang appchain-native na mga financial feature hanggang magkaroon ang ecosystem ng sapat na users, moderation tools, at linaw ng produkto upang masuportahan ang mga ito nang ligtas.
-- Bukas pa rin ang eksaktong mechanics. Ipinapaliwanag ng pahinang ito ang papel ng Bitsocial Network, hindi isang nakapirming pangako tungkol sa mga token launcher, formula ng fee, o pinal na tokenomics.
+- Bukas pa rin ang eksaktong mechanics. Ipinapaliwanag ng pahinang ito ang papel ng Bitsocial Chain, hindi isang nakapirming pangako tungkol sa mga token launcher, formula ng fee, o pinal na tokenomics.

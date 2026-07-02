@@ -1,11 +1,11 @@
 ---
-title: Bitsocial Network
+title: Bitsocial Chain
 description: Fase 4 av hovedplanen, som dekker det delte appkjedelaget foreslått for Bitsocial-apper.
 ---
 
-# Bitsocial Network
+# Bitsocial Chain
 
-Bitsocial Network er navnet som brukes i hovedplanen for det delte appchain-laget som vil sitte under Bitsocial-apper.
+Bitsocial Chain er navnet som brukes i hovedplanen for det delte appchain-laget som vil sitte under Bitsocial-apper.
 
 Tanken er ikke å erstatte det jevnaldrende sosiale laget. Det er å gi de delte økonomiske og koordinerende primitivene som sosiale apper trenger hvis de skal konkurrere med etablerte plattformer i stor skala.
 
@@ -21,11 +21,11 @@ Tanken er ikke å erstatte det jevnaldrende sosiale laget. Det er å gi de delte
 
 Desentralisering av fellesskap og identiteter er nødvendig, men det er ikke nok å desentralisere alle sosiale medier.
 
-Hvis det økonomiske laget fortsatt avhenger av en håndfull sentraliserte skinner, er apper fortsatt enkle å presse, deplatformere eller sulte økonomisk. Bitsocial Network er det foreslåtte svaret på det andre laget av avhengighet.
+Hvis det økonomiske laget fortsatt avhenger av en håndfull sentraliserte skinner, er apper fortsatt enkle å presse, deplatformere eller sulte økonomisk. Bitsocial Chain er det foreslåtte svaret på det andre laget av avhengighet.
 
 ## Forholdet til resten av Bitsocial
 
-Bitsocial Network er foreslått som delt infrastruktur for Bitsocial-apper, ikke som produktet brukerne samhandler direkte med hver dag.
+Bitsocial Chain er foreslått som delt infrastruktur for Bitsocial-apper, ikke som produktet brukerne samhandler direkte med hver dag.
 
 Det offentlige vendte resultatet vil være:
 
@@ -41,16 +41,16 @@ Hovedplanen plasserer dette etter de tidligere prøvepunktene på app-nivå:
 1. desentralisere bildetavler
 2. start Bitsocial RPC
 3. desentralisere fora
-4. starte Bitsocial Network
+4. starte Bitsocial Chain
 
 Denne sekvensen er fornuftig fordi et koordineringslag på økosystemnivå er mer nyttig når ekte apper og ekte brukeratferd allerede eksisterer på nettverket.
 
 ## Designprinsipper
 
-Siden Bitsocial Network fortsatt er foreslått infrastruktur og ikke et lansert produkt, bør den nåværende planen være disiplinert på noen punkter:
+Siden Bitsocial Chain fortsatt er foreslått infrastruktur og ikke et lansert produkt, bør den nåværende planen være disiplinert på noen punkter:
 
 - apper og fellesskap først. Nettverkslaget bør følge reell bruk i Bitsocial-apper, ikke gå foran med spekulative finansfunksjoner.
 - reelt bidrag foran hype. Hvis Bitsocial senere legger til aktiva på fellesskaps-, skaper- eller klientnivå, bør de belønne deltakelse og langsiktig bygging i stedet for kopierte lanseringer eller kortsiktig handel.
 - kuratering er tillatt. Bitsocial-apper kan forme rangeringer, standardvalg, oppdagelse og utrullingstempo slik at varige fellesskap prioriteres fremfor kasinolignende atferd.
 - gradvis utrulling er sunt. Det er rimelig å utsette appchain-native finansfunksjoner til økosystemet har nok brukere, modereringsverktøy og produktklarhet til å støtte dem på en trygg måte.
-- de nøyaktige mekanismene er fortsatt åpne. Denne siden forklarer rollen til Bitsocial Network, ikke et låst løfte om token-launchere, gebyrformler eller endelige tokenomics.
+- de nøyaktige mekanismene er fortsatt åpne. Denne siden forklarer rollen til Bitsocial Chain, ikke et låst løfte om token-launchere, gebyrformler eller endelige tokenomics.

@@ -35,7 +35,7 @@ Az állandóan aktív közösségek és profilok sokkal praktikusabbakká válna
 
 ## Miért számít itt a hálózati réteg?
 
-Ha a tartalom bevételszerzését a szokásos banki vagy platformnyomás meg tudja szakítani, akkor az ökoszisztéma törékeny marad. A Bitsocial Network az a gazdasági réteg, amely hitelesebbé teszi a hosszú távú versenyt.
+Ha a tartalom bevételszerzését a szokásos banki vagy platformnyomás meg tudja szakítani, akkor az ökoszisztéma törékeny marad. A Bitsocial Chain az a gazdasági réteg, amely hitelesebbé teszi a hosszú távú versenyt.
 
 ## Az alaptét
 

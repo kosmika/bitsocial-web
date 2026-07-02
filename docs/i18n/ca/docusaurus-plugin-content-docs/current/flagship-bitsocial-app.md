@@ -68,6 +68,6 @@ Aquesta és la diferència entre la comoditat i la custòdia.
 
 ## Per què es pot convertir en una aplicació de tot
 
-Si Bitsocial Network ofereix a les aplicacions noms duradors, pagaments, propina, premis i altres vies financeres, l'aplicació insígnia podria convertir-se en molt més que un client d'alimentació.
+Si Bitsocial Chain ofereix a les aplicacions noms duradors, pagaments, propina, premis i altres vies financeres, l'aplicació insígnia podria convertir-se en molt més que un client d'alimentació.
 
 La limitació important és que l'aplicació no s'ha de convertir en el nou propietari de la xarxa. Pot ser un client gran, potser fins i tot el client més popular, tot deixant espai per a aplicacions competidores, RPC competidors, algorismes de feeds competidors i nodes de perfil autoallotjats.

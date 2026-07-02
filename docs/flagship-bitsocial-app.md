@@ -101,7 +101,7 @@ That is the difference between convenience and custody.
 
 ## Why it can become an everything-app
 
-If Bitsocial Network gives apps durable naming, payments, tipping, awards, and other financial
+If Bitsocial Chain gives apps durable naming, payments, tipping, awards, and other financial
 rails, the flagship app could become much more than a feed client.
 
 The important constraint is that the app should not become the new owner of the network. It can be a

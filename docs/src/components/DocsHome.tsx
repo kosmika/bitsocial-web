@@ -87,13 +87,13 @@ const roadmapCards = [
     eyebrow: tr("docs.home.roadmap.card.network.eyebrow", "Phase 2", "Roadmap card eyebrow."),
     title: tr(
       "docs.home.roadmap.card.network.title",
-      "Bitsocial Network",
-      "Roadmap card title for Bitsocial Network.",
+      "Bitsocial Chain",
+      "Roadmap card title for Bitsocial Chain.",
     ),
     body: tr(
       "docs.home.roadmap.card.network.body",
-      "The economic layer proposed to power .bso names, awards, tipping, monetization, and shared app network effects.",
-      "Roadmap card description for Bitsocial Network.",
+      "The proposed Ethereum L2 economic layer for .bso names, awards, tipping, monetization, and shared app network effects.",
+      "Roadmap card description for Bitsocial Chain.",
     ),
   },
   {

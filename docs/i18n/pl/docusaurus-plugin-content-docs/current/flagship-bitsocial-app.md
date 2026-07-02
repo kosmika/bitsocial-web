@@ -68,6 +68,6 @@ Na tym polega różnica między wygodą a opieką.
 
 ## Dlaczego może stać się aplikacją do wszystkiego
 
-Jeśli Bitsocial Network zapewni aplikacjom trwałe nazewnictwo, płatności, napiwki, nagrody i inne zabezpieczenia finansowe, flagowa aplikacja może stać się czymś więcej niż tylko klientem kanałów.
+Jeśli Bitsocial Chain zapewni aplikacjom trwałe nazewnictwo, płatności, napiwki, nagrody i inne zabezpieczenia finansowe, flagowa aplikacja może stać się czymś więcej niż tylko klientem kanałów.
 
 Ważnym ograniczeniem jest to, że aplikacja nie powinna stać się nowym właścicielem sieci. Może to być duży klient, a może nawet najpopularniejszy klient, pozostawiając jednocześnie miejsce dla konkurencyjnych aplikacji, konkurencyjnych wywołań RPC, konkurencyjnych algorytmów kanałów i hostowanych samodzielnie węzłów profili.

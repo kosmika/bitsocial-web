@@ -35,7 +35,7 @@ Komunitas dan profil yang selalu aktif menjadi lebih praktis setelah pasar RPC p
 
 ## Mengapa lapisan jaringan penting di sini
 
-Jika monetisasi konten dapat dihentikan oleh tekanan perbankan atau platform, maka ekosistem akan tetap rapuh. Bitsocial Network diusulkan sebagai lapisan ekonomi yang membuat persaingan jangka panjang lebih kredibel.
+Jika monetisasi konten dapat dihentikan oleh tekanan perbankan atau platform, maka ekosistem akan tetap rapuh. Bitsocial Chain diusulkan sebagai lapisan ekonomi yang membuat persaingan jangka panjang lebih kredibel.
 
 ## Taruhan inti
 

@@ -68,6 +68,6 @@ Das ist der Unterschied zwischen Bequemlichkeit und Sorgerecht.
 
 ## Warum daraus eine Alles-App werden kann
 
-Wenn Bitsocial Network Apps dauerhafte Namen, Zahlungen, Trinkgelder, Auszeichnungen und andere Finanzschienen bietet, könnte die Flaggschiff-App viel mehr als nur ein Feed-Client werden.
+Wenn Bitsocial Chain Apps dauerhafte Namen, Zahlungen, Trinkgelder, Auszeichnungen und andere Finanzschienen bietet, könnte die Flaggschiff-App viel mehr als nur ein Feed-Client werden.
 
 Die wichtige Einschränkung besteht darin, dass die App nicht der neue Eigentümer des Netzwerks werden darf. Es kann sich um einen großen Client handeln, vielleicht sogar um den beliebtesten Client, der dennoch Platz für konkurrierende Apps, konkurrierende RPCs, konkurrierende Feed-Algorithmen und selbst gehostete Profilknoten lässt.

@@ -35,7 +35,7 @@ Always-on-Communitys und -Profile werden viel praktischer, sobald öffentliche R
 
 ## Warum die Netzwerkschicht hier wichtig ist
 
-Wenn die Monetarisierung von Inhalten durch normalen Bank- oder Plattformdruck unterbrochen werden kann, bleibt das Ökosystem fragil. Das Bitsocial Network wird als Wirtschaftsschicht vorgeschlagen, die den langfristigen Wettbewerb glaubwürdiger macht.
+Wenn die Monetarisierung von Inhalten durch normalen Bank- oder Plattformdruck unterbrochen werden kann, bleibt das Ökosystem fragil. Das Bitsocial Chain wird als Wirtschaftsschicht vorgeschlagen, die den langfristigen Wettbewerb glaubwürdiger macht.
 
 ## Die Kernwette
 

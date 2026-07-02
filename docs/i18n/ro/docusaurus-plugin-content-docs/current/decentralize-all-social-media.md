@@ -35,7 +35,7 @@ Comunitățile și profilurile mereu active devin mult mai practice odată ce pi
 
 ## De ce contează nivelul de rețea aici
 
-Dacă monetizarea conținutului poate fi întreruptă de presiunea bancară obișnuită sau a platformei, atunci ecosistemul rămâne fragil. Bitsocial Network este propus ca stratul economic care face concurența pe termen lung mai credibilă.
+Dacă monetizarea conținutului poate fi întreruptă de presiunea bancară obișnuită sau a platformei, atunci ecosistemul rămâne fragil. Bitsocial Chain este propus ca stratul economic care face concurența pe termen lung mai credibilă.
 
 ## Pariul de bază
 

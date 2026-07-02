@@ -35,7 +35,7 @@ Comunità e profili sempre attivi diventano molto più pratici una volta che esi
 
 ## Perché il livello di rete è importante qui
 
-Se la monetizzazione dei contenuti può essere interrotta dalla normale pressione bancaria o della piattaforma, l'ecosistema rimane fragile. Bitsocial Network viene proposto come il livello economico che rende più credibile la concorrenza a lungo termine.
+Se la monetizzazione dei contenuti può essere interrotta dalla normale pressione bancaria o della piattaforma, l'ecosistema rimane fragile. Bitsocial Chain viene proposto come il livello economico che rende più credibile la concorrenza a lungo termine.
 
 ## La scommessa principale
 

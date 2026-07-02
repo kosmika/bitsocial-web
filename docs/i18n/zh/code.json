@@ -476,11 +476,11 @@
   },
   "docs.home.roadmap.card.phase4.title": {
     "message": "比特社交网络",
-    "description": "Roadmap card title for Bitsocial Network."
+    "description": "Roadmap card title for Bitsocial Chain."
   },
   "docs.home.roadmap.card.phase4.body": {
     "message": "应用程序链层旨在为应用程序之间的共享流动性、去中心化域和持久激励提供动力。",
-    "description": "Roadmap card description for Bitsocial Network."
+    "description": "Roadmap card description for Bitsocial Chain."
   },
   "docs.home.roadmap.card.phase5.title": {
     "message": "去中心化所有社交媒体",

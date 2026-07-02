@@ -476,11 +476,11 @@
   },
   "docs.home.roadmap.card.phase4.title": {
     "message": "ビットソーシャルネットワーク",
-    "description": "Roadmap card title for Bitsocial Network."
+    "description": "Roadmap card title for Bitsocial Chain."
   },
   "docs.home.roadmap.card.phase4.body": {
     "message": "アプリチェーン層は、アプリ全体で共有流動性、分散ドメイン、永続的なインセンティブを強化することを提案しました。",
-    "description": "Roadmap card description for Bitsocial Network."
+    "description": "Roadmap card description for Bitsocial Chain."
   },
   "docs.home.roadmap.card.phase5.title": {
     "message": "すべてのソーシャルメディアを分散化する",

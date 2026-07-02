@@ -68,6 +68,6 @@ Iyan ang pagkakaiba sa pagitan ng kaginhawahan at pag-iingat.
 
 ## Bakit maaari itong maging isang everything-app
 
-Kung ang Bitsocial Network ay nagbibigay sa mga app ng matibay na pagpapangalan, mga pagbabayad, tipping, mga parangal, at iba pang financial rail, ang flagship app ay maaaring maging higit pa sa isang feed client.
+Kung ang Bitsocial Chain ay nagbibigay sa mga app ng matibay na pagpapangalan, mga pagbabayad, tipping, mga parangal, at iba pang financial rail, ang flagship app ay maaaring maging higit pa sa isang feed client.
 
 Ang mahalagang hadlang ay ang app ay hindi dapat maging bagong may-ari ng network. Maaari itong maging isang malaking kliyente, marahil kahit na ang pinakasikat na kliyente, habang nag-iiwan pa rin ng puwang para sa mga nakikipagkumpitensyang app, mga nakikipagkumpitensyang RPC, nakikipagkumpitensyang feed algorithm, at mga node ng profile na naka-host sa sarili.

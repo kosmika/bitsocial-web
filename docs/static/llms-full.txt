@@ -29,7 +29,7 @@ The content is biased toward inference-time lookup, not formal API reference gen
 
 ## Master plan
 
-- [Bitsocial Network](https://bitsocial.net/docs/bitsocial-network/): Phase 2 of the master plan, covering the shared economic layer proposed for Bitsocial apps.
+- [Bitsocial Chain](https://bitsocial.net/docs/bitsocial-network/): Phase 2 of the master plan, covering the proposed Ethereum L2 economic layer for Bitsocial apps.
 - [Build your own Bitsocial client](https://bitsocial.net/docs/build-your-own-client/): Builder guide for shipping independent Bitsocial clients, from imageboards and forums to niche social apps.
 - [Decentralize All Social Media](https://bitsocial.net/docs/decentralize-all-social-media/): Phase 5 of the master plan, focused on funding and building the long tail of Bitsocial social clients.
 - [Flagship Bitsocial App](https://bitsocial.net/docs/flagship-bitsocial-app/): The proposed profile-based Bitsocial client: familiar like X/Twitter by default, but with replaceable RPCs, feeds, algorithms, ads, and communities.
@@ -144,7 +144,7 @@ A Call to Action
 Bitsocial wins by attracting as many builders as possible. Run your own unstoppable community, develop your own decentralized social app, or even launch your own business on top of Bitsocial. The tide rises with every builder.
 
 - Phase 1 - Decentralize imageboards and forums: Imageboards are the simplest form of social media to decentralize: anonymous posting, few default boards, and no profile graph. 5chan proves Bitsocial can replace centralized imageboards while removing global admins from the equation.
-- Phase 2 - Launch Bitsocial Network: In order to decentralize all social media, Bitsocial apps will need killer features and strong network effects: unstoppable financial structures, decentralized Bitsocial domains (.bso), awards and tipping, common liquidity, and practical monetization. All of this will be powered by Bitsocial Network, a decentralized appchain solution for Bitsocial apps.
+- Phase 2 - Launch Bitsocial Chain: In order to decentralize all social media, Bitsocial apps will need killer features and strong network effects: unstoppable financial structures, decentralized Bitsocial domains (.bso), awards and tipping, common liquidity, and practical monetization. All of this will be powered by Bitsocial Chain, the proposed Ethereum L2 economic layer for Bitsocial apps.
 - Phase 3 - Launch the flagship Bitsocial app: The flagship Bitsocial app should be the first profile-based client: posts, replies, follows, real-time public conversation, and communities that can pull network effects from every Bitsocial client. By default, it can feel as familiar as a modern For You social app, while still letting users switch RPCs, feeds, instances, algorithms, ads, or remove ranking entirely.
 - Phase 4 - Scale Bitsocial economies: The next layer is ecosystem funding and infrastructure pluralism. Bitsocial Forge's RPC should not be the only successful RPC: many businesses, independent teams, anonymous operators, and community entities should build RPCs, media hosting, discovery, moderation, and other services on top of Bitsocial. Funding should push that decentralization forward, so developers and operators can compete to make the network faster, cheaper, more reliable, and harder to capture.
 - Phase 5 - Decentralize all social media: With the core apps, public RPCs, profile nodes, discovery, and monetization in place, Bitsocial can fund and build the long tail of social clients: blogging, crowdfunding, creator video and a credible YouTube alternative, niche experiments, and every format too early for the first four phases. Bitsocial Forge can build some of them, centralized clients can compete too, they do not all have to be FOSS, and decentralized community grants can fund as many developers as possible.
@@ -902,18 +902,19 @@ peer-to-peer pubsub for real-time communication. Together they produce a social 
 - users own their identities through keypairs, not through revocable accounts
 - the whole system runs without servers, blockchains, or platform fees
 
-### Bitsocial Network
+### Bitsocial Chain
 
 Source: https://bitsocial.net/docs/bitsocial-network/
 Path: docs/bitsocial-network.md
-Description: Phase 2 of the master plan, covering the shared economic layer proposed for Bitsocial apps.
+Description: Phase 2 of the master plan, covering the proposed Ethereum L2 economic layer for Bitsocial apps.
 
-# Bitsocial Network
+# Bitsocial Chain
 
-Bitsocial Network is the proposed economic layer for Bitsocial apps.
+Bitsocial Chain is the proposed Ethereum L2 economic layer for Bitsocial apps. The current
+chain-specific site is [chain.bitsocial.net](https://chain.bitsocial.net).
 
 The peer-to-peer social layer lets communities, identities, and content move outside a central
-platform database. Bitsocial Network is meant to add the shared naming, monetization, and payment
+platform database. Bitsocial Chain is meant to add the shared naming, monetization, and payment
 primitives that make those apps harder to starve financially.
 
 ## What it is meant to power
@@ -928,18 +929,35 @@ primitives that make those apps harder to starve financially.
 The goal is not to lead with token mechanics. The goal is to make useful social apps more durable,
 more fundable, and less dependent on centralized payment or naming providers.
 
+## Current proof of concept
+
+The first Bitsocial Chain proof of concept focuses on native `.bso` names. It proves that a name
+registry can be derived from Ethereum L1 history without placing social content on-chain:
+
+- users submit register, update, transfer, and revoke intents through plain Ethereum L1 transactions
+- anyone can run the derivation node and reconstruct the same `.bso` registry state
+- a resolver maps a `.bso` name to the Bitsocial public key that clients already use over the
+  peer-to-peer protocol
+- posts, votes, moderation, feeds, and community content stay off-chain and peer-to-peer
+
+That proof of concept is not a production Stage 2 launch. It has no proof system, challenge game,
+audited code, live deployment, final pricing, or final governance yet. Its long-term posture is
+transparent by default and privacy-compatible by design: the core chain is public, while future
+tipping, payments, awards, and liquidity should avoid forcing permanent links between social
+identity and wallet history.
+
 ## Why it matters
 
 Decentralizing communities and identities is necessary, but it is not enough to decentralize all of
 social media.
 
 If social apps still depend on a few centralized economic rails, they remain easy to pressure,
-deplatform, or starve financially. Bitsocial Network is the proposed answer to that second layer of
+deplatform, or starve financially. Bitsocial Chain is the proposed answer to that second layer of
 dependency.
 
 ## Relationship to apps
 
-Bitsocial Network should sit under Bitsocial apps, not replace them.
+Bitsocial Chain should sit under Bitsocial apps, not replace them.
 
 The public-facing result should be:
 
@@ -951,7 +969,7 @@ The public-facing result should be:
 
 ## Why this sits early
 
-The current master plan places Bitsocial Network immediately after the first wedge categories:
+The current master plan places Bitsocial Chain immediately after the first wedge categories:
 imageboards, forums, and the public RPC layer that makes those apps practical for more users.
 
 That timing matters because social apps need strong network effects. If naming, support, awards,
@@ -960,7 +978,7 @@ too long.
 
 ## Design principles
 
-Because Bitsocial Network is still proposed infrastructure rather than a launched product, the plan
+Because Bitsocial Chain is still proposed infrastructure rather than a launched product, the plan
 should stay disciplined:
 
 - Apps and communities first. The network layer should make real social products stronger.
@@ -970,7 +988,7 @@ should stay disciplined:
   community support.
 - Curation is allowed. Apps can shape rankings, defaults, and discovery to favor durable
   communities.
-- Exact mechanics are still open. This page explains the role of Bitsocial Network, not a locked
+- Exact mechanics are still open. This page explains the role of Bitsocial Chain, not a locked
   promise about final economics.
 
 ### Build your own Bitsocial client
@@ -1067,7 +1085,7 @@ social formats as possible.
 ## What still needs to be built
 
 The first phases focus on the highest-leverage categories: imageboards, forums, public RPC,
-Bitsocial Network, profile nodes, the flagship app, and the service economy around them.
+Bitsocial Chain, profile nodes, the flagship app, and the service economy around them.
 
 After that, the network should expand into the long tail:
 
@@ -1223,7 +1241,7 @@ That is the difference between convenience and custody.
 
 ## Why it can become an everything-app
 
-If Bitsocial Network gives apps durable naming, payments, tipping, awards, and other financial
+If Bitsocial Chain gives apps durable naming, payments, tipping, awards, and other financial
 rails, the flagship app could become much more than a feed client.
 
 The important constraint is that the app should not become the new owner of the network. It can be a
@@ -3673,7 +3691,7 @@ bitsocial community edit your-community.bso \
   '--settings.challenges[0].options.transferCooldownSeconds' '604800'
 ```
 
-See the [bitsocial-cli documentation](https://github.com/bitsocial/bitsocial-cli) for full CLI reference.
+See the [bitsocial-cli documentation](https://github.com/bitsocialnet/bitsocial-cli) for full CLI reference.
 
 ## Where MintPass is useful
 
@@ -3697,9 +3715,13 @@ These items are exploratory; concrete work will land incrementally and stay conf
 
 ## License
 
-MIT License — see [LICENSE](LICENSE).
+MintPass is fully open source — you're free to run your own. It's a mixed-license monorepo (see [LICENSE](LICENSE)):
 
-Open source and commercial‑friendly. A hosted version is available at [mintpass.org](https://mintpass.org).
+- `web/` (the mintpass.org hosted site + API): AGPL-3.0-or-later
+- `challenge/` (`@bitsocial/mintpass-challenge`): GPL-3.0-or-later
+- `contracts/` (`@bitsocial/mintpass-contracts`): MIT
+
+A hosted version is available at [mintpass.org](https://mintpass.org).
 
 ### @bitsocial/ai-moderation-challenge
 
@@ -5664,7 +5686,7 @@ EXAMPLES
   $ bitsocial challenge install ./my-local-challenge
 ```
 
-_See code: [src/cli/commands/challenge/install.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.73/src/cli/commands/challenge/install.ts)_
+_See code: [src/cli/commands/challenge/install.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.83/src/cli/commands/challenge/install.ts)_
 
 ## `bitsocial challenge list`
 
@@ -5690,7 +5712,7 @@ EXAMPLES
   $ bitsocial challenge list -q
 ```
 
-_See code: [src/cli/commands/challenge/list.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.73/src/cli/commands/challenge/list.ts)_
+_See code: [src/cli/commands/challenge/list.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.83/src/cli/commands/challenge/list.ts)_
 
 ## `bitsocial challenge ls`
 
@@ -5744,7 +5766,7 @@ EXAMPLES
   $ bitsocial challenge remove @scope/my-challenge
 ```
 
-_See code: [src/cli/commands/challenge/remove.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.73/src/cli/commands/challenge/remove.ts)_
+_See code: [src/cli/commands/challenge/remove.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.83/src/cli/commands/challenge/remove.ts)_
 
 ## `bitsocial challenge rm NAME`
 
@@ -5858,7 +5880,7 @@ EXAMPLES
     $ bitsocial community create --jsonFile ./create-options.json
 ```
 
-_See code: [src/cli/commands/community/create.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.73/src/cli/commands/community/create.ts)_
+_See code: [src/cli/commands/community/create.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.83/src/cli/commands/community/create.ts)_
 
 ## `bitsocial community delete ADDRESSES`
 
@@ -5883,7 +5905,7 @@ EXAMPLES
   $ bitsocial community delete 12D3KooWG3XbzoVyAE6Y9vHZKF64Yuuu4TjdgQKedk14iYmTEPWu
 ```
 
-_See code: [src/cli/commands/community/delete.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.73/src/cli/commands/community/delete.ts)_
+_See code: [src/cli/commands/community/delete.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.83/src/cli/commands/community/delete.ts)_
 
 ## `bitsocial community edit ADDRESS`
 
@@ -5953,7 +5975,7 @@ EXAMPLES
     $ bitsocial community edit bitsocial.bso --jsonFile ./edit-options.json
 ```
 
-_See code: [src/cli/commands/community/edit.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.73/src/cli/commands/community/edit.ts)_
+_See code: [src/cli/commands/community/edit.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.83/src/cli/commands/community/edit.ts)_
 
 ## `bitsocial community export [ADDRESS]`
 
@@ -5994,7 +6016,7 @@ EXAMPLES
   $ bitsocial community export --publicKey 12D3KooWG3XbzoVyAE6Y9vHZKF64Yuuu4TjdgQKedk14iYmTEPWu
 ```
 
-_See code: [src/cli/commands/community/export.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.73/src/cli/commands/community/export.ts)_
+_See code: [src/cli/commands/community/export.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.83/src/cli/commands/community/export.ts)_
 
 ## `bitsocial community get [ADDRESS]`
 
@@ -6025,7 +6047,7 @@ EXAMPLES
   $ bitsocial community get --publicKey 12D3KooWG3XbzoVyAE6Y9vHZKF64Yuuu4TjdgQKedk14iYmTEPWu
 ```
 
-_See code: [src/cli/commands/community/get.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.73/src/cli/commands/community/get.ts)_
+_See code: [src/cli/commands/community/get.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.83/src/cli/commands/community/get.ts)_
 
 ## `bitsocial community list`
 
@@ -6048,7 +6070,7 @@ EXAMPLES
   $ bitsocial community list
 ```
 
-_See code: [src/cli/commands/community/list.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.73/src/cli/commands/community/list.ts)_
+_See code: [src/cli/commands/community/list.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.83/src/cli/commands/community/list.ts)_
 
 ## `bitsocial community start ADDRESSES`
 
@@ -6082,7 +6104,7 @@ EXAMPLES
     $ bitsocial community start $(bitsocial community list -q) --concurrency 1
 ```
 
-_See code: [src/cli/commands/community/start.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.73/src/cli/commands/community/start.ts)_
+_See code: [src/cli/commands/community/start.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.83/src/cli/commands/community/start.ts)_
 
 ## `bitsocial community stop ADDRESSES`
 
@@ -6107,7 +6129,7 @@ EXAMPLES
   $ bitsocial community stop Qmb99crTbSUfKXamXwZBe829Vf6w5w5TktPkb6WstC9RFW
 ```
 
-_See code: [src/cli/commands/community/stop.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.73/src/cli/commands/community/stop.ts)_
+_See code: [src/cli/commands/community/stop.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.83/src/cli/commands/community/stop.ts)_
 
 ## `bitsocial daemon`
 
@@ -6153,7 +6175,7 @@ EXAMPLES
   $ bitsocial daemon --no-allowPrivateKeyExport
 ```
 
-_See code: [src/cli/commands/daemon.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.73/src/cli/commands/daemon.ts)_
+_See code: [src/cli/commands/daemon.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.83/src/cli/commands/daemon.ts)_
 
 ## `bitsocial help [COMMAND]`
 
@@ -6219,7 +6241,7 @@ EXAMPLES
   $ bitsocial logs --stdout -f
 ```
 
-_See code: [src/cli/commands/logs.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.73/src/cli/commands/logs.ts)_
+_See code: [src/cli/commands/logs.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.83/src/cli/commands/logs.ts)_
 
 ## `bitsocial update check`
 
@@ -6236,7 +6258,7 @@ EXAMPLES
   $ bitsocial update check
 ```
 
-_See code: [src/cli/commands/update/check.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.73/src/cli/commands/update/check.ts)_
+_See code: [src/cli/commands/update/check.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.83/src/cli/commands/update/check.ts)_
 
 ## `bitsocial update install [VERSION]`
 
@@ -6268,7 +6290,7 @@ EXAMPLES
   $ bitsocial update install --no-restart-daemons
 ```
 
-_See code: [src/cli/commands/update/install.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.73/src/cli/commands/update/install.ts)_
+_See code: [src/cli/commands/update/install.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.83/src/cli/commands/update/install.ts)_
 
 ## `bitsocial update versions`
 
@@ -6290,7 +6312,7 @@ EXAMPLES
   $ bitsocial update versions --limit 5
 ```
 
-_See code: [src/cli/commands/update/versions.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.73/src/cli/commands/update/versions.ts)_
+_See code: [src/cli/commands/update/versions.ts](https://github.com/bitsocialnet/bitsocial-cli/blob/v0.19.83/src/cli/commands/update/versions.ts)_
 <!-- commandsstop -->
 
 ## Contribution
@@ -6455,6 +6477,13 @@ The seeder checks npm for a newer `@bitsocial/bitsocial-seeder` release on
 startup and once per day after that. When a newer release exists, it prints an
 update notice in the logs. Set `SEEDER_UPDATE_CHECK_ENABLED=false` to disable
 that check.
+
+The same check also watches the bundled runtime packages, including
+`@bitsocial/bitsocial-cli` and `@pkcprotocol/pkc-js`. Upgrading the seeder
+package or Docker image upgrades the bundled daemon used by
+`SEEDER_DAEMON_AUTOSTART=true`. If the seeder is reusing an already-running
+external `bitsocial daemon`, upgrade and restart that daemon separately; the
+seeder does not install over or restart externally managed daemon processes.
 
 ## VPS Sizing
 

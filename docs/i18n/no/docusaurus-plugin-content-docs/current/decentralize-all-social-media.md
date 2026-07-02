@@ -35,7 +35,7 @@ Alltid aktive samfunn og profiler blir mye mer praktiske når offentlige RPC-mar
 
 ## Hvorfor nettverkslaget er viktig her
 
-Hvis inntektsgenerering for innhold kan avskjæres av vanlig bank- eller plattformpress, forblir økosystemet skjørt. Bitsocial Network foreslås som det økonomiske laget som gjør langsiktig konkurranse mer troverdig.
+Hvis inntektsgenerering for innhold kan avskjæres av vanlig bank- eller plattformpress, forblir økosystemet skjørt. Bitsocial Chain foreslås som det økonomiske laget som gjør langsiktig konkurranse mer troverdig.
 
 ## Kjernesatsingen
 

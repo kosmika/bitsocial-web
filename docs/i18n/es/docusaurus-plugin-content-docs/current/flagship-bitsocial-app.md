@@ -68,6 +68,6 @@ La ruta alojada es importante porque la mayoría de los usuarios no comenzarán 
 
 ## Por qué puede convertirse en una aplicación para todo
 
-Si Bitsocial Network brinda a las aplicaciones nombres duraderos, pagos, propinas, premios y otras vías financieras, la aplicación insignia podría convertirse en mucho más que un cliente de feeds.
+Si Bitsocial Chain brinda a las aplicaciones nombres duraderos, pagos, propinas, premios y otras vías financieras, la aplicación insignia podría convertirse en mucho más que un cliente de feeds.
 
 La restricción importante es que la aplicación no debe convertirse en el nuevo propietario de la red. Puede ser un cliente grande, tal vez incluso el cliente más popular, y al mismo tiempo dejar espacio para aplicaciones de la competencia, RPC de la competencia, algoritmos de alimentación de la competencia y nodos de perfil autohospedados.

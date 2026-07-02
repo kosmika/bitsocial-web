@@ -35,7 +35,7 @@ Always-on communities en profielen worden veel praktischer zodra er openbare RPC
 
 ## Waarom de netwerklaag hier van belang is
 
-Als het genereren van inkomsten met inhoud kan worden afgesneden door gewone bank- of platformdruk, blijft het ecosysteem kwetsbaar. Bitsocial Network wordt voorgesteld als de economische laag die concurrentie op de lange termijn geloofwaardiger maakt.
+Als het genereren van inkomsten met inhoud kan worden afgesneden door gewone bank- of platformdruk, blijft het ecosysteem kwetsbaar. Bitsocial Chain wordt voorgesteld als de economische laag die concurrentie op de lange termijn geloofwaardiger maakt.
 
 ## De kern van de weddenschap
 

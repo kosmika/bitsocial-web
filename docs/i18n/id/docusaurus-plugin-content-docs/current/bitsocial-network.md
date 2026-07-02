@@ -1,11 +1,11 @@
 ---
-title: Bitsocial Network
+title: Bitsocial Chain
 description: Fase 4 dari rencana induk, mencakup lapisan rantai aplikasi bersama yang diusulkan untuk aplikasi Bitsocial.
 ---
 
-# Bitsocial Network
+# Bitsocial Chain
 
-Bitsocial Network adalah nama yang digunakan dalam rencana induk untuk lapisan rantai aplikasi bersama yang akan berada di bawah aplikasi Bitsocial.
+Bitsocial Chain adalah nama yang digunakan dalam rencana induk untuk lapisan rantai aplikasi bersama yang akan berada di bawah aplikasi Bitsocial.
 
 Idenya bukan untuk menggantikan lapisan sosial peer-to-peer. Hal ini bertujuan untuk menyediakan landasan ekonomi dan koordinasi bersama yang dibutuhkan oleh aplikasi sosial jika mereka ingin bersaing dengan platform lama dalam skala besar.
 
@@ -21,11 +21,11 @@ Idenya bukan untuk menggantikan lapisan sosial peer-to-peer. Hal ini bertujuan u
 
 Desentralisasi komunitas dan identitas memang diperlukan, namun desentralisasi seluruh media sosial saja tidak cukup.
 
-Jika lapisan ekonomi masih bergantung pada segelintir jalur yang tersentralisasi, maka aplikasi akan mudah tertekan, dicabut platformnya, atau mengalami kelaparan secara finansial. Bitsocial Network adalah jawaban yang diusulkan untuk ketergantungan lapisan kedua.
+Jika lapisan ekonomi masih bergantung pada segelintir jalur yang tersentralisasi, maka aplikasi akan mudah tertekan, dicabut platformnya, atau mengalami kelaparan secara finansial. Bitsocial Chain adalah jawaban yang diusulkan untuk ketergantungan lapisan kedua.
 
 ## Hubungan dengan Bitsocial lainnya
 
-Bitsocial Network diusulkan sebagai infrastruktur bersama untuk aplikasi Bitsocial, bukan sebagai produk yang berinteraksi langsung dengan pengguna setiap hari.
+Bitsocial Chain diusulkan sebagai infrastruktur bersama untuk aplikasi Bitsocial, bukan sebagai produk yang berinteraksi langsung dengan pengguna setiap hari.
 
 Hasil yang dapat dilihat publik adalah:
 
@@ -47,10 +47,10 @@ Urutan tersebut masuk akal karena lapisan koordinasi tingkat ekosistem akan lebi
 
 ## Prinsip Desain
 
-Karena Bitsocial Network masih berupa infrastruktur yang diusulkan, bukan produk yang sudah diluncurkan, rencana saat ini harus tetap disiplin dalam beberapa hal:
+Karena Bitsocial Chain masih berupa infrastruktur yang diusulkan, bukan produk yang sudah diluncurkan, rencana saat ini harus tetap disiplin dalam beberapa hal:
 
 - Aplikasi dan komunitas lebih dulu. Lapisan jaringan harus mengikuti penggunaan nyata di aplikasi Bitsocial, bukan mendahului dengan fitur keuangan spekulatif.
 - Kontribusi nyata di atas hype. Jika nanti Bitsocial menambahkan aset tingkat komunitas, kreator, atau klien, aset itu harus memberi imbalan pada partisipasi dan pembangunan jangka panjang, bukan peluncuran tiruan atau perdagangan jangka pendek.
 - Kurasi diperbolehkan. Aplikasi Bitsocial dapat membentuk peringkat, pengaturan bawaan, penemuan, dan waktu rollout untuk mengutamakan komunitas yang tahan lama dibanding perilaku bergaya kasino.
 - Rollout bertahap itu sehat. Masuk akal untuk menunda fitur keuangan native appchain sampai ekosistem memiliki cukup pengguna, alat moderasi, dan kejelasan produk untuk mendukungnya dengan aman.
-- Mekanisme pastinya masih terbuka. Halaman ini menjelaskan peran Bitsocial Network, bukan janji yang sudah terkunci tentang peluncur token, rumus biaya, atau tokenomics final.
+- Mekanisme pastinya masih terbuka. Halaman ini menjelaskan peran Bitsocial Chain, bukan janji yang sudah terkunci tentang peluncur token, rumus biaya, atau tokenomics final.

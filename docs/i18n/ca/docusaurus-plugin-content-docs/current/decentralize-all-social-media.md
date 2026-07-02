@@ -35,7 +35,7 @@ Les comunitats i els perfils sempre activats es tornen molt més pràctics un co
 
 ## Per què la capa de xarxa és important aquí
 
-Si la monetització del contingut es pot tallar per la pressió de la banca o la plataforma normal, aleshores l'ecosistema es manté fràgil. Bitsocial Network es proposa com la capa econòmica que fa que la competència a llarg termini sigui més creïble.
+Si la monetització del contingut es pot tallar per la pressió de la banca o la plataforma normal, aleshores l'ecosistema es manté fràgil. Bitsocial Chain es proposa com la capa econòmica que fa que la competència a llarg termini sigui més creïble.
 
 ## L'aposta bàsica
 

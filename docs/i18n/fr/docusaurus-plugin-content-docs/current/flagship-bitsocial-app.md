@@ -68,6 +68,6 @@ C'est la différence entre la commodité et la garde.
 
 ## Pourquoi cela peut devenir une application polyvalente
 
-Si Bitsocial Network donne aux applications des noms durables, des paiements, des pourboires, des récompenses et d'autres rails financiers, l'application phare pourrait devenir bien plus qu'un client de flux.
+Si Bitsocial Chain donne aux applications des noms durables, des paiements, des pourboires, des récompenses et d'autres rails financiers, l'application phare pourrait devenir bien plus qu'un client de flux.
 
 La contrainte importante est que l’application ne devienne pas le nouveau propriétaire du réseau. Il peut s'agir d'un gros client, peut-être même du client le plus populaire, tout en laissant de la place aux applications concurrentes, aux RPC concurrents, aux algorithmes de flux concurrents et aux nœuds de profil auto-hébergés.

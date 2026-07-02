@@ -35,7 +35,7 @@ Altid aktive fællesskaber og profiler bliver meget mere praktiske, når der fø
 
 ## Hvorfor netværkslaget betyder noget her
 
-Hvis indholdsindtægtsgenerering kan afskæres af almindeligt bank- eller platformspres, så forbliver økosystemet skrøbeligt. Bitsocial Network foreslås som det økonomiske lag, der gør langsigtet konkurrence mere troværdig.
+Hvis indholdsindtægtsgenerering kan afskæres af almindeligt bank- eller platformspres, så forbliver økosystemet skrøbeligt. Bitsocial Chain foreslås som det økonomiske lag, der gør langsigtet konkurrence mere troværdig.
 
 ## Kernesatsningen
 

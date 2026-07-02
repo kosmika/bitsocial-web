@@ -35,7 +35,7 @@ Alltid-på-gemenskaper och profiler blir mycket mer praktiska när väl offentli
 
 ## Varför nätverkslagret är viktigt här
 
-Om intäktsgenerering för innehåll kan avbrytas av vanligt bank- eller plattformstryck, förblir ekosystemet bräckligt. Bitsocial Network föreslås som det ekonomiska lager som gör långsiktig konkurrens mer trovärdig.
+Om intäktsgenerering för innehåll kan avbrytas av vanligt bank- eller plattformstryck, förblir ekosystemet bräckligt. Bitsocial Chain föreslås som det ekonomiska lager som gör långsiktig konkurrens mer trovärdig.
 
 ## Kärnsatsningen
 

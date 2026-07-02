@@ -35,7 +35,7 @@ Aina käytössä olevat yhteisöt ja profiilit tulevat paljon käytännöllisemm
 
 ## Miksi verkkokerroksella on tässä väliä
 
-Jos sisällön kaupallistaminen voidaan katkaista tavallisella pankki- tai alustapaineella, ekosysteemi pysyy hauraana. Bitsocial Networkia ehdotetaan taloudelliseksi kerrokseksi, joka tekee pitkän aikavälin kilpailusta uskottavampaa.
+Jos sisällön kaupallistaminen voidaan katkaista tavallisella pankki- tai alustapaineella, ekosysteemi pysyy hauraana. Bitsocial Chainia ehdotetaan taloudelliseksi kerrokseksi, joka tekee pitkän aikavälin kilpailusta uskottavampaa.
 
 ## Peruspanos
 

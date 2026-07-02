@@ -68,6 +68,6 @@ Questa è la differenza tra convenienza e custodia.
 
 ## Perché può diventare un'app tutto
 
-Se Bitsocial Network offrisse alle app nomi durevoli, pagamenti, mance, premi e altri strumenti finanziari, l'app di punta potrebbe diventare molto più di un semplice client di feed.
+Se Bitsocial Chain offrisse alle app nomi durevoli, pagamenti, mance, premi e altri strumenti finanziari, l'app di punta potrebbe diventare molto più di un semplice client di feed.
 
 Il vincolo importante è che l’app non diventi il ​​nuovo proprietario della rete. Può essere un client di grandi dimensioni, forse anche il client più popolare, lasciando comunque spazio ad app concorrenti, RPC concorrenti, algoritmi di feed concorrenti e nodi di profilo self-hosted.

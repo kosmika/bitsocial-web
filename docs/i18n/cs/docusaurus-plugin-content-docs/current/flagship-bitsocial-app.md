@@ -68,6 +68,6 @@ To je rozdíl mezi pohodlím a úschovou.
 
 ## Proč se může stát aplikací na všechno
 
-Pokud Bitsocial Network poskytuje aplikacím trvalé pojmenování, platby, spropitné, ocenění a další finanční prostředky, vlajková loď aplikace by se mohla stát mnohem více než jen klientským zdrojem.
+Pokud Bitsocial Chain poskytuje aplikacím trvalé pojmenování, platby, spropitné, ocenění a další finanční prostředky, vlajková loď aplikace by se mohla stát mnohem více než jen klientským zdrojem.
 
 Důležitým omezením je, že aplikace by se neměla stát novým vlastníkem sítě. Může to být velký klient, možná dokonce nejoblíbenější klient, přičemž stále ponechává prostor pro konkurenční aplikace, konkurenční RPC, konkurenční algoritmy feedu a vlastní uzly profilu.

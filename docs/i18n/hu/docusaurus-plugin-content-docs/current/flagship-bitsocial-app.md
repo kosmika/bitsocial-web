@@ -68,6 +68,6 @@ Ez a különbség a kényelem és a felügyelet között.
 
 ## Miért válhat minden alkalmazássá
 
-Ha a Bitsocial Network tartós elnevezést, fizetést, borravalót, díjakat és egyéb pénzügyi lehetőségeket biztosít az alkalmazásoknak, akkor a zászlóshajó alkalmazás sokkal több lesz, mint hírcsatorna-kliens.
+Ha a Bitsocial Chain tartós elnevezést, fizetést, borravalót, díjakat és egyéb pénzügyi lehetőségeket biztosít az alkalmazásoknak, akkor a zászlóshajó alkalmazás sokkal több lesz, mint hírcsatorna-kliens.
 
 A fontos megkötés az, hogy az alkalmazás ne legyen a hálózat új tulajdonosa. Ez lehet egy nagy kliens, talán a legnépszerűbb kliens is, miközben teret hagy a versengő alkalmazásoknak, a versengő RPC-knek, a versengő feed-algoritmusoknak és a saját üzemeltetésű profilcsomópontoknak.

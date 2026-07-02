@@ -68,6 +68,6 @@ Dat is het verschil tussen gemak en bewaring.
 
 ## Waarom het een alles-app kan worden
 
-Als Bitsocial Network apps duurzame naamgeving, betalingen, fooien, beloningen en andere financiële rails geeft, zou de vlaggenschipapp veel meer kunnen worden dan een feedclient.
+Als Bitsocial Chain apps duurzame naamgeving, betalingen, fooien, beloningen en andere financiële rails geeft, zou de vlaggenschipapp veel meer kunnen worden dan een feedclient.
 
 De belangrijke beperking is dat de app niet de nieuwe eigenaar van het netwerk mag worden. Het kan een grote klant zijn, misschien zelfs de meest populaire klant, terwijl er nog steeds ruimte overblijft voor concurrerende apps, concurrerende RPC's, concurrerende feedalgoritmen en zelfgehoste profielknooppunten.

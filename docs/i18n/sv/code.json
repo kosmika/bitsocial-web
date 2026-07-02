@@ -476,11 +476,11 @@
   },
   "docs.home.roadmap.card.phase4.title": {
     "message": "Bitsocialt nätverk",
-    "description": "Roadmap card title for Bitsocial Network."
+    "description": "Roadmap card title for Bitsocial Chain."
   },
   "docs.home.roadmap.card.phase4.body": {
     "message": "Appchain-lagret föreslog att driva delad likviditet, decentraliserade domäner och hållbara incitament över appar.",
-    "description": "Roadmap card description for Bitsocial Network."
+    "description": "Roadmap card description for Bitsocial Chain."
   },
   "docs.home.roadmap.card.phase5.title": {
     "message": "Decentralisera alla sociala medier",

@@ -31,9 +31,9 @@
     "message": "RPC public fără permisiune",
     "description": "The label of footer link with label=Permissionless public RPC linking to /permissionless-public-rpc/"
   },
-  "link.item.label.Bitsocial Network": {
-    "message": "Bitsocial Network",
-    "description": "The label of footer link with label=Bitsocial Network linking to /bitsocial-network/"
+  "link.item.label.Bitsocial Chain": {
+    "message": "Bitsocial Chain",
+    "description": "The label of footer link with label=Bitsocial Chain linking to /bitsocial-network/"
   },
   "link.item.label.Decentralize all social media": {
     "message": "Descentralizați toate rețelele sociale",

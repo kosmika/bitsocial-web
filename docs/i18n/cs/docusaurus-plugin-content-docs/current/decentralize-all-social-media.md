@@ -35,7 +35,7 @@ Vždy aktivní komunity a profily se stanou mnohem praktičtějšími, jakmile b
 
 ## Proč zde záleží na síťové vrstvě
 
-Pokud lze monetizaci obsahu přerušit běžným bankovním nebo platformovým tlakem, pak ekosystém zůstane křehký. Bitsocial Network je navržen jako ekonomická vrstva, která dělá dlouhodobou konkurenci důvěryhodnější.
+Pokud lze monetizaci obsahu přerušit běžným bankovním nebo platformovým tlakem, pak ekosystém zůstane křehký. Bitsocial Chain je navržen jako ekonomická vrstva, která dělá dlouhodobou konkurenci důvěryhodnější.
 
 ## Základní sázka
 

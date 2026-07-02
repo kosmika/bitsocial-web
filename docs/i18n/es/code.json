@@ -476,11 +476,11 @@
   },
   "docs.home.roadmap.card.phase4.title": {
     "message": "Red Bitsocial",
-    "description": "Roadmap card title for Bitsocial Network."
+    "description": "Roadmap card title for Bitsocial Chain."
   },
   "docs.home.roadmap.card.phase4.body": {
     "message": "La capa de cadena de aplicaciones se propuso impulsar la liquidez compartida, los dominios descentralizados y los incentivos duraderos entre las aplicaciones.",
-    "description": "Roadmap card description for Bitsocial Network."
+    "description": "Roadmap card description for Bitsocial Chain."
   },
   "docs.home.roadmap.card.phase5.title": {
     "message": "Descentralizar todas las redes sociales",

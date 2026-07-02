@@ -475,12 +475,12 @@
     "description": "Roadmap card description for permissionless public RPC."
   },
   "docs.home.roadmap.card.phase4.title": {
-    "message": "Bitsocial Network",
-    "description": "Roadmap card title for Bitsocial Network."
+    "message": "Bitsocial Chain",
+    "description": "Roadmap card title for Bitsocial Chain."
   },
   "docs.home.roadmap.card.phase4.body": {
     "message": "Az alkalmazáslánc-réteg a megosztott likviditás, a decentralizált tartományok és az alkalmazások közötti tartós ösztönzők támogatását javasolta.",
-    "description": "Roadmap card description for Bitsocial Network."
+    "description": "Roadmap card description for Bitsocial Chain."
   },
   "docs.home.roadmap.card.phase5.title": {
     "message": "Decentralizálja az összes közösségi médiát",

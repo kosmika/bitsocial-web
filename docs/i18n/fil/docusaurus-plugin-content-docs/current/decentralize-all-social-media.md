@@ -35,7 +35,7 @@ Ang palaging-on na mga komunidad at profile ay nagiging mas praktikal kapag umii
 
 ## Bakit mahalaga ang layer ng network dito
 
-Kung ang monetization ng content ay maaaring putulin ng ordinaryong pagbabangko o presyon ng platform, mananatiling marupok ang ecosystem. Ang Bitsocial Network ay iminungkahi bilang economic layer na ginagawang mas kapani-paniwala ang pangmatagalang kompetisyon.
+Kung ang monetization ng content ay maaaring putulin ng ordinaryong pagbabangko o presyon ng platform, mananatiling marupok ang ecosystem. Ang Bitsocial Chain ay iminungkahi bilang economic layer na ginagawang mas kapani-paniwala ang pangmatagalang kompetisyon.
 
 ## Ang pangunahing taya
 

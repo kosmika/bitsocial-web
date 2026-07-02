@@ -76,7 +76,7 @@ const exprReplacements = [
 
 const displayReplacements = [
   ["subplebbit_address", "community_address"],
-  ["Plebbit Peers", "Bitsocial Network Peers"],
+  ["Plebbit Peers", "Bitsocial P2P Peers"],
   ["Plebbit Seeders", "Bitsocial Seeders"],
   ["Plebbit Seeder", "Bitsocial Seeder"],
   ["Plebbit Previewers", "Bitsocial Previewers"],

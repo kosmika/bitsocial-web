@@ -1,11 +1,11 @@
 ---
-title: Bitsocial Network
+title: Bitsocial Chain
 description: 总体规划的第四阶段，涵盖为 Bitsocial 应用程序提议的共享应用程序链层。
 ---
 
-# Bitsocial Network
+# Bitsocial Chain
 
-Bitsocial Network 是总体规划中用于位于 Bitsocial 应用程序下的共享应用程序链层的名称。
+Bitsocial Chain 是总体规划中用于位于 Bitsocial 应用程序下的共享应用程序链层的名称。
 
 这个想法并不是要取代点对点的社交层。它旨在提供社交应用程序与现有平台进行大规模竞争所需的共享经济和协调原语。
 
@@ -21,11 +21,11 @@ Bitsocial Network 是总体规划中用于位于 Bitsocial 应用程序下的共
 
 去中心化社区和身份是必要的，但去中心化所有社交媒体还不够。
 
-如果经济层仍然依赖于少数集中化轨道，那么应用程序仍然很容易受到压力、平台化或财务匮乏。 Bitsocial Network 是针对第二层依赖的建议答案。
+如果经济层仍然依赖于少数集中化轨道，那么应用程序仍然很容易受到压力、平台化或财务匮乏。 Bitsocial Chain 是针对第二层依赖的建议答案。
 
 ## 与 Bitsocial 其余部分的关系
 
-Bitsocial Network 被提议作为 Bitsocial 应用程序的共享基础设施，而不是作为用户每天直接交互的产品。
+Bitsocial Chain 被提议作为 Bitsocial 应用程序的共享基础设施，而不是作为用户每天直接交互的产品。
 
 面向公众的结果将是：
 
@@ -47,10 +47,10 @@ Bitsocial Network 被提议作为 Bitsocial 应用程序的共享基础设施，
 
 ## 设计原则
 
-由于 Bitsocial Network 仍然是拟议中的基础设施，而不是已经上线的产品，当前计划在几个方面都应该保持克制：
+由于 Bitsocial Chain 仍然是拟议中的基础设施，而不是已经上线的产品，当前计划在几个方面都应该保持克制：
 
 - 先有应用和社区。网络层应该跟随 Bitsocial 应用中的真实使用，而不是用投机性的金融功能抢跑。
 - 真实贡献高于炒作。如果 Bitsocial 以后增加社区级、创作者级或客户端级资产，它们应当奖励参与和长期建设，而不是模仿式发行或短线交易。
 - 允许策展。Bitsocial 应用可以通过排名、默认设置、发现机制和 rollout 节奏来优先照顾可持续的社区，而不是鼓励赌场式行为。
 - 渐进式 rollout 更健康。在生态系统拥有足够的用户、审核工具和产品清晰度、能够安全支撑这些功能之前，推迟 appchain 原生金融功能是合理的。
-- 具体机制仍未定案。本页解释的是 Bitsocial Network 的角色，而不是对 token launcher、费用公式或最终 tokenomics 的锁定承诺。
+- 具体机制仍未定案。本页解释的是 Bitsocial Chain 的角色，而不是对 token launcher、费用公式或最终 tokenomics 的锁定承诺。
