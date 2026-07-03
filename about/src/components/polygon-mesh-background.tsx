@@ -144,6 +144,7 @@ function initMesh(
   ctx: CanvasRenderingContext2D,
   isDark: boolean,
   shouldAnimate: boolean,
+  hideAtScrollTop: boolean,
   seed: number,
 ): () => void {
   const edgeAlpha = shouldAnimate ? (isDark ? 0.1 : 0.085) : isDark ? 0.22 : 0.155;
@@ -216,7 +217,7 @@ function initMesh(
   function syncViewportClip() {
     const rootRect = root.getBoundingClientRect();
     const topOverscrollGuard =
-      window.scrollY <= 1
+      hideAtScrollTop && window.scrollY <= 1
         ? Math.max(h, window.innerHeight, document.documentElement.clientHeight)
         : 0;
     const clipTop =
@@ -439,7 +440,7 @@ function supportsDynamicMesh() {
   );
 }
 
-function StaticPolygonMeshBackground() {
+function StaticPolygonMeshBackground({ hideAtScrollTop = false }: { hideAtScrollTop?: boolean }) {
   const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -450,7 +451,7 @@ function StaticPolygonMeshBackground() {
     const syncClip = () => {
       af = null;
       const clipTop =
-        window.scrollY <= 1
+        hideAtScrollTop && window.scrollY <= 1
           ? Math.max(root.clientHeight, window.innerHeight, document.documentElement.clientHeight)
           : 0;
       const clipValue = `inset(${clipTop}px 0px 0px 0px)`;
@@ -474,7 +475,7 @@ function StaticPolygonMeshBackground() {
       window.removeEventListener("scroll", scheduleSync);
       window.removeEventListener("resize", scheduleSync);
     };
-  }, []);
+  }, [hideAtScrollTop]);
 
   return (
     <div ref={rootRef} className="fixed inset-0 pointer-events-none z-0" aria-hidden="true">
@@ -494,15 +495,23 @@ function StaticPolygonMeshBackground() {
   );
 }
 
-function NoScriptStaticPolygonMeshBackground() {
+function NoScriptStaticPolygonMeshBackground({
+  hideAtScrollTop = false,
+}: {
+  hideAtScrollTop?: boolean;
+}) {
   return (
     <noscript>
-      <StaticPolygonMeshBackground />
+      <StaticPolygonMeshBackground hideAtScrollTop={hideAtScrollTop} />
     </noscript>
   );
 }
 
-const PolygonMeshBackground = memo(function PolygonMeshBackground() {
+const PolygonMeshBackground = memo(function PolygonMeshBackground({
+  hideAtScrollTop = false,
+}: {
+  hideAtScrollTop?: boolean;
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const rootRef = useRef<HTMLDivElement>(null);
   const viewportRef = useRef<HTMLDivElement>(null);
@@ -539,15 +548,22 @@ const PolygonMeshBackground = memo(function PolygonMeshBackground() {
       resolvedTheme === "dark" ||
       (!resolvedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches);
 
-    return initMesh(canvas, root, viewport, ctx, isDark, shouldAnimate, meshSeed);
-  }, [isGraphicsModePending, meshSeed, resolvedTheme, shouldAnimate, shouldUseStaticFallback]);
+    return initMesh(canvas, root, viewport, ctx, isDark, shouldAnimate, hideAtScrollTop, meshSeed);
+  }, [
+    hideAtScrollTop,
+    isGraphicsModePending,
+    meshSeed,
+    resolvedTheme,
+    shouldAnimate,
+    shouldUseStaticFallback,
+  ]);
 
   if (isGraphicsModePending) {
-    return <NoScriptStaticPolygonMeshBackground />;
+    return <NoScriptStaticPolygonMeshBackground hideAtScrollTop={hideAtScrollTop} />;
   }
 
   if (shouldUseStaticFallback) {
-    return <StaticPolygonMeshBackground />;
+    return <StaticPolygonMeshBackground hideAtScrollTop={hideAtScrollTop} />;
   }
 
   return (

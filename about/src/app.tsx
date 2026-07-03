@@ -69,13 +69,16 @@ function AppFrame({
   enableClientEffects: boolean;
   includeAnalytics: boolean;
 }) {
+  const location = useLocation();
+  const hideBackgroundAtScrollTop = location.pathname === "/";
+
   return (
     <>
       {enableClientEffects ? <SeoHead /> : null}
       {enableClientEffects ? <InitialHomeScrollGuard /> : null}
       {enableClientEffects ? <RouteScrollReset /> : null}
       <div className="relative min-h-screen overflow-x-hidden">
-        <PolygonMeshBackground />
+        <PolygonMeshBackground hideAtScrollTop={hideBackgroundAtScrollTop} />
         <div className="relative z-10">
           <Routes>
             <Route path="/" element={<Home />} />
