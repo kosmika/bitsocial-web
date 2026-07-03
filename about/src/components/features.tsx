@@ -419,12 +419,12 @@ export default function Features() {
 
   const handleSanctuaryClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
-    const sanctuaryTarget = document.getElementById("sanctuary-communication");
+    const sanctuaryTarget = document.getElementById("decentralized");
     if (!sanctuaryTarget) return;
     window.history.pushState(
       null,
       "",
-      `${window.location.pathname}${window.location.search}#sanctuary-communication`,
+      `${window.location.pathname}${window.location.search}#decentralized`,
     );
     sanctuaryTarget.scrollIntoView({ behavior: getScrollBehavior(), block: "start" });
   };

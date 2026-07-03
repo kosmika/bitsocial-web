@@ -546,7 +546,7 @@ function renderLandingShortIndex(landing, heading = "Landing page highlights") {
 
 - [Home](${siteOrigin}/): ${landing.hero}
 - [Core features](${siteOrigin}/): Bitsocial is open source, peer-to-peer via IPFS/libp2p, app-oriented, serverless by default, locally moderated with no protocol-level global bans, and built around key-controlled identities and communities.
-- [Sanctuary comparison](${siteOrigin}/#sanctuary-communication): Compares ${landing.comparison.approaches.join("; ")} across self-hosting cost, who keeps content online, scaling, custom anti-spam logic, and takedown choke points.
+- [Sanctuary comparison](${siteOrigin}/#decentralized): Compares ${landing.comparison.approaches.join("; ")} across self-hosting cost, who keeps content online, scaling, custom anti-spam logic, and takedown choke points.
 - [Deep comparison tables](${siteOrigin}/#nostr-comparison): Sourced modal tables compare Bitsocial with ${deepServices} across ${deepRows}.
 - [Arbitrary Challenges](${siteOrigin}/#arbitrary-challenges): ${landing.arbitraryChallenges.supporting} Example modules include ${challengeOptions}.
 - [Text-only Protocol](${siteOrigin}/#text-only-protocol): ${landing.textOnlyProtocol.supporting}
@@ -567,7 +567,7 @@ function renderLandingComparisonTable(landing) {
   return collapseBlankLines(`
 ### Sanctuary comparison
 
-Source: ${siteOrigin}/#sanctuary-communication
+Source: ${siteOrigin}/#decentralized
 
 ${landing.comparison.supporting}
 

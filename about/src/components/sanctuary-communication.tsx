@@ -2040,7 +2040,7 @@ export default function SanctuaryCommunication() {
       typeof window !== "undefined" &&
       getDeepComparisonServiceFromHash(window.location.hash)
     ) {
-      replaceDeepComparisonHash("#sanctuary-communication");
+      replaceDeepComparisonHash("#decentralized");
     }
   }, []);
   const noJsMobileApproaches = useMemo(() => {
@@ -2082,7 +2082,7 @@ export default function SanctuaryCommunication() {
       <div className="max-w-7xl mx-auto">
         {/* Section label — reads last (smallest, muted) per visual hierarchy principle */}
         <div
-          id="sanctuary-communication"
+          id="decentralized"
           data-home-section-label
           className="scroll-mt-[99px] md:scroll-mt-[103px]"
         >
@@ -2095,7 +2095,7 @@ export default function SanctuaryCommunication() {
           >
             <a
               data-sanctuary-label
-              href="#sanctuary-communication"
+              href="#decentralized"
               className="rounded-md transition-[color,box-shadow] duration-300 hover:text-muted-foreground/70"
             >
               {t("sanctuary.sectionLabel")}

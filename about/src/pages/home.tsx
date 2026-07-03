@@ -17,7 +17,7 @@ import { MAILING_LIST_HASH, scheduleMailingListHashScroll } from "@/lib/mailing-
 import { getScrollBehavior } from "@/lib/utils";
 
 const HOME_SECTION_HASHES = new Set([
-  "#sanctuary-communication",
+  "#decentralized",
   "#arbitrary-challenges",
   "#text-only-protocol",
   "#adoption-thesis",
