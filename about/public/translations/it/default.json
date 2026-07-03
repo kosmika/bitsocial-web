@@ -88,8 +88,8 @@
     }
   },
   "sanctuary": {
-    "sectionLabel": "Comunicazione inviolabile",
-    "headline": "Funziona e basta.",
+    "sectionLabel": "Decentralizzato",
+    "headline": "Non è una parola d'ordine.",
     "supporting": "Nessun server da affittare. Nessun dominio da comprare. Nessuna chain da sincronizzare. Un nodo Bitsocial gira su un Raspberry Pi. E ogni community può far rispettare il proprio controllo anti-spam: captcha, reputazione, SMS, pagamenti, token, controlli IP o qualsiasi altra cosa si possa programmare.",
     "approaches": {
       "federated": {

@@ -88,8 +88,8 @@
     }
   },
   "sanctuary": {
-    "sectionLabel": "Sanctuary-viestintä",
-    "headline": "Se vain toimii.",
+    "sectionLabel": "Hajautettu",
+    "headline": "Ei pelkkää muotisanaa.",
     "supporting": "Ei vuokrattavia palvelimia. Ei ostettavia domaineja. Ei ketjuja synkronoitavaksi. Bitsocial-solmu toimii Raspberry Pi:llä. Ja jokainen yhteisö voi ottaa käyttöön oman roskapostin vastaisen haasteensa: captcha, maine, SMS, maksut, tokenit, IP-tarkistukset tai mitä tahansa muuta, mikä voidaan koodata.",
     "approaches": {
       "federated": {

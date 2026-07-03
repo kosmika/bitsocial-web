@@ -88,8 +88,8 @@
     }
   },
   "sanctuary": {
-    "sectionLabel": "Szentélykommunikáció",
-    "headline": "Egyszerűen működik.",
+    "sectionLabel": "Decentralizált",
+    "headline": "Nem csak divatos szó.",
     "supporting": "Nincs kibérelendő szerver. Nincs megvásárolandó domain. Nincsenek szinkronizálandó láncok. Egy Bitsocial csomópont fut Raspberry Pi-n. És minden közösség saját spamellenes kihívást érvényesíthet: captcha, reputáció, SMS, fizetések, tokenek, IP-ellenőrzések vagy bármi más, ami kódolható.",
     "approaches": {
       "federated": {

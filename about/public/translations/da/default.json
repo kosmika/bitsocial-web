@@ -88,8 +88,8 @@
     }
   },
   "sanctuary": {
-    "sectionLabel": "Fristedskommunikation",
-    "headline": "Det virker bare.",
+    "sectionLabel": "Decentraliseret",
+    "headline": "Ikke bare et modeord.",
     "supporting": "Ingen server at leje. Intet domæne at købe. Ingen chains at synkronisere. En Bitsocial-node kører på en Raspberry Pi. Og hvert fællesskab kan håndhæve sin egen antispam-udfordring: captchas, reputation, SMS, betalinger, tokens, IP-tjek eller hvad som helst andet, der kan kodes.",
     "approaches": {
       "federated": {

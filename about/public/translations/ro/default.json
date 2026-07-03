@@ -88,8 +88,8 @@
     }
   },
   "sanctuary": {
-    "sectionLabel": "Comunicare de sanctuar",
-    "headline": "Pur și simplu funcționează.",
+    "sectionLabel": "Decentralizat",
+    "headline": "Nu e doar un buzzword.",
     "supporting": "Nu trebuie să închiriezi servere. Nu trebuie să cumperi domenii. Nu trebuie să sincronizezi lanțuri. Un nod Bitsocial rulează pe un Raspberry Pi. Iar fiecare comunitate își poate aplica propria provocare anti-spam: captchas, reputație, SMS, plăți, tokenuri, verificări IP sau orice altceva poate fi programat.",
     "approaches": {
       "federated": {

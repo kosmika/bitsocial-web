@@ -88,8 +88,8 @@
     }
   },
   "sanctuary": {
-    "sectionLabel": "Comunicació de santuari",
-    "headline": "Simplement funciona.",
+    "sectionLabel": "Descentralitzat",
+    "headline": "No és una paraula buida.",
     "supporting": "No cal llogar servidors. No cal comprar dominis. No cal sincronitzar cadenes. Un node Bitsocial funciona en un Raspberry Pi. I cada comunitat pot fer complir el seu propi repte anti-spam: captchas, reputació, SMS, pagaments, tokens, comprovacions d'IP o qualsevol altra cosa que es pugui programar.",
     "approaches": {
       "federated": {

@@ -89,8 +89,8 @@
     }
   },
   "sanctuary": {
-    "sectionLabel": "Sanctuary Communication",
-    "headline": "It just works.",
+    "sectionLabel": "Decentralized",
+    "headline": "Not a buzzword.",
     "supporting": "No servers to rent. No domains to buy. No chains to sync. A Bitsocial node runs on a Raspberry Pi. And each community can enforce its own anti-spam challenge: captchas, reputation, SMS, payments, tokens, IP checks, or anything else that can be coded.",
     "approaches": {
       "federated": {

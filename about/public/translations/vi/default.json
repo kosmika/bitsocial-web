@@ -88,8 +88,8 @@
     }
   },
   "sanctuary": {
-    "sectionLabel": "Truyền thông nơi an toàn",
-    "headline": "Chạy mượt là xong.",
+    "sectionLabel": "Phi tập trung",
+    "headline": "Không phải từ thời thượng.",
     "supporting": "Không cần thuê máy chủ. Không cần mua tên miền. Không cần đồng bộ chuỗi. Một node Bitsocial có thể chạy trên Raspberry Pi. Và mỗi cộng đồng có thể áp dụng cơ chế chống spam riêng: captcha, điểm uy tín, SMS, thanh toán, token, kiểm tra IP, hoặc bất kỳ thứ gì có thể lập trình được.",
     "approaches": {
       "federated": {

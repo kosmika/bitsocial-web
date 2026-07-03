@@ -88,8 +88,8 @@
     }
   },
   "sanctuary": {
-    "sectionLabel": "Fristadskommunikation",
-    "headline": "Det bara funkar.",
+    "sectionLabel": "Decentraliserad",
+    "headline": "Inte bara ett modeord.",
     "supporting": "Ingen server att hyra. Ingen domän att köpa. Inga kedjor att synka. En Bitsocial-nod körs på en Raspberry Pi. Och varje community kan tillämpa sin egen antispam-utmaning: captchas, reputation, SMS, betalningar, tokens, IP-kontroller eller vad som helst annat som går att koda.",
     "approaches": {
       "federated": {

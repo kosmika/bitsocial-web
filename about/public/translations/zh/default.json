@@ -88,8 +88,8 @@
     }
   },
   "sanctuary": {
-    "sectionLabel": "庇护通信",
-    "headline": "就是这么简单。",
+    "sectionLabel": "去中心化",
+    "headline": "不是流行词。",
     "supporting": "无需租服务器。无需购买域名。无需同步链。Bitsocial 节点可以在 Raspberry Pi 上运行。而且每个社区都可以执行自己的反垃圾验证：验证码、信誉分、短信、支付、代币、IP 检查，或者任何可以编写出来的其他方式。",
     "approaches": {
       "federated": {

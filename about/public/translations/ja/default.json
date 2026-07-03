@@ -88,8 +88,8 @@
     }
   },
   "sanctuary": {
-    "sectionLabel": "サンクチュアリ通信",
-    "headline": "とにかく動く。",
+    "sectionLabel": "分散型",
+    "headline": "流行語じゃない。",
     "supporting": "サーバーを借りる必要も、ドメインを買う必要も、チェーンを同期する必要もありません。Bitsocial ノードは Raspberry Pi で動きます。しかも各コミュニティは、captcha、レピュテーション、SMS、支払い、トークン、IP チェック、あるいは実装可能なあらゆる方法で、独自のスパム対策チャレンジを課せます。",
     "approaches": {
       "federated": {
