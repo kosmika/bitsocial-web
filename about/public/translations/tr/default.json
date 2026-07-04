@@ -89,7 +89,7 @@
   },
   "sanctuary": {
     "sectionLabel": "Merkeziyetsiz",
-    "headline": "Boş bir moda sözcüğü değil.",
+    "headline": "Sadece moda bir sözcük değil.",
     "supporting": "Kiralayacak sunucu yok. Alınacak alan adı yok. Eşitlenecek zincir yok. Bir Bitsocial düğümü bir Raspberry Pi üzerinde çalışır. Ve her topluluk kendi spam önleme sınamasını uygulayabilir: captcha, itibar, SMS, ödeme, token, IP kontrolleri ya da kodlanabilen başka herhangi bir şey.",
     "approaches": {
       "federated": {

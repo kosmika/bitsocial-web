@@ -89,7 +89,7 @@
   },
   "sanctuary": {
     "sectionLabel": "विकेंद्रीकृत",
-    "headline": "फक्त buzzword नाही.",
+    "headline": "फक्त फॅशनेबल शब्द नाही.",
     "supporting": "भाड्याने घेण्यासाठी कोणताही server नाही. विकत घेण्यासाठी कोणताही domain नाही. सिंक करण्यासाठी कोणतीही chain नाही. एक Bitsocial node Raspberry Pi वर चालतो. आणि प्रत्येक community आपला anti-spam challenge लागू करू शकते: captcha, reputation, SMS, payments, tokens, IP checks, किंवा code करता येईल अशी कुठलीही गोष्ट.",
     "approaches": {
       "federated": {

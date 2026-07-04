@@ -89,7 +89,7 @@
   },
   "sanctuary": {
     "sectionLabel": "বিকেন্দ্রীকৃত",
-    "headline": "কেবল buzzword নয়।",
+    "headline": "শুধু ফ্যাশনেবল শব্দ নয়।",
     "supporting": "ভাড়া করার মতো কোনো সার্ভার নেই। কেনার মতো কোনো ডোমেইন নেই। সিঙ্ক করার মতো কোনো চেইন নেই। একটি Bitsocial node একটি Raspberry Pi-তে চলে। আর প্রতিটি community নিজের anti-spam challenge প্রয়োগ করতে পারে: captcha, reputation, SMS, payments, tokens, IP checks, বা কোড করা যায় এমন অন্য যেকোনো কিছু.",
     "approaches": {
       "federated": {

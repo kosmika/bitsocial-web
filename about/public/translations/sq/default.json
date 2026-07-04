@@ -89,7 +89,7 @@
   },
   "sanctuary": {
     "sectionLabel": "Decentralizuar",
-    "headline": "Nuk është thjesht fjalë modë.",
+    "headline": "Nuk është thjesht një fjalë në modë.",
     "supporting": "Nuk ka serverë për t'u marrë me qira. Nuk ka domain-e për t'u blerë. Nuk ka zinxhirë për t'u sinkronizuar. Një nyje Bitsocial funksionon në një Raspberry Pi. Dhe çdo komunitet mund të zbatojë sfidën e vet kundër spam-it: captcha, reputacion, SMS, pagesa, tokenë, kontrolle IP ose çdo gjë tjetër që mund të kodifikohet.",
     "approaches": {
       "federated": {

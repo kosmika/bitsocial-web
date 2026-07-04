@@ -89,7 +89,7 @@
   },
   "sanctuary": {
     "sectionLabel": "Decentralizované",
-    "headline": "Není to jen prázdné slovo.",
+    "headline": "Není to jen módní slovo.",
     "supporting": "Žádný server k pronájmu. Žádná doména ke koupi. Žádné blockchainy k synchronizaci. Uzel Bitsocial běží na Raspberry Pi. A každá komunita si může prosadit vlastní anti-spamovou výzvu: captchy, reputaci, SMS, platby, tokeny, kontrolu IP nebo cokoli jiného, co lze naprogramovat.",
     "approaches": {
       "federated": {
