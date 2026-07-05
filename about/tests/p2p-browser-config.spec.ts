@@ -1,6 +1,8 @@
 import { expect, test } from "@playwright/test";
 import {
   configureP2PBrowserPkcOptions,
+  DEFAULT_HTTP_ROUTER_URLS,
+  getBrowserHttpRoutersOptionsWithCurrentDefaults,
   getBrowserGatewayPkcOptions,
   getPureP2PBrowserPreference,
   PURE_P2P_BROWSER_SETTING_KEY,
@@ -29,6 +31,13 @@ const createStorage = (values: Record<string, string | undefined> = {}) => ({
 });
 
 test.describe("browser P2P config", () => {
+  const legacyDefaultHttpRouters = [
+    "https://peers.plebpubsub.xyz",
+    "https://routing.lol",
+    "https://peers.pleb.bot",
+    "https://peers.forumindex.com",
+  ];
+
   test("configures pure browser PKC options by default", ({ browserName }) => {
     test.skip(browserName !== "chromium", "one project is enough for this module test");
 
@@ -47,12 +56,7 @@ test.describe("browser P2P config", () => {
     expect(configureP2PBrowserPkcOptions(targetWindow)).toBe(true);
     expect(targetWindow.defaultPkcOptions).toMatchObject({
       chainProviders,
-      httpRoutersOptions: [
-        "https://peers.plebpubsub.xyz",
-        "https://routing.lol",
-        "https://peers.pleb.bot",
-        "https://peers.forumindex.com",
-      ],
+      httpRoutersOptions: DEFAULT_HTTP_ROUTER_URLS,
       ipfsGatewayUrls: undefined,
       libp2pJsClientsOptions: [{ key: "libp2pjs" }],
       pubsubKuboRpcClientsOptions: undefined,
@@ -102,9 +106,48 @@ test.describe("browser P2P config", () => {
     setPureP2PBrowserPreference(true, targetWindow);
     expect(getPureP2PBrowserPreference(targetWindow)).toBe(true);
   });
+
+  test("updates only known default HTTP router lists with current trackers", ({ browserName }) => {
+    test.skip(browserName !== "chromium", "one project is enough for this module test");
+
+    const partiallyUpdatedDefaultHttpRouters = [
+      ...legacyDefaultHttpRouters,
+      "https://routerofbitsocial.xyz",
+    ];
+
+    expect(DEFAULT_HTTP_ROUTER_URLS).toEqual([
+      "https://peers.pleb.bot",
+      "https://routing.lol",
+      "https://peers.forumindex.com",
+      "https://peers.plebpubsub.xyz",
+      "https://routerofbitsocial.xyz",
+      "https://bsotracker.online",
+    ]);
+    expect(getBrowserHttpRoutersOptionsWithCurrentDefaults(legacyDefaultHttpRouters)).toEqual([
+      ...legacyDefaultHttpRouters,
+      "https://routerofbitsocial.xyz",
+      "https://bsotracker.online",
+    ]);
+    expect(
+      getBrowserHttpRoutersOptionsWithCurrentDefaults(partiallyUpdatedDefaultHttpRouters),
+    ).toEqual([...partiallyUpdatedDefaultHttpRouters, "https://bsotracker.online"]);
+    expect(
+      getBrowserHttpRoutersOptionsWithCurrentDefaults([
+        "https://router.custom.example",
+        "https://peers.pleb.bot",
+      ]),
+    ).toBeUndefined();
+    expect(getBrowserHttpRoutersOptionsWithCurrentDefaults([])).toBeUndefined();
+  });
 });
 
 test.describe("browser P2P runtime", () => {
+  const legacyDefaultHttpRouters = [
+    "https://peers.plebpubsub.xyz",
+    "https://routing.lol",
+    "https://peers.pleb.bot",
+    "https://peers.forumindex.com",
+  ];
   const browserWindow: P2PBrowserConfigWindow = {
     isElectron: false,
     localStorage: createStorage(),
@@ -146,6 +189,18 @@ test.describe("browser P2P runtime", () => {
 
     const gatewayAccount = { pkcOptions: { ipfsGatewayUrls: ["https://gateway.example"] } };
     const browserAccount = { pkcOptions: { libp2pJsClientsOptions: [{ key: "libp2pjs" }] } };
+    const browserAccountWithLegacyDefaultRouters = {
+      pkcOptions: {
+        httpRoutersOptions: legacyDefaultHttpRouters,
+        libp2pJsClientsOptions: [{ key: "libp2pjs" }],
+      },
+    };
+    const browserAccountWithCustomRouters = {
+      pkcOptions: {
+        httpRoutersOptions: ["https://router.custom.example"],
+        libp2pJsClientsOptions: [{ key: "libp2pjs" }],
+      },
+    };
     const mixedBrowserAccount = {
       pkcOptions: {
         libp2pJsClientsOptions: [{ key: "libp2pjs" }],
@@ -156,6 +211,12 @@ test.describe("browser P2P runtime", () => {
 
     expect(shouldUpgradeBrowserPureP2PAccount(gatewayAccount, browserWindow)).toBe(true);
     expect(shouldUpgradeBrowserPureP2PAccount(browserAccount, browserWindow)).toBe(false);
+    expect(
+      shouldUpgradeBrowserPureP2PAccount(browserAccountWithLegacyDefaultRouters, browserWindow),
+    ).toBe(true);
+    expect(shouldUpgradeBrowserPureP2PAccount(browserAccountWithCustomRouters, browserWindow)).toBe(
+      false,
+    );
     expect(shouldUpgradeBrowserPureP2PAccount(mixedBrowserAccount, browserWindow)).toBe(true);
     expect(shouldUpgradeBrowserPureP2PAccount(fullNodeAccount, browserWindow)).toBe(false);
     expect(shouldUpgradeBrowserPureP2PAccount(gatewayAccount, disabledBrowserWindow)).toBe(false);
@@ -204,6 +265,7 @@ test.describe("browser P2P runtime", () => {
 
     expect(isBrowserPureP2PEnabled(account, browserWindow)).toBe(true);
     expect(getBrowserPureP2PAccountOptions(account)).toMatchObject({
+      httpRoutersOptions: ["https://custom-router.example"],
       ipfsGatewayUrls: undefined,
       libp2pJsClientsOptions: [{ key: "libp2pjs" }],
       pkcRpcClientsOptions: undefined,
@@ -219,6 +281,25 @@ test.describe("browser P2P runtime", () => {
         "https://plebpubsub.xyz/api/v0",
         "https://rannithepleb.com/api/v0",
       ],
+    });
+
+    expect(
+      getBrowserPureP2PAccountOptions({
+        pkcOptions: { httpRoutersOptions: legacyDefaultHttpRouters },
+      }),
+    ).toMatchObject({
+      httpRoutersOptions: [
+        ...legacyDefaultHttpRouters,
+        "https://routerofbitsocial.xyz",
+        "https://bsotracker.online",
+      ],
+    });
+    expect(
+      getBrowserPureP2PAccountOptions({
+        pkcOptions: { httpRoutersOptions: [] },
+      }),
+    ).toMatchObject({
+      httpRoutersOptions: [],
     });
   });
 });

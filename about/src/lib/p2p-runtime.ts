@@ -1,5 +1,6 @@
 import {
   canUsePureP2PBrowser,
+  getBrowserHttpRoutersOptionsWithCurrentDefaults,
   getBrowserGatewayPkcOptions,
   getBrowserPureP2PPkcOptions,
   getPureP2PBrowserPreference,
@@ -42,6 +43,15 @@ const hasMixedBrowserPureP2POptions = (protocolOptions: AccountProtocolOptions |
   (hasArrayItems(protocolOptions?.kuboRpcClientsOptions) ||
     hasArrayItems(protocolOptions?.pubsubKuboRpcClientsOptions));
 
+const getHttpRoutersOptions = (
+  protocolOptions: AccountProtocolOptions | undefined,
+  fallbackHttpRoutersOptions: string[],
+) =>
+  getBrowserHttpRoutersOptionsWithCurrentDefaults(protocolOptions?.httpRoutersOptions) ??
+  (Array.isArray(protocolOptions?.httpRoutersOptions)
+    ? protocolOptions.httpRoutersOptions
+    : fallbackHttpRoutersOptions);
+
 export const getP2PRuntimeMode = (
   account?: unknown,
   targetWindow?: P2PBrowserConfigWindow,
@@ -80,11 +90,17 @@ export const isBrowserPureP2PEnabled = (
   return shouldUsePureP2PBrowser(targetWindow);
 };
 
-export const getBrowserPureP2PAccountOptions = (account?: unknown) => ({
-  ...toAccountShape(account)?.pkcOptions,
-  ...getBrowserPureP2PPkcOptions(),
-  pkcRpcClientsOptions: undefined,
-});
+export const getBrowserPureP2PAccountOptions = (account?: unknown) => {
+  const protocolOptions = toAccountShape(account)?.pkcOptions;
+  const pureP2POptions = getBrowserPureP2PPkcOptions();
+
+  return {
+    ...protocolOptions,
+    ...pureP2POptions,
+    httpRoutersOptions: getHttpRoutersOptions(protocolOptions, pureP2POptions.httpRoutersOptions),
+    pkcRpcClientsOptions: undefined,
+  };
+};
 
 export const shouldUpgradeBrowserPureP2PAccount = (
   account?: unknown,
@@ -102,7 +118,8 @@ export const shouldUpgradeBrowserPureP2PAccount = (
   const protocolOptions = toAccountShape(account)?.pkcOptions;
   return (
     getP2PRuntimeMode(account, targetWindow) === null ||
-    hasMixedBrowserPureP2POptions(protocolOptions)
+    hasMixedBrowserPureP2POptions(protocolOptions) ||
+    Boolean(getBrowserHttpRoutersOptionsWithCurrentDefaults(protocolOptions?.httpRoutersOptions))
   );
 };
 
@@ -129,9 +146,7 @@ export const getBrowserGatewayAccountOptions = (account?: unknown) => {
     pubsubKuboRpcClientsOptions: hasArrayItems(protocolOptions?.pubsubKuboRpcClientsOptions)
       ? protocolOptions?.pubsubKuboRpcClientsOptions
       : gatewayOptions.pubsubKuboRpcClientsOptions,
-    httpRoutersOptions: hasArrayItems(protocolOptions?.httpRoutersOptions)
-      ? protocolOptions?.httpRoutersOptions
-      : gatewayOptions.httpRoutersOptions,
+    httpRoutersOptions: getHttpRoutersOptions(protocolOptions, gatewayOptions.httpRoutersOptions),
     pkcRpcClientsOptions: undefined,
   };
 };

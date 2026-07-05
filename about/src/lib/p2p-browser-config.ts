@@ -14,11 +14,26 @@ const BROWSER_PUBSUB_KUBO_RPC_CLIENTS_OPTIONS = [
   "https://rannithepleb.com/api/v0",
 ];
 
-export const BROWSER_HTTP_ROUTER_OPTIONS = [
-  "https://peers.plebpubsub.xyz",
-  "https://routing.lol",
+// Keep this aligned with bitsocial-react-hooks' DEFAULT_HTTP_ROUTER_URLS without
+// relying on a package-internal runtime import before window.defaultPkcOptions
+// is configured.
+export const DEFAULT_HTTP_ROUTER_URLS = [
   "https://peers.pleb.bot",
+  "https://routing.lol",
   "https://peers.forumindex.com",
+  "https://peers.plebpubsub.xyz",
+  "https://routerofbitsocial.xyz",
+  "https://bsotracker.online",
+];
+
+const LEGACY_DEFAULT_HTTP_ROUTER_URL_SETS = [
+  [
+    "https://peers.plebpubsub.xyz",
+    "https://routing.lol",
+    "https://peers.pleb.bot",
+    "https://peers.forumindex.com",
+  ],
+  ["https://peers.plebpubsub.xyz", "https://routing.lol", "https://peers.pleb.bot"],
 ];
 
 const P2P_BROWSER_PKC_OPTIONS = {
@@ -27,7 +42,7 @@ const P2P_BROWSER_PKC_OPTIONS = {
   kuboRpcClientsOptions: undefined,
   pubsubHttpClientsOptions: undefined,
   pubsubKuboRpcClientsOptions: undefined as string[] | undefined,
-  httpRoutersOptions: BROWSER_HTTP_ROUTER_OPTIONS,
+  httpRoutersOptions: DEFAULT_HTTP_ROUTER_URLS,
 };
 
 const GATEWAY_BROWSER_PKC_OPTIONS = {
@@ -40,7 +55,7 @@ const GATEWAY_BROWSER_PKC_OPTIONS = {
   libp2pJsClientsOptions: undefined,
   pubsubHttpClientsOptions: undefined,
   pubsubKuboRpcClientsOptions: BROWSER_PUBSUB_KUBO_RPC_CLIENTS_OPTIONS,
-  httpRoutersOptions: BROWSER_HTTP_ROUTER_OPTIONS,
+  httpRoutersOptions: DEFAULT_HTTP_ROUTER_URLS,
 };
 
 export type P2PBrowserConfigWindow = {
@@ -54,6 +69,52 @@ const getDefaultBrowserConfigWindow = () =>
   typeof window === "undefined" ? undefined : (window as unknown as P2PBrowserConfigWindow);
 
 const cloneArray = <T>(value: T[] | undefined) => (value ? [...value] : undefined);
+
+const getUniqueTrimmedUrls = (urls: string[] | undefined) =>
+  urls?.reduce<string[]>((uniqueUrls, url) => {
+    const trimmedUrl = url.trim();
+    if (trimmedUrl && !uniqueUrls.includes(trimmedUrl)) uniqueUrls.push(trimmedUrl);
+    return uniqueUrls;
+  }, []) ?? [];
+
+const hasSameUrlSet = (urls: string[], comparisonUrls: string[]) =>
+  urls.length === comparisonUrls.length && urls.every((url) => comparisonUrls.includes(url));
+
+const hasUrlSet = (urls: string[], comparisonUrls: string[]) =>
+  comparisonUrls.every((url) => urls.includes(url));
+
+const isKnownDefaultHttpRoutersOptions = (httpRoutersOptions: string[]) => {
+  if (hasSameUrlSet(httpRoutersOptions, DEFAULT_HTTP_ROUTER_URLS)) return true;
+  if (
+    LEGACY_DEFAULT_HTTP_ROUTER_URL_SETS.some((legacyRouters) =>
+      hasSameUrlSet(httpRoutersOptions, legacyRouters),
+    )
+  ) {
+    return true;
+  }
+
+  return (
+    httpRoutersOptions.every((routerUrl) => DEFAULT_HTTP_ROUTER_URLS.includes(routerUrl)) &&
+    LEGACY_DEFAULT_HTTP_ROUTER_URL_SETS.some((legacyRouters) =>
+      hasUrlSet(httpRoutersOptions, legacyRouters),
+    )
+  );
+};
+
+export const getBrowserHttpRoutersOptionsWithCurrentDefaults = (
+  httpRoutersOptions: string[] | undefined,
+) => {
+  const httpRouters = getUniqueTrimmedUrls(httpRoutersOptions);
+  if (httpRouters.length === 0 || !isKnownDefaultHttpRoutersOptions(httpRouters)) return undefined;
+
+  const missingDefaultHttpRoutersOptions = DEFAULT_HTTP_ROUTER_URLS.filter(
+    (routerUrl) => !httpRouters.includes(routerUrl),
+  );
+
+  return missingDefaultHttpRoutersOptions.length
+    ? [...httpRouters, ...missingDefaultHttpRoutersOptions]
+    : undefined;
+};
 
 export function getBrowserPureP2PPkcOptions() {
   return {
