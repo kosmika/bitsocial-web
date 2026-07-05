@@ -47,9 +47,9 @@
     "test:planet-theme": "playwright test --config about/playwright.config.ts",
     "typecheck": "tsgo --noEmit --project about/tsconfig.json && yarn --cwd docs typecheck",
     "preview": "vite preview --config about/vite.config.ts",
-    "doctor": "react-doctor about -y",
+    "doctor": "react-doctor --project about,chain -y",
     "doctor:score": "react-doctor about --score -y",
-    "doctor:verbose": "react-doctor about --verbose -y",
+    "doctor:verbose": "react-doctor --project about,chain --verbose -y",
     "commit": "cz"
   },
   "devDependencies": {

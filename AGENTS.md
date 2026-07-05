@@ -17,6 +17,7 @@ Only record items that are repo-specific, likely to recur, and have a concrete m
 Bitsocial Web is a small monorepo for the public Bitsocial web surface:
 
 - `about/` for the Bitsocial landing/about site served at `bitsocial.net`
+- `chain/` for the Bitsocial Chain landing site (BSO token and L2 appchain) served at `chain.bitsocial.net`
 - `docs/` for the Docusaurus docs served at `docs.bitsocial.net`
 - `stats/` for Grafana, Prometheus, and deployment assets behind `stats.bitsocial.net`
 
@@ -54,7 +55,7 @@ Agents may use compiled context to navigate quickly, but must verify against sou
 | Situation | Required action |
 | Situation | Required action |
 | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| React UI logic changed (`about/src/components`, `about/src/pages`, `about/src/app.tsx`, `about/src/main.tsx`, `about/src/lib`) | Follow React architecture rules below and run `yarn doctor` |
+| React UI logic changed (`about/src/components`, `about/src/pages`, `about/src/app.tsx`, `about/src/main.tsx`, `about/src/lib`, `chain/src/**`) | Follow React architecture rules below and run `yarn doctor` |
 | `package.json` changed | Run `yarn install` to keep `yarn.lock` in sync |
 | Dependencies or import graph changed | Run `yarn knip` as an advisory manifest/import audit |
 | Translation key/value changed | Use `docs/agent-playbooks/translations.md` |
@@ -100,6 +101,7 @@ about/
 ├── public/           # Landing-site static assets and translations
 └── vite.config.ts    # Landing-site Vite config
 
+chain/                # Bitsocial Chain landing site (BSO token and L2 appchain), standalone Vite app
 docs/                 # Docusaurus site and agent playbooks
 docs/i18n/            # Docusaurus translations
 stats/                # Monitoring, Grafana, Prometheus, and deployment assets

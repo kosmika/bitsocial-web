@@ -41,6 +41,11 @@ const needsAboutBuild =
   changedPaths.some(
     (filePath) => filePath === "about/package.json" || filePath.startsWith("about/"),
   );
+const needsChainBuild =
+  touchesRootDependencies ||
+  changedPaths.some(
+    (filePath) => filePath === "chain/package.json" || filePath.startsWith("chain/"),
+  );
 const needsDocsBuild = changedPaths.some(
   (filePath) => filePath === "docs/package.json" || filePath.startsWith("docs/"),
 );
@@ -70,6 +75,10 @@ if (needsAboutBuild) {
   runYarnCommand(["build:about"]);
 }
 
+if (needsChainBuild) {
+  runYarnCommand(["build:chain"]);
+}
+
 if (needsDocsBuild) {
   runYarnCommand(["docs:build:verify"]);
 }
@@ -82,6 +91,12 @@ if (needsStatsMonitorCheck) {
   runYarnCommand(["build:stats-monitor"]);
 }
 
-if (!needsAboutBuild && !needsDocsBuild && !needsStatsDashboardsBuild && !needsStatsMonitorCheck) {
+if (
+  !needsAboutBuild &&
+  !needsChainBuild &&
+  !needsDocsBuild &&
+  !needsStatsDashboardsBuild &&
+  !needsStatsMonitorCheck
+) {
   console.log("No targeted build checks matched the current diff.");
 }

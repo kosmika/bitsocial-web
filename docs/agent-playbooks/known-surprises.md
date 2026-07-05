@@ -157,3 +157,13 @@ If uncertain, ask the developer before adding an entry.
 - **Impact:** Agents can incorrectly claim no-JS support works, or miss regressions that only show up on `*.bitsocial.localhost`.
 - **Mitigation:** For `about/` browser verification, always start the real local server with `yarn start` or `yarn start:about` and test the branch-scoped Portless URL first. If a Portless hostname looks stale, inspect and stop the old process before retesting.
 - **Status:** confirmed
+
+### `chain/` was invisible to `yarn build:verify` and `yarn doctor`
+
+- **Date:** 2026-07-05
+- **Observed by:** Codex
+- **Context:** Verifying a chain/-only diff after the `chain/` workspace (standalone Vite app for `chain.bitsocial.net`) was added to the monorepo.
+- **What was surprising:** `scripts/verify-build.mjs` only recognized `about/`, `docs/`, and `stats/` path prefixes, so a chain/-only diff printed "No targeted build checks matched the current diff" and ran no build at all, even though `build:chain` already existed in the root `package.json`. Separately, `yarn doctor` was hard-coded to `react-doctor about -y`, so React changes under `chain/src` got zero React Doctor coverage.
+- **Impact:** Agents verifying chain changes had to know to call `yarn build:chain` directly instead of trusting `yarn build:verify`, and React issues in `chain/src` (effects, hooks, dead code) went undetected by `yarn doctor`.
+- **Mitigation:** `scripts/verify-build.mjs` now has a `chain/` branch mirroring the `about/` one, and `doctor` / `doctor:verbose` now run `react-doctor --project about,chain -y` in a single invocation. `doctor:score` stays `about`-only because `--score` silently prints nothing when combined with `--project` for more than one project; use `yarn react-doctor --project about,chain --verbose -y` (or `--json`) if a chain score is needed.
+- **Status:** confirmed
