@@ -498,7 +498,7 @@
     "p2p": {
       "button": "P2P status",
       "eyebrow": "Pure P2P",
-      "title": "Bitsocial P2P status",
+      "title": "Bitsocial Blog P2P Status",
       "description": "This blog page is itself a Bitsocial app. Posts are fetched directly from the peer-to-peer network through libp2p running in your browser — no servers, no central gateways.",
       "close": "Close",
       "refresh": "Refresh",
